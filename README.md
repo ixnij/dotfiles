@@ -48,5 +48,7 @@ quickly as yadm, and is more flexible (I know that yadm can implement
 some functions through hooks), and it can quickly create and delete 
 symbolic links.
 
+Of course, stow has written in perl.
+
 Come with a complete git tutorial: [git tutorial](https://www.liaoxuefeng.com/wiki/896043488029600/)
 
