@@ -60,3 +60,4 @@ Of course, stow has written in perl.
 After a period of use and testing, this configuration file repository 
 can run normally on Linux distributions such as openSUSE Tumbleweed, 
 gentoo rootfs, archlinux and debian.
+**But this usually has nothing to do with the release.**
