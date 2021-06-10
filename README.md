@@ -8,6 +8,12 @@ from this directory.
 ```bash
 stow --target="~" --dir="." nvim
 ```
+or
+
+```bash
+stow --target="~/.config" --dir="." nvim
+```
+
 There are some articles worth referring to about the way of backing up configuration files:
 - [The best way to store your dotfiles](https://www.atlassian.com/git/tutorials/dotfiles)
 
