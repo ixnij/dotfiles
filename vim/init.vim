@@ -1,3 +1,12 @@
+
+" For vim-plug:
+
+if empty(glob('~/.vim/autoload/plug.vim'))
+	silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+				\ https://raw.staticdn.net/junegunn/vim-plug/master/plug.vim
+	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 set number
 set nocompatible
 syntax on
