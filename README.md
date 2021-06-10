@@ -30,6 +30,8 @@ There are some articles worth referring to about the way of backing up configura
 
 # Why?
 
+## Why I back up my configuration file to Github
+
 Of course, no one is willing to spend a lot of time and energy on the configuration file to 
 lose in vain (I once built an Emacs configuration file locally, I spent quite a while to 
 improve it, but I did not think of my own The computer will have problems and cause me to
@@ -37,4 +39,14 @@ lose these files. Naturally, I have no idea of backing up the configuration file
 though my configuration files are very inelegant and clumsy). Moreover, since there is a
 way to back up the configuration files you have accumulated, why not do it?
 
+## Why using GNU/stow ?
+
+If I just create symbolic links, I don't seem to need to use a 
+dedicated manager to manage my configuration files. However, it is 
+very convenient, which means that it can deploy configuration files as 
+quickly as yadm, and is more flexible (I know that yadm can implement 
+some functions through hooks), and it can quickly create and delete 
+symbolic links.
+
 Come with a complete git tutorial: [git tutorial](https://www.liaoxuefeng.com/wiki/896043488029600/)
+
