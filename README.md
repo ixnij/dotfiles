@@ -1,7 +1,15 @@
 # How to?
-I'm using GNU's stow to manage my configuation files.
 
+I'm using GNU's stow to manage my configuation files.
 You can check out the usage of `stow` through `man stow`.
+
+I usually let the repository named `~/.files` locally.
+
+If you just want to give it a try without any other actions, you can use this command to speed up the cloning process:
+
+```bash
+git clone --depth=1 https://github.com/ixnij/dotfiles.git ~/.files
+```
 
 For example, you can use the following commands to make a symbol link to `~/.config/nvim`
 from this directory.
