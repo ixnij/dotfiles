@@ -14,6 +14,12 @@ or
 stow --target="~/.config" --dir="." nvim
 ```
 
+You can also:
+
+```bash
+stow --target="~/.vim" --dir="." vim
+```
+
 There are some articles worth referring to about the way of backing up configuration files:
 - [The best way to store your dotfiles](https://www.atlassian.com/git/tutorials/dotfiles)
 
