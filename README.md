@@ -30,6 +30,8 @@ There are some articles worth referring to about the way of backing up configura
 
 # Why?
 
+There are some reasons and ideas about this repository.
+
 ## Why I back up my configuration file to Github
 
 Of course, no one is willing to spend a lot of time and energy on the configuration file to 
