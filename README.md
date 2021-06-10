@@ -1,8 +1,9 @@
 # How to?
 I'm using GNU's stow to manage my configuation files.
-Check out the usage of `stow` through `man stow`.
 
-For example,you can use the following commands to make a symbol link to `~/.config/nvim`
+You can check out the usage of `stow` through `man stow`.
+
+For example, you can use the following commands to make a symbol link to `~/.config/nvim`
 from this directory.
 
 ```bash
