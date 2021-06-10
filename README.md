@@ -53,5 +53,10 @@ symbolic links.
 
 Of course, stow has written in perl.
 
-Come with a complete git tutorial: [git tutorial](https://www.liaoxuefeng.com/wiki/896043488029600/)
+~~Come with a complete git tutorial: [git tutorial](https://www.liaoxuefeng.com/wiki/896043488029600/)~~
 
+# Note:
+
+After a period of use and testing, this configuration file repository 
+can run normally on Linux distributions such as openSUSE Tumbleweed, 
+gentoo rootfs, archlinux and debian.
