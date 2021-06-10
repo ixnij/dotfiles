@@ -14,6 +14,14 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'morhetz/gruvbox'
 
+" Vim language server plugin
+Plug 'prabirshrestha/vim-lsp'
+
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+
 call plug#end()
 
 set number
@@ -58,4 +66,19 @@ nnoremap <Tab> :bn<CR>
 nnoremap <s-Tab> :bp<CR>
 nnoremap <s-q> :q!<CR>
 nnoremap <c-s> :w<CR>
+
+" Language server and completion settings:
+
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr> pumvisible() ? "\<C-y>\<cr>" : "\<cr>"
+
+"" Registe Lsp
+if executable('clangd')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'clangd',
+        \ 'cmd': {server_info->['clangd', '-background-index']},
+        \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp','cc','cxx'],
+        \ })
+endif
 
