@@ -19,7 +19,11 @@ You can also:
 ```bash
 stow --target="~/.vim" --dir="." vim
 ```
-For the vim config file, you should create the `~/.vimrc` file and you need to write a sentence like this: `source ~/.vim/init.vim`.
+For the vim config file, you should create the `~/.vimrc` file and you need to write a sentence like this: 
+
+```bash
+source ~/.vim/init.vim
+```
 
 There are some articles worth referring to about the way of backing up configuration files:
 - [The best way to store your dotfiles](https://www.atlassian.com/git/tutorials/dotfiles)
