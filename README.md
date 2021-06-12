@@ -22,8 +22,7 @@ or
 ```bash
 stow --target="~/.config" --dir="." nvim
 ```
-
-You can also:
+## Vim
 
 ```bash
 stow --target="~/.vim" --dir="." vim
@@ -32,6 +31,22 @@ For the vim config file, you should create the `~/.vimrc` file and you need to w
 
 ```bash
 source ~/.vim/init.vim
+```
+
+## Neovim
+
+```bash
+stow --target="~" --dir="." nvim
+```
+or
+
+```bash
+stow --target="~/.config" --dir="." nvim
+```
+## Emacs
+
+```bash
+stow --target="~/.emacs.d" emacs
 ```
 
 There are some articles worth referring to about the way of backing up configuration files:
