@@ -3,6 +3,8 @@
 I'm using GNU's stow to manage my configuation files.
 You can check out the usage of `stow` through `man stow`.
 
+## To deploy
+
 I usually let the repository named `~/.files` locally.
 
 If you just want to give it a try without any other actions, you can use this command to speed up the cloning process:
@@ -22,7 +24,7 @@ or
 ```bash
 stow --target="~/.config" --dir="." nvim
 ```
-## Vim
+### Vim
 
 ```bash
 stow --target="~/.vim" --dir="." vim
@@ -33,7 +35,7 @@ For the vim config file, you should create the `~/.vimrc` file and you need to w
 source ~/.vim/init.vim
 ```
 
-## Neovim
+### Neovim
 
 ```bash
 stow --target="~" --dir="." nvim
@@ -43,7 +45,7 @@ or
 ```bash
 stow --target="~/.config" --dir="." nvim
 ```
-## Emacs
+### Emacs
 
 ```bash
 stow --target="~/.emacs.d" emacs
@@ -70,6 +72,38 @@ So you have another way to deploy the emacs configuration file:
 
 ```bash
 stow --target="~/.config/emacs" emacs
+```
+
+## To delete
+
+### Vim
+
+```bash
+stow --target="~/.vim" --dir="." -D vim
+```
+Also, you should delete `~/.vimrc`.
+
+### Neovim
+
+```bash
+stow --target="~" --dir="." -D nvim
+```
+or
+
+```bash
+stow --target="~/.config" --dir="." -D nvim
+```
+
+### Emacs
+
+```bash
+stow --target="~/.emacs.d" -D emacs
+```
+
+or
+
+```bash
+stow --target="~/.config/emacs" -D emacs
 ```
 
 There are some articles worth referring to about the way of backing up configuration files:
