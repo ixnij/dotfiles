@@ -13,6 +13,5 @@
 (require 'init-packages)
 (require 'init-look)
 (require 'init-lsp)
-(require 'init-sessions)
 
 ;; End of init.el
