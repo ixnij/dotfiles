@@ -53,7 +53,7 @@ stow --target="~/.emacs.d" emacs
 Released Aug 10, 2020
 Emacs 27.1 has a wide variety of new features, including:
 
-Built-in support for arbitrary-size integers
+>Built-in support for arbitrary-size integers
 Text shaping with HarfBuzz
 Native support for JSON parsing
 Better support for Cairo drawing
