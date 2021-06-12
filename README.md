@@ -48,6 +48,29 @@ stow --target="~/.config" --dir="." nvim
 ```bash
 stow --target="~/.emacs.d" emacs
 ```
+**Note**: 
+>Emacs 27.1
+Released Aug 10, 2020
+Emacs 27.1 has a wide variety of new features, including:
+
+Built-in support for arbitrary-size integers
+Text shaping with HarfBuzz
+Native support for JSON parsing
+Better support for Cairo drawing
+Portable dumping used instead of unexec
+Support for XDG conventions for init files
+Additional early-init initialization file
+Built-in support for tab bar and tab-line
+Support for resizing and rotating of images without ImageMagick
+
+Yes, Since Emacs 27, emacs follows XDG standard. you can put the configuration file in `~/.config/emacs`, Like
+many other programs such as `neovim` and so on.
+
+So you have another way to deploy the emacs configuration file:
+
+```bash
+stow --target="~/.config/emacs" emacs
+```
 
 There are some articles worth referring to about the way of backing up configuration files:
 - [The best way to store your dotfiles](https://www.atlassian.com/git/tutorials/dotfiles)
