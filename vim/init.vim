@@ -35,6 +35,7 @@ set ruler
 set ignorecase
 set smartcase
 set cursorline
+set wildmenu " For vim command mode auto completion
 set relativenumber
 " set softtabstop=2
 set expandtab
