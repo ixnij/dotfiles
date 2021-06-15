@@ -86,10 +86,16 @@
 (use-package flycheck
   :hook (after-init . global-flycheck-mode))
 
-;; Turbo windows tiling..
-
 (use-package ace-window
   :bind (("M-o" . 'ace-window)))
+
+(use-package rainbow-delimiters
+  :diminish
+  :hook (prog-mode . rainbow-delimiters-mode))
+
+(use-package highlight-parentheses
+  :diminish
+  :hook (prog-mode . highlight-parentheses-mode))
 
 ;; this must be in here
 
