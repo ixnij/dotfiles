@@ -97,6 +97,12 @@
   :diminish
   :hook (prog-mode . highlight-parentheses-mode))
 
+;; hignlighting for current line.
+
+(use-package beacon
+  :unless *is-windows*
+  :hook (after-init . beacon-mode))
+
 ;; this must be in here
 
 (provide 'init-packages)
