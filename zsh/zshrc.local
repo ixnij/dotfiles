@@ -3,7 +3,7 @@
 #
 
 source /Users/thomas.wu/.config/broot/launcher/bash/br
-# prompt spaceship
+prompt spaceship
 
 # End of file ##############################
 # vim:filetype=zsh
