@@ -9,8 +9,9 @@ export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.sjtug.sjtu.edu.cn/homebrew-bottle
 # Homebrew: zsh completions
 export FPATH=$(brew --prefix)/share/zsh/site-functions:~/.zfunc:$FPATH
 
-# End of file #####
+# End of file ##############################
 # vim:filetype=zsh
 # Local variables:
 # mode: sh
 # End:
+# #########################################
