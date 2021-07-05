@@ -1,2 +1,13 @@
+# Filename: ~/.zprofile
+# Author Thomas Wu <ixnij.wu@outlook.com>
+#
+
 source /Users/thomas.wu/.config/broot/launcher/bash/br
 prompt spaceship
+
+# End of file ##############################
+# vim:filetype=zsh
+# Local variables:
+# mode: sh
+# End:
+# #########################################
