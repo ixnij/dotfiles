@@ -6,4 +6,10 @@
 所以为了区分，还是添加了一个 `zshrc.local` 用于存放个人的配置文件。
 </details>
 
-Now, I'm using `spaceship` as my prompt. 
+~~Now, I'm using `spaceship` as my prompt.~~ 
+I'm using `starship` now. (It's written in rust) 
+
+Some Awesome repositories & articles about zsh:
+[zshGuide](https://github.com/goreliu/zshguide)
+[ArchWiki-zsh](https://wiki.archlinux.org/title/Zsh)
+[Star-ship(SHELL prompt)](https://github.com/spaceship-prompt/spaceship-prompt#features)
