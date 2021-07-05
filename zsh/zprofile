@@ -1,3 +1,5 @@
+# Filename: ~/.zprofile
+# Author Thomas Wu <ixnij.wu@outlook.com>
 # For homebrew 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 # Homebrew: Source
@@ -6,3 +8,9 @@ export HOMEBREW_BREW_GIT_REMOTE="https://git.sjtu.edu.cn/sjtug/brew.git"
 export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.sjtug.sjtu.edu.cn/homebrew-bottles/bottles"
 # Homebrew: zsh completions
 export FPATH=$(brew --prefix)/share/zsh/site-functions:~/.zfunc:$FPATH
+
+# End of file #####
+# vim:filetype=zsh
+# Local variables:
+# mode: sh
+# End:

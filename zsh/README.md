@@ -6,3 +6,4 @@
 所以为了区分，还是添加了一个 `zshrc.local` 用于存放个人的配置文件。
 </details>
 
+Now, I'm using `spaceship` as my prompt. 
