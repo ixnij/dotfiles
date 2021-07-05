@@ -1,9 +1,10 @@
-# Filename: ~/.zprofile
+# Filename: ~/.zshrc.local
 # Author Thomas Wu <ixnij.wu@outlook.com>
 #
 
 source /Users/thomas.wu/.config/broot/launcher/bash/br
-prompt spaceship
+# prompt spaceship
+eval "$(starship init zsh)"
 
 # End of file ##############################
 # vim:filetype=zsh
