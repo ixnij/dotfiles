@@ -4,7 +4,6 @@
 
 source /Users/thomas.wu/.config/broot/launcher/bash/br
 # prompt spaceship
-eval "$(starship init zsh)"
 
 # End of file ##############################
 # vim:filetype=zsh
