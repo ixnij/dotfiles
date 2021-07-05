@@ -5,6 +5,9 @@
 source /Users/thomas.wu/.config/broot/launcher/bash/br
 prompt spaceship
 
+# alias to go to my dotfile directory:
+alias dof="cd ~/Projects/Repositories/Dotfiles"
+
 # End of file ##############################
 # vim:filetype=zsh
 # Local variables:

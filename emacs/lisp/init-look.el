@@ -20,7 +20,7 @@
       (set-face-attribute 'default nil :font "Cascadia Code 12")
       (dolist (charset '(kana han symbol cjk-misc bopomofo))
         (set-fontset-font (frame-parameter nil 'font) charset (font-spec :family "Microsoft Yahei Mono" :size 12))))
-    (set-face-attribute 'default nil :font "Fira Code Retina 12")))
+    (set-face-attribute 'default nil :font "Fira Code 16")))
 
 ;; end
 
