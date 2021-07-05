@@ -21,7 +21,7 @@
       (dolist (charset '(kana han symbol cjk-misc bopomofo))
         (set-fontset-font (frame-parameter nil 'font) charset (font-spec :family "Microsoft Yahei Mono" :size 12))))
     (if *is-mac*
-	(set-face-attribute 'default nil :font "SF mono 16")
+	(set-face-attribute 'default nil :font "SF Mono 16")
         (set-face-attribute 'default nil :font "Fira Code 16"))))
 
 ;; end
