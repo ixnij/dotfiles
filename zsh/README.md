@@ -7,7 +7,10 @@
 </details>
 
 ~~Now, I'm using `spaceship` as my prompt.~~ 
-I'm using `starship` now. (It's written in rust) 
+
+~~I'm using `starship` now. (It's written in rust)~~ 
+
+using spaceship now.
 
 Some Awesome repositories & articles about zsh:
 [zshGuide](https://github.com/goreliu/zshguide)
