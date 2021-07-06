@@ -3,10 +3,15 @@
 #
 
 source /Users/thomas.wu/.config/broot/launcher/bash/br
-prompt spaceship
+
+# The following is to set zsh prompt - spaceship.
+# prompt spaceship
 
 # alias to go to my dotfile directory:
-alias dof="cd ~/Projects/Repositories/Dotfiles"
+alias dot="cd ~/Projects/Repositories/Dotfiles"
+
+# For zsh theme - powerlevel10k
+source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # End of file ##############################
 # vim:filetype=zsh
