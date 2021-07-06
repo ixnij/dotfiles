@@ -12,6 +12,5 @@
 (require 'init-key)
 (require 'init-packages)
 (require 'init-look)
-(require 'init-lsp)
 
 ;; End of init.el
