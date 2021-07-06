@@ -1,0 +1,3 @@
+deploy.sh -> finish
+deploy.sh -> deploy.py
+deploy.py -> deploy
