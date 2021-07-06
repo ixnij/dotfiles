@@ -13,6 +13,10 @@ alias dot="cd ~/Projects/Repositories/Dotfiles"
 # For zsh theme - powerlevel10k
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 
+# It's add by powerlevel10k
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
 # End of file ##############################
 # vim:filetype=zsh
 # Local variables:
