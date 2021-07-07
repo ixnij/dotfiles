@@ -5,5 +5,6 @@ import os
 
 def fd(dry = "/"):
     for i in os.listdir(dry):
-        print(i)
+        if os.path.isdir(i):
+            print(i)
 fd()
