@@ -11,6 +11,7 @@
 # alias to go to my dotfile directory:
 alias dot="cd ~/Projects/Repositories/Dotfiles"
 alias py=python3
+alias cat="bat --theme=Nord"
 
 # For zsh theme - powerlevel10k
 source ~/powerlevel10k/powerlevel10k.zsh-theme
