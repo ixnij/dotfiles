@@ -5,6 +5,7 @@ import os
 
 def fd(dry = "/Users/thomas.wu/Projects/Repositories"):
     for i in os.listdir(dry):
-        print(i, end=" ")
-        fd(os.path.join(dry,i))
+        if os.path.isdir(i):
+            print(i, end=" ")
+            fd(os.path.join(dry,i))
 fd()
