@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from os import *
+import os
 
 def fd(dr = "/Users/thomas.wu/Projects"):
     for i in os.listdir(dr):
