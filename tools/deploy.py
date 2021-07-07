@@ -6,5 +6,5 @@ import os
 def fd(dry = "/"):
     for i in os.listdir(dry):
         print(i, end=" ")
-        fd(os.path.abspath(i))
+        fd(os.path.join(dry,i))
 fd()
