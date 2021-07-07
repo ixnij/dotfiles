@@ -12,5 +12,4 @@ def fd(dr = "/Users/thomas.wu/Projects"):
         if os.path.isdir(fullpath):
             fd(fullpath)
         print(fullpath)
-
 fd()
