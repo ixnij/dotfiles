@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 
+"""
+this python script is used for search & find files.
+"""
+
 import os
 
 def fd(dr = "/Users/thomas.wu/Projects"):
