@@ -3,4 +3,4 @@
 
 "Python script that help me deploy my configuration files."
 
-_authoer_ = "Thomas Wu <ixnij.wu@outlook.com>"
+__author__ = "Thomas Wu <ixnij.wu@outlook.com>"
