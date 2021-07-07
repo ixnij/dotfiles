@@ -2,7 +2,8 @@
 # Author Thomas Wu <ixnij.wu@outlook.com>
 #
 
-source /Users/thomas.wu/.config/broot/launcher/bash/br
+# For program: broot. 
+[[ -s  /Users/thomas.wu/.config/broot/launcher/bash/br ]] &&  source /Users/thomas.wu/.config/broot/launcher/bash/br
 
 # The following is to set zsh prompt - spaceship.
 # prompt spaceship
