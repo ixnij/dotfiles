@@ -7,3 +7,5 @@ Require: homebrew(On macOS), libzypp & zypper & rpm in openSUSE.
 
 Terminal: "Apple terminal" and kitty.
 Colorscheme: ayu & nord & gruvbox 
+
+Emacs: without language server.
