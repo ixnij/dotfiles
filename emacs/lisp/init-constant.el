@@ -1,4 +1,7 @@
-;;; File name: init-constant.el
+;;; package --- init-constant.el
+;;; Commentary:
+
+;;; Code:
 
 (defconst *is-mac* (eq system-type 'darwin))
 (defconst *is-linux* (eq system-type 'gnu/linux))
@@ -6,4 +9,4 @@
 
 (provide 'init-constant)
 
-;; End of init-constant.el
+;;; init-constant.el ends here

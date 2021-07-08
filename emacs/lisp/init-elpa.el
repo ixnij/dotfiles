@@ -1,3 +1,9 @@
+;;; package --- init-elpa.el
+;;; Commentary:
+;;; init-elpa.el
+
+;;; Code:
+
 ;; software source
 
 (setq package-archives '(
@@ -53,3 +59,5 @@ re-downloaded in order to locate PACKAGE."
 ;; provide a name to call.
 
 (provide 'init-elpa)
+
+;;; init-elpa.el ends here
