@@ -28,7 +28,9 @@ curl -Lo .zshrc       https://git.grml.org/f/grml-etc-core/etc/zsh/zshrc
 
 ~~I'm using `starship` now. (It's written in rust)~~ 
 
-using spaceship now.
+~~using spaceship now.~~
+
+I'm using `Powerlevel10k` now. It's powerful.
 
 Some Awesome repositories & articles about zsh:
 
