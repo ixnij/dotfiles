@@ -1,4 +1,8 @@
-;;; File name: init.el
+;;; package --- init.el
+;;; Commentary:
+;;; the initiaze file.
+
+;;; code:
 
 (add-to-list 'load-path
 	     (expand-file-name (concat user-emacs-directory "lisp")))
@@ -13,4 +17,4 @@
 (require 'init-packages)
 (require 'init-look)
 
-;; End of init.el
+;;; init.el ends here
