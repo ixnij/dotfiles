@@ -11,6 +11,7 @@
 # alias to go to my dotfile directory:
 alias dot="cd ~/Projects/Repositories/Dotfiles"
 alias py=python3
+alias ls="exa -h --icons --git"
 alias cat="bat --theme=zenburn"
 # I'm using `Archey4` instead `neofetch`.
 # `Archey4` has written in python3.
