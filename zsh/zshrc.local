@@ -12,6 +12,9 @@
 alias dot="cd ~/Projects/Repositories/Dotfiles"
 alias py=python3
 alias cat="bat --theme=zenburn"
+# I'm using `Archey4` instead `neofetch`.
+# `Archey4` has written in python3.
+alias neofetch=archey
 
 # For zsh theme - powerlevel10k
 [[ -s ~/powerlevel10k/powerlevel10k.zsh-theme ]] && source ~/powerlevel10k/powerlevel10k.zsh-theme
