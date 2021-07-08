@@ -1,7 +1,8 @@
-;;; 
-;;; File name: init-packages.el
-;;;
+;;; package --- init-packages.el
+;;; Commentary:
+;;; init-packages.el
 
+;;; Code:
 
 (use-package benchmark-init
   :init (benchmark-init/activate)
