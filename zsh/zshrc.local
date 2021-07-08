@@ -27,7 +27,8 @@ alias neofetch=archey
 [[ -s /Users/thomas.wu/.autojump/etc/profile.d/autojump.sh ]] && source /Users/thomas.wu/.autojump/etc/profile.d/autojump.sh
 
 # For z.lua settings.
-eval "$(lua ~/Projects/Repositories/z.lua/z.lua --init zsh)"
+
+[[ -s ~/Projects/Repositories/z.lua/z.lua ]] &&  eval "$(lua ~/Projects/Repositories/z.lua/z.lua --init zsh)"
 
 # End of file ##############################
 # vim:filetype=zsh
