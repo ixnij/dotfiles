@@ -1,3 +1,9 @@
+;;; packege --- init-look.el
+;;; Commentary:
+;;; init-look.el
+
+;;; Code:
+
 ;; install restart-emacs
 
 (use-package gruvbox-theme
