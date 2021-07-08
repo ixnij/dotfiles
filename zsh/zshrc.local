@@ -32,3 +32,4 @@ alias neofetch=archey
 # mode: sh
 # End:
 # #########################################
+alias nf=/opt/homebrew/bin/neofetch
