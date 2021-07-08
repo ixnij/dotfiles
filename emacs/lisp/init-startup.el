@@ -1,4 +1,10 @@
-;;; File name: init-startup.el
+;;; package --- init-startup.el
+;;; Commentary:
+;;; init-startup.el
+
+;;; Code:
+
+
 (prefer-coding-system 'utf-8)
 (set-default-coding-systems 'utf-8)
 (set-terminal-coding-system 'utf-8)
@@ -17,4 +23,4 @@
 
 (provide 'init-startup)
 
-;;; End of init-startup.el
+;;; init-startup.el ends here
