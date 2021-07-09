@@ -30,7 +30,8 @@ curl -Lo .zshrc       https://git.grml.org/f/grml-etc-core/etc/zsh/zshrc
 
 ~~using spaceship now.~~
 
-I'm using `Powerlevel10k` now. It's powerful.
+~~I'm using `Powerlevel10k` now. It's powerful.~~
+
 
 Some Awesome repositories & articles about zsh:
 
