@@ -16,6 +16,7 @@ alias cat="bat --theme=zenburn"
 # I'm using `Archey4` instead `neofetch`.
 # `Archey4` has written in python3.
 alias neofetch=archey
+alias nf=/opt/homebrew/bin/neofetch
 
 # For zsh theme - powerlevel10k
 [[ -s ~/powerlevel10k/powerlevel10k.zsh-theme ]] && source ~/powerlevel10k/powerlevel10k.zsh-theme
@@ -37,4 +38,3 @@ alias neofetch=archey
 # mode: sh
 # End:
 # #########################################
-alias nf=/opt/homebrew/bin/neofetch
