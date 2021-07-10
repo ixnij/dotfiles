@@ -38,6 +38,7 @@ powerline_path=/opt/homebrew/lib/python${python_version}/site-packages/powerline
 if [[ "$TERM_PROGRAM" = "Apple_Terminal" ]]; then
 	[[ -s ~/.zfunc/spaceship.zsh ]] && prompt spaceship
 else
+	prompt off
 	[[ -s $powerline_path ]] && source $powerline_path
 fi
 
