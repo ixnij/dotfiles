@@ -32,6 +32,10 @@ alias nf=/opt/homebrew/bin/neofetch
 
 [[ -s ~/Projects/Repositories/z.lua/z.lua ]] &&  eval "$(lua ~/Projects/Repositories/z.lua/z.lua --init zsh)"
 
+# For powerline.
+python_version=3.9
+source /opt/homebrew/lib/python${python_version}/site-packages/powerline/bindings/zsh/powerline.zsh 
+
 # End of file ##############################
 # vim:filetype=zsh
 # Local variables:

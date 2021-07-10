@@ -32,6 +32,17 @@ curl -Lo .zshrc       https://git.grml.org/f/grml-etc-core/etc/zsh/zshrc
 
 ~~I'm using `Powerlevel10k` now. It's powerful.~~
 
+If you like powerline, you should do:
+
+```zsh
+pip install --user powerline-status
+```
+will get current release version and
+
+```zsh
+pip install --user git+git://github.com/powerline/powerline
+```
+
 
 Some Awesome repositories & articles about zsh:
 
