@@ -9,6 +9,24 @@ zstyle ':completion:*' menu select
 setopt completealiases
 zstyle ':completion:*' rehash true
 
+# Check if we can read given files and source those we can.
+
+function ssource () {
+    if (( ${#argv} < 1 )) ; then
+        printf 'usage: xsource FILE(s)...\n' >&2
+        return 1
+    fi
+
+    while (( ${#argv} > 0 )) ; do
+        [[ -r "$1" ]] && source "$1"
+        shift
+    done
+    return 0
+}
+
+# If has .zshrc.local, source it.
+ssource ~/.zshrc.local
+
 # End of file ##############################
 # vim:filetype=zsh
 # Local variables:
