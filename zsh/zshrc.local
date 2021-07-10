@@ -6,7 +6,7 @@
 [[ -s  /Users/thomas.wu/.config/broot/launcher/bash/br ]] &&  source /Users/thomas.wu/.config/broot/launcher/bash/br
 
 # The following is to set zsh prompt - spaceship.
-# prompt spaceship
+prompt spaceship
 
 # alias to go to my dotfile directory:
 alias dot="cd ~/Projects/Repositories/Dotfiles"
@@ -34,7 +34,8 @@ alias nf=/opt/homebrew/bin/neofetch
 
 # For powerline.
 python_version=3.9
-source /opt/homebrew/lib/python${python_version}/site-packages/powerline/bindings/zsh/powerline.zsh 
+powerline_path=/opt/homebrew/lib/python${python_version}/site-packages/powerline/bindings/zsh/powerline.zsh 
+[[ -s $powerline_path ]] && $powerline_path
 
 # End of file ##############################
 # vim:filetype=zsh
