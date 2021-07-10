@@ -6,7 +6,7 @@
 [[ -s  /Users/thomas.wu/.config/broot/launcher/bash/br ]] &&  source /Users/thomas.wu/.config/broot/launcher/bash/br
 
 # The following is to set zsh prompt - spaceship.
-prompt spaceship
+# prompt spaceship
 
 # alias to go to my dotfile directory:
 alias dot="cd ~/Projects/Repositories/Dotfiles"
