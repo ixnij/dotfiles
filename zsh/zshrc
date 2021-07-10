@@ -1,5 +1,5 @@
-# Filename: ~/.zshrc
-# Author Thomas Wu <ixnij.wu@outlook.com>
+### Filename: ~/.zshrc
+### Author: Thomas Wu <ixnij.wu@outlook.com>
 
 autoload -U compinit promptinit
 compinit && promptinit

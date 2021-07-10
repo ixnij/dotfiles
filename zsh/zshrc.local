@@ -38,8 +38,8 @@ powerline_path=/opt/homebrew/lib/python${python_version}/site-packages/powerline
 if [[ "$TERM_PROGRAM" = "Apple_Terminal" ]]; then
 	prompt grml-large 
 else
-	prompt off
-	[[ -s $powerline_path ]] && source $powerline_path
+	prompt spaceship 
+#	[[ -s $powerline_path ]] && source $powerline_path
 fi
 
 ### End of file ##############################
