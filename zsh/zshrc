@@ -6,6 +6,9 @@ autoload -U compinit promptinit
 compinit && promptinit
 # prompt walters 
 
+# Some aliases.
+alias ls="ls -G"
+
 zstyle ':completion:*' menu select
 setopt completealiases
 zstyle ':completion:*' rehash true
