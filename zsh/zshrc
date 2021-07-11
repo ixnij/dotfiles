@@ -1,5 +1,6 @@
 ### Filename: ~/.zshrc
 ### Author: Thomas Wu <ixnij.wu@outlook.com>
+## TODO: make it useable.
 
 autoload -U compinit promptinit
 compinit && promptinit
@@ -26,6 +27,13 @@ function ssource () {
 
 # If has .zshrc.local, source it.
 ssource ~/.zshrc.local
+
+
+# automatically complete 'cd -<tab>' and 'cd -<ctrl-d>' with menu
+zstyle ':completion:*:*:cd:*:directory-stack' menu yes select
+
+# match uppercase from lowercase
+zstyle ':completion:*'    matcher-list 'm:{a-z}={A-Z}'
 
 # End of file ##############################
 # vim:filetype=zsh
