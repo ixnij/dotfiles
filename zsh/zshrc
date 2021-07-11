@@ -51,6 +51,12 @@ zstyle ':completion:*:options'         description 'yes'
 # on processes completion complete all user processes
 zstyle ':completion:*:processes'       command 'ps -au$USER'
 
+# complete manual by their section
+zstyle ':completion:*:manuals'    separate-sections true
+zstyle ':completion:*:manuals.*'  insert-sections   true
+zstyle ':completion:*:man:*'      menu yes select
+
+
 # End of file ##############################
 # vim:filetype=zsh
 # Local variables:
