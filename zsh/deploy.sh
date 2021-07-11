@@ -14,4 +14,5 @@ if [[ ! -f "$ZSHRC" ]]; then
 fi
 
 if [[ ! -f "ZSHRC_LOCAL" ]]; then
-	ln -s 
+	ln -s zshrc.local $ZSHRC_LOCAL 
+fi
