@@ -20,6 +20,7 @@ if ls --version |& grep -q 'GNU' >/dev/null 2>&1 && ls -v / >/dev/null 2>&1; the
     ls_options+=( -v )
 fi
 
+alias ls="ls $ls_options"
 
 zstyle ':completion:*' menu select
 setopt completealiases
