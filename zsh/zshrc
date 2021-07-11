@@ -35,6 +35,15 @@ zstyle ':completion:*:*:cd:*:directory-stack' menu yes select
 # match uppercase from lowercase
 zstyle ':completion:*'    matcher-list 'm:{a-z}={A-Z}'
 
+# activate menu
+zstyle ':completion:*:history-words'   menu yes
+
+# ignore duplicate entries
+zstyle ':completion:*:history-words'   remove-all-dups yes
+zstyle ':completion:*:history-words'   stop yes
+
+
+
 # End of file ##############################
 # vim:filetype=zsh
 # Local variables:
