@@ -58,6 +58,9 @@ zstyle ':completion:*:man:*'      menu yes select
 
 zstyle ':completion:*' special-dirs ..
 
+# command for process lists, the local web server details and host completion
+zstyle ':completion:*:urls' local 'www' '/var/www/' 'public_html'
+
 # End of file ##############################
 # vim:filetype=zsh
 # Local variables:
