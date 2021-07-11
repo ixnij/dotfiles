@@ -11,13 +11,6 @@ wget -O .vimrc        https://git.grml.org/f/grml-etc-core/etc/vim/vimrc
 wget -O .zshrc        https://git.grml.org/f/grml-etc-core/etc/zsh/zshrc
 ```
 
-```sh
-curl -Lo .screenrc    https://git.grml.org/f/grml-etc-core/etc/grml/screenrc_generic
-curl -Lo .tmux.conf   https://git.grml.org/f/grml-etc-core/etc/tmux.conf
-curl -Lo .vimrc       https://git.grml.org/f/grml-etc-core/etc/vim/vimrc
-curl -Lo .zshrc       https://git.grml.org/f/grml-etc-core/etc/zsh/zshrc
-```
-
 The grml's configuretion file repository: [grml-etc-core](https://github.com/grml/grml-etc-core)
 
 >Further information is available from https://grml.org/console/
