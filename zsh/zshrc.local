@@ -2,6 +2,19 @@
 ### Author: Thomas Wu <ixnij.wu@outlook.com>
 ## Don't forget that you have another prompt: spaceship.
 
+# Set the Localtion of z.lua.
+PLUGIN_HOME="$HOME/Projects/Repositories"
+Z_LUA_LOCALTION="$PLUGIN_HOME/z.lua/z.lua"
+
+# Install z.lua plugin if not exist.
+if [[ ! -f "$Z_LUA_LOCALTION" ]]; then
+	echo "Not found z.lua.\nInstall it."
+	git clone --depth=1 https://github.com/skywind3000/z.lua $PLUGIN_HOME 
+	if [[ ! $? -eq 0 ]]; then
+		git clone --depth=1 https://hub.fastgit.org/skywind3000/z.lua $PLUGIN_HOME 
+	fi
+fi
+
 # For program: broot. 
 [[ -s  /Users/thomas.wu/.config/broot/launcher/bash/br ]] &&  source /Users/thomas.wu/.config/broot/launcher/bash/br
 
