@@ -29,7 +29,7 @@ zstyle ':completion:*' rehash true
 
 function ssource () {
     if (( ${#argv} < 1 )) ; then
-        printf 'usage: xsource FILE(s)...\n' >&2
+        printf 'usage: ssource FILE(s)...\n' >&2
         return 1
     fi
 
