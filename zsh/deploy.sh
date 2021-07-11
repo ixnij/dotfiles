@@ -7,12 +7,12 @@ ZSHRC="$HOME/.zshrc"
 ZSHRC_LOCAL="$HOME/.zshrc.local"
 
 if [[ ! -f "$ZSHRC" ]]; then
-	wget -O .zshrc https://git.grml.org/f/grml-etc-core/etc/zsh/zshrc
+	wget -O $ZSHRC https://git.grml.org/f/grml-etc-core/etc/zsh/zshrc
 #else
 #	mv $ZSHRC $ZSHRC.bak
 #	wget -O .zshrc https://git.grml.org/f/grml-etc-core/etc/zsh/zshrc
 fi
 
-if [[ ! -f "ZSHRC_LOCAL" ]]; then
+if [[ ! -f "$ZSHRC_LOCAL" ]]; then
 	ln -s zshrc.local $ZSHRC_LOCAL 
 fi
