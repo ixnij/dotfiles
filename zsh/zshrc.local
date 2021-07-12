@@ -28,6 +28,7 @@ alias cat="bat --theme=gruvbox-dark"
 alias neofetch=archey
 alias nv=nvim
 alias nf=/opt/homebrew/bin/neofetch
+alias bu='brew update && brew upgrade && brew cu'
 
 # For zsh theme - powerlevel10k
 [[ -s ~/powerlevel10k/powerlevel10k.zsh-theme ]] && source ~/powerlevel10k/powerlevel10k.zsh-theme
