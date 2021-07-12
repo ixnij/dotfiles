@@ -69,7 +69,7 @@ fi
 
 # I'm using `zoxide` instead z.lua or z.sh.
 
-if [[ -x "$(where zoxide init zsh)" ]]; then
+if [[ -x "$(where zoxide)" ]]; then
 	eval "$(zoxide init zsh)"
 fi
 
