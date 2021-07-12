@@ -45,7 +45,7 @@ alias bu='brew update && brew upgrade && brew cu && brew cleanup'
 
 # For z.lua settings.
 
-[[ -s ~/Projects/Repositories/z.lua/z.lua ]] &&  eval "$(lua ~/Projects/Repositories/z.lua/z.lua --init zsh)"
+# [[ -s ~/Projects/Repositories/z.lua/z.lua ]] &&  eval "$(lua ~/Projects/Repositories/z.lua/z.lua --init zsh)"
 
 # For powerline.
 python_version=3.9
