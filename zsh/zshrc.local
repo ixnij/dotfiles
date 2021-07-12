@@ -3,6 +3,9 @@
 ## Don't forget that you have another prompt: spaceship.
 
 # Set the Localtion of z.lua.
+
+prompt restore
+
 PLUGIN_HOME="$HOME/Projects/Repositories"
 Z_LUA_LOCALTION="$PLUGIN_HOME/z.lua/z.lua"
 
@@ -52,16 +55,12 @@ powerline_path=/opt/homebrew/lib/python${python_version}/site-packages/powerline
 
 if [[ "$TERM_PROGRAM" = "Apple_Terminal" ]]; then
 	prompt grml-large 
+elif [[ -x "$(which starship)" ]]; then
+	eval "$(starship init zsh)"
 else
 	prompt spaceship 
 #	[[ -s $powerline_path ]] && source $powerline_path
 fi
-
-# For starship
-# ~/.zshrc
-
-eval "$(starship init zsh)"
-
 
 ### End of file ##############################
 ### vim:filetype=zsh
