@@ -57,6 +57,12 @@ else
 #	[[ -s $powerline_path ]] && source $powerline_path
 fi
 
+# For starship
+# ~/.zshrc
+
+eval "$(starship init zsh)"
+
+
 ### End of file ##############################
 ### vim:filetype=zsh
 ### Local variables:
