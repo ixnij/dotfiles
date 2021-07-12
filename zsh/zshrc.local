@@ -7,24 +7,29 @@
 prompt restore
 
 PLUGIN_HOME="$HOME/Projects/Repositories"
-Z_LUA_LOCALTION="$PLUGIN_HOME/z.lua/z.lua"
+######## Z_LUA_LOCALTION="$PLUGIN_HOME/z.lua/z.lua"
 
 # Install z.lua plugin if not exist.
-if [[ ! -f "$Z_LUA_LOCALTION" ]]; then
-	echo "Not found z.lua.\nInstall it."
-	git clone --depth=1 https://github.com/skywind3000/z.lua $PLUGIN_HOME 
-	if [[ ! $? -eq 0 ]]; then
-		git clone --depth=1 https://hub.fastgit.org/skywind3000/z.lua $PLUGIN_HOME 
+if [[ ! -x "$(where zoxide)" ]]; then
+###	echo "Not found z.lua.\nInstall it."
+###	git clone --depth=1 https://github.com/skywind3000/z.lua $PLUGIN_HOME 
+###	if [[ ! $? -eq 0 ]]; then
+###		git clone --depth=1 https://hub.fastgit.org/skywind3000/z.lua $PLUGIN_HOME 
+###	fi
+	if [[ ! -x "$(where brew)" ]]; then
+		curl -sS https://webinstall.dev/zoxide | bash
+	else
+		brew install zoxide
 	fi
 fi
 
 # For program: broot. 
 [[ -s  /Users/thomas.wu/.config/broot/launcher/bash/br ]] &&  source /Users/thomas.wu/.config/broot/launcher/bash/br
 
-# alias to go to my dotfile directory:
+###### alias to go to my dotfile directory:
 alias dot="cd ~/Projects/Repositories/Dotfiles"
 alias py=python3
-# alias ls="exa -h --icons --git"
+###### alias ls="exa -h --icons --git"
 alias cat="bat --theme=gruvbox-dark"
 # I'm using `Archey4` instead `neofetch`.
 # `Archey4` has written in python3.
@@ -45,7 +50,7 @@ alias bu='brew update && brew upgrade && brew cu && brew cleanup'
 
 # For z.lua settings.
 
-# [[ -s ~/Projects/Repositories/z.lua/z.lua ]] &&  eval "$(lua ~/Projects/Repositories/z.lua/z.lua --init zsh)"
+###### [[ -s ~/Projects/Repositories/z.lua/z.lua ]] &&  eval "$(lua ~/Projects/Repositories/z.lua/z.lua --init zsh)"
 
 # For powerline.
 python_version=3.9
