@@ -55,11 +55,17 @@ powerline_path=/opt/homebrew/lib/python${python_version}/site-packages/powerline
 
 if [[ "$TERM_PROGRAM" = "Apple_Terminal" ]]; then
 	prompt grml-large 
-elif [[ -x "$(which starship)" ]]; then
+elif [[ -x "$(where starship)" ]]; then
 	eval "$(starship init zsh)"
 else
 	prompt spaceship 
 #	[[ -s $powerline_path ]] && source $powerline_path
+fi
+
+# I'm using `zoxide` instead z.lua or z.sh.
+
+if [[ -x "$(where zoxide init zsh)" ]]; then
+	eval "$(zoxide init zsh)"
 fi
 
 ### End of file ##############################

@@ -26,4 +26,4 @@
 	side-by-side = true
 	line-numbers-left-format = ""
 	line-numbers-right-format = "│ "
-	syntax-theme = Nord
+	syntax-theme = gruvbox-dark 
