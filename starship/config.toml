@@ -1,5 +1,5 @@
 [character]
-success_symbol = "[](fg:)"
+success_symbol = "[](fg:yellow)"
 error_symbol = "[✗](#ff4b00)"
 
 [cmd_duration]
