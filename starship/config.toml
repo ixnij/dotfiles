@@ -6,6 +6,10 @@ error_symbol = "[✗](#ff4b00)"
 style = "#f9a600"
 format = "[](fg:black bg:#f9a600)[祥$duration](bg:$style fg:black)[](fg:$style)"
 
+[time]
+disabled = false
+format = "[](bg:yellow fg:black)[ $time](fg:yellow bg:black)"
+
 [directory]
 style = "#c05303"
 truncate_to_repo = false
