@@ -1,5 +1,5 @@
 [character]
-success_symbol = "[ ]()"
+success_symbol = "[~](fg:bold blue)"
 error_symbol = "[✗](#ff4b00)"
 
 [cmd_duration]
@@ -7,7 +7,7 @@ style = "#f9a600"
 format = "[](fg:black bg:#f9a600)[祥$duration](bg:$style fg:black)[](fg:$style)"
 
 [time]
-disabled = false
+disabled = true 
 format = "[](bg:yellow fg:black)[ $time](fg:yellow bg:black)"
 
 [directory]
