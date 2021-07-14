@@ -8,3 +8,5 @@ by using symbol link.
 You can also use GNU stow to set up symbolic links in batches.
 
 In my opinion, using symbol link is the best way to deploy configuretion files. As for the reason, I think smart readers have guessed it.
+
+I also set up some scripts to help deploy files.
