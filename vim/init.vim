@@ -12,6 +12,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'lifepillar/vim-solarized8'
 Plug 'morhetz/gruvbox'
 Plug 'jiangmiao/auto-pairs'
 
