@@ -1,3 +1,3 @@
-Deployment: by using symbol link.
+# Intro
+This repository is used to store my configuration files.
 
-Emacs: without language server.
