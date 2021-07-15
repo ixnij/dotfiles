@@ -62,7 +62,7 @@ powerline_path=/opt/homebrew/lib/python${python_version}/site-packages/powerline
 # The following is to set zsh prompt {- spaceship}.
 
 if [[ "$TERM_PROGRAM" = "Apple_Terminal" ]]; then
-	prompt grml-large 
+	prompt walters  
 elif [[ -x "$(where starship)" ]]; then
 	eval "$(starship init zsh)"
 else
