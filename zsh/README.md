@@ -2,8 +2,6 @@
 
 **Don't use my zshrc. Use grml's zshrc.**
 
-**WARING: PLEASE NOTE THAT YOU MIGHT OVERRIDE EXISTING CONFIGUTATION FILES IN THE CURRENT WORKING DIRECTORY.**
-
 ```sh
 wget -O .screenrc     https://git.grml.org/f/grml-etc-core/etc/grml/screenrc_generic
 wget -O .tmux.conf    https://git.grml.org/f/grml-etc-core/etc/tmux.conf
