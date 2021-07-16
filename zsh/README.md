@@ -23,7 +23,12 @@ will get current release version and
 ```zsh
 pip install --user git+git://github.com/powerline/powerline
 ```
+For fzf, you may should run
 
+```zsh
+$(brew --prefix)/opt/fzf/install
+```
+To install shell completions.
 
 Some Awesome repositories & articles about zsh:
 
