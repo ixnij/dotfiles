@@ -1,4 +1,4 @@
-
+-- TODO: init.vim -> init.lua
 " For vim-plug:
 
 if empty(glob('~/.vim/autoload/plug.vim'))
