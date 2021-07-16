@@ -33,9 +33,9 @@ alias py="python3 $@"
 alias cat="bat --theme=gruvbox-dark"
 # I'm using `Archey4` instead `neofetch`.
 # `Archey4` has written in python3.
-alias neofetch="archey $@"
+alias neofetch=archey
 alias ls="exa -h --git"
-alias nv="nvim $@"
+alias nv=nvim
 alias -s zip=unzip
 alias -s lisp=emacs
 alias nf=/opt/homebrew/bin/neofetch
