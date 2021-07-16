@@ -33,7 +33,7 @@ alias cat="bat --theme=gruvbox-dark"
 # I'm using `Archey4` instead `neofetch`.
 # `Archey4` has written in python3.
 alias neofetch="archey $@"
-alias ls="exa $@"
+alias ls=exa
 alias nv="nvim $@"
 alias -s zip=unzip
 alias -s lisp=emacs
