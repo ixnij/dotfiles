@@ -1,6 +1,5 @@
-### Filename: ~/.zshrc
-### Author: Thomas Wu <ixnij.wu@outlook.com>
-## TODO: make it useable.
+# Filename: ~/.zshrc
+# Author: Thomas Wu <ixnij.wu@outlook.com>
 
 autoload -U compinit promptinit
 compinit && promptinit
