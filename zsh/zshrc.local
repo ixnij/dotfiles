@@ -6,7 +6,7 @@
 
 prompt restore
 
-PLUGIN_HOME="$HOME/Projects/Repositories"
+# PLUGIN_HOME="$HOME/Projects/Repositories"
 # Z_LUA_LOCALTION="$PLUGIN_HOME/z.lua/z.lua"
 
 # Install z.lua plugin if not exist.
@@ -28,7 +28,7 @@ fi
 
 # alias to go to my dotfile directory:
 
-alias py="python3 $@"
+alias py=python3 
 # alias ls="exa -h --icons --git"
 alias cat="bat --theme=gruvbox-dark"
 # I'm using `Archey4` instead `neofetch`.
