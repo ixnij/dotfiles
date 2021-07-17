@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 ### Filename: deploy.sh 
 ### Author: Thomas Wu <ixnij.wu@outlook.com>
 ### TODO: sh -> py
@@ -7,12 +7,12 @@ ZSHRC="$HOME/.zshrc"
 ZSHRC_LOCAL="$HOME/.zshrc.local"
 
 if [[ ! -f "$ZSHRC" ]]; then
-	wget -O $ZSHRC https://git.grml.org/f/grml-etc-core/etc/zsh/zshrc
+	wget -O "$ZSHRC" https://git.grml.org/f/grml-etc-core/etc/zsh/zshrc
 #else
 #	mv $ZSHRC $ZSHRC.bak
 #	wget -O .zshrc https://git.grml.org/f/grml-etc-core/etc/zsh/zshrc
 fi
 
 if [[ ! -f "$ZSHRC_LOCAL" ]]; then
-	ln -s zshrc.local $ZSHRC_LOCAL 
+	ln -s zshrc.local "$ZSHRC_LOCAL" 
 fi
