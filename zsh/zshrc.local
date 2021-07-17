@@ -1,21 +1,21 @@
-### Filename: ~/.zshrc.local
-### Author: Thomas Wu <ixnij.wu@outlook.com>
-## Don't forget that you have another prompt: spaceship.
+# Filename: ~/.zshrc.local
+# Author: Thomas Wu <ixnij.wu@outlook.com>
+# Don't forget that you have another prompt: spaceship.
 
 # Set the Localtion of z.lua.
 
 prompt restore
 
 PLUGIN_HOME="$HOME/Projects/Repositories"
-######## Z_LUA_LOCALTION="$PLUGIN_HOME/z.lua/z.lua"
+# Z_LUA_LOCALTION="$PLUGIN_HOME/z.lua/z.lua"
 
 # Install z.lua plugin if not exist.
 if [[ ! -x "$(where zoxide)" ]]; then
-###	echo "Not found z.lua.\nInstall it."
-###	git clone --depth=1 https://github.com/skywind3000/z.lua $PLUGIN_HOME 
-###	if [[ ! $? -eq 0 ]]; then
-###		git clone --depth=1 https://hub.fastgit.org/skywind3000/z.lua $PLUGIN_HOME 
-###	fi
+#	echo "Not found z.lua.\nInstall it."
+#	git clone --depth=1 https://github.com/skywind3000/z.lua $PLUGIN_HOME 
+#	if [[ ! $? -eq 0 ]]; then
+#		git clone --depth=1 https://hub.fastgit.org/skywind3000/z.lua $PLUGIN_HOME 
+#	fi
 	if [[ ! -x "$(where brew)" ]]; then
 		curl -sS https://webinstall.dev/zoxide | bash
 	else
@@ -56,7 +56,7 @@ setopt no_nomatch
 
 # For z.lua settings.
 
-###### [[ -s ~/Projects/Repositories/z.lua/z.lua ]] &&  eval "$(lua ~/Projects/Repositories/z.lua/z.lua --init zsh)"
+# [[ -s ~/Projects/Repositories/z.lua/z.lua ]] &&  eval "$(lua ~/Projects/Repositories/z.lua/z.lua --init zsh)"
 
 # For powerline.
 python_version=3.9
@@ -79,9 +79,9 @@ if [[ -x "$(where zoxide)" ]]; then
 	eval "$(zoxide init zsh)"
 fi
 
-### End of file ##############################
-### vim:filetype=zsh
-### Local variables:
-### mode: sh
-### End:
-### #########################################
+# End of file ##############################
+# vim:filetype=zsh
+# Local variables:
+# mode: sh
+# End:
+# #########################################
