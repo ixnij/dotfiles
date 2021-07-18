@@ -1,22 +1,22 @@
 
 " For vim-plug:
 
-if empty(glob('~/.vim/autoload/plug.vim'))
-	silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-				\ https://raw.staticdn.net/junegunn/vim-plug/master/plug.vim
-	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
+" if empty(glob('~/.vim/autoload/plug.vim'))
+"	silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+"				\ https://raw.staticdn.net/junegunn/vim-plug/master/plug.vim
+"	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+"endif
 
 " Vim Plugin settings: (using vim-plug as plugin manager)
-call plug#begin('~/.vim/plugged')
-
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'lifepillar/vim-solarized8'
-Plug 'morhetz/gruvbox'
-Plug 'jiangmiao/auto-pairs'
-
-call plug#end()
+" call plug#begin('~/.vim/plugged')
+" 
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
+" Plug 'lifepillar/vim-solarized8'
+" Plug 'morhetz/gruvbox'
+"  Plug 'jiangmiao/auto-pairs'
+" 
+" call plug#end()
 
 set number
 set nocompatible
@@ -49,12 +49,12 @@ colorscheme gruvbox
 
 " Airline settings:
 
-let g:airline_powerline_fonts = 1  
-let g:airline#extensions#tabline#enabled = 1     
-let g:airline#extensions#tabline#left_sep = ' '   
-let g:airline#extensions#tabline#left_alt_sep = '|'      
-let g:airline#extensions#tabline#buffer_nr_show = 1
-
+" let g:airline_powerline_fonts = 1  
+" let g:airline#extensions#tabline#enabled = 1     
+" let g:airline#extensions#tabline#left_sep = ' '   
+" let g:airline#extensions#tabline#left_alt_sep = '|'      
+" let g:airline#extensions#tabline#buffer_nr_show = 1
+" 
 " Key map settings:
 
 nnoremap <Tab> :bn<CR>
