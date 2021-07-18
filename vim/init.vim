@@ -45,7 +45,7 @@ set mouse=a
 
 set background=dark
 " set background=light
-colorscheme gruvbox
+" colorscheme gruvbox
 
 " Airline settings:
 
