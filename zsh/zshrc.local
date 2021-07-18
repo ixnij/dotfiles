@@ -17,7 +17,11 @@ if [[ ! -x "$(where zoxide)" ]]; then
 #		git clone --depth=1 https://hub.fastgit.org/skywind3000/z.lua $PLUGIN_HOME 
 #	fi
 	if [[ ! -x "$(where brew)" ]]; then
-		curl -sS https://webinstall.dev/zoxide | bash
+#		curl -sS https://webinstall.dev/zoxide | bash
+                printf "Did't find homebrew. stop.\n\a"
+                printf "If you want to install zoxide manually, \n"
+                printf "Type the following command to do it.\n";
+                printf "curl -sS https://webinstall.dev/zoxide | bash\n"
 	else
 		brew install zoxide
 	fi
