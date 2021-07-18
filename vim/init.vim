@@ -43,7 +43,7 @@ set mouse=a
 
 " Color scheme:
 
-set background=dark
+" set background=dark
 " set background=light
 " colorscheme gruvbox
 
