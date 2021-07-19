@@ -12,7 +12,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " Plug 'lifepillar/vim-solarized8'
-" Plug 'morhetz/gruvbox'
+Plug 'morhetz/gruvbox'
 Plug 'jiangmiao/auto-pairs'
 " 
 call plug#end()
@@ -42,9 +42,9 @@ set mouse=a
 
 " Color scheme:
 
-" set background=dark
+set background=dark
 " set background=light
-" colorscheme gruvbox
+colorscheme gruvbox
 
 " Airline settings:
 
