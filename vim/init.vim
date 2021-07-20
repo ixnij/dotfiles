@@ -59,4 +59,4 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 nnoremap <Tab> :bn<CR>
 nnoremap <s-Tab> :bp<CR>
 nnoremap <s-q> :q!<CR>
-nnoremap <c-s> :w<CR>
+nnoremap <s-w> :w<CR>
