@@ -49,22 +49,22 @@ alias bu='brew update && brew upgrade && brew cu && brew cleanup'
 setopt no_nomatch
 
 # For zsh theme - powerlevel10k
-[[ -s ~/powerlevel10k/powerlevel10k.zsh-theme ]] && source ~/powerlevel10k/powerlevel10k.zsh-theme
+# [[ -s ~/powerlevel10k/powerlevel10k.zsh-theme ]] && source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # It's add by powerlevel10k
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # For autojump command plugin.
-[[ -s /Users/thomas.wu/.autojump/etc/profile.d/autojump.sh ]] && source /Users/thomas.wu/.autojump/etc/profile.d/autojump.sh
+# [[ -s /Users/thomas.wu/.autojump/etc/profile.d/autojump.sh ]] && source /Users/thomas.wu/.autojump/etc/profile.d/autojump.sh
 
 # For z.lua settings.
 
 # [[ -s ~/Projects/Repositories/z.lua/z.lua ]] &&  eval "$(lua ~/Projects/Repositories/z.lua/z.lua --init zsh)"
 
 # For powerline.
-python_version=3.9
-powerline_path=/opt/homebrew/lib/python${python_version}/site-packages/powerline/bindings/zsh/powerline.zsh 
+# python_version=3.9
+# powerline_path=/opt/homebrew/lib/python${python_version}/site-packages/powerline/bindings/zsh/powerline.zsh 
 
 # The following is to set zsh prompt {- spaceship}.
 
