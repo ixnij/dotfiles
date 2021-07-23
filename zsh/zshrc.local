@@ -9,6 +9,28 @@ prompt restore
 # PLUGIN_HOME="$HOME/Projects/Repositories"
 # Z_LUA_LOCALTION="$PLUGIN_HOME/z.lua/z.lua"
 
+# Check if we can read given files and source those we can.
+function xsource () {
+    if (( ${#argv} < 1 )) ; then
+        printf 'usage: xsource FILE(s)...\n' >&2
+        return 1
+    fi
+
+    while (( ${#argv} > 0 )) ; do
+        [[ -r "$1" ]] && source "$1"
+        shift
+    done
+    return 0
+}
+
+function xalias () {
+    if [[ ! -x $(where $2) ]]; then
+        printf "No $2 found."
+    else
+       alias $1=$2
+    fi
+}
+
 # Install z.lua plugin if not exist.
 if [[ ! -x "$(where zoxide)" ]]; then
 #	echo "Not found z.lua.\nInstall it."
@@ -28,17 +50,33 @@ if [[ ! -x "$(where zoxide)" ]]; then
 fi
 
 # For program: broot. 
-[[ -s  /Users/thomas.wu/.config/broot/launcher/bash/br ]] &&  source /Users/thomas.wu/.config/broot/launcher/bash/br
+xsource /Users/thomas.wu/.config/broot/launcher/bash/br
 
 # alias to go to my dotfile directory:
 
 alias py=python3 
 # alias ls="exa -h --icons --git"
-alias cat="bat --theme=gruvbox-dark"
+if [[ ! -x $(where bat) ]]; then
+    printf "No bat found.\n"
+else
+    alias cat="bat --theme=gruvbox-dark"
+fi
 # I'm using `Archey4` instead `neofetch`.
 # `Archey4` has written in python3.
-alias neofetch=archey
-alias ls="exa -h --git"
+xalias neofetch archey
+
+if [[ -x $(where vi) ]]; then
+    printf "Have vi.\n"
+else
+    alias vi=vim
+fi
+
+if [[ ! -x $(where exa) ]]; then
+    printf "No exa found.\n"
+else
+    alias ls="exa -h --git"
+fi
+
 alias nv=nvim
 alias -s zip=unzip
 alias -s lisp=emacs

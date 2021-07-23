@@ -26,7 +26,6 @@ setopt completealiases
 zstyle ':completion:*' rehash true
 
 # Check if we can read given files and source those we can.
-
 function ssource () {
     if (( ${#argv} < 1 )) ; then
         printf 'usage: ssource FILE(s)...\n' >&2
