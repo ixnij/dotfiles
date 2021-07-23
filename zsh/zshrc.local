@@ -25,7 +25,7 @@ function xsource () {
 
 function xalias () {
     if [[ ! -x $(where $2) ]]; then
-        printf "No $2 found."
+        printf "No $2 found.\n"
     else
        alias $1=$2
     fi
