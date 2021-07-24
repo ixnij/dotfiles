@@ -5,7 +5,6 @@
 ;;; Code:
 
 ;; install restart-emacs
-
 (use-package gruvbox-theme
   :init (load-theme 'gruvbox-dark-soft t))
 
@@ -15,8 +14,7 @@
     (setq sml/theme 'respectful)
     (sml/setup))
 
-;; For font setting on windows 
-
+;; For font setting on windows
 (use-package emacs
   :if (display-graphic-p)
   :config

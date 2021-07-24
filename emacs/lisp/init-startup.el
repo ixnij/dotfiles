@@ -1,3 +1,4 @@
+
 ;;; package --- init-startup.el
 ;;; Commentary:
 ;;; init-startup.el
@@ -13,9 +14,9 @@
 
 (setq gc-cons-threshold most-positive-fixnum)
 
-(tool-bar-mode -1)
-(scroll-bar-mode -1)
-;; (menu-bar-mode -1)
+;; (tool-bar-mode -1)
+;; (scroll-bar-mode -1)
+(menu-bar-mode -1)
 
 (setq inhibit-startup-screen t)
 
