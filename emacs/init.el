@@ -10,13 +10,13 @@
 
 (setq custom-file
     (expand-file-name "custom.el" user-emacs-directory))
-
 (require 'init-constants)
 (require 'init-startup)
 (require 'init-elpa)
 (require 'init-key)
 (require 'init-packages)
 (require 'init-look)
+(require 'init-desktop)
 
 (provide 'init)
 
