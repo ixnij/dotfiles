@@ -10,7 +10,7 @@
 (setq custom-file
     (expand-file-name "custom.el" user-emacs-directory))
 
-(require 'init-constant)
+(require 'init-constants)
 (require 'init-startup)
 (require 'init-elpa)
 (require 'init-key)
