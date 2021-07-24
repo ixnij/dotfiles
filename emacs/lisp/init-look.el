@@ -4,7 +4,6 @@
 
 ;;; Code:
 
-;; install restart-emacs
 (use-package gruvbox-theme
   :init (load-theme 'gruvbox-dark-soft t))
 

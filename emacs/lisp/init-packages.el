@@ -8,7 +8,7 @@
   :init (benchmark-init/activate)
   :hook (after-init . benchmark-init/deactivate))
 
-(use-package restart-emacs) ;; will fix
+(use-package restart-emacs)
 
 (use-package drag-stuff
   :bind (("<M-up>". drag-stuff-up)
@@ -17,7 +17,7 @@
 
 (use-package hungry-delete
     :bind (("C-c DEL" . hungry-delete-backward) ; Not the `delete` menu on the keyborad!
-           ("C-c d" . hungry-delete-forward))) 
+           ("C-c d" . hungry-delete-forward)))
 
 (use-package crux
   :bind ("C-c k" . crux-smart-kill-line))
@@ -46,7 +46,8 @@
   :bind (("C-s" . swiper)
          ("C-r" . swiper-isearch-backward))
   :config (setq swiper-action-recenter t
-                swiper-include-line-number-in-search t)) 
+                swiper-include-line-number-in-search t))
+
 ;; They require the ivy..
 
 ;; Complete plugin: company
@@ -76,8 +77,7 @@
   :bind (("C-a" . crux-move-beginning-of-line)
          ("C-c ^" . crux-top-join-line)
          ("C-x ," . crux-find-user-init-file)
-         ("C-c k" . crux-smart-kill-line))) 
-
+         ("C-c k" . crux-smart-kill-line)))
 (use-package which-key
   :defer nil
   :config (which-key-mode))
