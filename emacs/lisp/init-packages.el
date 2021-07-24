@@ -98,6 +98,8 @@
   :diminish
   :hook (prog-mode . highlight-parentheses-mode))
 
+(use-package magit)
+
 ;; hignlighting for current line.
 
 (use-package beacon
