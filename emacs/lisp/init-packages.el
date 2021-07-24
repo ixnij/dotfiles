@@ -102,7 +102,7 @@
 (use-package paredit)
 
 ;; Google translate.
-(use-package go-translatek
+(use-package go-translate
   :config (setq go-translate-base-url "https://translate.google.cn"
 		go-translate-local-language "zh-CN" ))
 
