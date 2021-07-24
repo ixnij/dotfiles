@@ -14,13 +14,12 @@
 
 (setq gc-cons-threshold most-positive-fixnum)
 
-;; (tool-bar-mode -1)
-;; (scroll-bar-mode -1)
+(if (display-graphic-p)
+ (progn (tool-bar-mode -1)
+  (scroll-bar-mode -1)))
 (menu-bar-mode -1)
 
 (setq inhibit-startup-screen t)
-
-
 
 (provide 'init-startup)
 
