@@ -16,7 +16,6 @@
 (require 'init-key)
 (require 'init-packages)
 (require 'init-look)
-(require 'init-desktop)
 
 (provide 'init)
 
