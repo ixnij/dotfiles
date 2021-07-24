@@ -99,6 +99,12 @@
   :hook (prog-mode . highlight-parentheses-mode))
 
 (use-package magit)
+(use-package paredit)
+
+;; Google translate.
+(use-package go-translatek
+  :config (setq go-translate-base-url "https://translate.google.cn"
+		go-translate-local-language "zh-CN" ))
 
 ;; hignlighting for current line.
 
