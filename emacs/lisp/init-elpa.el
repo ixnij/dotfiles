@@ -1,4 +1,4 @@
-;;; package --- init-elpa.el
+;;; init-elpa.el -- config the elpa source -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; init-elpa.el
 
@@ -40,5 +40,9 @@
 ;; provide a name to call.
 
 (provide 'init-elpa)
+
+;; Local Variables:
+;; coding: utf-8
+;; End:
 
 ;;; init-elpa.el ends here

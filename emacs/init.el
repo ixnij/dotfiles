@@ -1,11 +1,12 @@
-;;; package --- init.el
+;;; init.el --- Load the full configuration -*- lexical-binding: t -*-
 ;;; Commentary:
-;;; the initiaze file.
+
+;; This file bootstraps the configurations.
 
 ;;; code:
 
 (add-to-list 'load-path
-	     (expand-file-name (concat user-emacs-directory "lisp")))
+	     (expand-file-name "lisp" user-emacs-directory))
 
 (setq custom-file
     (expand-file-name "custom.el" user-emacs-directory))
@@ -17,4 +18,9 @@
 (require 'init-packages)
 (require 'init-look)
 
+(provide 'init)
+
+;; Local Variables:
+;; coding: utf-8
+;; End:
 ;;; init.el ends here

@@ -1,4 +1,4 @@
-;;; packege --- init-look.el
+;; init-look.el -- set the graphic interface -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; init-look.el
 
@@ -41,4 +41,5 @@
 ;; Local Variables:
 ;; coding: utf-8
 ;; End:
+
 ;;; init-look.el ends here

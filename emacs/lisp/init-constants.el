@@ -1,4 +1,4 @@
-;;; package --- init-constants.el
+;;; init-constants.el --- define some constants. -*- lexical-binding: t -*-
 ;;; Commentary:
 
 ;;; Code:
@@ -12,4 +12,8 @@
 
 (provide 'init-constants)
 
-;;; init-constant.el ends here
+;; Local Variables:
+;; coding: utf-8
+;; End:
+
+;;; init-constants.el ends here
