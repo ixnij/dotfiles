@@ -4,8 +4,10 @@
 
 ;;; Code:
 
-(use-package gruvbox-theme
-  :init (load-theme 'gruvbox-dark-soft t))
+(use-package gruvbox-theme)
+(use-package atom-one-dark-theme)
+(use-package ayu-theme
+  :config (load-theme 'ayu-light t))
 
 (use-package smart-mode-line
     :init
