@@ -1,2 +1,0 @@
-#+AUTHOR Thomas Wu
-* TODO
