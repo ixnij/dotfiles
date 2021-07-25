@@ -1,4 +1,2 @@
 #+AUTHOR Thomas Wu
 * TODO
-  1) [] Read SICP
-     2) [] sqrt
