@@ -1,4 +1,4 @@
-;;; init-elpa.el -- Config the elpa source. 
+;;; init-elpa.el -- Config the elpa source.
 ;;; Commentary:
 ;;; init-elpa.el
 
@@ -13,7 +13,7 @@
 
 ;; for package.el
 
-(setq package-check-signature nil) 
+(setq package-check-signature nil)
 (require 'package) ;; package.el: init
 (unless (bound-and-true-p package--initialized)
    (package-initialize)) ;; update index
@@ -30,7 +30,7 @@
 
 (eval-and-compile
     (setq use-package-always-ensure t)
-    (setq use-package-always-defer t) 
+    (setq use-package-always-defer t)
     (setq use-package-always-demand nil)
     (setq use-package-expand-minimally t)
     (setq use-package-verbose t))
