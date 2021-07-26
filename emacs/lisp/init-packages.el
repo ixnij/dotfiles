@@ -1,4 +1,4 @@
-;;; init-packages.el --- install and config packages. -*- lexical-binding: t -*-
+;;; init-packages.el --- Install and config packages.
 ;;; Commentary:
 ;;; init-packages.el
 

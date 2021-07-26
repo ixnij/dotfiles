@@ -1,4 +1,4 @@
-;;; init-constants.el --- define some constants. -*- lexical-binding: t -*-
+;;; init-constants.el --- define some constants.
 ;;; Commentary:
 
 ;;; Code:

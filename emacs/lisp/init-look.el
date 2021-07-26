@@ -1,4 +1,4 @@
-;; init-look.el -- set the graphic interface -*- lexical-binding: t -*-
+;; init-look.el -- Set the graphic interface. 
 ;;; Commentary:
 ;;; init-look.el
 

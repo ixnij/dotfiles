@@ -1,4 +1,4 @@
-;;; init-elpa.el -- config the elpa source -*- lexical-binding: t -*-
+;;; init-elpa.el -- Config the elpa source. 
 ;;; Commentary:
 ;;; init-elpa.el
 

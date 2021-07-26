@@ -1,4 +1,4 @@
-;;; init.el --- Load the full configuration -*- lexical-binding: t -*-
+;;; init.el --- Load the full configuration.
 ;;; Commentary:
 
 ;; This file bootstraps the configurations.
@@ -10,14 +10,13 @@
 
 (setq custom-file
     (expand-file-name "custom.el" user-emacs-directory))
+
 (require 'init-constants)
 (require 'init-startup)
 (require 'init-elpa)
 (require 'init-key)
 (require 'init-packages)
 (require 'init-look)
-
-(provide 'init)
 
 ;; Local Variables:
 ;; coding: utf-8

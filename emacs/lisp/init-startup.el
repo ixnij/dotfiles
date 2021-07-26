@@ -1,4 +1,4 @@
-;;; init-startup.el -- do some startup jobs. -*- lexical-binding: t -*-
+;;; init-startup.el -- Do some startup jobs.
 ;;; Commentary:
 ;;; Code:
 
