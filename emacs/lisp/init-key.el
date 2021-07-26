@@ -1,4 +1,4 @@
-;;; init-key.el -- Set some key bindings. 
+;;; init-key.el -- Set some key bindings.
 ;;; Commentary:
 ;;; init-key.el
 

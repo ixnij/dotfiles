@@ -1,4 +1,4 @@
-;; init-look.el -- Set the graphic interface. 
+;; init-look.el -- Set the graphic interface.
 ;;; Commentary:
 ;;; init-look.el
 
@@ -13,7 +13,7 @@
     (setq sml/theme 'respectful)
     (sml/setup))
 
-;; For font setting on windows
+;; Font settings
 (use-package emacs
   :if (display-graphic-p)
   :config

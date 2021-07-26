@@ -12,8 +12,8 @@
     (expand-file-name "custom.el" user-emacs-directory))
 
 (require 'init-constants)
-(require 'init-startup)
 (require 'init-elpa)
+(require 'init-startup)
 (require 'init-key)
 (require 'init-packages)
 (require 'init-look)
