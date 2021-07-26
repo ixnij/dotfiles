@@ -77,6 +77,10 @@ else
     alias ls="exa -h --git"
 fi
 
+if [[ -x $(where batcat) ]]; then
+	alias bat=batcat
+fi
+
 alias nv=nvim
 alias -s zip=unzip
 alias -s lisp=emacs
