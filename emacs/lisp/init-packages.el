@@ -95,7 +95,12 @@
   :hook (prog-mode . highlight-parentheses-mode))
 
 (use-package magit)
-(use-package paredit)
+
+;; Automatic parenthesis pairing
+(use-package elec-pair
+  :ensure nil
+  :hook (after-init . electric-pair-mode)
+  :init (setq electric-pair-inhibit-predicate 'electric-pair-conservative-inhibit))
 
 ;; Google translate.
 (use-package go-translate
