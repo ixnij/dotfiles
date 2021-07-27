@@ -19,6 +19,7 @@
   (setq inhibit-startup-screen t))
 
 (provide 'init-startup)
+
 ;; Local Variables:
 ;; coding: utf-8
 ;; no-byte-compile: t

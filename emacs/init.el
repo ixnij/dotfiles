@@ -17,6 +17,7 @@
 (require 'init-key)
 (require 'init-packages)
 (require 'init-look)
+(require 'init-lsp)
 
 (provide 'init)
 ;; Local Variables:
