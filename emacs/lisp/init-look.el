@@ -15,6 +15,7 @@
 
 ;; Font settings
 (use-package emacs
+  :ensure nil
   :if (display-graphic-p)
   :config
   ;; Font settings
@@ -30,6 +31,7 @@
 ;; end
 
 (use-package emacs
+    :ensure nil
     :config
     (setq display-line-numbers-type 't) ;; or visual, relative
     (global-display-line-numbers-mode t))

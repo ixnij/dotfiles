@@ -3,6 +3,7 @@
 ;;; Code:
 
 (use-package emacs
+  :ensure nil
   :config (prefer-coding-system 'utf-8)
   (set-default-coding-systems 'utf-8)
   (set-terminal-coding-system 'utf-8)
@@ -10,6 +11,7 @@
   (setq gc-cons-threshold most-positive-fixnum))
 
 (use-package emacs
+  :ensure nil
   :config (if (display-graphic-p)
 	      (progn (tool-bar-mode -1)
 		     (scroll-bar-mode -1)))
