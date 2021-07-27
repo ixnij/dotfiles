@@ -94,18 +94,8 @@
   :diminish
   :hook (prog-mode . highlight-parentheses-mode))
 
+;; Very fourmos packages.
 (use-package magit)
-
-;; Automatic parenthesis pairing
-(use-package elec-pair
-  :ensure nil
-  :hook (after-init . electric-pair-mode)
-  :init (setq electric-pair-inhibit-predicate 'electric-pair-conservative-inhibit))
-
-;; Google translate.
-(use-package go-translate
-  :config (setq go-translate-base-url "https://translate.google.cn"
-		go-translate-local-language "zh-CN" ))
 
 ;; hignlighting for current line.
 
