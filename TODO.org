@@ -1,0 +1,21 @@
+#+TITLE: TODO
+#+AUTHOR: Thomas Wu <ixnij.wu@outlook.com>
+#+DATE: 2021-7-28
+
+* Practice
+  Test /test/ the Github Org-mode style.
+
+  #+begin_src c++
+  #include <iostream>
+
+  template<typename T, typename... Args>
+  void printer(T value, Args... arg);
+  using std::cout, std::endl;
+  int main() {
+  
+  }
+  #+end_src
+  
+** TODO Practice
+
+   
