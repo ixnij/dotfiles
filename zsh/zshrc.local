@@ -115,7 +115,8 @@ if [[ "$TERM_PROGRAM" = "Apple_Terminal" ]]; then
 elif [[ -x "$(where starship)" ]]; then
 	eval "$(starship init zsh)"
 else
-	prompt grml 
+#	prompt grml 
+	prompt pws
 #	[[ -s $powerline_path ]] && source $powerline_path
 fi
 
