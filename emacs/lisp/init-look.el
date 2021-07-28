@@ -7,6 +7,9 @@
 (use-package atom-one-dark-theme
   :init (load-theme 'atom-one-dark t))
 
+;; (use-package dracula-theme
+;; :init (load-theme 'dracula))
+
 ;; (use-package monokai-theme
 ;;  :init (load-theme 'monokai))
 

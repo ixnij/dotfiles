@@ -52,6 +52,13 @@ fi
 # For program: broot. 
 xsource /Users/thomas.wu/.config/broot/launcher/bash/br
 
+
+#####     _    _ _                     
+#####    / \  | (_) __ _ ___  ___  ___ 
+#####   / _ \ | | |/ _` / __|/ _ \/ __|
+#####  / ___ \| | | (_| \__ \  __/\__ \
+##### /_/   \_\_|_|\__,_|___/\___||___/
+
 # alias to go to my dotfile directory:
 
 alias py=python3 
@@ -86,6 +93,8 @@ alias -s zip=unzip
 alias -s lisp=emacs
 alias nf=/opt/homebrew/bin/neofetch
 alias bu='brew update && brew upgrade && brew cu && brew cleanup'
+alias et="emacsclient -t -a ''" # emacs --daemon
+alias ec="emacsclient -c -a ''"
 
 # Some problem of not match.
 setopt no_nomatch
@@ -116,7 +125,7 @@ elif [[ -x "$(where starship)" ]]; then
 	eval "$(starship init zsh)"
 else
 #	prompt grml 
-	prompt pws
+	prompt fade 
 #	[[ -s $powerline_path ]] && source $powerline_path
 fi
 

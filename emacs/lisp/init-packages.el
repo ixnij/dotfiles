@@ -97,6 +97,8 @@
 ;; Very fourmos packages.
 (use-package magit)
 
+(use-package treemacs)
+
 ;; hignlighting for current line.
 
 (use-package beacon
