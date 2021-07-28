@@ -6,16 +6,24 @@
   Test /test/ the Github Org-mode style.
 
   #+begin_src c++
-  #include <iostream>
+    #include <iostream>
 
-  template<typename T, typename... Args>
-  void printer(T value, Args... arg);
-  using std::cout, std::endl;
-  int main() {
-  
-  }
+    template<typename T, typename... Args>
+    void printer(T value, Args... arg);
+
+    using std::cout, std::endl;
+
+    int main([[maybe_used] int argc, [[maybe_used]] char* const argv[]) {
+
+    }
+  #+end_src
+
+  #+begin_src python
+    import os
+    os.uname()
   #+end_src
   
 ** TODO Practice
-
-   
+   Math test
+* Nowadays
+  The future *must* be very wonderful!
