@@ -19,6 +19,7 @@
 (require 'init-look)
 (require 'init-edit)
 (require 'init-company)
+(require 'init-yasnippet)
 (require 'init-lsp)
 
 (provide 'init)
