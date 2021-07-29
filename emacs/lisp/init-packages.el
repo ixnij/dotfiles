@@ -4,6 +4,8 @@
 
 ;;; Code:
 
+(require 'init-constants)
+
 (use-package restart-emacs)
 
 (use-package drag-stuff
@@ -102,7 +104,7 @@
 ;; hignlighting for current line.
 
 (use-package beacon
-  :unless *is-windows*
+  :unless sys/winntp
   :hook (after-init . beacon-mode))
 
 ;; this must be in here

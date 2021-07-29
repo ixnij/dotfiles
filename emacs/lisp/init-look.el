@@ -32,16 +32,6 @@
   :if (display-graphic-p)
   :config (set-face-attribute 'default nil :font "Cascadia Code PL 13"))
 
-;; end
-
-(use-package emacs
-  :ensure nil
-  :config
-  (setq display-line-numbers-type 't) ;; or visual, relative
-  (global-display-line-numbers-mode t))
-
-;; the following line must be put in the last of file
-
 (provide 'init-look)
 
 ;; Local Variables:

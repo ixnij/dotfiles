@@ -3,11 +3,11 @@
 
 ;;; Code:
 
-(defconst *is-mac* (eq system-type 'darwin)
+(defconst sys/darwinp (eq system-type 'darwin)
   "Constant for check the System, macOS (Darwin).")
-(defconst *is-linux* (eq system-type 'gnu/linux)
+(defconst sys/linuxp (eq system-type 'gnu/linux)
   "Constant for check the System, GNU/Linux.")
-(defconst *is-windows* (or (eq system-type 'ms-dos) (eq system-type 'windows-nt))
+(defconst sys/winntp (or (eq system-type 'ms-dos) (eq system-type 'windows-nt))
   "Constant for check the System, Windows NT or MSDOS.")
 
 (provide 'init-constants)

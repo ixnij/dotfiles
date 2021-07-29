@@ -4,7 +4,9 @@
 
 ;;; Code:
 
-(when *is-mac*
+(require 'init-constants)
+
+(when sys/darwinp
     (setq mac-command-modifier 'meta)
     (setq mac-option-modifier 'none))
 
