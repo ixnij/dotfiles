@@ -59,6 +59,15 @@
                 (remove-text-properties next pos '(display nil face nil) str))))))
       (advice-add #'ivy-cleanup-string :after #'my-ivy-cleanup-indentation))))
 
+
+(use-package rainbow-delimiters
+  :diminish
+  :hook (prog-mode . rainbow-delimiters-mode))
+
+(use-package highlight-parentheses
+  :diminish
+  :hook (prog-mode . highlight-parentheses-mode))
+
 (provide 'init-edit)
 
 ;;; Local Variables:

@@ -18,6 +18,7 @@
 (require 'init-packages)
 (require 'init-look)
 (require 'init-edit)
+(require 'init-company)
 (require 'init-lsp)
 
 (provide 'init)
