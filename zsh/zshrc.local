@@ -39,11 +39,14 @@ if [[ ! -x "$(where zoxide)" ]]; then
 #		git clone --depth=1 https://hub.fastgit.org/skywind3000/z.lua $PLUGIN_HOME 
 #	fi
 	if [[ ! -x "$(where brew)" ]]; then
-#		curl -sS https://webinstall.dev/zoxide | bash
+		curl -sS https://webinstall.dev/zoxide | bash
                 printf "Did't find homebrew. stop.\n\a"
                 printf "If you want to install zoxide manually, \n"
                 printf "Type the following command to do it.\n";
                 printf "curl -sS https://webinstall.dev/zoxide | bash\n"
+                printf "Your platform: $(uname)."
+                printf "Package name: zoxide-*-apple-darwin.tar.gz"
+                printf "Or wget https://github.com/ajeetdsouza/zoxide/releases/latest/zoxide-x86_64-unknown-linux-musl.tar.gz"
 	else
 		brew install zoxide
 	fi
