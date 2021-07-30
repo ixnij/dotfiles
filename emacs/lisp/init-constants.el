@@ -10,6 +10,11 @@
 (defconst sys/winntp (or (eq system-type 'ms-dos) (eq system-type 'windows-nt))
   "Constant for check the System, Windows NT or MSDOS.")
 
+(defconst clangd-p
+  (or (executable-find "clangd")  ;; usually
+      (executable-find "/usr/local/opt/llvm/bin/clangd"))  ;; macOS
+  "Do we have clangd?")
+
 (provide 'init-constants)
 
 ;; Local Variables:

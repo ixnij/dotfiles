@@ -13,6 +13,8 @@
 (use-package emacs
   :config (defalias 'yes-or-no-p 'y-or-n-p))
 
+(progn (define-prefix-command 'ctl-z-map)
+   (global-set-key (kbd "C-z") 'ctl-z-map))
 
 (provide 'init-key)
 

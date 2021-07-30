@@ -17,13 +17,8 @@
     :bind (("C-c DEL" . hungry-delete-backward) ; Not the `delete` menu on the keyborad!
            ("C-c d" . hungry-delete-forward)))
 
-(use-package crux
-  :bind ("C-c k" . crux-smart-kill-line))
-
-;; They require the ivy..
-
-;; Complete plugin: company
-
+(use-package disk-usage
+  :commands (disk-usage))
 
 ;; optimization some operations..
 
@@ -44,16 +39,10 @@
 
 (use-package treemacs)
 
-;; hignlighting for current line.
-
 (use-package beacon
-  :unless sys/winntp
   :hook (after-init . beacon-mode))
 
-;; this must be in here
-
 (provide 'init-packages)
-
 ;; Local Variables:
 ;; coding: utf-8
 ;; End:

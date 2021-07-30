@@ -1,3 +1,6 @@
 [submodule "emacs/site-lisp/awesome-pair"]
 	path = emacs/site-lisp/awesome-pair
 	url = https://github.com/manateelazycat/awesome-pair.git
+[submodule "emacs/site-lisp/color-rg"]
+	path = emacs/site-lisp/color-rg
+	url = https://github.com/manateelazycat/color-rg.git

@@ -26,6 +26,12 @@
   :diminish t
   :init (modern-c++-font-lock-global-mode t))
 
+(use-package color-rg
+  :load-path (lambda () (expand-file-name "site-elisp/color-rg" user-emacs-directory))
+  :if (executable-find "rg")
+  :bind ("C-M-s" . color-rg-search-input))
+
+
 (use-package emacs
   :ensure nil
   :config
