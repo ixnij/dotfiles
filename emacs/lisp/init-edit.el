@@ -5,10 +5,22 @@
 ;;; Code:
 
 ;; Automatic parenthesis pairing.
-(use-package elec-pair
-  :ensure nil
-  :hook (after-init . electric-pair-mode)
-  :init (setq electric-pair-inhibit-predicate 'electric-pair-conservative-inhibit))
+;; (use-package elec-pair
+  ;; :ensure nil
+  ;; :hook (after-init . electric-pair-mode)
+  ;; :init (setq electric-pair-inhibit-predicate 'electric-pair-conservative-inhibit))
+
+;; Using awesome-pair as automatic parentheis paring plugin.
+(use-package awesome-pair
+  :load-path (lambda () (expand-file-name "site-lisp/awesome-pair" user-emacs-directory))
+  :bind
+  (:map prog-mode-map
+        (("M-D" . awesome-pair-kill)
+         ("SPC" . awesome-pair-space)
+         ("=" . awesome-pair-equal)
+         ("M-F" . awesome-pair-jump-right)
+         ("M-B" . awesome-pair-jump-left)))
+  :hook (prog-mode . awesome-pair-mode))
 
 (use-package emacs
   :ensure nil

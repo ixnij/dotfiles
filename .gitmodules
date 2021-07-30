@@ -1,0 +1,3 @@
+[submodule "emacs/site-lisp/awesome-pair"]
+	path = emacs/site-lisp/awesome-pair
+	url = https://github.com/manateelazycat/awesome-pair.git

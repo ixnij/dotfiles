@@ -29,6 +29,7 @@
   :config (setq swiper-action-recenter t
                 swiper-include-line-number-in-search t))
 
+(provide 'init-ivy)
 ;;; Local Variables:
 ;;; coding: utf-8
 ;;; End:
