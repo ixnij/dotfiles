@@ -27,9 +27,9 @@
   :init (modern-c++-font-lock-global-mode t))
 
 (use-package color-rg
-  :load-path (lambda () (expand-file-name "site-elisp/color-rg" user-emacs-directory))
+  :load-path (lambda () (expand-file-name "site-lisp/color-rg" user-emacs-directory))
   :if (executable-find "rg")
-  :bind ("C-M-s" . color-rg-search-input))
+  :bind ("C-M-s" . color-rg-search-input)) ;; For ripgrep searcher tool.
 
 
 (use-package emacs
@@ -54,7 +54,6 @@
   :hook (prog-mode . highlight-parentheses-mode))
 
 (provide 'init-edit)
-
 ;;; Local Variables:
 ;;; coding: utf-8
 ;;; End:

@@ -34,9 +34,6 @@
 (use-package ace-window
   :bind (("M-o" . 'ace-window)))
 
-;; Very fourmos packages.
-(use-package magit)
-
 (use-package treemacs)
 
 (use-package beacon

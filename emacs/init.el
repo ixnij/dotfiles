@@ -21,6 +21,9 @@
 (require 'init-company)
 (require 'init-yasnippet)
 (require 'init-ivy)
+(require 'init-magit)
+(require 'init-undotree)
+(require 'init-flycheck)
 (require 'init-lsp)
 
 (provide 'init)
