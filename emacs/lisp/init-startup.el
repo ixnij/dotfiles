@@ -1,4 +1,4 @@
-;;; init-startup.el -- Do some startup jobs.
+;;; init-startup.el -- Do some startup jobs. -*- lexical-binding:t -*-
 ;;; Commentary:
 ;;; Code:
 
@@ -35,7 +35,6 @@ rightly."
 
 ;; Local Variables:
 ;; coding: utf-8
-;; no-byte-compile: t
 ;; End:
 
 ;;; init-startup.el ends here

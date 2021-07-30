@@ -1,4 +1,4 @@
-;;; init-constants.el --- define some constants.
+;;; init-constants.el --- define some constants. -*- lexical-binding:t -*-
 ;;; Commentary:
 
 ;;; Code:
@@ -14,7 +14,6 @@
 
 ;; Local Variables:
 ;; coding: utf-8
-;; no-byte-compile: t
 ;; End:
 
 ;;; init-constants.el ends here

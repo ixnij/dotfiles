@@ -1,4 +1,4 @@
-;;; init-company.el --- Settings for company.
+;;; init-company.el --- Settings for company. -*- lexical-binding:t -*-
 
 ;;; Commentary:
 

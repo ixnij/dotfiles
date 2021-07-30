@@ -1,4 +1,4 @@
-;;; init-lsp.el --- Language server protocol settings
+;;; init-lsp.el --- Language server protocol settings. -*- lexical-binding:t -*-
 
 ;;; Commentary:
 
@@ -30,7 +30,6 @@
 
 ;;; Local Variables:
 ;;; coding: utf-8
-;;; no-byte-compile: t
 ;;; End:
 
 ;;; init-lsp.el ends here

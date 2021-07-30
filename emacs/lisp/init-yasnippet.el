@@ -1,4 +1,4 @@
-;;; init-yasnippet.el --- Settings for yasnippet.
+;;; init-yasnippet.el --- Settings for yasnippet. -*- lexical-binding:t -*-
 
 ;;; Commentary:
 
@@ -20,4 +20,9 @@
            ("H-y" . aya-expand))))
 
 (provide 'init-yasnippet)
+
+;;; Local Variables:
+;;; coding: utf-8
+;;; End:
+
 ;;; init-yasnippet.el ends here

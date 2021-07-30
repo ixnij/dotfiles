@@ -1,4 +1,4 @@
-;;; init-elpa.el -- Config the elpa source.
+;;; init-elpa.el -- Config the elpa source. -*- lexical-binding:t -*-
 ;;; Commentary:
 ;;; init-elpa.el
 
@@ -43,7 +43,6 @@
 
 ;; Local Variables:
 ;; coding: utf-8
-;; no-byte-compile: t
 ;; End:
 
 ;;; init-elpa.el ends here

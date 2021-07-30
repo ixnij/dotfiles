@@ -1,4 +1,4 @@
-;;; init-packages.el --- Install and config packages.
+;;; init-packages.el --- Install and config packages. -*- lexical-binding:t -*-
 ;;; Commentary:
 ;;; init-packages.el
 
@@ -56,7 +56,6 @@
 
 ;; Local Variables:
 ;; coding: utf-8
-;; no-byte-compile: t
 ;; End:
 
 ;;; init-packages.el ends here

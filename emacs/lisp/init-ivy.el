@@ -1,4 +1,4 @@
-;;; init-ivy.el --- For ivy and the package which is require ivy.
+;;; init-ivy.el --- For ivy and the package which is require ivy. -*- lexical-binding:t -*-
 ;;; Commentary:
 
 ;;; Code:
@@ -28,5 +28,9 @@
          ("C-r" . swiper-isearch-backward))
   :config (setq swiper-action-recenter t
                 swiper-include-line-number-in-search t))
+
+;;; Local Variables:
+;;; coding: utf-8
+;;; End:
 
 ;;; init-ivy.el ends here

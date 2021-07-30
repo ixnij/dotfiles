@@ -1,4 +1,4 @@
-;;; init.el --- Load the full configuration.
+;;; init.el --- Load the full configuration. -*- lexial-binding: t -*-
 ;;; Commentary:
 
 ;; This file bootstraps the configurations.
@@ -20,6 +20,7 @@
 (require 'init-edit)
 (require 'init-company)
 (require 'init-yasnippet)
+(require 'init-ivy)
 (require 'init-lsp)
 
 (provide 'init)

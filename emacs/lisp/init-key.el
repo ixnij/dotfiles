@@ -1,4 +1,4 @@
-;;; init-key.el -- Set some key bindings.
+;;; init-key.el -- Set some key bindings. -*- lexical-binding:t -*-
 ;;; Commentary:
 ;;; init-key.el
 
@@ -18,7 +18,6 @@
 
 ;; Local Variables:
 ;; coding: utf-8
-;; no-byte-compile: t
 ;; End:
 
 ;;; init-key.el ends here
