@@ -22,6 +22,10 @@
          ("M-B" . awesome-pair-jump-left)))
   :hook (prog-mode . awesome-pair-mode))
 
+(use-package modern-cpp-font-lock
+  :diminish t
+  :init (modern-c++-font-lock-global-mode t))
+
 (use-package emacs
   :ensure nil
   :config
