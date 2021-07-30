@@ -1,6 +1,6 @@
 #+TITLE: TODO
 #+AUTHOR: Thomas Wu <ixnij.wu@outlook.com>
-#+DATE: 2021-7-28
+#+DATE: 2021/7/28
 
 * Practice
   Test /test/ the Github Org-mode style.

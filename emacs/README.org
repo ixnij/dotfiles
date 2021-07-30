@@ -1,0 +1,5 @@
+#+Author: Thomas Wu <ixnij.wu@outlook.com>
+#+date: 2021/7/30
+
+* This is my Emacs configuretion file.
+  
