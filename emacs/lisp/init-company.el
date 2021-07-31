@@ -92,9 +92,14 @@ If all failed, try to complete the common part with `company-complete-common'"
     (add-to-list 'company-transformers 'company//sort-by-tabnine t)
     (add-to-list 'company-backends '(company-capf :with company-tabnine :separate)))
   :hook
-  (kill-emacs . company-tabnine-kill-process)
-  :config
-  (company-tabnine-toggle t))
+  (kill-emacs . company-tabnine-kill-process))
+;; :config
+;; (company-tabnine-toggle t))
 
 (provide 'init-company)
+
+;;; Local Variables:
+;;; coding: utf-8
+;;; End:
+
 ;;; init-company.el ends here

@@ -17,4 +17,8 @@
     (magit-log-buffer-file t)))
 
 (provide 'init-magit)
+;;; Local Variables:
+;;; coding: utf-8
+;;; End:
+
 ;;; init-magit.el ends here

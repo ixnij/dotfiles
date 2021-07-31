@@ -24,13 +24,13 @@
 (require 'init-magit)
 (require 'init-undotree)
 (require 'init-flycheck)
+(require 'init-cn)
 (require 'init-lsp)
 
 (provide 'init)
 
 ;; Local Variables:
 ;; coding: utf-8
-;; no-byte-compile: t
 ;; End:
 
 ;;; init.el ends here

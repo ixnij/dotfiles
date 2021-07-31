@@ -128,7 +128,7 @@ elif [[ -x "$(where starship)" ]]; then
 	eval "$(starship init zsh)"
 else
 #	prompt grml 
-	prompt fade 
+	prompt fade blue white 
 #	[[ -s $powerline_path ]] && source $powerline_path
 fi
 
