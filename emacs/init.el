@@ -13,10 +13,10 @@
 
 (require 'init-constants)
 (require 'init-elpa)
+(require 'init-look)
 (require 'init-startup)
 (require 'init-key)
 (require 'init-packages)
-(require 'init-look)
 (require 'init-edit)
 (require 'init-company)
 (require 'init-yasnippet)

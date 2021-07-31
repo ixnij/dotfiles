@@ -4,18 +4,18 @@
 
 ;;; Code:
 
-(use-package atom-one-dark-theme
- :init (load-theme 'atom-one-dark t))
+;; (use-package atom-one-dark-theme
+;; :init (load-theme 'atom-one-dark t))
 
-;; (use-package doom-themes
-  ;; :custom-face
-  ;; (cursor ((t (:background "BlanchedAlmond"))))
-  ;; :config
+(use-package doom-themes
+  :custom-face
+  (cursor ((t (:background "BlanchedAlmond"))))
+  :config
   ;; flashing mode-line on errors
-  ;; (doom-themes-visual-bell-config)
+  (doom-themes-visual-bell-config)
   ;; Corrects (and improves) org-mode's native fontification.
- ;;  (doom-themes-org-config)
-  ;; (load-theme 'doom-one t))
+  (doom-themes-org-config)
+  :init (load-theme 'doom-material t))
 
 ;; (use-package dracula-theme
 ;; :init (load-theme 'dracula))
