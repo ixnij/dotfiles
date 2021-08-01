@@ -35,10 +35,30 @@
 (use-package ace-window
   :bind (("M-o" . 'ace-window)))
 
+(use-package markdown-mode)
 
+;; (use-package beacon
+  ;; :hook (after-init . beacon-mode))
 
-(use-package beacon
-  :hook (after-init . beacon-mode))
+;; Using the following Package instead beacon.
+
+;; Show native line numbers if possible, otherwise use `linum'
+(if (fboundp 'display-line-numbers-mode)
+    (use-package display-line-numbers
+      :ensure nil
+      :hook (prog-mode . display-line-numbers-mode))
+  (use-package linum-off
+    :demand
+    :defines linum-format
+    :hook (after-init . global-linum-mode)
+    :init (setq linum-format "%4d ")
+    :config
+    ;; Highlight current line number
+    (use-package hlinum
+      :defines linum-highlight-in-all-buffersp
+      :custom-face (linum-highlight-face ((t (:inherit default :background nil :foreground nil))))
+      :hook (global-linum-mode . hlinum-activate)
+      :init (setq linum-highlight-in-all-buffersp t))))
 
 (provide 'init-packages)
 ;; Local Variables:

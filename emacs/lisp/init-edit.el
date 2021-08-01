@@ -14,17 +14,6 @@
 
 (require 'use-package)
 
-(use-package awesome-pair
-  :load-path (lambda () (expand-file-name "site-lisp/awesome-pair" user-emacs-directory))
-  :bind
-  (:map prog-mode-map
-        (("M-D" . awesome-pair-kill)
-         ("SPC" . awesome-pair-space)
-         ("=" . awesome-pair-equal)
-         ("M-F" . awesome-pair-jump-right)
-         ("M-B" . awesome-pair-jump-left)))
-  :hook (prog-mode . awesome-pair-mode))
-
 (use-package modern-cpp-font-lock
   :diminish t
   :init (modern-c++-font-lock-global-mode t))

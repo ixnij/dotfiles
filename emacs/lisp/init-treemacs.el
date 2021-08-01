@@ -6,7 +6,8 @@
 
 (require 'use-package)
 
-(use-package treemacs)
+(use-package treemacs
+  :bind ("C-x t" . treemacs))
 
 (provide 'init-treemacs)
 

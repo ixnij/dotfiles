@@ -9,12 +9,13 @@
 	     (expand-file-name "lisp" user-emacs-directory))
 
 (setq custom-file
-    (expand-file-name "custom.el" user-emacs-directory))
+      (expand-file-name "custom.el" user-emacs-directory))
 
-(require 'init-constants)
-(require 'init-elpa)
-(require 'init-look)
 (require 'init-startup)
+(require 'init-fn)
+(require 'init-constants)
+(require 'init-elpa) ; using use-package
+(require 'init-look)
 (require 'init-key)
 (require 'init-packages)
 (require 'init-edit)
@@ -26,9 +27,10 @@
 (require 'init-flycheck)
 (require 'init-cn)
 (require 'init-lsp)
+(require 'init-ap)
+(require 'init-treemacs)
 
 (provide 'init)
-
 ;; Local Variables:
 ;; coding: utf-8
 ;; End:
