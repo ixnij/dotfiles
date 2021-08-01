@@ -11,6 +11,9 @@
   ;; :init (setq electric-pair-inhibit-predicate 'electric-pair-conservative-inhibit))
 
 ;; Using awesome-pair as automatic parentheis paring plugin.
+
+(require 'use-package)
+
 (use-package awesome-pair
   :load-path (lambda () (expand-file-name "site-lisp/awesome-pair" user-emacs-directory))
   :bind

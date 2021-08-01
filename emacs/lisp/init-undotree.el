@@ -4,6 +4,8 @@
 
 ;;; Code:
 
+(require 'use-package)
+
 (use-package undo-tree
   :defer t
   :diminish undo-tree-mode

@@ -5,6 +5,7 @@
 ;;; Code:
 
 (require 'init-constants)
+(require 'use-package)
 
 (when sys/darwinp
     (setq mac-command-modifier 'meta)

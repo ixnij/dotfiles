@@ -4,6 +4,8 @@
 
 ;;; Code:
 
+(require 'use-package)
+
 (use-package pyim
   :init
   (use-package posframe :defer t)

@@ -4,6 +4,8 @@
 
 ;;; Code:
 
+(require 'use-package)
+
 (use-package company
   :diminish company-mode
   :hook ((prog-mode LaTeX-mode latex-mode ess-r-mode) . company-mode)

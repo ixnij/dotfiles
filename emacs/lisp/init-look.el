@@ -15,7 +15,7 @@
   (doom-themes-visual-bell-config)
   ;; Corrects (and improves) org-mode's native fontification.
   (doom-themes-org-config)
-  :init (load-theme 'doom-material t))
+  :init (load-theme 'doom-oceanic-next t))
 
 ;; (use-package dracula-theme
 ;; :init (load-theme 'dracula))

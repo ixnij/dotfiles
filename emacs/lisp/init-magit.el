@@ -4,6 +4,8 @@
 
 ;;; Code:
 
+(require 'use-package)
+
 (use-package magit
   :if (executable-find "git")
   :bind

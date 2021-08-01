@@ -3,6 +3,7 @@
 ;;; Code:
 
 (require 'init-constants)
+(require 'use-package)
 
 (use-package emacs
   :ensure nil

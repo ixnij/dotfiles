@@ -4,6 +4,8 @@
 
 ;;; Code:
 
+(require 'use-package)
+
 (use-package lsp-ivy
   :commands lsp-ivy-workspace-symbol)
 

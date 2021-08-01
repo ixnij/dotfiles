@@ -5,6 +5,7 @@
 ;;; Code:
 
 (require 'init-constants)
+(require 'use-package)
 
 (use-package restart-emacs)
 
@@ -34,7 +35,7 @@
 (use-package ace-window
   :bind (("M-o" . 'ace-window)))
 
-(use-package treemacs)
+
 
 (use-package beacon
   :hook (after-init . beacon-mode))

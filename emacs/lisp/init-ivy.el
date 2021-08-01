@@ -3,6 +3,8 @@
 
 ;;; Code:
 
+(require 'use-package)
+
 (use-package ivy
  :defer 1
  :demand

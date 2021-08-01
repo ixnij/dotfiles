@@ -35,10 +35,6 @@
     (setq use-package-expand-minimally t)
     (setq use-package-verbose t))
 
-(require 'use-package)
-
-;; provide a name to call.
-
 (provide 'init-elpa)
 
 ;; Local Variables:
