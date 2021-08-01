@@ -4,6 +4,8 @@
 
 ;;; Code:
 
+(require 'use-package)
+
 ;; (use-package atom-one-dark-theme
 ;; :init (load-theme 'atom-one-dark t))
 
@@ -15,8 +17,11 @@
   (doom-themes-visual-bell-config)
   ;; Corrects (and improves) org-mode's native fontification.
   (doom-themes-org-config)
-  :init (load-theme 'doom-oceanic-next t))
+  :init (load-theme 'doom-one t))
 
+;; (use-package flatland-theme
+;;  :init (load-theme 'flatland))
+  
 ;; (use-package dracula-theme
 ;; :init (load-theme 'dracula))
 
