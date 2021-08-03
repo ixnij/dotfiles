@@ -10,7 +10,7 @@
         (user-names (format ";; %20s: %s\n" "Login User" (user-login-name)))
         (machine-name (format ";; %20s: %s\n" "Machine Name" (system-name)))
         (suffix ";; Happy Hacking!"))
-    (concat ";;\n" os-version user-names machine-name ";;\n" suffix)))
+    (concat ";; Conigured by Thomas Wu <ixnij.wu@outlook.com>\n" ";;\n" os-version user-names machine-name ";;\n" suffix)))
 
 (provide 'init-fn)
 ;;; init-fn.el ends here

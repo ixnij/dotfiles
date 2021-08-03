@@ -66,10 +66,12 @@ xsource /Users/thomas.wu/.config/broot/launcher/bash/br
 
 alias py=python3 
 # alias ls="exa -h --icons --git"
-if [[ ! -x $(where bat) ]]; then
-    printf "No bat found.\n"
-else
+if [[ -x $(which bat) ]] ; then
     alias cat="bat --theme=gruvbox-dark"
+elif [[ -x $(which batcat) ]]; then
+    alias cat="batcat --theme=gruvbox-dark"
+else
+    printf "No bat found.\n"
 fi
 # I'm using `Archey4` instead `neofetch`.
 # `Archey4` has written in python3.
