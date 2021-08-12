@@ -83,11 +83,11 @@ if [[ ! -x $(where vi) ]]; then
     alias vi=vim
 fi
 
-if [[ ! -x $(where exa) ]]; then
-    printf "No exa found.\n"
-else
-    alias ls="exa -h --git"
-fi
+#if [[ ! -x $(where exa) ]]; then
+#    printf "No exa found.\n"
+#else
+#    alias ls="exa -h --git"
+#fi
 
 if [[ -x $(where batcat) ]]; then
 	alias bat=batcat
