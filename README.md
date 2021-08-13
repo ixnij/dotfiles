@@ -17,3 +17,19 @@ Sample:
 cd /path/to/this_repo
 ln -s $(pwd)/vim/init.vim $HOME/.vimrc
 ```
+
+## Requirement
+
+There're some useful tools and I've configured for them.
+
+- `Fzf` : file finder (wriiten in go)
+- `Ripgrep` : for search (written in rust)
+- `Fd` : finder (written in rust)
+- `Brew` : package manager (written in ruby)
+- `Bat` : A substitute of cat (written in rust)
+- `Neovim` : text editor (wriiten in C)
+- `GNU's Emacs` : text editor (written in Lisp)
+- `Zoxide` : awesome, wriiten in rust.
+- `Starship` : My zsh prompt (wriiten in rust)
+- `Nix-*` : package manager, wriiten in c++
+- `pkg-src ` : package manager written in c

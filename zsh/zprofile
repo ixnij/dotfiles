@@ -17,6 +17,7 @@ export STARSHIP_CONFIG=~/.config/starship/config.toml
 # For comman `fzf`
 export FZF_DEFAULT_OPTS="--height 80% --layout=reverse --border --preview 'bat --style=numbers --color=always --theme=gruvbox-dark --line-range :500 {}'"
 export FZF_COMPLETION_OPTS="--border --info=inline"
+export FZF_DEFAUlT_COMMAND="fd --type f"
 
 # On macOS:
 # export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
