@@ -53,7 +53,7 @@ if [[ ! -x "$(where zoxide)" ]]; then
 fi
 
 # For program: broot. 
-xsource /Users/thomas.wu/.config/broot/launcher/bash/br
+# xsource /Users/thomas.wu/.config/broot/launcher/bash/br
 
 
 #####     _    _ _                     
