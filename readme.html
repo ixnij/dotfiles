@@ -1,0 +1,37 @@
+<h1>Intro</h1>
+
+<p>This repository is used to store my configuration files.</p>
+
+<h2>Deployment</h2>
+
+<p>by using symbol link.
+You can also use GNU stow to set up symbolic links in batches.</p>
+
+<p>In my opinion, using symbol link is the best way to deploy configuretion files. As for the reason, I think smart readers have guessed it.</p>
+
+<p>I also set up some scripts to help deploy files. And, you'd better use absolute paths to set up symbol links.</p>
+
+<p>Sample:</p>
+
+<p><code>zsh
+cd /path/to/this_repo
+ln -s $(pwd)/vim/init.vim $HOME/.vimrc
+</code></p>
+
+<h2>Requirement</h2>
+
+<p>There're some useful tools and I've configured for them.</p>
+
+<ul>
+<li><code>Fzf</code> : file finder (wriiten in go)</li>
+<li><code>Ripgrep</code> : for search (written in rust)</li>
+<li><code>Fd</code> : finder (written in rust)</li>
+<li><code>Brew</code> : package manager (written in ruby)</li>
+<li><code>Bat</code> : A substitute of cat (written in rust)</li>
+<li><code>Neovim</code> : text editor (wriiten in C)</li>
+<li><code>GNU's Emacs</code> : text editor (written in Lisp)</li>
+<li><code>Zoxide</code> : awesome, wriiten in rust.</li>
+<li><code>Starship</code> : My zsh prompt (wriiten in rust)</li>
+<li><code>Nix-*</code> : package manager, wriiten in c++</li>
+<li><code>pkg-src</code> : package manager written in c</li>
+</ul>

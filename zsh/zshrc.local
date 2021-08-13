@@ -96,7 +96,11 @@ fi
 alias nv=nvim
 alias -s zip=unzip
 alias -s lisp=emacs
-alias nf=/opt/homebrew/bin/neofetch
+
+if [[ "$(uname)" == "Darwin" ]]; then
+	alias nf=/opt/homebrew/bin/neofetch
+fi
+
 alias bu='brew update && brew upgrade && brew cu && brew cleanup'
 alias et="emacsclient -t -a ''" # emacs --daemon
 alias ec="emacsclient -c -a ''"
