@@ -45,7 +45,7 @@
 (use-package emacs
   :ensure nil
   :if (display-graphic-p)
-  :config (set-face-attribute 'default nil :font "Cascadia Code PL 13"))
+  :config (set-face-attribute 'default nil :font "Cascadia Code PL 16"))
 
 (provide 'init-look)
 
