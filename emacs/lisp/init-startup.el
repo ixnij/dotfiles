@@ -22,7 +22,8 @@
 
 (progn (tool-bar-mode -1)
        (scroll-bar-mode -1))
-(unless sys/darwinp
+
+(unless (and sys/darwinp (display-graphic-p))
   (menu-bar-mode -1))
 
 (if sys/darwinp
