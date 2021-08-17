@@ -128,16 +128,16 @@ setopt no_nomatch
 
 # The following is to set zsh prompt {- spaceship}.
 
-if [[ "$TERM_PROGRAM" = "Apple_Terminal" ]]; then
-	prompt walters  
-elif [[ -x "$(where starship)" ]]; then
-	eval "$(starship init zsh)"
-else
-#	prompt grml 
-	prompt fade blue white 
-#	[[ -s $powerline_path ]] && source $powerline_path
-fi
-
+# if [[ "$TERM_PROGRAM" = "Apple_Terminal" ]]; then
+# 	prompt walters  
+# elif [[ -x "$(where starship)" ]]; then
+# 	eval "$(starship init zsh)"
+# else
+# #	prompt grml 
+# 	prompt fade blue white 
+# #	[[ -s $powerline_path ]] && source $powerline_path
+# fi
+# 
 # I'm using `zoxide` instead z.lua or z.sh.
 
 if [[ -x "$(where zoxide)" ]]; then

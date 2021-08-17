@@ -7,9 +7,9 @@
 ;; software source
 
 (setq package-archives '(
-    ("melpa" . "http://mirrors.bfsu.edu.cn/elpa/melpa/")
-    ("gnu" . "http://mirrors.bfsu.edu.cn/elpa/gnu/")
-    ("org" . "http://mirrors.bfsu.edu.cn/elpa/org/")))
+    ("melpa" . "http://mirrors.sjtug.sjtu.edu.cn/emacs-elpa/melpa/")
+    ("gnu" . "http://mirrors.sjtug.sjtu.edu.cn/emacs-elpa/gnu/")
+    ("org" . "http://mirrors.sjtug.sjtu.edu.cn/emacs-elpa/org/")))
 
 ;; for package.el
 

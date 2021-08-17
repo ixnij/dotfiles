@@ -42,10 +42,13 @@
 
 ;; Font settings
 
-(use-package emacs
-  :ensure nil
-  :if (display-graphic-p)
-  :config (set-face-attribute 'default nil :font "Cascadia Code PL 16"))
+;; (use-package emacs
+  ;; :ensure nil
+  ;; :if (display-graphic-p)
+  ;; :config (set-face-attribute 'default nil :font "Cascadia Code PL 16"))
+
+(if (display-graphic-p)
+    (set-face-attribute 'default nil :font "Jetbrains Mono 16"))
 
 (provide 'init-look)
 
