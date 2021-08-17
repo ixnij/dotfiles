@@ -73,6 +73,8 @@ elif [[ -x $(which batcat) ]]; then
 else
     printf "No bat found.\n"
 fi
+
+alias gt='git status'
 # I'm using `Archey4` instead `neofetch`.
 # `Archey4` has written in python3.
 # if [[ -x $(which archey) ]]; then

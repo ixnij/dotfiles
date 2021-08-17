@@ -22,14 +22,14 @@ ln -s $(pwd)/vim/init.vim $HOME/.vimrc
 
 There're some useful tools and I've configured for them.
 
-- `Fzf` : file finder (written in go)
-- `Ripgrep` : for search (written in rust)
-- `Fd` : finder (written in rust)
-- `Brew` : package manager (written in ruby)
+- `Fzf` : File finder (written in go)
+- `Ripgrep` : For search (written in rust)
+- `Fd` : Finder (written in rust)
+- `Brew` : Package manager (written in ruby)
 - `Bat` : A substitute of cat (written in rust)
-- `Neovim` : text editor (written in C)
-- `GNU's Emacs` : text editor (written in Lisp)
-- `Zoxide` : awesome, wriiten in rust.
-- `Starship` : My zsh prompt (wriiten in rust)
-- `Nix-*` : package manager, wriiten in c++
-- `pkg-src ` : package manager written in c
+- `Neovim` : Text editor (written in C)
+- `GNU's Emacs` : Text editor (written in Lisp)
+- `Zoxide` : Awesome, (written in rust)
+- `Starship` : My zsh prompt (written in rust)
+- `Nix-*` : Package manager (written in c++)
+- `Pkg-src ` : Package manager (written in c)
