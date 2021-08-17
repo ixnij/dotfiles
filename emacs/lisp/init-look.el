@@ -37,8 +37,8 @@
 ;; (setq sml/theme 'respectful)
 ;; (sml/setup))
 
-(use-package doom-modeline
-  :hook (after-init . doom-modeline-mode))
+;; (use-package doom-modeline
+  ;; :hook (after-init . doom-modeline-mode))
 
 ;; Font settings
 

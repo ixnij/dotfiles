@@ -33,3 +33,4 @@ There're some useful tools and I've configured for them.
 - `Starship` : My zsh prompt (written in rust)
 - `Nix-*` : Package manager (written in c++)
 - `Pkg-src ` : Package manager (written in c)
+- `iTerm2` : The best Terminal in macOS (written in Obj-c and swift)

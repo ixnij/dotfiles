@@ -4,6 +4,8 @@
 
 # Set the Localtion of z.lua.
 
+# prompt fire red magenta blue white white white 
+# prompt off
 prompt restore
 
 # PLUGIN_HOME="$HOME/Projects/Repositories"
