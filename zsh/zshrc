@@ -42,7 +42,6 @@ function ssource () {
 # If has .zshrc.local, source it.
 ssource ~/.zshrc.local
 
-
 # automatically complete 'cd -<tab>' and 'cd -<ctrl-d>' with menu
 zstyle ':completion:*:*:cd:*:directory-stack' menu yes select
 

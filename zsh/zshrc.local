@@ -10,18 +10,18 @@ prompt restore
 # Z_LUA_LOCALTION="$PLUGIN_HOME/z.lua/z.lua"
 
 # Check if we can read given files and source those we can.
-function xsource () {
-   if (( ${#argv} < 1 )) ; then
-       printf 'usage: xsource FILE(s)...\n' >&2
-       return 1
-   fi
-
-   while (( ${#argv} > 0 )) ; do
-       [[ -r "$1" ]] && source "$1"
-       shift
-   done
-   return 0
-}
+# function xsource () {
+#    if (( ${#argv} < 1 )) ; then
+#        printf 'usage: xsource FILE(s)...\n' >&2
+#        return 1
+#    fi
+# 
+#    while (( ${#argv} > 0 )) ; do
+#        [[ -r "$1" ]] && source "$1"
+#        shift
+#    done
+#    return 0
+# }
 
 #function xalias () {
 #    if [[ ! -x $(where $2) ]]; then
@@ -32,25 +32,25 @@ function xsource () {
 #}
 
 # Install z.lua plugin if not exist.
-if [[ ! -x "$(where zoxide)" ]]; then
-#	echo "Not found z.lua.\nInstall it."
-#	git clone --depth=1 https://github.com/skywind3000/z.lua $PLUGIN_HOME 
-#	if [[ ! $? -eq 0 ]]; then
-#		git clone --depth=1 https://hub.fastgit.org/skywind3000/z.lua $PLUGIN_HOME 
+#if [[ ! -x "$(where zoxide)" ]]; then
+##	echo "Not found z.lua.\nInstall it."
+##	git clone --depth=1 https://github.com/skywind3000/z.lua $PLUGIN_HOME 
+##	if [[ ! $? -eq 0 ]]; then
+##		git clone --depth=1 https://hub.fastgit.org/skywind3000/z.lua $PLUGIN_HOME 
+##	fi
+#	if [[ ! -x "$(where brew)" ]]; then
+#		curl -sS https://webinstall.dev/zoxide | bash
+#                printf "Did't find homebrew. stop.\n\a"
+#                printf "If you want to install zoxide manually, \n"
+#                printf "Type the following command to do it.\n";
+#                printf "curl -sS https://webinstall.dev/zoxide | bash\n"
+#                printf "Your platform: %s." "$(uname)"
+#                printf "Package name: zoxide-*-apple-darwin.tar.gz"
+#                printf "Or wget https://github.com/ajeetdsouza/zoxide/releases/latest/zoxide-x86_64-unknown-linux-musl.tar.gz"
+#	else
+#		brew install zoxide
 #	fi
-	if [[ ! -x "$(where brew)" ]]; then
-		curl -sS https://webinstall.dev/zoxide | bash
-                printf "Did't find homebrew. stop.\n\a"
-                printf "If you want to install zoxide manually, \n"
-                printf "Type the following command to do it.\n";
-                printf "curl -sS https://webinstall.dev/zoxide | bash\n"
-                printf "Your platform: %s." "$(uname)"
-                printf "Package name: zoxide-*-apple-darwin.tar.gz"
-                printf "Or wget https://github.com/ajeetdsouza/zoxide/releases/latest/zoxide-x86_64-unknown-linux-musl.tar.gz"
-	else
-		brew install zoxide
-	fi
-fi
+#fi
 
 # For program: broot. 
 # xsource /Users/thomas.wu/.config/broot/launcher/bash/br
@@ -75,9 +75,9 @@ else
 fi
 # I'm using `Archey4` instead `neofetch`.
 # `Archey4` has written in python3.
-if [[ -x $(which archey) ]]; then
-    alias neofetch=archey
-fi
+# if [[ -x $(which archey) ]]; then
+#     alias neofetch=archey
+# fi
 
 if [[ ! -x $(where vi) ]]; then
     alias vi=vim
@@ -97,11 +97,12 @@ alias nv=nvim
 alias -s zip=unzip
 alias -s lisp=emacs
 
-if [[ "$(uname)" == "Darwin" ]]; then
+if [[ "$(uname)" == "Darwin" ]] && [[ "$(arch)" == "arm64" ]]; then
 	alias nf=/opt/homebrew/bin/neofetch
+    alias lsdd="/opt/homebrew/bin/lsd -ha"
 fi
 
-alias bu='brew update && brew upgrade && brew cu && brew cleanup'
+# alias bu='brew update && brew upgrade && brew cu && brew cleanup'
 alias et="emacsclient -t -a ''" # emacs --daemon
 alias ec="emacsclient -c -a ''"
 
@@ -139,6 +140,10 @@ setopt no_nomatch
 # fi
 # 
 # I'm using `zoxide` instead z.lua or z.sh.
+
+# if [[ -x "$(command -v starship)" ]]; then
+#     eval "$(starship init zsh)"
+# fi
 
 if [[ -x "$(where zoxide)" ]]; then
 	eval "$(zoxide init zsh)"
