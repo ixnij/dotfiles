@@ -13,22 +13,27 @@ The grml's configuretion file repository: [grml-etc-core](https://github.com/grm
 
 >Further information is available from https://grml.org/console/
 
-If you like powerline, you should do:
+~~If you like powerline, you should do:~~
 
-```zsh
+~~```zsh
 pip install --user powerline-status
-```
-will get current release version and
+```~~
+~~will get current release version and~~
 
-```zsh
+~~```zsh
 pip install --user git+git://github.com/powerline/powerline
-```
+```~~
+
+~~starship also awesome~~
+
+I'm using [powerline-go](https://github.com/justjanne/powerline-go) now. It's faster.
+
 For fzf, you may should run
 
 ```zsh
 $(brew --prefix)/opt/fzf/install
 ```
-To install shell completions.
+To install shell functions.
 
 Some Awesome repositories & articles about zsh:
 
