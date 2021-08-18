@@ -4,15 +4,17 @@
 # For homebrew:
 # Prepare for homebrew.
 eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # Homebrew: Source
-export HOMEBREW_CORE_GIT_REMOTE="https://git.sjtu.edu.cn/sjtug/homebrew-core.git"
-export HOMEBREW_BREW_GIT_REMOTE="https://git.sjtu.edu.cn/sjtug/brew.git"
-export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.sjtug.sjtu.edu.cn/homebrew-bottles/bottles"
+export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.ustc.edu.cn/homebrew-core.git"
+export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git"
+export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/linuxbrew-bottles"
+
 # Homebrew: zsh completions
 export FPATH=$(brew --prefix)/share/zsh/site-functions:~/.zfunc:$FPATH
 
 # For starship configuretion file path.
-export STARSHIP_CONFIG=~/.config/starship/config.toml
+# export STARSHIP_CONFIG=~/.config/starship/config.toml
 
 # For comman `fzf`
 export FZF_DEFAULT_OPTS="--height 80% --layout=reverse --border --preview 'bat --style=numbers --color=always --theme=gruvbox-dark --line-range :500 {}'"
