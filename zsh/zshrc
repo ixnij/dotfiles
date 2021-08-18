@@ -3,7 +3,7 @@
 
 autoload -U compinit promptinit
 compinit && promptinit
-# prompt walters 
+# prompt walters
 
 # Colors on GNU ls(1)
 if ls --color=auto / >/dev/null 2>&1; then
@@ -28,13 +28,13 @@ zstyle ':completion:*' rehash true
 # Check if we can read given files and source those we can.
 function ssource () {
     if (( ${#argv} < 1 )) ; then
-        printf 'usage: ssource FILE(s)...\n' >&2
-        return 1
+	printf 'usage: ssource FILE(s)...\n' >&2
+	return 1
     fi
 
     while (( ${#argv} > 0 )) ; do
-        [[ -r "$1" ]] && source "$1"
-        shift
+	[[ -r "$1" ]] && source "$1"
+	shift
     done
     return 0
 }

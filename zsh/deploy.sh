@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-### Filename: deploy.sh 
+### Filename: deploy.sh
 ### Author: Thomas Wu <ixnij.wu@outlook.com>
 ### TODO: sh -> py
 
@@ -14,5 +14,5 @@ if [[ ! -f "$ZSHRC" ]]; then
 fi
 
 if [[ ! -f "$ZSHRC_LOCAL" ]]; then
-	ln -s $(pwd)/zshrc.local "$ZSHRC_LOCAL" 
+	ln -s $(pwd)/zshrc.local "$ZSHRC_LOCAL"
 fi
