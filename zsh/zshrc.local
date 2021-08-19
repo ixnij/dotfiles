@@ -5,6 +5,7 @@
 # prompt fire red magenta blue white white white
 # prompt off
 # prompt restore
+prompt adam1
 
 ###     _    _ _
 ###    / \  | (_) __ _ ___  ___  ___
@@ -16,6 +17,7 @@
 # alias to go to my dotfile directory:
 
 alias py=python3
+alias e="emacs -nw"
 # alias ls="exa -h --icons --git"
 if [[ -x $(which bat) ]] ; then
     alias cat="bat --theme=gruvbox-dark"
@@ -72,6 +74,13 @@ setopt no_nomatch
 
 ## For powerline-go
 
+## zmodload zsh/datetime
+## 
+## function preexec() {
+##   __TIMER=$EPOCHREALTIME
+## }
+## 
+## 
 ## function powerline_precmd() {
 ##     PS1="$(powerline-go -error $? -jobs ${${(%):%j}:-0})"
 ## 
@@ -91,13 +100,7 @@ setopt no_nomatch
 ##   done
 ##   precmd_functions+=(powerline_precmd)
 ## }
-## 
-## zmodload zsh/datetime
-## 
-## function preexec() {
-##   __TIMER=$EPOCHREALTIME
-## }
-## 
+
 ## function powerline_precmd() {
 ##   local __ERRCODE=$?
 ##   local __DURATION=0
@@ -111,9 +114,11 @@ setopt no_nomatch
 ##   unset __TIMER
 ## }
 ## 
+
 ## if [ "$TERM" != "linux" ] && [ -f "$(command -v powerline-go)" ]; then
 ##     install_powerline_precmd
 ## fi
+## 
 
 # For zsh theme - powerlevel10k
 # [[ -s ~/powerlevel10k/powerlevel10k.zsh-theme ]] && source ~/powerlevel10k/powerlevel10k.zsh-theme
@@ -184,6 +189,9 @@ setopt no_nomatch
 # xsource /Users/thomas.wu/.config/broot/launcher/bash/br
 
 # The following is to set zsh prompt {- spaceship}.
+
+# python_package_repository_root="/Users/wu/Library/Python/3.9/lib/python/site-packages"
+# . ${python_package_repository_root}/powerline/bindings/zsh/powerline.zsh
 
 # if [[ "$TERM_PROGRAM" = "Apple_Terminal" ]]; then
 #	prompt walters
