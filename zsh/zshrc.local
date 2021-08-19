@@ -52,7 +52,7 @@ alias -s lisp=emacs
 
 if [[ "$(uname)" == "Darwin" ]] && [[ "$(arch)" == "arm64" ]]; then
 	alias nf=/opt/homebrew/bin/neofetch
-    alias lsdd="/opt/homebrew/bin/lsd -ha"
+#    alias lsdd="/opt/homebrew/bin/lsd -ha"
 fi
 
 # alias bu='brew update && brew upgrade && brew cu && brew cleanup'
