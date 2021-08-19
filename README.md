@@ -14,9 +14,18 @@ I also set up some scripts to help deploy files. And, you'd better use absolute 
 Sample:
 
 ```zsh
-cd /path/to/this_repo
+cd /path/to/this/repo
 ln -s $(pwd)/vim/init.vim $HOME/.vimrc
 ```
+
+using GNU/stow:
+
+```zsh
+cd /path/to/this/repo
+stow emacs -t ~/.emacs.d
+```
+
+Note: the `~/.emacs.d` or `~/.config/emacs` directory must be exist.
 
 ## Requirement
 
@@ -34,4 +43,4 @@ There're some useful tools and I've configured for them.
 - `Nix-*` : Package manager (written in c++)
 - `Pkg-src ` : Package manager (written in c)
 - `iTerm2` : The best Terminal in macOS (written in Obj-c and swift)
-- `powerline-go` : Awesome, It's my new prompt.
+- `Powerline-go` : Awesome, It's my new prompt (written in golang).
