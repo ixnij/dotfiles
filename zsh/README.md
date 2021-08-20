@@ -26,7 +26,9 @@ pip install --user git+git://github.com/powerline/powerline
 
 ~~starship also awesome~~
 
-I'm using [powerline-go](https://github.com/justjanne/powerline-go) now. It's faster.
+~~I'm using [powerline-go](https://github.com/justjanne/powerline-go) now. It's faster.~~
+
+I'm using starship now.
 
 For fzf, you may should run
 

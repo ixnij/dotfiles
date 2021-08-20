@@ -3,9 +3,9 @@
 
 # Don't forget that you have another prompt: spaceship.
 # prompt fire red magenta blue white white white
-# prompt off
+prompt off
 # prompt restore
-prompt adam1
+# prompt adam1
 
 ###     _    _ _
 ###    / \  | (_) __ _ ___  ___  ___
@@ -75,23 +75,23 @@ setopt no_nomatch
 ## For powerline-go
 
 ## zmodload zsh/datetime
-## 
+##
 ## function preexec() {
 ##   __TIMER=$EPOCHREALTIME
 ## }
-## 
-## 
+##
+##
 ## function powerline_precmd() {
 ##     PS1="$(powerline-go -error $? -jobs ${${(%):%j}:-0})"
-## 
+##
 ##     # Uncomment the following line to automatically clear errors after showing
 ##     # them once. This not only clears the error for powerline-go, but also for
 ##     # everything else you run in that shell. Don't enable this if you're not
 ##     # sure this is what you want.
-## 
+##
 ##     #set "?"
 ## }
-## 
+##
 ## function install_powerline_precmd() {
 ##   for s in "${precmd_functions[@]}"; do
 ##     if [ "$s" = "powerline_precmd" ]; then
@@ -104,21 +104,21 @@ setopt no_nomatch
 ## function powerline_precmd() {
 ##   local __ERRCODE=$?
 ##   local __DURATION=0
-## 
+##
 ##   if [ -n $__TIMER ]; then
 ##     local __ERT=$EPOCHREALTIME
 ##     __DURATION="$(($__ERT - ${__TIMER:-__ERT}))"
 ##   fi
-## 
+##
 ##   PS1="$(powerline-go -modules duration -duration $__DURATION -error $__ERRCODE -shell zsh)"
 ##   unset __TIMER
 ## }
-## 
+##
 
 ## if [ "$TERM" != "linux" ] && [ -f "$(command -v powerline-go)" ]; then
 ##     install_powerline_precmd
 ## fi
-## 
+##
 
 # For zsh theme - powerlevel10k
 # [[ -s ~/powerlevel10k/powerlevel10k.zsh-theme ]] && source ~/powerlevel10k/powerlevel10k.zsh-theme
@@ -205,9 +205,9 @@ setopt no_nomatch
 #
 # I'm using `zoxide` instead z.lua or z.sh.
 
-# if [[ -x "$(command -v starship)" ]]; then
-#     eval "$(starship init zsh)"
-# fi
+if [[ -x "$(command -v starship)" ]]; then
+    eval "$(starship init zsh)"
+fi
 
 if [[ -x "$(where zoxide)" ]]; then
 	eval "$(zoxide init zsh)"
