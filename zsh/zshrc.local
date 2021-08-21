@@ -17,7 +17,7 @@ prompt off
 # alias to go to my dotfile directory:
 
 alias py=python3
-alias e="emacs -nw"
+# alias e="emacs -nw" # Just for Pure Emacs :D
 # alias ls="exa -h --icons --git"
 if [[ -x $(which bat) ]] ; then
     alias cat="bat --theme=gruvbox-dark"
