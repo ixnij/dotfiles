@@ -1,7 +1,7 @@
-#+Author: Thomas Wu <ixnij.wu@outlook.com>
+#+Author: Thomas Wu <ixnij.wu@gmail.com>
 #+date: 2021/7/30
 
-* This is my Emacs configuretion file.
+* This is the configuration file of Emacs.
 
   The non-melpa(or gnu) package in /site-lisp/ directory.
   #+begin_src shell
