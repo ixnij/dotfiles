@@ -3,9 +3,10 @@
 
 # Don't forget that you have another prompt: spaceship.
 # prompt fire red magenta blue white white white
-prompt off
+# prompt off
 # prompt restore
 # prompt adam1
+#
 
 ###     _    _ _
 ###    / \  | (_) __ _ ___  ___  ___
@@ -23,8 +24,8 @@ if [[ -x $(which bat) ]] ; then
     alias cat="bat --theme=gruvbox-dark"
 elif [[ -x $(which batcat) ]]; then
     alias cat="batcat --theme=gruvbox-dark"
-else
-    printf "No bat found.\n"
+# else
+#     printf "No bat found.\n"
 fi
 
 alias gt='git status'
@@ -48,11 +49,14 @@ if [[ -x $(where batcat) ]]; then
 	alias bat=batcat
 fi
 
-alias nv=nvim
+if [[ -x $(where nvim) ]]; then
+	alias nv=nvim
+fi
+
 alias -s zip=unzip
 alias -s lisp=emacs
 
-if [[ "$(uname)" == "Darwin" ]] && [[ "$(arch)" == "arm64" ]]; then
+if [[ "$(uname)" == "Darwin" ]] && [[ -x "$(command -v brew)" ]] && [[ "$(arch)" == "arm64" ]]; then
 	alias nf=/opt/homebrew/bin/neofetch
 #    alias lsdd="/opt/homebrew/bin/lsd -ha"
 fi
@@ -205,9 +209,10 @@ setopt no_nomatch
 #
 # I'm using `zoxide` instead z.lua or z.sh.
 
-if [[ -x "$(command -v starship)" ]]; then
-    eval "$(starship init zsh)"
-fi
+# if [[ -x "$(command -v starship)" ]]; then
+#     eval "$(starship init zsh)"
+# fi
+# 
 
 if [[ -x "$(where zoxide)" ]]; then
 	eval "$(zoxide init zsh)"
