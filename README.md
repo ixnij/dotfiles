@@ -2,6 +2,10 @@
 
 This repository is used to store my configuration files.
 
+Now, I'm using Nix as my package manager on macOS.
+
+The font I use: SF Mono & Jetbrains Mono & Fira Code & Cascadia Code.
+
 ## Deployment
 
 by using symbol link.
@@ -26,6 +30,10 @@ stow emacs -t ~/.emacs.d
 ```
 
 Note: the `~/.emacs.d` or `~/.config/emacs` directory must be exist.
+
+## About Nix
+
+Nix is a pure functional package manager. But, It's not easy for newer macOS with apfs to install it.
 
 ## Requirement
 
