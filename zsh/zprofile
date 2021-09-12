@@ -25,7 +25,7 @@ export FZF_COMPLETION_OPTS="--border --info=inline"
 export FZF_DEFAUlT_COMMAND="fd --type f"
 
 # On macOS:
-# export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
+export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
 
 # End of file ##############################
 # vim:filetype=zsh
