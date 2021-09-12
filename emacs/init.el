@@ -17,6 +17,7 @@
 (defconst system-darwin-p (eq system-type 'darwin))
 
 (require 'init-utils)
+(require 'init-native-comp)
 (require 'init-mackeys)
 (require 'init-fonts)
 
@@ -31,7 +32,9 @@
 (require 'init-elpa)
 (require 'init-selectrum)
 (require 'init-company)
+(require 'init-lisp)
 (require 'init-editing)
+(require 'init-look)
 
 (add-hook 'after-init-hook
 	  (lambda ()
