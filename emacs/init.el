@@ -16,8 +16,8 @@
 
 (defconst system-darwin-p (eq system-type 'darwin))
 
+(require 'init-utils)
 (require 'init-mackeys)
-
 (require 'init-fonts)
 
 (let ((normal-gc-cons-threshold (* 20 1024 1024))
@@ -27,6 +27,8 @@
             (lambda () (setq gc-cons-threshold normal-gc-cons-threshold))))
 
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+
+(require 'init-elpa)
 
 (add-hook 'after-init-hook
           (lambda ()
