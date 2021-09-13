@@ -30,6 +30,7 @@
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
 (require 'init-elpa)
+(require-package 'diminish)
 (require 'init-selectrum)
 (require 'init-company)
 (require 'init-lisp)
