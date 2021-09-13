@@ -1,3 +1,4 @@
+;; init-elpa.el -- For elpa and package settings. -*- lexical-binding: t; -*-
 
 (require 'package)
 

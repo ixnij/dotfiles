@@ -15,7 +15,7 @@
   (if (string-equal ns-system-appearance "dark")
       (load-theme 'doom-one t)
     (load-theme 'doom-one-light t))
-  (load-theme 'doom-city-lights t))
+  (load-theme 'doom-nord t))
 
 (provide 'init-look)
 ;;; Local Variables:
