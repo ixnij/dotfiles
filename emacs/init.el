@@ -40,6 +40,7 @@
 (require 'init-company)
 (require 'init-lisp)
 (require 'init-editing)
+(require 'init-lsp)
 (require 'init-git)
 (require 'init-look)
 
