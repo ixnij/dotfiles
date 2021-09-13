@@ -32,7 +32,7 @@
 (require 'init-elpa)
 (require-package 'diminish)
 (require-package 'restart-emacs)
-(require 'init-selectrum)
+(require 'init-searching)
 (require 'init-company)
 (require 'init-lisp)
 (require 'init-editing)
