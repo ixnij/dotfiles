@@ -16,7 +16,9 @@
   (add-hook 'minibuffer-setup-hook 'ixnij/use-orderless-in-minibuffer)
 
   (when (maybe-require-package 'marginalia)
-  (add-hook 'after-init-hook 'marginalia-mode)))
+    (add-hook 'after-init-hook 'marginalia-mode))
+  (when (maybe-require-package 'consult)
+    (global-set-key (kbd "C-s") 'consult-line)))
 
 (provide 'init-searching)
 ;;; Local Variables:
