@@ -34,7 +34,7 @@
 (require 'init-company)
 (require 'init-lisp)
 (require 'init-editing)
-(require 'init-magit)
+(require 'init-git)
 (require 'init-look)
 
 (add-hook 'after-init-hook
