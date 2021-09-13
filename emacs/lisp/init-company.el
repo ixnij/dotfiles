@@ -4,8 +4,9 @@
 
 ;;; TODO:
 
-;; company-box
-;; company-quickhelp
+;; Either:
+;; [] company-box
+;; [] company-quickhelp
 
 ;;; Code:
 
