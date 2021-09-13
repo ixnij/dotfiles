@@ -31,6 +31,7 @@
 
 (require 'init-elpa)
 (require-package 'diminish)
+(require-package 'restart-emacs)
 (require 'init-selectrum)
 (require 'init-company)
 (require 'init-lisp)
