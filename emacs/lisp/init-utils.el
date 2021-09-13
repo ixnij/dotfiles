@@ -14,7 +14,6 @@
 
 (defalias 'list-buffers 'ibuffer) ; to make ibuffer default.
 
-
 (setq visual-line-fringe-indicators '(left-bracket right-bracket))
 
 (provide 'init-utils)

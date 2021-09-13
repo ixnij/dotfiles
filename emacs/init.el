@@ -32,6 +32,10 @@
 (require 'init-elpa)
 (require-package 'diminish)
 (require-package 'restart-emacs)
+
+(when (maybe-require-package 'ace-window)
+  (global-set-key (kbd "M-o") 'ace-window))
+
 (require 'init-searching)
 (require 'init-company)
 (require 'init-lisp)
