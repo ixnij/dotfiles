@@ -13,9 +13,9 @@
 
 (if (and system-darwin-p (display-graphic-p))
   (if (string-equal ns-system-appearance "dark")
-      (load-theme 'doom-one t)
-    (load-theme 'doom-one-light t))
-  (load-theme 'doom-nord t))
+      (load-theme 'doom-xcode t)
+    (load-theme 'doom-opera-light t))
+  (load-theme 'doom-xcode t))
 
 (provide 'init-look)
 ;;; Local Variables:
