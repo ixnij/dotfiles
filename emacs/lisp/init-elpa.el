@@ -48,6 +48,7 @@ locate PACKAGE."
 
 (let ((package-check-signature nil))
   (require-package 'gnu-elpa-keyring-update))
+(package-initialize)
 
 (provide 'init-elpa)
 ;;; Local Variables:

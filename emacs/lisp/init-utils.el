@@ -8,7 +8,7 @@
   (tool-bar-mode -1)
   (scroll-bar-mode -1))
 
-(or system-darwin-p (menu-bar-mode -1))
+(or (and system-darwin-p (display-graphic-p)) (menu-bar-mode -1))
 
 (setq inhibit-startup-screen t)
 

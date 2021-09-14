@@ -36,6 +36,7 @@
 (when (maybe-require-package 'ace-window)
   (global-set-key (kbd "M-o") 'ace-window))
 
+(require 'init-exec-path)
 (require 'init-searching)
 (require 'init-company)
 (require 'init-lisp)
