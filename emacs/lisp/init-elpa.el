@@ -1,5 +1,11 @@
 ;; init-elpa.el -- For elpa and package settings. -*- lexical-binding: t; -*-
 
+;;; Commentary:
+
+;; `require-package' and `maybe-require-package' is from purcell's emacs configuretion file.
+
+;;; Code:
+
 (require 'package)
 
 (setq package-archives '(
@@ -40,4 +46,11 @@ locate PACKAGE."
      (message "Couldn't install optional package `%s': %S" package err)
      nil)))
 
+(let ((package-check-signature nil))
+  (require-package 'gnu-elpa-keyring-update))
+
 (provide 'init-elpa)
+;;; Local Variables:
+;;; coding: utf-8
+;;; End:
+;;; init-elpa.el ends here

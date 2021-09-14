@@ -13,10 +13,10 @@
   "Check if font with FONT-NAME is available."
   (find-font (font-spec :name font-name)))
 
-(defvar ixnij/default-fonts '("Jetbrains Mono"
+(defvar ixnij/default-fonts '("Iosevka"
+			      "Jetbrains Mono"
 			      "Fira Code Retina"
-			      "SF Mono"
-			      "Iosevka")
+			      "SF Mono")
   "This is My favorite fonts list.")
 
 (when (display-graphic-p)
@@ -25,7 +25,7 @@
    when (font-installed-p font)
    return (set-face-attribute 'default nil
 				      :font font
-				      :height 160))
+				      :height 180))
 
   ;; Specify font for all unicode characters
   (cl-loop for font in '("Apple Color Emoji" "Segoe UI Symbol" "Symbola" "Symbol")
