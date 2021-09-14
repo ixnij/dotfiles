@@ -5,7 +5,7 @@
 ;;; Code:
 
 (when (maybe-require-package 'eros)
-  (add-hook 'elisp-mode 'eros-mode))
+  (add-hook 'emacs-lisp-mode-hook 'eros-mode))
 
 (provide 'init-lisp)
 ;;; Local Variables:
