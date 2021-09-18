@@ -45,6 +45,7 @@
 (require 'init-git)
 (require 'init-look)
 (require 'init-dired)
+(require 'init-ibuffer)
 
 (when system-darwin-p
   (when (maybe-require-package 'ns-auto-titlebar)
