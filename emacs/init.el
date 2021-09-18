@@ -19,7 +19,7 @@
 (if (display-graphic-p)
    (setq frame-resize-pixelwise t))
 
-(require 'init-utils)
+(require 'init-misc)
 (require 'init-native-comp)
 (require 'init-mackeys)
 (require 'init-fonts)

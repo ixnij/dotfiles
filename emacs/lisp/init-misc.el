@@ -1,4 +1,4 @@
-;;; init-utils.el --- Miscellaneous.  -*- lexical-binding: t; -*-
+;;; init-misc.el --- Miscellaneous.  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 
@@ -10,14 +10,17 @@
 
 (or (and system-darwin-p (display-graphic-p)) (menu-bar-mode -1))
 
+(fset 'yes-or-no-p 'y-or-n-p)
+
 (setq inhibit-startup-screen t)
 
-(defalias 'list-buffers 'ibuffer) ; to make ibuffer default.
+;; to make ibuffer default.
+(defalias 'list-buffers 'ibuffer)
 
 (setq visual-line-fringe-indicators '(left-bracket right-bracket))
 
-(provide 'init-utils)
+(provide 'init-misc)
 ;;; Local Variables:
 ;;; coding: utf-8
 ;;; end:
-;;; init-utils.el ends here
+;;; init-misc.el ends here
