@@ -7,14 +7,13 @@
 (when (maybe-require-package 'doom-themes)
   (setq doom-themes-enable-bold t
 	doom-themes-enable-italic t)
-;;  (load-theme 'doom-ayu-mirage t)
   (doom-themes-org-config)
   (doom-themes-visual-bell-config))
 
 (if (and system-darwin-p (display-graphic-p))
-  (if (string-equal ns-system-appearance "dark")
-      (load-theme 'doom-opera t)
-    (load-theme 'doom-opera-light t))
+    (if (string-equal ns-system-appearance "dark")
+        (load-theme 'doom-opera t)
+      (load-theme 'doom-opera-light t))
   (load-theme 'doom-xcode t))
 
 (provide 'init-look)

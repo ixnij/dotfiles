@@ -16,6 +16,9 @@
 
 (defconst system-darwin-p (eq system-type 'darwin))
 
+(if (display-graphic-p)
+   (setq frame-resize-pixelwise t))
+
 (require 'init-utils)
 (require 'init-native-comp)
 (require 'init-mackeys)
