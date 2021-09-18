@@ -46,6 +46,7 @@
 (require 'init-look)
 (require 'init-dired)
 (require 'init-ibuffer)
+(require 'init-desktop)
 
 (when system-darwin-p
   (when (maybe-require-package 'ns-auto-titlebar)
