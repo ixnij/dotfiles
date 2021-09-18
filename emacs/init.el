@@ -16,9 +16,6 @@
 
 (defconst system-darwin-p (eq system-type 'darwin))
 
-(if (display-graphic-p)
-   (setq frame-resize-pixelwise t))
-
 (require 'init-misc)
 (require 'init-native-comp)
 (require 'init-mackeys)
@@ -48,6 +45,10 @@
 (require 'init-git)
 (require 'init-look)
 (require 'init-dired)
+
+(when system-darwin-p
+  (when (maybe-require-package 'ns-auto-titlebar)
+    (ns-auto-titlebar-mode)))
 
 (add-hook 'after-init-hook
 	  (lambda ()

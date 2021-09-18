@@ -9,9 +9,9 @@
 (require 'package)
 
 (setq package-archives '(
-    ("melpa" . "https://mirrors.sjtug.sjtu.edu.cn/emacs-elpa/melpa/")
-    ("gnu" . "https://mirrors.sjtug.sjtu.edu.cn/emacs-elpa/gnu/")
-    ("org" . "https://mirrors.sjtug.sjtu.edu.cn/emacs-elpa/org/")))
+			 ("melpa" . "https://mirrors.sjtug.sjtu.edu.cn/emacs-elpa/melpa/")
+			 ("gnu" . "https://mirrors.sjtug.sjtu.edu.cn/emacs-elpa/gnu/")
+			 ("org" . "https://mirrors.sjtug.sjtu.edu.cn/emacs-elpa/org/")))
 
 ;; Work-around for https://debbugs.gnu.org/cgi/bugreport.cgi?bug=34341
 (when (and (version< emacs-version "26.3") (boundp 'libgnutls-version) (>= libgnutls-version 30604))

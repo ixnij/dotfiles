@@ -19,6 +19,11 @@
 
 (setq visual-line-fringe-indicators '(left-bracket right-bracket))
 
+;; There is some problems with gui.
+(setq-default
+ window-resize-pixelwise t
+ frame-resize-pixelwise t)
+
 (provide 'init-misc)
 ;;; Local Variables:
 ;;; coding: utf-8
