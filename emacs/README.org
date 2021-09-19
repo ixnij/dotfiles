@@ -12,4 +12,4 @@
   git submodule update
   #+END_SRC
 
-  I'm using selectrum instead of ivy.
+ I'm using vertico instead of ivy.
