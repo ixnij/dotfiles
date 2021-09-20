@@ -380,8 +380,7 @@ endif
 " " Plug 'lifepillar/vim-solarized8'
 " Plug 'morhetz/gruvbox'
 " Plug 'jiangmiao/auto-pairs'
- 
-call plug#end()
+" call plug#end()
 
 set number
 set nocompatible
@@ -410,7 +409,7 @@ set mouse=a
 
 set background=dark
 " set background=light
-colorscheme gruvbox
+" colorscheme gruvbox
 
 " Airline settings:
 
