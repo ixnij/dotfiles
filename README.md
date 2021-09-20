@@ -76,4 +76,4 @@ deploy by using symbol links.
 12. sdcv
 
 As for emacs, I'm using emacs-plus@28 with native-comp.
-My unix login name: win, unix shell: zsh, mksh, yash.
+My unix login name: wu, unix shell: zsh, mksh, yash.
