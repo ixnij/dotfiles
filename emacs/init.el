@@ -30,6 +30,7 @@
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
 (require 'init-elpa)
+(require 'init-evil)
 (require-package 'diminish)
 (require-package 'restart-emacs)
 

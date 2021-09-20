@@ -1,3 +1,9 @@
+;;; init-ibuffer.el --- For ibuffer  -*- lexical-binding: t; -*-
+
+;;; Commentary:
+
+;;; Code:
+
 (require-package 'ibuffer-vc)
 
 (with-eval-after-load 'ibuffer
@@ -34,3 +40,4 @@
 	      vc-relative-file)))
 
 (provide 'init-ibuffer)
+;;; init-ibuffer.el ends here

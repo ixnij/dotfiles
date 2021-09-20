@@ -1,3 +1,8 @@
+;;; init-mackeyss.el --- For keyboard keybindings in darwin.  -*- lexical-binding: t; -*- 
+
+;;; Commentary:
+
+;;; Code:
 (when system-darwin-p
   (setq mac-command-modifier 'meta)
   (setq mac-option-modifier 'none)
@@ -17,3 +22,4 @@
   )
 
 (provide 'init-mackeys)
+;;; init-mackeys.el ends here
