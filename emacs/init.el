@@ -40,7 +40,10 @@
 (require 'init-exec-path)
 (require 'init-searching)
 (require 'init-company)
+
 (require 'init-lisp)
+(require 'init-md)
+
 (require 'init-editing)
 (require 'init-lsp)
 (require 'init-git)
