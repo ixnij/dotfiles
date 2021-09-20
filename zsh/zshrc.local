@@ -21,21 +21,6 @@
 # prompt restore
 # prompt adam1
 
-## Inform users about upgrade path for grml's old zshrc layout, assuming that:
-## /etc/skel/.zshrc was installed as ~/.zshrc,
-## /etc/zsh/zshrc was installed as ~/.zshrc.global and
-## ~/.zshrc.local does not exist yet.
-if [ -r ~/.zshrc -a -r ~/.zshrc.global -a ! -r ~/.zshrc.local ] ; then
-    printf '-!-\n'
-    printf '-!- Looks like you are using the old zshrc layout of grml.\n'
-    printf '-!- Please read the notes in the grml-zsh-refcard, being'
-    printf '-!- available at: http://grml.org/zsh/\n'
-    printf '-!-\n'
-    printf '-!- If you just want to get rid of this warning message execute:\n'
-    printf '-!-        touch ~/.zshrc.local\n'
-    printf '-!-\n'
-fi
-
 ## Settings for umask
 #if (( EUID == 0 )); then
 #    umask 002
@@ -72,14 +57,14 @@ zstyle ':prompt:grml:left:setup' items rc virtual-env change-root user at host p
 #bindkey "^Z" predict-off
 
 ## press ctrl-q to quote line:
-#mquote () {
-#      zle beginning-of-line
-#      zle forward-word
-#      # RBUFFER="'$RBUFFER'"
-#      RBUFFER=${(q)RBUFFER}
-#      zle end-of-line
-#}
-#zle -N mquote && bindkey '^q' mquote
+mquote () {
+      zle beginning-of-line
+      zle forward-word
+      # RBUFFER="'$RBUFFER'"
+      RBUFFER=${(q)RBUFFER}
+      zle end-of-line
+}
+zle -N mquote && bindkey '^q' mquote
 
 ## define word separators (for stuff like backward-word, forward-word, backward-kill-word,..)
 #WORDCHARS='*?_-.[]~=/&;!#$%^(){}<>' # the default
@@ -120,17 +105,17 @@ setopt NO_clobber
 #setopt nocheckjobs
 
 ## alert me if something failed
-#setopt printexitvalue
+setopt printexitvalue
 
 ## with spelling correction, assume dvorak kb
 #setopt dvorak
 
 ## Allow comments even in interactive shells
-#setopt interactivecomments
+setopt interactivecomments
 
 ## if a new command line being added to the history list duplicates an older
 ## one, the older command is removed from the list
-#is4 && setopt histignorealldups
+is4 && setopt histignorealldups
 
 ## compsys related snippets ##
 
@@ -155,7 +140,7 @@ zstyle ':completion:*' completer _expand_alias _complete _approximate
 
 ## add grml.org to your list of hosts
 #hosts+=(grml.org)
-#zstyle ':completion:*:hosts' hosts $hosts
+zstyle ':completion:*:hosts' hosts $hosts
 
 ## telnet on non-default ports? ...well:
 ## specify specific port/service settings:
@@ -180,10 +165,10 @@ zstyle ':completion:*' completer _expand_alias _complete _approximate
 alias top10='print -l ${(o)history%% *} | uniq -c | sort -nr | head -n 10'
 
 ## Execute \kbd{./configure}
-#alias CO="./configure"
+alias CO="./configure"
 
 ## Execute \kbd{./configure --help}
-#alias CH="./configure --help"
+alias CH="./configure --help"
 
 ## miscellaneous code ##
 
@@ -191,10 +176,10 @@ alias top10='print -l ${(o)history%% *} | uniq -c | sort -nr | head -n 10'
 #export MANWIDTH=${MANWIDTH:-80}
 
 ## Set a search path for the cd builtin
-#cdpath=(.. ~)
+cdpath=(.. ~)
 
 ## variation of our manzsh() function; pick you poison:
-#manzsh()  { /usr/bin/man zshall |  most +/"$1" ; }
+manzsh()  { /usr/bin/man zshall |  most +/"$1" ; }
 
 ## Switching shell safely and efficiently? http://www.zsh.org/mla/workers/2001/msg02410.html
 bash() {
@@ -210,38 +195,38 @@ restart () {
 #ot () { [[ $REPLY -ot ${~1} ]] }
 
 ## get_ic() - queries imap servers for capabilities; real simple. no imaps
-#ic_get() {
-#    emulate -L zsh
-#    local port
-#    if [[ ! -z $1 ]] ; then
-#        port=${2:-143}
-#        print "querying imap server on $1:${port}...\n";
-#        print "a1 capability\na2 logout\n" | nc $1 ${port}
-#    else
-#        print "usage:\n  $0 <imap-server> [port]"
-#    fi
-#}
+ic_get() {
+    emulate -L zsh
+    local port
+    if [[ ! -z $1 ]] ; then
+        port=${2:-143}
+        print "querying imap server on $1:${port}...\n";
+        print "a1 capability\na2 logout\n" | nc $1 ${port}
+    else
+        print "usage:\n  $0 <imap-server> [port]"
+    fi
+}
 
 ## List all occurrences of programm in current PATH
-#plap() {
-#    emulate -L zsh
-#    if [[ $# = 0 ]] ; then
-#        echo "Usage:    $0 program"
-#        echo "Example:  $0 zsh"
-#        echo "Lists all occurrences of program in the current PATH."
-#    else
-#        ls -l ${^path}/*$1*(*N)
-#    fi
-#}
+plap() {
+    emulate -L zsh
+    if [[ $# = 0 ]] ; then
+        echo "Usage:    $0 program"
+        echo "Example:  $0 zsh"
+        echo "Lists all occurrences of program in the current PATH."
+    else
+        ls -l ${^path}/*$1*(*N)
+    fi
+}
 
 ## Find out which libs define a symbol
-#lcheck() {
-#    if [[ -n "$1" ]] ; then
-#        nm -go /usr/lib/lib*.a 2>/dev/null | grep ":[[:xdigit:]]\{8\} . .*$1"
-#    else
-#        echo "Usage: lcheck <function>" >&2
-#    fi
-#}
+lcheck() {
+    if [[ -n "$1" ]] ; then
+        nm -go /usr/lib/lib*.a 2>/dev/null | grep ":[[:xdigit:]]\{8\} . .*$1"
+    else
+        echo "Usage: lcheck <function>" >&2
+    fi
+}
 
 ## Download a file and display it locally
 #uopen() {
