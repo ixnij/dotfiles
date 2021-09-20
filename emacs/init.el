@@ -48,6 +48,7 @@
 (require 'init-dired)
 (require 'init-ibuffer)
 (require 'init-desktop)
+(require 'init-undo-tree)
 
 (when system-darwin-p
   (when (maybe-require-package 'ns-auto-titlebar)

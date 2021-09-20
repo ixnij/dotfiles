@@ -1,6 +1,9 @@
 *~
 \#*
 
+# For undo-tree (emacs package)
+*.\~undo-tree\~
+
 # On macOS
 
 .DS_Store
