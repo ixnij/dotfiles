@@ -1,0 +1,8 @@
+#+TITLE: DOTFILES
+
+* This is the repository that store my configuretion files for emacs, vim etc.
+
+  To deploy it, you'd better use symbol link. GNU's stow is a very useful tool that helps you
+  create symbol links.
+
+  This configuretion can only runs on darwin and linux (including wsl).
