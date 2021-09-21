@@ -1,7 +1,9 @@
-;;; init-misc.el --- Miscellaneous.  -*- lexical-binding: t; -*-
+;;; init-misc.el --- Miscellaneous and built-in.  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
-
+;; The `add-auto-mode' is from purcell.
+;; This file also config for some built-in packages.
+;; `follow-mode' is awesome.
 ;;; Code:
 
 (when (display-graphic-p)
@@ -23,6 +25,24 @@
 (setq-default
  window-resize-pixelwise t
  frame-resize-pixelwise t)
+
+;; Handier way to add modes to auto-mode-alist
+(defun add-auto-mode (mode &rest patterns)
+  "Add entries to `auto-mode-alist' to use `MODE' for all given file `PATTERNS'."
+  (dolist (pattern patterns)
+    (add-to-list 'auto-mode-alist (cons pattern mode))))
+
+;; Make winner mode load after init.
+(add-hook 'after-init-hook 'winner-mode)
+
+;; Remeber curser localtion
+(add-hook 'after-init-hook 'save-place-mode)
+
+(add-hook 'after-init-hook 'global-hl-line-mode)
+
+(global-so-long-mode 1)
+
+(add-hook 'after-init-hook 'global-auto-revert-mode)
 
 (provide 'init-misc)
 ;;; Local Variables:

@@ -37,6 +37,8 @@
   (with-eval-after-load 'page-break-lines
     (diminish 'page-break-lines-mode)))
 
+(global-set-key (kbd "RET") 'newline-and-indent)
+
 (provide 'init-editing)
 ;;; Local Variables:
 ;;; coding: utf-8
