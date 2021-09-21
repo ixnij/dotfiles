@@ -2,7 +2,7 @@
 
 ;;; Commentary:
 
-;; This file is a bootstraper of full configuretion.
+;; This file bootstraps full configuretion.
 
 ;;; Code:
 
