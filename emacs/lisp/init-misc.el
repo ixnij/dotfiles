@@ -48,6 +48,9 @@
 
 (recentf-mode t)
 
+(diminish 'hs-minor-mode)
+(add-hook 'prog-mode-hook 'hs-minor-mode)
+
 (provide 'init-misc)
 ;;; Local Variables:
 ;;; coding: utf-8
