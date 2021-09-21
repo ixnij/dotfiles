@@ -1,7 +1,7 @@
 #+TITLE: Emacs configuretion files
 #+AUTHOR: Thomas Wu <ixnij.wu@gmail.com>
 
-* Please place the non-melpa packages in /site-lisp/.
+* Please place the non-melpa packages in *site-lisp*.
   Managing the non-melpa packages by using git submodule.
 
   For example:
