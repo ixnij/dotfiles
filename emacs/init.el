@@ -15,6 +15,9 @@
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
 (defconst system-darwin-p (eq system-type 'darwin))
+(when (display-graphic-p)
+  (tool-bar-mode -1)
+  (scroll-bar-mode -1))
 
 (require 'init-native-comp)
 (require 'init-mackeys)
@@ -52,6 +55,8 @@
 (require 'init-ibuffer)
 (require 'init-desktop)
 (require 'init-undo-tree)
+
+(require 'init-zh-utils)
 
 (when system-darwin-p
   (when (maybe-require-package 'ns-auto-titlebar)

@@ -6,10 +6,6 @@
 ;; `follow-mode' is awesome.
 ;;; Code:
 
-(when (display-graphic-p)
-  (tool-bar-mode -1)
-  (scroll-bar-mode -1))
-
 (or (and system-darwin-p (display-graphic-p)) (menu-bar-mode -1))
 
 (fset 'yes-or-no-p 'y-or-n-p)

@@ -7,8 +7,8 @@
   (setq evil-want-keybinding nil)
   (require 'evil)
   (evil-mode 1)
-  (require-package 'evil-collection)
-  (evil-collection-init))
+  (when (require 'evil-collection nil t)
+    (evil-collection-init)))
 
 (provide 'init-evil)
 ;;; init-evil.el ends here

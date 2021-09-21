@@ -12,13 +12,6 @@
     (:name "Size" :inline t)
     (file-size-human-readable (buffer-size))))
 
-(defun ibuffer-set-up-preferred-filters ()
-  (ibuffer-vc-set-filter-groups-by-vc-root)
-  (unless (eq ibuffer-sorting-mode 'filename/process)
-    (ibuffer-do-sort-by-filename/process)))
-
-(add-hook 'ibuffer-hook 'ibuffer-set-up-preferred-filters)
-
 (setq ibuffer-formats
       '((mark modified read-only vc-status-mini " "
 	      (name 22 22 :left :elide)
