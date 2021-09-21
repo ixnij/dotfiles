@@ -25,7 +25,7 @@
    when (font-installed-p font)
    return (set-face-attribute 'default nil
 				      :font font
-				      :height 180))
+				      :height 160))
 
   ;; Specify font for all unicode characters
   (cl-loop for font in '("Apple Color Emoji" "Segoe UI Symbol" "Symbola" "Symbol")
