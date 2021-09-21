@@ -4,8 +4,11 @@
 
 ;;; Code:
 (when (maybe-require-package 'evil)
+  (setq evil-want-keybinding nil)
   (require 'evil)
-  (evil-mode 1))
+  (evil-mode 1)
+  (require-package 'evil-collection)
+  (evil-collection-init))
 
 (provide 'init-evil)
 ;;; init-evil.el ends here

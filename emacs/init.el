@@ -16,7 +16,6 @@
 
 (defconst system-darwin-p (eq system-type 'darwin))
 
-(require 'init-misc)
 (require 'init-native-comp)
 (require 'init-mackeys)
 (require 'init-fonts)
@@ -30,6 +29,7 @@
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
 (require 'init-elpa)
+(require 'init-misc)
 (require 'init-evil)
 (require-package 'diminish)
 (require-package 'restart-emacs)
