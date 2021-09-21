@@ -40,9 +40,13 @@
 
 (add-hook 'after-init-hook 'global-hl-line-mode)
 
-(global-so-long-mode 1)
+(global-so-long-mode t)
 
 (add-hook 'after-init-hook 'global-auto-revert-mode)
+
+(savehist-mode t)
+
+(recentf-mode t)
 
 (provide 'init-misc)
 ;;; Local Variables:
