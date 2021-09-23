@@ -1,6 +1,10 @@
-;;; init-desktop.el --- For sessions  -*- lexical-binding: t; -*-
+;;; init-session.el --- For sessions  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
+
+;;; TODO:
+
+;; [] replace built-in desktop with presp.
 
 ;;; Code:
 
@@ -16,4 +20,4 @@
 (desktop-save-mode t)
 
 (provide 'init-desktop)
-;;; init-desktop.el ends here
+;;; init-session.el ends here
