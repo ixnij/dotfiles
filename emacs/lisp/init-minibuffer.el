@@ -1,4 +1,4 @@
- ;;; init-searching.el --- Setup searching and minibuffer.  -*- lexical-binding: t; -*-
+ ;;; init-minibuffer.el --- Settings for minibuffer.  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 
@@ -28,8 +28,8 @@
   (global-set-key (kbd "C-h v") #'helpful-variable)
   (global-set-key (kbd "C-h k") #'helpful-key))
 
-(provide 'init-searching)
+(provide 'init-minibuffer)
 ;;; Local Variables:
 ;;; coding: utf-8
 ;;; End:
-;;; init-searching.el ends here
+;;; init-minibuffer.el ends here
