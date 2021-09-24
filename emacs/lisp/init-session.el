@@ -11,7 +11,6 @@
 (require 'desktop)
 (setq desktop-path (list user-emacs-directory)
       desktop-auto-save-timeout 600
-      desktop-restore-frames nil
       desktop-file-modtime (file-attribute-modification-time
 			    (file-attributes (desktop-full-file-name)))
       desktop-save t

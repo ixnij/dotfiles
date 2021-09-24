@@ -4,6 +4,7 @@
 
 ;;; Code:
 (when (maybe-require-package 'evil)
+  (setq evil-collection-setup-minibuffer t)
   (setq evil-want-keybinding nil)
   (require 'evil)
   (evil-mode 1)
