@@ -16,6 +16,13 @@
       (load-theme 'doom-one-light t))
   (load-theme 'doom-xcode t))
 
+(when (maybe-require-package 'doom-modeline)
+  (require 'doom-modeline)
+  (add-hook 'after-init-hook #'doom-modeline-mode)
+  (setq doom-modeline-enable-word-count t)
+  (setq doom-modeline-unicode-fallback t)
+  (setq doom-modeline-indent-info t))
+
 (provide 'init-look)
 ;;; Local Variables:
 ;;; coding: utf-8
