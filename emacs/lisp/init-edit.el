@@ -1,4 +1,4 @@
-;;; init-editing.el --- Editing utils.  -*- lexical-binding: t; -*-
+;;; init-edit.el --- Editing utils.  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 
@@ -37,8 +37,8 @@
 
 (global-set-key (kbd "RET") 'newline-and-indent)
 
-(provide 'init-editing)
+(provide 'init-edit)
 ;;; Local Variables:
 ;;; coding: utf-8
 ;;; End:
-;;; init-editing.el ends here
+;;; init-edit.el ends here

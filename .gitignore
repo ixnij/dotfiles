@@ -7,3 +7,5 @@
 # On macOS
 
 .DS_Store
+
+.\#*

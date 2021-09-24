@@ -19,5 +19,5 @@
       desktop-restore-eager t)
 (desktop-save-mode t)
 
-(provide 'init-desktop)
+(provide 'init-session)
 ;;; init-session.el ends here

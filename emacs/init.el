@@ -47,13 +47,13 @@
 (require 'init-lisp)
 (require 'init-md)
 
-(require 'init-editing)
+(require 'init-edit)
 (require 'init-lsp)
 (require 'init-git)
 (require 'init-look)
 (require 'init-dired)
 (require 'init-ibuffer)
-(require 'init-desktop)
+(require 'init-session)
 (require 'init-undo-tree)
 
 (require 'init-zh-utils)
