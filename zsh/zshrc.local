@@ -344,6 +344,12 @@ if [[ -x $(where nvim) ]]; then
 	alias nv=nvim
 fi
 
+alias nixre="darwin-rebuild switch"
+alias nixgc="nix-collect-garbage -d"
+alias nixq="nix-env -qaP"
+alias nixupgrade="sudo -i sh -c 'nix-channel --update && nix-env -iA nixpkgs.nix && launchctl stop org.nixos.nix-daemon && launchctl start org.nixos.nix-daemon"
+alias nixup="nix-env -u"
+
 # alias -s zip=unzip
 # alias -s lisp=emacs
 
@@ -366,146 +372,26 @@ alias ec="emacsclient -c -a ''"
 ### |_|  |_|_|___/\___\___|_|_|\__,_|_| |_|\___|\___/ \__,_|___/
 ###                 -- is for other programs and plugins settings (fzf, powerline, etc..)
 
-## For powerline-go
-
-## zmodload zsh/datetime
-##
-## function preexec() {
-##   __TIMER=$EPOCHREALTIME
-## }
-##
-##
-## function powerline_precmd() {
-##     PS1="$(powerline-go -error $? -jobs ${${(%):%j}:-0})"
-##
-##     # Uncomment the following line to automatically clear errors after showing
-##     # them once. This not only clears the error for powerline-go, but also for
-##     # everything else you run in that shell. Don't enable this if you're not
-##     # sure this is what you want.
-##
-##     #set "?"
-## }
-##
-## function install_powerline_precmd() {
-##   for s in "${precmd_functions[@]}"; do
-##     if [ "$s" = "powerline_precmd" ]; then
-##       return
-##     fi
-##   done
-##   precmd_functions+=(powerline_precmd)
-## }
-
-## function powerline_precmd() {
-##   local __ERRCODE=$?
-##   local __DURATION=0
-##
-##   if [ -n $__TIMER ]; then
-##     local __ERT=$EPOCHREALTIME
-##     __DURATION="$(($__ERT - ${__TIMER:-__ERT}))"
-##   fi
-##
-##   PS1="$(powerline-go -modules duration -duration $__DURATION -error $__ERRCODE -shell zsh)"
-##   unset __TIMER
-## }
-##
-
-## if [ "$TERM" != "linux" ] && [ -f "$(command -v powerline-go)" ]; then
-##     install_powerline_precmd
-## fi
-##
-
-# For zsh theme - powerlevel10k
-# [[ -s ~/powerlevel10k/powerlevel10k.zsh-theme ]] && source ~/powerlevel10k/powerlevel10k.zsh-theme
-
-# It's add by powerlevel10k
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# For autojump command plugin.
-# [[ -s /Users/thomas.wu/.autojump/etc/profile.d/autojump.sh ]] && source /Users/thomas.wu/.autojump/etc/profile.d/autojump.sh
-
-# For z.lua settings.
-
-# [[ -s ~/Projects/Repositories/z.lua/z.lua ]] &&  eval "$(lua ~/Projects/Repositories/z.lua/z.lua --init zsh)"
-
-# For powerline.
-# python_version=3.9
-# powerline_path=/opt/homebrew/lib/python${python_version}/site-packages/powerline/bindings/zsh/powerline.zsh
-
-# Set the Localtion of z.lua.
-# PLUGIN_HOME="$HOME/Projects/Repositories"
-# Z_LUA_LOCALTION="$PLUGIN_HOME/z.lua/z.lua"
-
 # Check if we can read given files and source those we can.
-# function xsource () {
-#    if (( ${#argv} < 1 )) ; then
-#        printf 'usage: xsource FILE(s)...\n' >&2
-#        return 1
-#    fi
-#
-#    while (( ${#argv} > 0 )) ; do
-#        [[ -r "$1" ]] && source "$1"
-#        shift
-#    done
-#    return 0
-# }
+function xsource () {
+   if (( ${#argv} < 1 )) ; then
+       printf 'usage: xsource FILE(s)...\n' >&2
+       return 1
+   fi
 
-#function xalias () {
-#    if [[ ! -x $(where $2) ]]; then
-#        printf "No $2 found.\n"
-#    else
-#       alias $1=$2
-#    fi
-#}
-
-# Install z.lua plugin if not exist.
-#if [[ ! -x "$(where zoxide)" ]]; then
-##	echo "Not found z.lua.\nInstall it."
-##	git clone --depth=1 https://github.com/skywind3000/z.lua $PLUGIN_HOME
-##	if [[ ! $? -eq 0 ]]; then
-##		git clone --depth=1 https://hub.fastgit.org/skywind3000/z.lua $PLUGIN_HOME
-##	fi
-#	if [[ ! -x "$(where brew)" ]]; then
-#		curl -sS https://webinstall.dev/zoxide | bash
-#                printf "Did't find homebrew. stop.\n\a"
-#                printf "If you want to install zoxide manually, \n"
-#                printf "Type the following command to do it.\n";
-#                printf "curl -sS https://webinstall.dev/zoxide | bash\n"
-#                printf "Your platform: %s." "$(uname)"
-#                printf "Package name: zoxide-*-apple-darwin.tar.gz"
-#                printf "Or wget https://github.com/ajeetdsouza/zoxide/releases/latest/zoxide-x86_64-unknown-linux-musl.tar.gz"
-#	else
-#		brew install zoxide
-#	fi
-#fi
-
-# For program: broot.
-# xsource /Users/thomas.wu/.config/broot/launcher/bash/br
-
-# The following is to set zsh prompt {- spaceship}.
-
-# python_package_repository_root="/Users/wu/Library/Python/3.9/lib/python/site-packages"
-# . ${python_package_repository_root}/powerline/bindings/zsh/powerline.zsh
-
-# if [[ "$TERM_PROGRAM" = "Apple_Terminal" ]]; then
-#	prompt walters
-# elif [[ -x "$(where starship)" ]]; then
-#	eval "$(starship init zsh)"
-# else
-# #	prompt grml
-#	prompt fade blue white
-# #	[[ -s $powerline_path ]] && source $powerline_path
-# fi
-#
-# I'm using `zoxide` instead z.lua or z.sh.
-
-# if [[ -x "$(command -v starship)" ]]; then
-#     eval "$(starship init zsh)"
-# fi
+   while (( ${#argv} > 0 )) ; do
+       [[ -r "$1" ]] && source "$1"
+       shift
+   done
+   return 0
+}
 
 if [[ -x "$(where zoxide)" ]]; then
 	eval "$(zoxide init zsh)"
 fi
+
+# For nix.
+xsource $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
 
 # End of file ##############################
 # vim:filetype=zsh
