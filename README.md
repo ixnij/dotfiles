@@ -1,3 +1,5 @@
 # Intro
 
 This repository stores my configuretion.
+
+Note: Nix does not have any offical shell completions.
