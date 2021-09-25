@@ -6,12 +6,13 @@
   environment.systemPackages =
     [ pkgs.vim
       pkgs.sbcl
-      pkgs.emacsGcc
+      pkgs.emacsUnstable
       pkgs.guile
       pkgs.lilypond
       pkgs.fzf
       pkgs.ripgrep
       pkgs.zoxide
+      pkgs.cloc
       pkgs.htop
     ];
 
@@ -31,11 +32,11 @@
   # $ darwin-rebuild changelog
   system.stateVersion = 4;
 
-   services.emacs.package = pkgs.emacsUnstable;
+  services.emacs.package = pkgs.emacsUnstable;
 
-   nixpkgs.overlays = [
-     (import (builtins.fetchTarball {
-       url = https://github.com/nix-community/emacs-overlay/archive/master.tar.gz;
-     }))
-   ];
+  nixpkgs.overlays = [
+    (import (builtins.fetchTarball {
+      url = https://github.com/nix-community/emacs-overlay/archive/master.tar.gz;
+    }))
+  ];
 }
