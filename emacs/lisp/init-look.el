@@ -4,6 +4,8 @@
 
 ;;; Code:
 
+(setq ns-system-appearance "dark")
+
 (when (maybe-require-package 'doom-themes)
   (setq doom-themes-enable-bold t
 	doom-themes-enable-italic t)

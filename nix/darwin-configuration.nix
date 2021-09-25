@@ -6,7 +6,7 @@
   environment.systemPackages =
     [ pkgs.vim
       pkgs.sbcl
-      pkgs.emacsUnstable
+      pkgs.emacsGit
       pkgs.guile
       pkgs.lilypond
       pkgs.fzf
