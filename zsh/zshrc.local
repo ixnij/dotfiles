@@ -393,6 +393,8 @@ fi
 # For nix.
 xsource $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
 
+export EDITOR=vim
+
 # End of file ##############################
 # vim:filetype=zsh
 # Local variables:
