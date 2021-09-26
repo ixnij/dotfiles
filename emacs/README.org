@@ -7,9 +7,11 @@
   For example:
 
   #+BEGIN_SRC bash
-  git submodule add https://github.com/foo/bar.git site-lisp/bar
-  git submodule init
-  git submodule update
+    git submodule add https://github.com/foo/bar.git site-lisp/bar
+    git submodule init
+    git submodule update
   #+END_SRC
 
  I'm using vertico instead of ivy.
+
+ The theme package =modus-themes= is good. tumashu recommands it.
