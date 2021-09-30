@@ -391,7 +391,7 @@ if [[ -x "$(where zoxide)" ]]; then
 fi
 
 # For nix.
-xsource $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
+# xsource $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
 
 export EDITOR=vim
 
