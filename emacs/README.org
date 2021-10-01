@@ -1,5 +1,7 @@
 * .emacs.d
 
+This is a very lightweight emacs configuretion file, with vim-keybinding(evil).
+
 I place the non-elpa packages in /site-lisp/ directly.
 
 I think it's ugly that manage the non-elpa packages
