@@ -1,17 +1,8 @@
-#+TITLE: Emacs configuretion files
-#+AUTHOR: Thomas Wu <ixnij.wu@gmail.com>
+* This is my emacs configuretion file.
 
-* Please place the non-melpa packages in *site-lisp*.
-  Managing the non-melpa packages by using git submodule.
+I place the non-elpa packages in /site-lisp/ directly.
 
-  For example:
+I think it's ugly that manage the non-elpa packages
+using git submodule(That's only a very *personal* opinion).
 
-  #+BEGIN_SRC bash
-    git submodule add https://github.com/foo/bar.git site-lisp/bar
-    git submodule init
-    git submodule update
-  #+END_SRC
-
- I'm using vertico instead of ivy.
-
- The theme package =modus-themes= is good. tumashu recommands it.
+I don't use use-package or leaf.el, but require-package from purcell.
