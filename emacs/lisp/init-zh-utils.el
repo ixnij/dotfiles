@@ -16,6 +16,7 @@
   (setq default-input-method "pyim")
   (pyim-default-scheme 'quanpin)
   (pyim-isearch-mode 1)
+  (diminish 'pyim-isearch-mode)
   (if (posframe-workable-p)
       (setq pyim-page-tooltip 'posframe)
     (setq pyim-page-tooltip 'popup))
