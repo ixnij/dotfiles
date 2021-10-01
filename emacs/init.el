@@ -56,6 +56,7 @@
 (require 'init-ibuffer)
 (require 'init-session)
 (require 'init-undo-tree)
+(require 'init-site-lisp)
 
 (require 'init-zh-utils)
 

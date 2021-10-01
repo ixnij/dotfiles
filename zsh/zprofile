@@ -26,6 +26,7 @@ export FZF_DEFAUlT_COMMAND="fd --type f"
 
 # On macOS:
 # export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
+export PATH="/usr/local/bin/:$PATH"
 
 # For nix
 # export NIX_PATH=darwin-config=$HOME/.nixpkgs/darwin-configuration.nix:$HOME/.nix-defexpr/channels${NIX_PATH:+:}$NIX_PATH

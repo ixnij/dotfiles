@@ -8,17 +8,18 @@
   (setq doom-themes-enable-bold t
 	doom-themes-enable-italic t)
   (doom-themes-org-config)
-  (doom-themes-visual-bell-config)
-  (load-theme 'doom-one-light t))
+  (doom-themes-visual-bell-config))
 
-(require-package 'modus-themes)
+;; (require-package 'modus-themes)
+(require-package 'nano-theme)
+(load-theme 'nano t)
 
 (defvar current-theme 'doom-one-light
   "Current theme.")
 
 (defvar ixnij/themes
-  '((light . doom-one-light)
-    (dark . modus-vivendi))
+  '((light . nano)
+    (dark . doom-1337))
   "The themes I'm using.")
 
 (defun ixnij/switch-theme ()
