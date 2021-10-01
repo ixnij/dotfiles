@@ -1,4 +1,4 @@
-* This is my emacs configuretion file.
+* .emacs.d
 
 I place the non-elpa packages in /site-lisp/ directly.
 
