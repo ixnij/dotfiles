@@ -4,26 +4,35 @@
 
 ;;; Code:
 
-(setq ns-system-appearance "dark")
-
 (when (maybe-require-package 'doom-themes)
   (setq doom-themes-enable-bold t
 	doom-themes-enable-italic t)
   (doom-themes-org-config)
   (doom-themes-visual-bell-config))
 
-(if (and system-darwin-p (display-graphic-p))
-    (if (string-equal ns-system-appearance "dark")
-        (load-theme 'doom-dracula t)
-      (load-theme 'doom-one-light t))
-  (load-theme 'doom-xcode t))
+(require-package 'modus-themes)
+(require-package 'doom-themes)
 
-(when (maybe-require-package 'doom-modeline)
-  (require 'doom-modeline)
-  (add-hook 'after-init-hook #'doom-modeline-mode)
-  (setq doom-modeline-enable-word-count t)
-  (setq doom-modeline-unicode-fallback t)
-  (setq doom-modeline-indent-info t))
+(defvar current-theme 'modus-vivendi
+  "Current theme.")
+
+(defvar ixnij/themes
+  '((dark . modus-vivendi)
+    (light . modus-operandi))
+  "The themes I'm using.")
+
+(defun ixnij/switch-theme ()
+  (interactive)
+  (let
+      ((light-theme (cdr (assoc 'light ixnij/themes)))
+       (dark-theme (cdr (assoc 'dark ixnij/themes))))
+    (if (equal current-theme dark-theme)
+	(progn 
+	  (load-theme light-theme)
+	  (setq current-theme light-theme))
+      (progn
+	(load-theme dark-theme)
+	(setq current-theme dark-theme)))))
 
 (provide 'init-look)
 ;;; Local Variables:

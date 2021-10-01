@@ -13,6 +13,8 @@
       pkgs.ripgrep
       pkgs.zoxide
       pkgs.cloc
+      pkgs.neofetch
+      pkgs.starship
       pkgs.htop
     ];
 
