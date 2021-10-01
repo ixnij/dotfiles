@@ -12,7 +12,9 @@
 
 ;; (require-package 'modus-themes)
 (require-package 'nano-theme)
-(load-theme 'nano t)
+(if (display-graphic-p)
+    (load-theme 'nano t)
+  (load-theme 'doom-one t))
 
 (defvar current-theme 'doom-one-light
   "Current theme.")
