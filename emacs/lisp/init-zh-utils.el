@@ -6,8 +6,7 @@
 
 (when (maybe-require-package 'cnfonts)
   (require 'cnfonts)
-  (cnfonts-enable)
-  (setq cnfonts-use-face-font-rescale t))
+  (cnfonts-enable))
 
 (when (maybe-require-package 'pyim)
   (require 'pyim)
@@ -18,8 +17,8 @@
   (pyim-default-scheme 'quanpin)
   (pyim-isearch-mode 1)
   (if (posframe-workable-p)
-    (setq pyim-page-tooltip 'posframe)
-  (setq pyim-page-tooltip 'popup))
+      (setq pyim-page-tooltip 'posframe)
+    (setq pyim-page-tooltip 'popup))
   (setq pyim-page-length 5))
 
 (provide 'init-zh-utils)

@@ -8,17 +8,17 @@
   (setq doom-themes-enable-bold t
 	doom-themes-enable-italic t)
   (doom-themes-org-config)
-  (doom-themes-visual-bell-config))
+  (doom-themes-visual-bell-config)
+  (load-theme 'doom-one-light t))
 
 (require-package 'modus-themes)
-(require-package 'doom-themes)
 
-(defvar current-theme 'modus-vivendi
+(defvar current-theme 'doom-one-light
   "Current theme.")
 
 (defvar ixnij/themes
-  '((dark . modus-vivendi)
-    (light . modus-operandi))
+  '((light . doom-one-light)
+    (dark . modus-vivendi))
   "The themes I'm using.")
 
 (defun ixnij/switch-theme ()
@@ -28,10 +28,12 @@
        (dark-theme (cdr (assoc 'dark ixnij/themes))))
     (if (equal current-theme dark-theme)
 	(progn 
-	  (load-theme light-theme)
+	  (load-theme light-theme t)
+	  (disable-theme current-theme)
 	  (setq current-theme light-theme))
       (progn
-	(load-theme dark-theme)
+	(load-theme dark-theme t)
+	(disable-theme current-theme)
 	(setq current-theme dark-theme)))))
 
 (provide 'init-look)
