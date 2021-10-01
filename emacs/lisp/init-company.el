@@ -12,7 +12,10 @@
 		  company-tooltip-align-annotations t))
   (global-set-key (kbd "M-C-/") 'company-complete)
   (setq company-minimum-prefix-length 1)
-  (setq company-idle-delay 0))
+  (setq company-idle-delay 0)
+  (when (maybe-require-package 'company-box)
+    (require 'company-box)
+    (add-hook 'company-mode-hook 'company-box-mode)))
 
 (provide 'init-company)
 ;;; Local Variable:

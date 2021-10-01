@@ -10,6 +10,9 @@
   (doom-themes-org-config)
   (doom-themes-visual-bell-config))
 
+;; For modeline.
+(column-number-mode 1)
+
 ;; (require-package 'modus-themes)
 (require-package 'nano-theme)
 (if (display-graphic-p)
