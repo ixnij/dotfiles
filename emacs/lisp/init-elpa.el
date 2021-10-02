@@ -62,7 +62,6 @@ locate PACKAGE."
 
 (let ((package-check-signature nil))
   (require-package 'gnu-elpa-keyring-update))
-(package-initialize)
 
 (require-package 'request)
 (defun find-fastest-mirror-for-me ()
@@ -96,6 +95,7 @@ Inspied by @xuchunyang https://emacs-china.org/t/elpa/11192/9"
 			       (if (eq symbol-status 'success)
 				   (request-response-header response "Last-Modified"))))))))))))
 
+(package-initialize)
 (provide 'init-elpa)
 ;;; Local Variables:
 ;;; coding: utf-8
