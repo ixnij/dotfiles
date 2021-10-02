@@ -1,10 +1,78 @@
-* .emacs.d
+* Dotfiles
 
-This is a very lightweight emacs configuretion file, with vim-keybinding(evil).
+** zsh
 
-I place the non-elpa packages in /site-lisp/ directly.
+我正在使用来自 grml 的 =.zshrc= ，搭配修改自 grml 的 =.zshrc.local= 。
+当然了，仓库中还有个叫做 =.zshrc= 的文件。可别误会，这是我自己配置的，
+而不是 grml 的，现在我只是偶尔更新一下，当作一个备用选项。
 
-I think it's ugly that manage the non-elpa packages
-using git submodule(That's only a very *personal* opinion).
+这里我摘录一下 grml 的安装建议（说明）：
 
-I don't use use-package or leaf.el, but require-package from purcell.
+#+begin_src  shell
+wget -O .screenrc     https://git.grml.org/f/grml-etc-core/etc/grml/screenrc_generic
+wget -O .tmux.conf    https://git.grml.org/f/grml-etc-core/etc/tmux.conf
+wget -O .vimrc        https://git.grml.org/f/grml-etc-core/etc/vim/vimrc
+wget -O .zshrc        https://git.grml.org/f/grml-etc-core/etc/zsh/zshrc
+#+end_src
+
+更多信息请访问 grml 的[[https://grml.org/console/][官方网站。]]
+
+** .emacs.d
+
+我的 emacs 配置带有 vim 编辑器的按键绑定，使用了 evil 的方案。
+我没有使用社区中比较流行的 use-package 或者 leaf.el ，而是选择了和 purcell 一样的方案 （实际上就是抄）。
+
+*** 关于主题
+
+我在使用 nano 主题。据 tumashu 说，modus-themes 系列主题也非常棒。
+
+我曾经使用 spacemacs-themes 和 doom-themes。
+
+*** 关于字体
+
+在 macOS(即 Darwin) 上，我使用 Monoca 字体和 SF Mono 字体。
+
+至于中文字体，用了 tumashu 的 cnfonts 来完成设置。
+
+顺便提一下，我就是在 emacs 上用 pyim 写这份文件的，感谢 tumashu 同学的努力 :)
+
+*** 关于第三方的插件
+
+我之前使用 git submodule 的方式管理第三方的包（也就是 non-elpa 的包）。
+类似于这样的形式：
+
+#+begin_src shell
+git submodule add https://github.com/tumashu/pyim.git
+git submodule init
+git submodule update
+#+end_src
+
+但是，我感觉这样的方式虽然部署比较方便，但下载有些麻烦。要么是加上 =--reverse= 选项，要么是
+克隆这个配置文件仓库之后再去执行 =git submodule init= 和 =git submodule update= 这样的操作。
+不管是上述的哪一个操作，都比较繁琐。
+
+所以我现在决定，把第三方插件以 =foo.el= 的方式提取出来，直接放在配置文件的 /site-lisp/ 目录下。
+
+** vim
+
+抄袭 grml。
+
+** dictd
+
+现在不用了。
+
+** kitty
+
+现在我只在 macOS 上使用 iterm2 。
+
+** starship
+
+我不需要这么个花里胡哨的东西了，所以算是不用了。
+
+** powerline
+
+同上。
+
+** neofetch
+
+同上。
