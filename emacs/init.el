@@ -56,9 +56,10 @@
 (require 'init-ibuffer)
 (require 'init-session)
 (require 'init-undo-tree)
-(require 'init-site-lisp)
 
 (require 'init-zh-utils)
+
+(require 'init-site-lisp)
 
 (when system-darwin-p
   (when (maybe-require-package 'ns-auto-titlebar)

@@ -11,6 +11,7 @@
 ;;   (awesome-tab-mode t))
 
 (require 'nano-modeline)
+(nano-modeline)
 
 (provide 'init-site-lisp)
 ;;; init-site-lisp.el ends here

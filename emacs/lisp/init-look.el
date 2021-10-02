@@ -16,10 +16,12 @@
 ;; (require-package 'modus-themes)
 (require-package 'nano-theme)
 (if (display-graphic-p)
-    (load-theme 'nano t)
+    (progn
+      (require 'nano-theme)
+      (nano-dark))
   (load-theme 'doom-one t))
 
-(defvar current-theme 'doom-one-light
+(defvar current-theme 'nano
   "Current theme.")
 
 (defvar ixnij/themes
