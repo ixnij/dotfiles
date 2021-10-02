@@ -6,9 +6,11 @@
 
 (add-to-list 'load-path (expand-file-name "site-lisp" user-emacs-directory))
 
-(require 'awesome-tab)
-(when (display-graphic-p)
-  (awesome-tab-mode t))
+;; (require 'awesome-tab)
+;; (when (display-graphic-p)
+;;   (awesome-tab-mode t))
+
+(require 'nano-modeline)
 
 (provide 'init-site-lisp)
 ;;; init-site-lisp.el ends here
