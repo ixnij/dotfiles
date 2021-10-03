@@ -33,9 +33,11 @@
 (when (maybe-require-package 'page-break-lines)
   (add-hook 'after-init-hook 'global-page-break-lines-mode)
   (with-eval-after-load 'page-break-lines
-    (diminish 'page-break-lines-mode)))
+	(diminish 'page-break-lines-mode)))
 
 (global-set-key (kbd "RET") 'newline-and-indent)
+
+(setq tab-width 4)
 
 (provide 'init-edit)
 ;;; Local Variables:

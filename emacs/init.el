@@ -19,6 +19,16 @@
   (tool-bar-mode -1)
   (scroll-bar-mode -1))
 
+(defvar ixnij/enable-pyim-p nil
+  "Is pyim should be enable?")
+
+(defvar ixnij/enable-emacs-rime-p t
+  "Is emacs-rime should be enable?")
+
+(when ixnij/enable-pyim-p
+  (defvar ixnij/pyim-use-rime-p t
+    "Should pyim use rime?"))
+
 (require 'init-native-comp)
 (require 'init-mackeys)
 (require 'init-fonts)

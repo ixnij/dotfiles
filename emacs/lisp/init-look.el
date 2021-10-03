@@ -13,22 +13,19 @@
 ;; For modeline.
 (column-number-mode 1)
 
-(defvar current-theme 'nano
+(defvar current-theme 'doom-one
   "Current theme.")
 
 ;; (require-package 'modus-themes)
 (require-package 'nano-theme)
 (if (display-graphic-p)
-    (progn
-      (disable-theme current-theme)1
-      (require 'nano-theme)
-      (nano-dark))
+    (load-theme 'doom-one-light t)
   (load-theme 'doom-one t))
 
 
 (defvar ixnij/themes
-  '((light . spacemacs-light)
-    (dark . spacemacs-dark))
+  '((light . doom-one-light)
+    (dark . doom-one))
   "The themes I'm using.")
 
 (defun ixnij/switch-theme ()
