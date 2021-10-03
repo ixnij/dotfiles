@@ -1,6 +1,6 @@
-* Dotfiles
+#+Title Dotfiles
 
-** zsh
+* zsh
 
 我正在使用来自 grml 的 =.zshrc= ，搭配修改自 grml 的 =.zshrc.local= 。
 当然了，仓库中还有个叫做 =.zshrc= 的文件。可别误会，这是我自己配置的，
@@ -17,18 +17,18 @@ wget -O .zshrc        https://git.grml.org/f/grml-etc-core/etc/zsh/zshrc
 
 更多信息请访问 grml 的[[https://grml.org/console/][官方网站。]]
 
-** .emacs.d
+* .emacs.d
 
 我的 emacs 配置带有 vim 编辑器的按键绑定，使用了 evil 的方案。
 我没有使用社区中比较流行的 use-package 或者 leaf.el ，而是选择了和 purcell 一样的方案 （实际上就是抄）。
 
-*** 关于主题
+** 关于主题
 
 我在使用 nano 主题。据 tumashu 说，modus-themes 系列主题也非常棒。
 
 我曾经使用 spacemacs-themes 和 doom-themes。
 
-*** 关于字体
+** 关于字体
 
 在 macOS(即 Darwin) 上，我使用 Monoca 字体和 SF Mono 字体。
 
@@ -36,7 +36,7 @@ wget -O .zshrc        https://git.grml.org/f/grml-etc-core/etc/zsh/zshrc
 
 顺便提一下，我就是在 emacs 上用 pyim 写这份文件的，感谢 tumashu 同学的努力 :)
 
-*** 关于第三方的插件
+** 关于第三方的插件
 
 我之前使用 git submodule 的方式管理第三方的包（也就是 non-elpa 的包）。
 类似于这样的形式：
@@ -53,26 +53,26 @@ git submodule update
 
 所以我现在决定，把第三方插件以 =foo.el= 的方式提取出来，直接放在配置文件的 /site-lisp/ 目录下。
 
-** vim
+* vim
 
 抄袭 grml。
 
-** dictd
+* dictd
 
 现在不用了。
 
-** kitty
+* kitty
 
 现在我只在 macOS 上使用 iterm2 。
 
-** starship
+* starship
 
 我不需要这么个花里胡哨的东西了，所以算是不用了。
 
-** powerline
+* powerline
 
 同上。
 
-** neofetch
+* neofetch
 
 同上。
