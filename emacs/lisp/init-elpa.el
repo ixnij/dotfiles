@@ -10,12 +10,12 @@
 
 (require 'package)
 
-(defconst package-mirror-alist
+(defconst ixnij/package-mirror-alist
   '((default
       ("gnu"          . "https://elpa.gnu.org/packages/")
       ("melpa"        . "https://melpa.org/packages/")
       ("org"          . "https://orgmode.org/elpa/"))
-    (emacs-china
+   (emacs-china
      ("gnu"          . "https://elpa.emacs-china.org/gnu/")
      ("melpa"        . "https://elpa.emacs-china.org/melpa/")
      ("org"          . "https://elpa.emacs-china.org/org/"))
@@ -25,7 +25,7 @@
      ("org" . "https://mirrors.sjtug.sjtu.edu.cn/emacs-elpa/org/")
      )))
 
-(setq package-archives (assoc-default 'default package-mirror-alist)) 
+(setq package-archives (assoc-default 'default ixnij/package-mirror-alist)) 
 
 ;; Work-around for https://debbugs.gnu.org/cgi/bugreport.cgi?bug=34341
 (when (and (version< emacs-version "26.3") (boundp 'libgnutls-version) (>= libgnutls-version 30604))
@@ -73,7 +73,7 @@ Inspied by @xuchunyang https://emacs-china.org/t/elpa/11192/9"
   (with-output-to-temp-buffer "*Elpa mirror test*"
     (princ "  score (s)  mirror                        last updated\n")
     (princ "-----------  ----------------------------  ------------------\n"))
-  (dolist (mirror package-mirror-alist)
+  (dolist (mirror ixnij/package-mirror-alist)
     (let ((url (cdr (assoc "melpa" mirror)))
 	  (begin-time (float-time (current-time)))
 	  (request-backend (car '(curl url-retrieve))))
@@ -95,7 +95,6 @@ Inspied by @xuchunyang https://emacs-china.org/t/elpa/11192/9"
 			       (if (eq symbol-status 'success)
 				   (request-response-header response "Last-Modified"))))))))))))
 
-(package-initialize)
 (provide 'init-elpa)
 ;;; Local Variables:
 ;;; coding: utf-8

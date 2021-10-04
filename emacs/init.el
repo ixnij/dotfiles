@@ -45,6 +45,7 @@
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
 (require 'init-elpa)
+(package-initialize)
 (require-package 'diminish)
 
 (require 'init-misc)
