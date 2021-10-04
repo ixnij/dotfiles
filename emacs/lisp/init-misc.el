@@ -47,6 +47,8 @@
 (diminish 'hs-minor-mode)
 (add-hook 'prog-mode-hook 'hs-minor-mode)
 
+(require-package 'restart-emacs)
+
 (provide 'init-misc)
 ;;; Local Variables:
 ;;; coding: utf-8

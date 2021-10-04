@@ -42,10 +42,10 @@
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
 (require 'init-elpa)
+(require-package 'diminish)
+
 (require 'init-misc)
 (require 'init-evil)
-(require-package 'diminish)
-(require-package 'restart-emacs)
 
 (when (maybe-require-package 'ace-window)
   (global-set-key (kbd "M-o") 'ace-window))
