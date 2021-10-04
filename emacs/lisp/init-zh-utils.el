@@ -42,5 +42,9 @@
     (setq rime-emacs-module-header-root "/opt/homebrew/Cellar/emacs-plus@28/28.0.50/include")
     (setq rime-show-candidate 'posframe)))
 
+(when (maybe-require-package 'fanyi)
+  (require 'fanyi)
+  )
+
 (provide 'init-zh-utils)
 ;;; init-zh-utils.el ends here

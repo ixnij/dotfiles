@@ -40,7 +40,7 @@
       (init-gc-cons-threshold (* 128 1024 1024)))
   (setq gc-cons-threshold init-gc-cons-threshold)
   (add-hook 'emacs-startup-hook
-	    (lambda () (setq gc-cons-threshold normal-gc-cons-threshold))))
+            (lambda () (setq gc-cons-threshold normal-gc-cons-threshold))))
 
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
@@ -82,10 +82,10 @@
     (ns-auto-titlebar-mode)))
 
 (add-hook 'after-init-hook
-	  (lambda ()
-	    (require 'server)
-	    (unless (server-running-p)
-	      (server-start))))
+          (lambda ()
+            (require 'server)
+            (unless (server-running-p)
+              (server-start))))
 
 (provide 'init)
 ;; Local Variables:
