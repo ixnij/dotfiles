@@ -29,6 +29,9 @@
   (defvar ixnij/pyim-use-rime-p t
     "Should pyim use rime?"))
 
+(defvar ixnij/meow-enable-p nil
+  "Should we enable meow?")
+
 (require 'init-native-comp)
 (require 'init-mackeys)
 (require 'init-fonts)
@@ -46,6 +49,9 @@
 
 (require 'init-misc)
 (require 'init-evil)
+
+(when ixnij/meow-enable-p
+  (require 'init-meow))
 
 (when (maybe-require-package 'ace-window)
   (global-set-key (kbd "M-o") 'ace-window))
