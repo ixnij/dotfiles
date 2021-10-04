@@ -12,12 +12,21 @@
 (when (version< emacs-version "27.1")
   (message "Your Emacs is old, and some functionality in this config will be disabled. Please upgrade if possible."))
 
+
+
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
+
+
 (defconst system-darwin-p (eq system-type 'darwin))
+
+
+
 (when (display-graphic-p)
   (tool-bar-mode -1)
   (scroll-bar-mode -1))
+
+
 
 (defvar ixnij/enable-pyim-p nil
   "Is pyim should be enable?")
@@ -31,6 +40,8 @@
 
 (defvar ixnij/meow-enable-p nil
   "Should we enable meow?")
+
+
 
 (require 'init-native-comp)
 (require 'init-mackeys)
@@ -77,6 +88,8 @@
 (require 'init-zh-utils)
 
 (require 'init-site-lisp)
+
+
 
 (when system-darwin-p
   (when (maybe-require-package 'ns-auto-titlebar)

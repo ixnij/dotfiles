@@ -10,6 +10,8 @@
 
 (require 'package)
 
+
+
 (defconst ixnij/package-mirror-alist
   '((default
       ("gnu"          . "https://elpa.gnu.org/packages/")
@@ -27,9 +29,13 @@
 
 (setq package-archives (assoc-default 'default ixnij/package-mirror-alist)) 
 
+
+
 ;; Work-around for https://debbugs.gnu.org/cgi/bugreport.cgi?bug=34341
 (when (and (version< emacs-version "26.3") (boundp 'libgnutls-version) (>= libgnutls-version 30604))
   (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3"))
+
+
 
 (defun require-package (package &optional min-version no-refresh)
   "Install given PACKAGE, optionally requiring MIN-VERSION.
@@ -60,8 +66,12 @@ locate PACKAGE."
      (message "Couldn't install optional package `%s': %S" package err)
      nil)))
 
+
+
 (let ((package-check-signature nil))
   (require-package 'gnu-elpa-keyring-update))
+
+
 
 (require-package 'request)
 (defun find-fastest-mirror-for-me ()

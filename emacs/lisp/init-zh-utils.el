@@ -9,6 +9,8 @@
   (require 'cnfonts)
   (cnfonts-enable))
 
+
+
 ;; Pyim
 
 (when ixnij/enable-pyim-p
@@ -31,6 +33,8 @@
       (with-eval-after-load "liberime"
 	(liberime-try-select-schema "luna_pinyin_simp")
 	(setq pyim-default-scheme 'rime-quanpin)))))
+
+
 
 ;; Emacs-rime
 
