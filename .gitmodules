@@ -1,0 +1,3 @@
+[submodule "emacs/pyim"]
+	path = emacs/pyim
+	url = https://github.com/tumashu/pyim.git

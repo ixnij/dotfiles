@@ -1,5 +1,9 @@
 #+title: Dotfiles
 
+* Intro
+
+你最好添加 =--depth=1= 這樣的選項（在克隆的時候）。
+
 * zsh
 
 我正在使用来自 grml 的 =.zshrc= ，搭配修改自 grml 的 =.zshrc.local= 。
