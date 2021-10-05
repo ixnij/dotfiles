@@ -1,4 +1,4 @@
-;;; init-mackeyss.el --- For keyboard keybindings in darwin.  -*- lexical-binding: t; -*- 
+;;; init-mackeyss.el --- For keyboard keybindings in darwin.  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 
@@ -8,8 +8,8 @@
   (setq mac-option-modifier 'none)
   ;; Make mouse wheel / trackpad scrolling less jerky
   (setq mouse-wheel-scroll-amount '(1
-                                    ((shift) . 5)
-                                    ((control))))
+				    ((shift) . 5)
+				    ((control))))
   (dolist (multiple '("" "double-" "triple-"))
     (dolist (direction '("right" "left"))
       (global-set-key (read-kbd-macro (concat "<" multiple "wheel-" direction ">")) 'ignore)))
