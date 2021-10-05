@@ -78,6 +78,7 @@
 (require 'init-lisp)
 (require 'init-md)
 (require 'init-haskell)
+(require 'init-nix)
 
 (require 'init-edit)
 (require 'init-lsp)

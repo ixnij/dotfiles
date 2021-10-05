@@ -29,7 +29,7 @@ export FZF_DEFAUlT_COMMAND="fd --type f"
 # export PATH="/usr/local/bin/:$PATH"
 
 # For nix
-# export NIX_PATH=darwin-config=$HOME/.nixpkgs/darwin-configuration.nix:$HOME/.nix-defexpr/channels${NIX_PATH:+:}$NIX_PATH
+export NIX_PATH=$HOME/.nix-defexpr/channels${NIX_PATH:+:}$NIX_PATH
 
 # End of file ##############################
 # vim:filetype=zsh
