@@ -49,6 +49,9 @@
 
 (require-package 'restart-emacs)
 
+(when (maybe-require-package 'paradox)
+  (paradox-enable))
+
 (provide 'init-misc)
 ;;; Local Variables:
 ;;; coding: utf-8
