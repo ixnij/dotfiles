@@ -24,7 +24,7 @@
      (dot . t)
      (emacs-lisp . t)
      (gnuplot . t)
-     (haskell . nil)
+     (haskell . t)
      (latex . t)
      (ocaml . nil)
      (octave . t)
