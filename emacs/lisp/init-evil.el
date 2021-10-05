@@ -3,6 +3,7 @@
 ;;; Commentary:
 
 ;;; Code:
+
 (when (maybe-require-package 'evil)
   (setq evil-want-keybinding nil)
   (require 'evil)

@@ -71,7 +71,7 @@
 (require 'init-exec-path)
 (require 'init-minibuffer)
 (require 'init-company)
-(require 'init-org)
+;; (require 'init-org)
 
 (require 'init-lisp)
 (require 'init-md)

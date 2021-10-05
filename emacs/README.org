@@ -61,22 +61,6 @@ git submodule update
 
 抄袭 grml。
 
-* dictd
+* TODO
 
-现在不用了。
-
-* kitty
-
-现在我只在 macOS 上使用 iterm2 。
-
-* starship
-
-我不需要这么个花里胡哨的东西了，所以算是不用了。
-
-* powerline
-
-同上。
-
-* neofetch
-
-同上。
+使用 =el-get= 管理第三方 Lisp 代碼片段。
