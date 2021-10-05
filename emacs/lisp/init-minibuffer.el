@@ -22,6 +22,7 @@
   (define-key vertico-map "RET" #'vertico-directory-enter)
   (define-key vertico-map "DEL" #'vertico-directory-delete-char)
   (define-key vertico-map "M-DEL" #'vertico-directory-delete-word)
+
   (when (maybe-require-package 'marginalia)
     (add-hook 'after-init-hook 'marginalia-mode))
   (when (maybe-require-package 'consult)
