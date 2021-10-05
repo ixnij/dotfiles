@@ -10,22 +10,19 @@
   (doom-themes-org-config)
   (doom-themes-visual-bell-config))
 
+
+
 ;; For modeline.
 (column-number-mode 1)
+
+
 
 (defvar current-theme 'doom-one
   "Current theme.")
 
-;; (require-package 'modus-themes)
-(require-package 'nano-theme)
-(if (display-graphic-p)
-    (load-theme 'doom-one-light t)
-  (load-theme 'doom-one t))
-
-
 (defvar ixnij/themes
   '((light . doom-one-light)
-    (dark . doom-one))
+    (dark . doom-solarized-dark))
   "The themes I'm using.")
 
 (defun ixnij/switch-theme ()
@@ -42,6 +39,7 @@
 	(load-theme dark-theme t)
 	(disable-theme current-theme)
 	(setq current-theme dark-theme)))))
+(ixnij/switch-theme)
 
 (provide 'init-look)
 ;;; Local Variables:
