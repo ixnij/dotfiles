@@ -55,6 +55,8 @@
 
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
+(require 'init-site-lisp)
+
 (require 'init-elpa)
 (package-initialize)
 (require-package 'diminish)
@@ -86,9 +88,6 @@
 (require 'init-undo-tree)
 
 (require 'init-zh-utils)
-
-(require 'init-site-lisp)
-
 
 
 (when system-darwin-p

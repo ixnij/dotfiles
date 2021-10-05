@@ -4,7 +4,7 @@
 
 ;;; Code:
 
-;; (add-to-list 'load-path (expand-file-name "site-lisp" user-emacs-directory))
+(add-to-list 'load-path (expand-file-name "site-lisp" user-emacs-directory))
 
 ;; (require 'awesome-tab)
 ;; (when (display-graphic-p)

@@ -15,6 +15,13 @@
     (setq-local completion-styles '(substring orderless)))
   (add-hook 'minibuffer-setup-hook 'ixnij/use-orderless-in-minibuffer)
 
+  (require-package 'savehist)
+  (add-hook 'after-init-hook #'savehist-mode)
+
+  (require 'vertico-directory)
+  (define-key vertico-map "RET" #'vertico-directory-enter)
+  (define-key vertico-map "DEL" #'vertico-directory-delete-char)
+  (define-key vertico-map "M-DEL" #'vertico-directory-delete-word)
   (when (maybe-require-package 'marginalia)
     (add-hook 'after-init-hook 'marginalia-mode))
   (when (maybe-require-package 'consult)
