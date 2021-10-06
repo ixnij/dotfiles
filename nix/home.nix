@@ -109,6 +109,7 @@
     {
       l = "ls -lha";
       gt = "git status";
+      ls = "exa -lha";
     };
 
   programs.zsh.sessionVariables = rec {
