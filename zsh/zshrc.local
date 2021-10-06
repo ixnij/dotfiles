@@ -115,7 +115,7 @@ setopt interactivecomments
 
 ## if a new command line being added to the history list duplicates an older
 ## one, the older command is removed from the list
-is4 && setopt histignorealldups
+# is4 && setopt histignorealldups
 
 ## compsys related snippets ##
 
@@ -336,13 +336,13 @@ alias gt='git status'
 #    alias ls="exa -h --git"
 #fi
 
-if [[ -x $(where batcat) ]]; then
-	alias bat=batcat
-fi
-
-if [[ -x $(where nvim) ]]; then
-	alias nv=nvim
-fi
+# if [[ -x $(where batcat) ]]; then
+# 	alias bat=batcat
+# fi
+# 
+# if [[ -x $(where nvim) ]]; then
+# 	alias nv=nvim
+# fi
 
 # alias -s zip=unzip
 # alias -s lisp=emacs
