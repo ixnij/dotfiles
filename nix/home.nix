@@ -36,11 +36,14 @@
   programs.fzf.enableZshIntegration = true;
   programs.fzf.defaultCommand = "fd --type f";
   programs.fzf.defaultOptions = [
-    "--height 40%"
-    "--border"];
+    "--height 50%"
+    "--border"
+    "--layout=reverse"
+    "--info=inline"
+  ];
 
   programs.fzf.changeDirWidgetOptions = [
-    "--preview 'tree -C {} | head -200'"
+    "--preview 'bat --style=numbers --color=always --theme=gruvbox-dark --line-range :500 {}'"
   ];
 
   programs.zoxide.enable = true;
