@@ -107,7 +107,8 @@
     programs.zsh.prezto.prompt.theme = "random";
     programs.zsh.prezto.python.virtualenvAutoSwitch = true;
 
-    systemd.user.sessionVariables = {
-      EDITOR = "emacs";
-    };
+#    systemd.user.sessionVariables = {
+#      EDITOR = "emacs";
+#    };
+
 }
