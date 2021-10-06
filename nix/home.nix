@@ -27,7 +27,7 @@
     pkgs.sbcl
     pkgs.guile
     pkgs.cloc
-    pkgs.nvimpager
+# pkgs.nvimpager
     pkgs.emacs
     pkgs.zoxide
   ];
@@ -104,7 +104,10 @@
     programs.zsh.prezto.gnuUtility.prefix = "g";
     programs.zsh.prezto.historySubstring.foundColor = "fg=blue";
 
-    programs.zsh.prezto.prompt.theme = "sorin";
+    programs.zsh.prezto.prompt.theme = "random";
     programs.zsh.prezto.python.virtualenvAutoSwitch = true;
 
+    systemd.user.sessionVariables = {
+      EDITOR = "emacs";
+    };
 }
