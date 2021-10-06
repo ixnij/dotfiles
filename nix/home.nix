@@ -27,7 +27,6 @@
     pkgs.sbcl
     pkgs.guile
     pkgs.cloc
-    pkgs.bat
     pkgs.emacs
     pkgs.zoxide
   ];
@@ -71,4 +70,10 @@
       l = "ls -lha";
       gt = "git status";
     };
+  programs.bat.enable = true;
+
+  programs.bat.config = {
+    theme = "TwoDark";
+    pager = "less -FR";
+  };
 }
