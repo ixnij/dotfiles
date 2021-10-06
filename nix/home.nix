@@ -25,9 +25,9 @@
     pkgs.ripgrep
     pkgs.fd
     pkgs.sbcl
+    pkgs.neofetch
     pkgs.guile
     pkgs.cloc
-# pkgs.nvimpager
     pkgs.emacs
     pkgs.zoxide
   ];
@@ -53,6 +53,42 @@
   programs.broot.enableZshIntegration = true;
   programs.broot.modal = true;
 
+  programs.bat.enable = true;
+
+  programs.bat.config = {
+    theme = "TwoDark";
+    pager = "less -FR";
+  };
+
+  programs.neovim.enable = true;
+
+  programs.neovim.plugins = with pkgs.vimPlugins; [
+    vim-nix
+    { plugin = vim-startify;
+      config = "let g:startify_change_to_vcs_root = 0";
+    }
+  ];
+
+  programs.zsh.prezto.enable = true;
+
+  programs.zsh.prezto.autosuggestions.color = "fg=blue";
+
+  programs.zsh.prezto.caseSensitive = true;
+
+  programs.zsh.prezto.editor.dotExpansion = true;
+
+  programs.zsh.prezto.editor.keymap = "emacs";
+
+  programs.zsh.prezto.editor.promptContext = true;
+
+  programs.zsh.prezto.gnuUtility.prefix = "g";
+  programs.zsh.prezto.historySubstring.foundColor = "fg=blue";
+
+  programs.zsh.prezto.prompt.theme = "random";
+  programs.zsh.prezto.python.virtualenvAutoSwitch = true;
+
+  programs.zsh.dotDir = "~/.config/zsh";
+
   programs.zsh.enable = true;
 
   programs.zsh.enableAutosuggestions = true;
@@ -65,6 +101,7 @@
   ];
 
   programs.zsh.defaultKeymap = "emacs";
+  programs.zsh.history.path = "~/.config/zsh/history";
   programs.zsh.history.save = 50000;
   programs.zsh.shellAliases =
     {
@@ -72,43 +109,7 @@
       gt = "git status";
     };
 
-    programs.bat.enable = true;
-
-    programs.bat.config = {
-      theme = "TwoDark";
-      pager = "less -FR";
-    };
-
-
-    programs.neovim.enable = true;
-
-    programs.neovim.plugins = with pkgs.vimPlugins; [
-      vim-nix
-      { plugin = vim-startify;
-      config = "let g:startify_change_to_vcs_root = 0";
-      }
-    ];
-
-    programs.zsh.prezto.enable = true;
-
-    programs.zsh.prezto.autosuggestions.color = "fg=blue";
-
-    programs.zsh.prezto.caseSensitive = true;
-
-    programs.zsh.prezto.editor.dotExpansion = true;
-
-    programs.zsh.prezto.editor.keymap = "emacs";
-
-    programs.zsh.prezto.editor.promptContext = true;
-
-    programs.zsh.prezto.gnuUtility.prefix = "g";
-    programs.zsh.prezto.historySubstring.foundColor = "fg=blue";
-
-    programs.zsh.prezto.prompt.theme = "random";
-    programs.zsh.prezto.python.virtualenvAutoSwitch = true;
-
-#    systemd.user.sessionVariables = {
-#      EDITOR = "emacs";
-#    };
-
+  programs.zsh.sessionVariables = rec {
+    EDITOR = "nvim";
+  };
 }
