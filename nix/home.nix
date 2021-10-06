@@ -68,5 +68,4 @@
       l = "ls -lha";
       gt = "git status";
     };
-  programs.zsh.enableAutosuggestions = true;
 }
