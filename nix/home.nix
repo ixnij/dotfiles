@@ -25,9 +25,11 @@
     pkgs.ripgrep
     pkgs.fd
     pkgs.sbcl
+    pkgs.less
     pkgs.neofetch
     pkgs.guile
     pkgs.cloc
+    pkgs.exa
     pkgs.emacs
     pkgs.zoxide
   ];
