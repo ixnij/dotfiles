@@ -26,6 +26,9 @@
     pkgs.ripgrep
     pkgs.fd
     pkgs.fzf
+    pkgs.sbcl
+    pkgs.guile
+    pkgs.cloc
     pkgs.bat
     pkgs.emacs
   ];

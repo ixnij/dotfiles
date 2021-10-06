@@ -344,12 +344,6 @@ if [[ -x $(where nvim) ]]; then
 	alias nv=nvim
 fi
 
-alias nixre="darwin-rebuild switch"
-alias nixgc="nix-collect-garbage -d"
-alias nixq="nix-env -qaP"
-alias nixupgrade="sudo -i sh -c 'nix-channel --update && nix-env -iA nixpkgs.nix && launchctl stop org.nixos.nix-daemon && launchctl start org.nixos.nix-daemon"
-alias nixup="nix-env -u"
-
 # alias -s zip=unzip
 # alias -s lisp=emacs
 
