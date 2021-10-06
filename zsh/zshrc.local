@@ -385,9 +385,8 @@ if [[ -x "$(where zoxide)" ]]; then
 fi
 
 # For nix.
-# xsource $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
-
-export EDITOR=vim
+xsource "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
+export NIX_PATH=$HOME/.nix-defexpr/channels${NIX_PATH:+:}$NIX_PATH
 
 # End of file ##############################
 # vim:filetype=zsh

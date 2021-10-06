@@ -22,7 +22,6 @@
   home.packages = [
     pkgs.htop
     pkgs.fortune
-    pkgs.zoxide
     pkgs.ripgrep
     pkgs.fd
     pkgs.fzf
@@ -31,6 +30,7 @@
     pkgs.cloc
     pkgs.bat
     pkgs.emacs
+    pkgs.zoxide
   ];
 
 }
