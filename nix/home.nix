@@ -27,6 +27,7 @@
     pkgs.sbcl
     pkgs.guile
     pkgs.cloc
+    pkgs.nvimpager
     pkgs.emacs
     pkgs.zoxide
   ];
@@ -70,10 +71,40 @@
       l = "ls -lha";
       gt = "git status";
     };
-  programs.bat.enable = true;
 
-  programs.bat.config = {
-    theme = "TwoDark";
-    pager = "less -FR";
-  };
+    programs.bat.enable = true;
+
+    programs.bat.config = {
+      theme = "TwoDark";
+      pager = "less -FR";
+    };
+
+
+    programs.neovim.enable = true;
+
+    programs.neovim.plugins = with pkgs.vimPlugins; [
+      vim-nix
+      { plugin = vim-startify;
+      config = "let g:startify_change_to_vcs_root = 0";
+      }
+    ];
+
+    programs.zsh.prezto.enable = true;
+
+    programs.zsh.prezto.autosuggestions.color = "fg=blue";
+
+    programs.zsh.prezto.caseSensitive = true;
+
+    programs.zsh.prezto.editor.dotExpansion = true;
+
+    programs.zsh.prezto.editor.keymap = "emacs";
+
+    programs.zsh.prezto.editor.promptContext = true;
+
+    programs.zsh.prezto.gnuUtility.prefix = "g";
+    programs.zsh.prezto.historySubstring.foundColor = "fg=blue";
+
+    programs.zsh.prezto.prompt.theme = "sorin";
+    programs.zsh.prezto.python.virtualenvAutoSwitch = true;
+
 }
