@@ -4,6 +4,8 @@
 
 你最好添加 =--depth=1= 這樣的選項（在克隆的時候）。
 
+我现在在使用 Nix 作为包管理器,用得很爽。我停止使用 Homebrew 了。
+
 * zsh
 
 我正在使用来自 grml 的 =.zshrc= ，搭配修改自 grml 的 =.zshrc.local= 。
