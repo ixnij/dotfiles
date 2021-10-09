@@ -52,6 +52,9 @@
 (when (maybe-require-package 'paradox)
   (paradox-enable))
 
+(setq-default initial-scratch-message
+	      (concat ";; Love the World, " user-login-name " - Emacs always with you!\n;; Never forget the support of your family!\n\n"))
+
 (provide 'init-misc)
 ;;; Local Variables:
 ;;; coding: utf-8
