@@ -6,5 +6,4 @@ with pkgs; [
 	emacs
         ripgrep
         ffmpeg
-        fzf
 ]
