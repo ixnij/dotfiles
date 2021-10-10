@@ -6,4 +6,9 @@ with pkgs; [
 	emacs
         ripgrep
         ffmpeg
+        wget
+        neofetch
+        httpie
+        freshfetch
+        jq
 ]
