@@ -21,8 +21,8 @@
   "Current theme.")
 
 (defvar ixnij/themes
-  '((light . doom-one-light)
-    (dark . doom-solarized-dark))
+  '((light . modus-operandi)
+    (dark . modus-vivendi))
   "The themes I'm using.")
 
 (defun ixnij/switch-theme ()
