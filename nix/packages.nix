@@ -1,14 +1,16 @@
 { pkgs }:
 
 with pkgs; [
-	zoxide
-	bat
-	emacs
-        ripgrep
-        ffmpeg
-        wget
-        neofetch
-        httpie
-        freshfetch
-        jq
+    zoxide
+    bat
+    emacsGcc
+    ripgrep
+    htop
+    ffmpeg
+    wget
+    neofetch
+    httpie
+    freshfetch
+    cachix
+    jq
 ]

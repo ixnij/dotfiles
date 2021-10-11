@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, callPackage, ... }:
 
 {
 # Let Home Manager install and manage itself.
@@ -23,9 +23,21 @@
     programs.fish.enable = true;
     programs.broot.enable = true;
     programs.broot.enableFishIntegration = true;
+    programs.broot.enableZshIntegration = true;
     programs.skim.enable = true;
     programs.skim.enableFishIntegration = true;
+    programs.skim.enableZshIntegration = true;
     programs.zoxide.enable = true;
     programs.zoxide.enableFishIntegration = true;
+    programs.zoxide.enableZshIntegration = true;
     programs.nnn.enable = true;
+
+    services.emacs.package = pkgs.emacsUnstable;
+
+    nixpkgs.overlays = [
+        (import (builtins.fetchTarball {
+                 url = https://github.com/nix-community/emacs-overlay/archive/master.tar.gz;
+                 }))
+    ];
+
 }
