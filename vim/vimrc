@@ -425,5 +425,3 @@ nnoremap <Tab> :bn<CR>
 nnoremap <s-Tab> :bp<CR>
 nnoremap <s-q> :q!<CR>
 nnoremap <s-w> :w<CR>
-
-set rtp+=/opt/homebrew/opt/fzf
