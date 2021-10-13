@@ -20,15 +20,15 @@
     home.stateVersion = "21.11";
     home.packages = pkgs.callPackage ./packages.nix {};
 
-    programs.fish.enable = true;
+#    programs.fish.enable = true;
     programs.broot.enable = true;
-    programs.broot.enableFishIntegration = true;
+#    programs.broot.enableFishIntegration = true;
     programs.broot.enableZshIntegration = true;
     programs.skim.enable = true;
-    programs.skim.enableFishIntegration = true;
+#    programs.skim.enableFishIntegration = true;
     programs.skim.enableZshIntegration = true;
     programs.zoxide.enable = true;
-    programs.zoxide.enableFishIntegration = true;
+#    programs.zoxide.enableFishIntegration = true;
     programs.zoxide.enableZshIntegration = true;
     programs.nnn.enable = true;
 
