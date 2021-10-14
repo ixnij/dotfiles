@@ -32,14 +32,15 @@
        (dark-theme (cdr (assoc 'dark ixnij/themes))))
     (if (equal current-theme dark-theme)
 	(progn 
-	  (load-theme light-theme t)
 	  (disable-theme current-theme)
+	  (load-theme light-theme t)
 	  (setq current-theme light-theme))
       (progn
-	(load-theme dark-theme t)
 	(disable-theme current-theme)
+	(load-theme dark-theme t)
 	(setq current-theme dark-theme)))))
-(ixnij/switch-theme)
+
+(add-hook 'after-init-hook #'ixnij/switch-theme)
 
 (provide 'init-look)
 ;;; Local Variables:
