@@ -70,10 +70,10 @@
 (when (maybe-require-package 'ace-window)
   (global-set-key (kbd "M-o") 'ace-window))
 
-; (require 'init-exec-path)
+(require 'init-exec-path)
 (require 'init-minibuffer)
 (require 'init-company)
-;; (require 'init-org)
+(require 'init-org)
 
 (require 'init-lisp)
 (require 'init-md)
