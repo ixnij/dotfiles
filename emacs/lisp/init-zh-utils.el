@@ -46,9 +46,56 @@
     (setq rime-emacs-module-header-root "/opt/homebrew/Cellar/emacs-plus@28/28.0.50/include")
     (setq rime-show-candidate 'posframe)))
 
-(when (maybe-require-package 'fanyi)
-  (require 'fanyi)
-  )
+;; (when (maybe-require-package 'fanyi)
+;;   (require 'fanyi)
+;;   )
+
+;; See Emacs-china: https://emacs-china.org/t/google/14407/63
+(when (and (maybe-require-package 'go-translate) (require 'go-translate nil t))
+  (setq gts-translate-list '(("en" "zh") ("zh" "en")))
+  ;; 配置默认的 translator,配置完成之后，gts-do-translate 命令将用这些配置进行翻译
+  (setq gts-default-translator
+	(gts-translator
+
+	 :picker
+	 ;; 选择其中一个 picker，用于拾取初始文本、from、to
+
+	 ;;(gts-noprompt-picker)
+	 ;;(gts-noprompt-picker :texter (gts-whole-buffer-texter))
+	 (gts-prompt-picker)
+	 ;;(gts-prompt-picker :single t)
+	 ;;(gts-prompt-picker :texter (gts-current-or-selection-texter) :single t)
+
+	 :engines
+	 ;; 设定若干翻译引擎，可以是一个，可以多个
+	 ;; 通过传入不同的 parser,配置其不同样式的输出
+
+	 (list
+	  (gts-google-engine)
+	  (gts-google-rpc-engine)
+	  ;;(gts-deepl-engine :auth-key "3e10bade-88e9-02f2-169f-ab3c445d7984:fx" :pro nil)
+
+	  ;;(gts-google-engine :parser (gts-google-summary-parser))
+	  ;;(gts-google-engine :parser (gts-google-parser))
+	  (gts-google-rpc-engine :parser (gts-google-rpc-summary-parser))
+	  ;;(gts-google-rpc-engine :parser (gts-google-rpc-summary-parser))
+	  )
+
+	 :render
+	 ;; 选定一个渲染器，从而将结果输出到不同目标
+	 ;; 推荐安装 posframe，并使用 gts-posframe-pop-render 或 gts-posframe-pin-render
+
+	 ;;(gts-buffer-render)
+
+	 ;;(gts-posframe-pop-render)
+	 ;;(gts-posframe-pop-render :backcolor "#333333" :forecolor "#ffffff")
+
+	 ;;(gts-posframe-pin-render)
+	 (gts-posframe-pin-render :position (cons 1200 20))
+	 ;;(gts-posframe-pin-render :width 80 :height 25 :position (cons 1000 20) :forecolor "#ffffff" :backcolor "#111111")
+
+	 ;;(gts-kill-ring-render)
+	 )))
 
 (provide 'init-zh-utils)
 ;;; init-zh-utils.el ends here
