@@ -55,7 +55,7 @@
 
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
-(require 'init-site-lisp)
+;; (require 'init-site-lisp)
 
 (require 'init-elpa)
 (package-initialize)
