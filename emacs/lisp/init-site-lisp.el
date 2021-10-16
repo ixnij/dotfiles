@@ -18,7 +18,6 @@
   (and (display-graphic-p) (awesome-tab-mode t)))
 
 (when (require 'ligature nil t)
-  (require 'ligature)
   ;; Enable ligatures in programming modes
   (ligature-set-ligatures 'prog-mode '("www" "**" "***" "**/" "*>" "*/" "\\\\" "\\\\\\" "{-" "::"
 				       ":::" ":=" "!!" "!=" "!==" "-}" "----" "-->" "->" "->>"
