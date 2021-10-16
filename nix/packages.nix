@@ -3,9 +3,11 @@
 with pkgs; [
 	zoxide
 	bat
-#	emacsGcc
-	emacsMacport
+	emacsGcc
+#	emacsMacport
 	ripgrep
+	guile
+	fd
 	htop
 	ffmpeg
 	wget
@@ -13,6 +15,6 @@ with pkgs; [
 	httpie
 	freshfetch
 	cachix
-	# librime
+# librime
 	jq
 ]

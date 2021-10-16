@@ -20,6 +20,7 @@
 (defvar current-theme 'doom-one
   "Current theme.")
 
+(maybe-require-package 'modus-themes)
 (defvar ixnij/themes
   '((light . modus-operandi)
     (dark . modus-vivendi))
