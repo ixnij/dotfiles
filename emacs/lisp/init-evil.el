@@ -11,10 +11,10 @@
   (evil-mode 1)
   (when (maybe-require-package 'evil-collection)
     (when (require 'evil-collection nil t)
-      (evil-collection-init)
       (setq evil-collection-setup-minibuffer t)
       (setq evil-collection-setup-debugger-keys t)
-      (setq evil-collection-calendar-want-org-bindings t))))
+      (setq evil-collection-calendar-want-org-bindings t)
+      (evil-collection-init))))
 
 (provide 'init-evil)
 ;;; init-evil.el ends here

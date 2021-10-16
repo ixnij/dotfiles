@@ -7,8 +7,6 @@
 
 ;;; Code:
 
-(add-to-list 'load-path (expand-file-name "site-lisp" user-emacs-directory))
-
 (defun add-subdirs-to-load-path (dir)
   "Recursive add directories to `load-path'."
   (let ((default-directory (file-name-as-directory dir)))
@@ -19,8 +17,20 @@
 (when (require 'awesome-tab nil t)
   (and (display-graphic-p) (awesome-tab-mode t)))
 
-(when (require 'nano-modeline nil t)
-  (nano-modeline))
+(when (require 'ligature nil t)
+  (require 'ligature)
+  ;; Enable ligatures in programming modes
+  (ligature-set-ligatures 'prog-mode '("www" "**" "***" "**/" "*>" "*/" "\\\\" "\\\\\\" "{-" "::"
+				       ":::" ":=" "!!" "!=" "!==" "-}" "----" "-->" "->" "->>"
+				       "-<" "-<<" "-~" "#{" "#[" "##" "###" "####" "#(" "#?" "#_"
+				       "#_(" ".-" ".=" ".." "..<" "..." "?=" "??" ";;" "/*" "/**"
+				       "/=" "/==" "/>" "//" "///" "&&" "||" "||=" "|=" "|>" "^=" "$>"
+				       "++" "+++" "+>" "=:=" "==" "===" "==>" "=>" "=>>" "<="
+				       "=<<" "=/=" ">-" ">=" ">=>" ">>" ">>-" ">>=" ">>>" "<*"
+				       "<*>" "<|" "<|>" "<$" "<$>" "<!--" "<-" "<--" "<->" "<+"
+				       "<+>" "<=" "<==" "<=>" "<=<" "<>" "<<" "<<-" "<<=" "<<<"
+				       "<~" "<~~" "</" "</>" "~@" "~-" "~>" "~~" "~~>" "%%"))
+  (global-ligature-mode 't))
 
 (provide 'init-site-lisp)
 ;;; init-site-lisp.el ends here
