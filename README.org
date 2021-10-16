@@ -15,10 +15,10 @@
 这里我摘录一下 grml 的安装建议（说明）：
 
 #+begin_src  shell
-wget -O .screenrc     https://git.grml.org/f/grml-etc-core/etc/grml/screenrc_generic
-wget -O .tmux.conf    https://git.grml.org/f/grml-etc-core/etc/tmux.conf
-wget -O .vimrc        https://git.grml.org/f/grml-etc-core/etc/vim/vimrc
-wget -O .zshrc        https://git.grml.org/f/grml-etc-core/etc/zsh/zshrc
+  wget -O .screenrc     https://git.grml.org/f/grml-etc-core/etc/grml/screenrc_generic
+  wget -O .tmux.conf    https://git.grml.org/f/grml-etc-core/etc/tmux.conf
+  wget -O .vimrc        https://git.grml.org/f/grml-etc-core/etc/vim/vimrc
+  wget -O .zshrc        https://git.grml.org/f/grml-etc-core/etc/zsh/zshrc
 #+end_src
 
 更多信息请访问 grml 的[[https://grml.org/console/][官方网站。]]
@@ -48,9 +48,19 @@ wget -O .zshrc        https://git.grml.org/f/grml-etc-core/etc/zsh/zshrc
 类似于这样的形式：
 
 #+begin_src shell
-git submodule add git@github.com:tumashu/pyim.git
-git submodule init
-git submodule update
+  git submodule add git@github.com:tumashu/pyim.git
+#+end_src
+
+至于去更新这些 /site-lisp/ 需要这样：
+
+#+begin_src shell
+  git submodule update
+#+end_src
+
+如果没有在克隆仓库的时候添加 =--reverse= 的选项，那么你需要：
+
+#+begin_src shell
+  git submodule init
 #+end_src
 
 * vim
