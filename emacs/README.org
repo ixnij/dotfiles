@@ -44,25 +44,15 @@ wget -O .zshrc        https://git.grml.org/f/grml-etc-core/etc/zsh/zshrc
 
 ** 关于第三方的插件
 
-我之前使用 git submodule 的方式管理第三方的包（也就是 non-elpa 的包）。
+我使用 git submodule 的方式管理第三方的包（也就是 non-elpa 的包）。
 类似于这样的形式：
 
 #+begin_src shell
-git submodule add https://github.com/tumashu/pyim.git
+git submodule add git@github.com:tumashu/pyim.git
 git submodule init
 git submodule update
 #+end_src
 
-但是，我感觉这样的方式虽然部署比较方便，但下载有些麻烦。要么是加上 =--reverse= 选项，要么是
-克隆这个配置文件仓库之后再去执行 =git submodule init= 和 =git submodule update= 这样的操作。
-不管是上述的哪一个操作，都比较繁琐。
-
-所以我现在决定，把第三方插件以 =foo.el= 的方式提取出来，直接放在配置文件的 /site-lisp/ 目录下。
-
 * vim
 
 抄袭 grml。
-
-* TODO
-
-使用 =el-get= 管理第三方 Lisp 代碼片段。
