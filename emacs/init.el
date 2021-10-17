@@ -30,11 +30,10 @@
 
 (defvar ixnij/enable-pyim-p t
   "Is pyim should be enable?")
-
+(defvar ixnij/enable-emacs-rime-p nil
+  "Is emacs-rime should be enable?")
 (unless ixnij/enable-pyim-p
-  (defvar ixnij/enable-emacs-rime-p t
-    "Is emacs-rime should be enable?"))
-
+  (setq ixnij/enable-emacs-rime-p t))
 (when ixnij/enable-pyim-p
   (defvar ixnij/pyim-use-rime-p nil
     "Should pyim use rime?"))
