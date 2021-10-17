@@ -28,19 +28,16 @@
 
 
 
-(defvar ixnij/enable-pyim-p nil
+(defvar ixnij/enable-pyim-p t
   "Is pyim should be enable?")
 
-(defvar ixnij/enable-emacs-rime-p t
-  "Is emacs-rime should be enable?")
+(unless ixnij/enable-pyim-p
+  (defvar ixnij/enable-emacs-rime-p t
+    "Is emacs-rime should be enable?"))
 
 (when ixnij/enable-pyim-p
-  (defvar ixnij/pyim-use-rime-p t
+  (defvar ixnij/pyim-use-rime-p nil
     "Should pyim use rime?"))
-
-(defvar ixnij/meow-enable-p nil
-  "Should we enable meow?")
-
 
 
 (require 'init-native-comp)
@@ -51,21 +48,18 @@
       (init-gc-cons-threshold (* 128 1024 1024)))
   (setq gc-cons-threshold init-gc-cons-threshold)
   (add-hook 'emacs-startup-hook
-            (lambda () (setq gc-cons-threshold normal-gc-cons-threshold))))
+	    (lambda () (setq gc-cons-threshold normal-gc-cons-threshold))))
 
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
-(require 'init-site-lisp)
 
+(require 'init-site-lisp)
 (require 'init-elpa)
 (package-initialize)
 (require-package 'diminish)
 
 (require 'init-misc)
 (require 'init-evil)
-
-(when ixnij/meow-enable-p
-  (require 'init-meow))
 
 (when (maybe-require-package 'ace-window)
   (global-set-key (kbd "M-o") 'ace-window))
@@ -97,10 +91,10 @@
     (ns-auto-titlebar-mode)))
 
 (add-hook 'after-init-hook
-          (lambda ()
-            (require 'server)
-            (unless (server-running-p)
-              (server-start))))
+	  (lambda ()
+	    (require 'server)
+	    (unless (server-running-p)
+	      (server-start))))
 
 (provide 'init)
 ;; Local Variables:

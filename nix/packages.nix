@@ -7,13 +7,15 @@ with pkgs; [
 #	emacsMacport
 	ripgrep
 	guile
+	stow
 	fd
 	htop
+	cloc
 	ffmpeg
 	wget
 	neofetch
 	httpie
-	freshfetch
+#	freshfetch
 	cachix
 # librime
 	jq
