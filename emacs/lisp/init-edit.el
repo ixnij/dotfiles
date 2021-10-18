@@ -12,14 +12,16 @@
 (maybe-require-package 'list-unicode-display)
 
 (when (fboundp 'display-line-numbers-mode)
-  (setq-default display-line-numbers-width 3)
+  (setq-default display-line-numbers-width nil)
   (add-hook 'prog-mode-hook 'display-line-numbers-mode))
+
+;; (global-linum-mode 1)
 
 
 
 (when (maybe-require-package 'beacon)
-  (setq-default beacon-lighter "")
-  (setq-default beacon-size 20)
+  (setq-default beacon-lighter " ^-^")
+  (setq-default beacon-size 50)
   (add-hook 'after-init-hook 'beacon-mode))
 
 

@@ -61,7 +61,7 @@
 (require 'init-evil)
 
 (when (maybe-require-package 'ace-window)
-  (global-set-key (kbd "M-o") 'ace-window))
+  (global-set-key (kbd "M-o") #'ace-window))
 
 (require 'init-exec-path)
 (require 'init-minibuffer)
