@@ -17,14 +17,14 @@
 
 
 
-(defvar current-theme 'doom-one
-  "Current theme.")
-
 (maybe-require-package 'modus-themes)
 (defvar ixnij/themes
   '((light . modus-operandi)
     (dark . modus-vivendi))
   "The themes I'm using.")
+
+(defvar current-theme (cdr (assoc 'light ixnij/themes))
+  "Current theme.")
 
 (defun ixnij/switch-theme ()
   (interactive)
@@ -42,7 +42,6 @@
 	(setq current-theme dark-theme)))))
 
 (add-hook 'after-init-hook #'ixnij/switch-theme)
-
 (provide 'init-look)
 ;;; Local Variables:
 ;;; coding: utf-8
