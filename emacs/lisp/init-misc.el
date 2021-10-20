@@ -56,7 +56,8 @@
 	      (concat ";; Love the World, " user-login-name " - Emacs by your side!\n;; Never forget the support of your family!\n\n"))
 
 (provide 'init-misc)
-;;; Local Variables:
-;;; coding: utf-8
-;;; end:
+;; Local Variables:
+;; coding: utf-8
+;; no-byte-compile: t
+;; end:
 ;;; init-misc.el ends here

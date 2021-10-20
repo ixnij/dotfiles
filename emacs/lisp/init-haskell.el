@@ -8,7 +8,8 @@
   )
 
 (provide 'init-haskell)
-;;; Local Variable:
-;;; coding: utf-8
-;;; End:
+;; Local Variable:
+;; coding: utf-8
+;; no-byte-compile: t
+;; End:
 ;;; init-haskell.el ends here
