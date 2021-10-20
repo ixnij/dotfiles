@@ -18,6 +18,8 @@
     (require 'pyim)
     (require-package 'pyim-basedict)
     (require 'pyim-basedict)
+    (require-package 'posframe)
+    (require 'posframe)
     (pyim-basedict-enable)
     (setq default-input-method "pyim")
     (pyim-default-scheme 'quanpin)
