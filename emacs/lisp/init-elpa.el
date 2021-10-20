@@ -3,7 +3,7 @@
 ;;; Commentary:
 
 ;; There are some functions that from others.
-;; `require-package' and `maybe-require-package' is from purcell's emacs configuretion file.
+;; `require-package' and `maybe-require-package' is from purcell's Emacs configuretion file.
 ;; `find-fastest-mirror-for-me' is from @twlz0ne.
 
 ;;; Code:
@@ -17,7 +17,7 @@
       ("gnu"          . "https://elpa.gnu.org/packages/")
       ("melpa"        . "https://melpa.org/packages/")
       ("org"          . "https://orgmode.org/elpa/"))
-   (emacs-china
+    (emacs-china
      ("gnu"          . "https://elpa.emacs-china.org/gnu/")
      ("melpa"        . "https://elpa.emacs-china.org/melpa/")
      ("org"          . "https://elpa.emacs-china.org/org/"))
@@ -27,7 +27,7 @@
      ("org" . "https://mirrors.sjtug.sjtu.edu.cn/emacs-elpa/org/")
      )))
 
-(setq package-archives (assoc-default 'sjtu ixnij/package-mirror-alist)) 
+(setq package-archives (assoc-default 'sjtu ixnij/package-mirror-alist))
 
 
 
@@ -88,25 +88,26 @@ Inspied by @xuchunyang https://emacs-china.org/t/elpa/11192/9"
 	  (begin-time (float-time (current-time)))
 	  (request-backend (car '(curl url-retrieve))))
       (request (concat url "archive-contents")
-	:timeout 30
-	:complete
-	(cl-function
-	 (lambda (&key response symbol-status &allow-other-keys)
-	   (with-current-buffer "*Elpa mirror test*"
-	     (goto-char (point-max))
-	     (let ((inhibit-read-only t))
-	       (insert (format "%11s  %-29s [%s]\n"
-			       (if (eq symbol-status 'success)
-				   (format
-				    "%6fs"
-				    (- (float-time (current-time)) begin-time))
-				 symbol-status)
-			       (url-host (url-generic-parse-url url))
-			       (if (eq symbol-status 'success)
-				   (request-response-header response "Last-Modified"))))))))))))
+	       :timeout 30
+	       :complete
+	       (cl-function
+		(lambda (&key response symbol-status &allow-other-keys)
+		  (with-current-buffer "*Elpa mirror test*"
+		    (goto-char (point-max))
+		    (let ((inhibit-read-only t))
+		      (insert (format "%11s  %-29s [%s]\n"
+				      (if (eq symbol-status 'success)
+					  (format
+					   "%6fs"
+					   (- (float-time (current-time)) begin-time))
+					symbol-status)
+				      (url-host (url-generic-parse-url url))
+				      (if (eq symbol-status 'success)
+					  (request-response-header response "Last-Modified"))))))))))))
 
 (provide 'init-elpa)
-;;; Local Variables:
-;;; coding: utf-8
-;;; End:
+;; Local Variables:
+;; coding: utf-8
+;; no-byte-compile: t
+;; End:
 ;;; init-elpa.el ends here

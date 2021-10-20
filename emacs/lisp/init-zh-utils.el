@@ -98,4 +98,8 @@
 	 )))
 
 (provide 'init-zh-utils)
+;; Local Variables:
+;; coding: utf-8
+;; no-byte-compile: t
+;; End:
 ;;; init-zh-utils.el ends here

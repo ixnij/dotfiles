@@ -10,4 +10,8 @@
     (add-to-list 'whitespace-cleanup-mode-ignore-modes 'markdown-mode)))
 
 (provide 'init-md)
+;; Local Variables:
+;; coding: utf-8
+;; no-byte-compile: t
+;; End:
 ;;; init-md.el ends here
