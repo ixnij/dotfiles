@@ -18,17 +18,13 @@
   (require-package 'savehist)
   (add-hook 'after-init-hook #'savehist-mode)
 
-  ;;  (require 'vertico-directory)
-  ;;  (define-key vertico-map "RET" #'vertico-directory-enter)
-  ;;  (define-key vertico-map "DEL" #'vertico-directory-delete-char)
-  ;;  (define-key vertico-map "M-DEL" #'vertico-directory-delete-word)
-
   (when (maybe-require-package 'marginalia)
     (add-hook 'after-init-hook 'marginalia-mode))
   (when (maybe-require-package 'consult)
     (global-set-key (kbd "C-s") 'consult-line))
-  (require 'vertico-posframe)
-  (vertico-posframe-mode 1))
+
+  (when (require 'vertico-posframe nil t)
+    (vertico-posframe-mode 1)))
 
 
 
@@ -58,7 +54,8 @@
   (global-set-key (kbd "C-h k") #'helpful-key))
 
 (provide 'init-minibuffer)
-;;; Local Variables:
-;;; coding: utf-8
-;;; End:
+;; Local Variables:
+;; coding: utf-8
+;; no-byte-compile: t
+;; End:
 ;;; init-minibuffer.el ends here
