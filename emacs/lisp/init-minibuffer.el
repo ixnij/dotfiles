@@ -30,15 +30,15 @@
 
 (when (maybe-require-package 'embark)
   (require 'embark)
-  (global-set-key (kbd "C-.") #'embark-act)
-  (global-set-key (kbd "C-;") #'embark-dwim)
+  ;; (global-set-key (kbd "C-.") #'embark-act)
+  (global-set-key (kbd "C-.") #'embark-dwim)
   (global-set-key (kbd "C-h B") #'embark-bindings)
   (setq prefix-help-command #'embark-prefix-help-command)
 
   (add-to-list 'display-buffer-alist
-	       '("\\`\\*Embark Collect \\(Live\\|Completions\\)\\*"
-		 nil
-		 (window-parameters (mode-line-format . none))))
+       '("\\`\\*Embark Collect \\(Live\\|Completions\\)\\*"
+	 nil
+	 (window-parameters (mode-line-format . none))))
   (when (maybe-require-package 'embark-consult)
     (require 'embark-consult)
     (add-hook 'embark-collect-mode #'consult-preview-at-point-mode)))
