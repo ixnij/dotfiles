@@ -30,9 +30,7 @@
 
 ** 关于主题
 
-我在使用 nano 主题。据 tumashu 说，modus-themes 系列主题也非常棒。
-
-我曾经使用 spacemacs-themes 和 doom-themes。
+使用 modus-themes。
 
 ** 关于字体
 

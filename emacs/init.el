@@ -38,7 +38,7 @@
   (defvar ixnij/pyim-use-rime-p nil
     "Should pyim use rime?"))
 (defvar ixnij/display-line-number-p nil)
-(defvar ixnij/vertico-use-posframe-p nil)
+(defvar ixnij/vertico-use-posframe-p t)
 
 
 (require 'init-native-comp)
