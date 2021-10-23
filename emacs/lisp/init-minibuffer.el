@@ -21,7 +21,7 @@
   (when (maybe-require-package 'marginalia)
     (add-hook 'after-init-hook 'marginalia-mode))
   (when (maybe-require-package 'consult)
-    (global-set-key (kbd "C-s") 'consult-line))
+    (global-set-key (kbd "C-x b") #'consult-buffer))
 
   (when (and (require 'vertico-posframe nil t) ixnij/vertico-use-posframe-p)
     (vertico-posframe-mode 1)))
