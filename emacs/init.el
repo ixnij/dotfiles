@@ -37,8 +37,8 @@
 (when ixnij/enable-pyim-p
   (defvar ixnij/pyim-use-rime-p nil
     "Should pyim use rime?"))
-(defvar ixnij/display-line-number-p nil
-  "See `vertico-posframe'.")
+(defvar ixnij/display-line-number-p nil)
+(defvar ixnij/vertico-use-posframe-p nil)
 
 
 (require 'init-native-comp)
@@ -58,6 +58,7 @@
 (require 'init-elpa)
 (package-initialize)
 (require-package 'diminish)
+(require-package 'posframe)
 
 (require 'init-misc)
 (require 'init-evil)

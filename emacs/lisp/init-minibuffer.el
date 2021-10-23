@@ -23,7 +23,7 @@
   (when (maybe-require-package 'consult)
     (global-set-key (kbd "C-s") 'consult-line))
 
-  (when (require 'vertico-posframe nil t)
+  (when (and (require 'vertico-posframe nil t) ixnij/vertico-use-posframe-p)
     (vertico-posframe-mode 1)))
 
 
