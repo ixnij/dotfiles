@@ -4,14 +4,6 @@
 
 ;;; Code:
 
-;; Cnfonts
-(when (maybe-require-package 'cnfonts)
-  (require 'cnfonts)
-  (cnfonts-enable)
-  (setq cnfonts-use-face-font-rescale t))
-
-
-
 ;; Pyim
 
 (when ixnij/enable-pyim-p
