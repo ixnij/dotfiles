@@ -9,3 +9,8 @@
 .DS_Store
 
 .\#*
+
+# For gentoo portage
+#
+
+._cfg*
