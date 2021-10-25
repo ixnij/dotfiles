@@ -9,18 +9,18 @@
 (when (display-graphic-p)
   (set-face-attribute
    'default nil
-   :font (font-spec :name "-*-Iosevka Term-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1"
+   :font (font-spec :name "-*-Iosevka Term-ultraheavy-italic-expanded-*-*-*-*-*-m-0-iso10646-1"
 		    :weight 'normal
 		    :slant 'normal
-		    :size 18.0))
+		    :size 12.5))
   (dolist (charset '(kana han symbol cjk-misc bopomofo))
     (set-fontset-font
      (frame-parameter nil 'font)
      charset
-     (font-spec :name "-*-Hiragino Sans GB-normal-normal-normal-*-*-*-*-*-p-0-iso10646-1"
+     (font-spec :name "-*-Hiragino Sans GB-medium-normal-normal-*-*-*-*-*-p-0-iso10646-1"
 		:weight 'normal
 		:slant 'normal
-		:size 21.0))))
+		:size 15.0))))
 
 (provide 'init-fonts)
 ;;; Local Variables:
