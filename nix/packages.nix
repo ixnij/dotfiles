@@ -17,6 +17,7 @@ with pkgs; [
 	httpie
 #	freshfetch
 	cachix
+	tree
 # librime
 	jq
 ]

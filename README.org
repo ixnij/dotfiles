@@ -6,6 +6,28 @@
 
 我现在在使用 Nix 作为包管理器,用得很爽。我停止使用 Homebrew 了。
 
+我的 =$HOME= 目录结构是：
+
+#+begin_example
+  /Users/wu/Projects
+  └── Repositories
+      ├── FreeBSD
+      │   └── src
+      ├── Kernel.org
+      │   └── dash
+      ├── Learning
+      │   └── Emacs
+      ├── My
+      │   ├── Blog
+      │   ├── Dotfiles
+      │   └── Practice
+      ├── NixOS
+      │   └── nixpkgs
+      └── OpenBSD
+
+  14 directories, 0 files
+#+end_example
+
 * zsh
 
 我正在使用来自 grml 的 =.zshrc= ，搭配修改自 grml 的 =.zshrc.local= 。
@@ -21,7 +43,7 @@
   wget -O .zshrc        https://git.grml.org/f/grml-etc-core/etc/zsh/zshrc
 #+end_src
 
-更多信息请访问 grml 的[[https://grml.org/console/][官方网站。]]
+更多信息请访问 grml 的[[https://grml.org/console/][官方网站]。
 
 * .emacs.d
 
@@ -64,3 +86,9 @@
 * vim
 
 抄袭 grml。
+
+* KDE/Plasma
+
+我以前是一个死忠的 gnome 用户。但是现在，我已经无法再忍受 gnome 的一次次崩溃和错误，
+所以我开始使用 KDE/Plasma 了。我使用的 Linux 发行版是 Gentoo Linux ，因为这个发行版的软件选择非常多。
+内核就是主线内核，要么是加上了 ZFS 模块，要么是 Xanmod 的内核，或者 gentoo-kernel-bin 这个二进制的内核。
