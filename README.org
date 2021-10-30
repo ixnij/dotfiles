@@ -43,7 +43,7 @@
   wget -O .zshrc        https://git.grml.org/f/grml-etc-core/etc/zsh/zshrc
 #+end_src
 
-更多信息请访问 grml 的[[https://grml.org/console/][官方网站]。
+Grml's [[https://grml.org/console][Offical Website]].
 
 * .emacs.d
 

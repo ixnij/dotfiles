@@ -4,7 +4,7 @@
 
 ;;; Code:
 
-(when (ybe-require-package 'eros)
+(when (maybe-require-package 'eros)
   (add-hook 'emacs-lisp-mode-hook 'eros-mode))
 
 (provide 'init-lisp)

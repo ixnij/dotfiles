@@ -43,7 +43,7 @@
 
 (require 'init-native-comp)
 (require 'init-mackeys)
-(require 'init-fonts)
+;; (require 'init-fonts)
 
 (let ((normal-gc-cons-threshold (* 20 1024 1024))
       (init-gc-cons-threshold (* 128 1024 1024)))
