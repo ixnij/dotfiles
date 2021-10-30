@@ -88,6 +88,29 @@
 (require 'init-zh-utils)
 
 
+(when (require 'eaf nil t)
+  (require 'eaf-airshare)
+  (require 'eaf-browser)
+  (require 'eaf-camera)
+  (require 'eaf-demo)
+  (require 'eaf-file-browser)
+  (require 'eaf-file-manager)
+  (require 'eaf-file-sender)
+  (require 'eaf-image-viewer)
+  (require 'eaf-jupyter)
+  (require 'eaf-markdown-previewer)
+  ;; (require 'eaf-mermaid)
+  (require 'eaf-mindmap)
+  (require 'eaf-music-player)
+  (require 'eaf-org-previewer)
+  (require 'eaf-pdf-viewer)
+  (require 'eaf-system-monitor)
+  (require 'eaf-terminal)
+  (require 'eaf-video-player)
+  (require 'eaf-vue-demo)
+  (require 'eaf-netease-cloud-music)
+  (require 'eaf-rss-reader))
+
 (when system-darwin-p
   (when (maybe-require-package 'ns-auto-titlebar)
     (ns-auto-titlebar-mode)))
