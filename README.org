@@ -83,6 +83,10 @@ Grml's [[https://grml.org/console][Offical Website]].
   git submodule init
 #+end_src
 
+** Tips
+
+善用 =pp-buffer= 以及 =imenu=, 相比 =consult-ripgrep=, =rg.el= 或许更加适合我。
+
 * vim
 
 抄袭 grml。
