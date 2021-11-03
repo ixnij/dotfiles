@@ -11,12 +11,6 @@
 
 (maybe-require-package 'list-unicode-display)
 
-(when (and (fboundp 'display-line-numbers-mode) ixnij/display-line-number-p)
-  (setq-default display-line-numbers-width nil)
-  (add-hook 'prog-mode-hook 'display-line-numbers-mode))
-
-;; (global-linum-mode 1)
-
 
 
 (when (maybe-require-package 'beacon)
