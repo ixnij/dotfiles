@@ -22,11 +22,6 @@
 (defconst system-linux-p
 (eq system-type 'gnu/linux))
 
-(when
-(display-graphic-p)
-(tool-bar-mode -1)
-(scroll-bar-mode -1))
-
 (defvar ixnij/vertico-use-posframe-p nil)
 
 (require 'init-native-comp)

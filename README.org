@@ -19,7 +19,7 @@
       │   └── Emacs
       ├── My
       │   ├── Blog
-      │   ├── Dotfiles
+      │   ├── otfiles
       │   └── Practice
       ├── NixOS
       │   └── nixpkgs

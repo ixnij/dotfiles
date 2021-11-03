@@ -3,9 +3,12 @@
 ;;; Commentary:
 
 ;;; Code:
-
 (setq package-enable-at-startup nil)
-
+(when
+(display-graphic-p)
+(tool-bar-mode -1)
+(scroll-bar-mode -1))
+
 (provide 'early-init)
 ;;; Local Variables:
 ;;; coding: utf-8
