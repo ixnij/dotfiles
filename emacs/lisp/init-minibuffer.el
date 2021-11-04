@@ -3,56 +3,68 @@
 ;;; Commentary:
 
 ;;; Code:
-
-(when (maybe-require-package 'vertico)
+(when
+    (maybe-require-package 'vertico)
   (add-hook 'after-init-hook 'vertico-mode)
-
   (require-package 'orderless)
   (with-eval-after-load 'vertico
     (require 'orderless))
-
-  (defun ixnij/use-orderless-in-minibuffer ()
-    (setq-local completion-styles '(substring orderless)))
+  (defun ixnij/use-orderless-in-minibuffer
+      ()
+    (setq-local completion-styles
+		'(substring orderless)))
   (add-hook 'minibuffer-setup-hook 'ixnij/use-orderless-in-minibuffer)
-
   (require-package 'savehist)
   (add-hook 'after-init-hook #'savehist-mode)
-
-  (when (maybe-require-package 'marginalia)
+  (when
+      (maybe-require-package 'marginalia)
     (add-hook 'after-init-hook 'marginalia-mode))
-  (when (maybe-require-package 'consult)
-    (global-set-key (kbd "C-x b") #'consult-buffer))
-
-  (when (and (require 'vertico-posframe nil t) ixnij/vertico-use-posframe-p)
+  (when
+      (maybe-require-package 'consult)
+    (global-set-key
+     (kbd "C-x b")
+     #'consult-buffer))
+  (when
+      (and
+       (require 'vertico-posframe nil t)
+       ixnij/vertico-use-posframe-p)
     (vertico-posframe-mode 1)))
-
 
-
-(when (maybe-require-package 'embark)
-  (require 'embark)
-  ;; (global-set-key (kbd "C-.") #'embark-act)
-  (global-set-key (kbd "C-.") #'embark-dwim)
-  (global-set-key (kbd "C-h B") #'embark-bindings)
-  (setq prefix-help-command #'embark-prefix-help-command)
-
-  (add-to-list 'display-buffer-alist
-       '("\\`\\*Embark Collect \\(Live\\|Completions\\)\\*"
+(when
+(maybe-require-package 'embark)
+(require 'embark)
+;; (global-set-key (kbd "C-.") #'embark-act)
+(global-set-key
+(kbd "C-.")
+#'embark-dwim)
+(global-set-key
+(kbd "C-h B")
+#'embark-bindings)
+(setq prefix-help-command #'embark-prefix-help-command)
+(add-to-list 'display-buffer-alist
+'("\\`\\*Embark Collect \\(Live\\|Completions\\)\\*"
 	 nil
-	 (window-parameters (mode-line-format . none))))
-  (when (maybe-require-package 'embark-consult)
-    (require 'embark-consult)
-    (add-hook 'embark-collect-mode #'consult-preview-at-point-mode)))
-
+(window-parameters
+(mode-line-format . none))))
+(when
+(maybe-require-package 'embark-consult)
+(require 'embark-consult)
+(add-hook 'embark-collect-mode #'consult-preview-at-point-mode)))
 
-
-(when (maybe-require-package 'helpful)
-  ;; Note that the built-in `describe-function' includes both functions
+(when
+(maybe-require-package 'helpful)
+;; Note that the built-in `describe-function' includes both functions
   ;; and macros. `helpful-function' is functions only, so we provide
   ;; `helpful-callable' as a drop-in replacement.
-  (global-set-key (kbd "C-h f") #'helpful-callable)
-  (global-set-key (kbd "C-h v") #'helpful-variable)
-  (global-set-key (kbd "C-h k") #'helpful-key))
-
+(global-set-key
+(kbd "C-h f")
+#'helpful-callable)
+(global-set-key
+(kbd "C-h v")
+#'helpful-variable)
+(global-set-key
+(kbd "C-h k")
+#'helpful-key))
 (provide 'init-minibuffer)
 ;; Local Variables:
 ;; coding: utf-8
