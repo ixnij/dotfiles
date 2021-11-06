@@ -17,6 +17,11 @@
 (add-to-list 'load-path
 (expand-file-name "lisp" user-emacs-directory))
 
+(when
+(display-graphic-p)
+(tool-bar-mode -1)
+(scroll-bar-mode -1))
+
 (defconst system-darwin-p
 (eq system-type 'darwin))
 (defconst system-linux-p

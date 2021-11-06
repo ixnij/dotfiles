@@ -26,11 +26,11 @@
 		:slant 'normal
 		:size 15.0))))
 (let
-((emoji-support-version "29.0"))
+((emoji-supported-version "29.0"))
 (when
 (and
 (not
-(version< emacs-version emoji-support-version))
+(version< emacs-version emoji-supported-version))
 system-darwin-p)
 (set-fontset-font t 'emoji
 '("Apple Color Emoji" . "iso10646-1")
