@@ -101,7 +101,7 @@ Grml's [[https://grml.org/console][Offical Website]].
 
 抄袭 grml。
 
-* KDE/Plasma
+* Kde/Plasma
 
 我以前是一个死忠的 gnome 用户。
 

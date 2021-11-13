@@ -15,19 +15,19 @@
 ;; to make ibuffer default.
 (defalias 'list-buffers 'ibuffer)
 (setq visual-line-fringe-indicators
-'(left-bracket right-bracket))
+      '(left-bracket right-bracket))
 ;; There is some problems with gui.
 (setq-default
  window-resize-pixelwise t
  frame-resize-pixelwise t)
 ;; Handier way to add modes to auto-mode-alist
 (defun add-auto-mode
-(mode &rest patterns)
-"Add entries to `auto-mode-alist' to use `MODE' for all given file `PATTERNS'."
-(dolist
-(pattern patterns)
-(add-to-list 'auto-mode-alist
-(cons pattern mode))))
+    (mode &rest patterns)
+  "Add entries to `auto-mode-alist' to use `MODE' for all given file `PATTERNS'."
+  (dolist
+      (pattern patterns)
+    (add-to-list 'auto-mode-alist
+		 (cons pattern mode))))
 ;; Make winner mode load after init.
 (add-hook 'after-init-hook 'winner-mode)
 ;; Remeber curser localtion
@@ -41,10 +41,10 @@
 (add-hook 'prog-mode-hook 'hs-minor-mode)
 (require-package 'restart-emacs)
 (when
-(maybe-require-package 'paradox)
-(paradox-enable))
+    (maybe-require-package 'paradox)
+  (paradox-enable))
 (setq-default initial-scratch-message
-(concat ";; Love the World, " user-login-name " - Emacs by your side!\n;; Never forget the support of your family!\n\n"))
+	      (concat ";; Love the World, " user-login-name " - Emacs by your side!\n;; Never forget the support of your family!\n\n"))
 (provide 'init-misc)
 ;; Local Variables:
 ;; coding: utf-8

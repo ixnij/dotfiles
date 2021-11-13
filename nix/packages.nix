@@ -1,23 +1,25 @@
 { pkgs }:
 
 with pkgs; [
-	zoxide
-	bat
-	emacsGcc
-#	emacsMacport
-	ripgrep
-	guile
-	stow
-	fd
-	htop
-	cloc
-	ffmpeg
-	wget
-	neofetch
-	httpie
-#	freshfetch
-	cachix
-	tree
-# librime
+  bat
+  emacsGcc
+  #	emacsMacport
+  ripgrep
+  guile
+  stow
+  fd
+  sbcl
+  htop
+  cloc
+  ffmpeg
+  wget
+  neofetch
+  httpie
+  # chez
+  # Em.. It seems like chez doesn't support Apple m1
+  #	freshfetch
+  # cachix
+  tree
+  # librime
 	jq
 ]

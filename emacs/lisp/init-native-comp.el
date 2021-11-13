@@ -4,7 +4,7 @@
 ;;; Code:
 
 (when (and (featurep 'native-compile) (native-comp-available-p))
-  (setq native-comp-async-jobs-number 4))
+  (setq native-comp-async-jobs-number 8))
 
 (provide 'init-native-comp)
 ;;; Local Variables:
