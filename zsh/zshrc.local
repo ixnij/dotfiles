@@ -300,7 +300,7 @@ alias ec="emacsclient -c -a ''"
 # Some problem of not match.
 # setopt no_nomatch
 
- xsource "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
+# xsource "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
 # export NIX_PATH=$HOME/.nix-defexpr/channels${NIX_PATH:+:}$NIX_PATH
 
 # End of file ##############################
