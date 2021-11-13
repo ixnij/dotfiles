@@ -26,6 +26,7 @@
     broot = {
       enable = true;
       enableZshIntegration = true;
+      modal = true;
     };
 
     skim = {
@@ -44,6 +45,7 @@
       dotDir = ".config/zsh";
       enableCompletion = true;
       enableAutosuggestions = true;
+      enableSyntaxHighlighting = true;
       autocd = true;
 
       history = {
@@ -74,14 +76,14 @@
             # date = 2021-05-02T18:15:26-0700;
           };
         }
-        {
-          name = "iterm2_tmux_integration";
-          src = pkgs.fetchurl {
-            url = https://gist.githubusercontent.com/antifuchs/c8eca4bcb9d09a7bbbcd/raw/3ebfecdad7eece7c537a3cd4fa0510f25d02611b/iterm2_zsh_init.zsh;
-            sha256 = "1v1b6yz0lihxbbg26nvz85c1hngapiv7zmk4mdl5jp0fsj6c9s8c";
-            # date = 2020-01-07T15:59:13-0800;
-          };
-        }
+       # {
+       #   name = "iterm2_tmux_integration";
+       #   src = pkgs.fetchurl {
+       #     url = https://gist.githubusercontent.com/antifuchs/c8eca4bcb9d09a7bbbcd/raw/3ebfecdad7eece7c537a3cd4fa0510f25d02611b/iterm2_zsh_init.zsh;
+       #     sha256 = "1v1b6yz0lihxbbg26nvz85c1hngapiv7zmk4mdl5jp0fsj6c9s8c";
+       #     # date = 2020-01-07T15:59:13-0800;
+       #   };
+       # }
       ];
 
 

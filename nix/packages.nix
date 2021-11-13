@@ -13,6 +13,7 @@ with pkgs; [
   cloc
   ffmpeg
   wget
+  tmux
   neofetch
   httpie
   # chez
