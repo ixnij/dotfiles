@@ -19,9 +19,10 @@
 # prompt fire red magenta blue white white white
 # prompt off
 # prompt restore
-# prompt adam1
+# prompt adam2
+prompt adam1
 
-## Settings for umask
+# Settings for umask
 
 if [[ "$(uname)" != "darwin" ]]; then
     if (( EUID == 0 )); then
@@ -388,8 +389,8 @@ if [[ -x "$(where zoxide)" ]]; then
 fi
 
 # For nix.
-xsource "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
-export NIX_PATH=$HOME/.nix-defexpr/channels${NIX_PATH:+:}$NIX_PATH
+# xsource "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
+# export NIX_PATH=$HOME/.nix-defexpr/channels${NIX_PATH:+:}$NIX_PATH
 
 # End of file ##############################
 # vim:filetype=zsh

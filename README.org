@@ -28,6 +28,16 @@
   14 directories, 0 files
 #+end_example
 
+Nix 的文档：[[https://nixos.org/manual/nix/stable/installation/upgrading.html][NixOS 手册]]。
+
+#+begin_quote
+  Multi-user Nix users on macOS can upgrade Nix by running the following command.
+#+end_quote
+
+#+begin_src shell
+  sudo -i sh -c 'nix-channel --update && nix-env -iA nixpkgs.nix && launchctl remove org.nixos.nix-daemon && launchctl load /Library/LaunchDaemons/org.nixos.nix-daemon.plist'
+#+end_src
+
 * zsh
 
 我正在使用来自 grml 的 =.zshrc= ，搭配修改自 grml 的 =.zshrc.local= 。
