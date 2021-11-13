@@ -43,27 +43,21 @@
 
       enable = true;
       dotDir = ".config/zsh";
-      enableCompletion = true;
       enableAutosuggestions = true;
       enableSyntaxHighlighting = true;
-      autocd = true;
-
       history = {
         extended = true;
         save = 1000000;
       };
-
-      defaultKeymap = "emacs";
-
-      initExtra = ''
-      source "$HOME/.config/zsh/zshrc.local"
+      initExtra = (builtins.readFile ~/Projects/Repositories/My/Dotfiles/zsh/zshrc.local) +
+                  ''
       if [[ $TERM == dumb || $TERM == emacs || ! -o interactive ]]; then
             unsetopt zle
             unset zle_bracketed_paste
             export PS1='%m %~ $ '
         else
            . ${config.xdg.configHome}/zsh/plugins/iterm2_shell_integration
-           . ${config.xdg.configHome}/zsh/plugins/iterm2_tmux_integration
+#           . ${config.xdg.configHome}/zsh/plugins/iterm2_tmux_integration
         fi
 
       '';
@@ -76,18 +70,25 @@
             # date = 2021-05-02T18:15:26-0700;
           };
         }
-       # {
-       #   name = "iterm2_tmux_integration";
-       #   src = pkgs.fetchurl {
-       #     url = https://gist.githubusercontent.com/antifuchs/c8eca4bcb9d09a7bbbcd/raw/3ebfecdad7eece7c537a3cd4fa0510f25d02611b/iterm2_zsh_init.zsh;
-       #     sha256 = "1v1b6yz0lihxbbg26nvz85c1hngapiv7zmk4mdl5jp0fsj6c9s8c";
-       #     # date = 2020-01-07T15:59:13-0800;
-       #   };
-       # }
+        # {
+        #   name = "iterm2_tmux_integration";
+        #   src = pkgs.fetchurl {
+        #     url = https://gist.githubusercontent.com/antifuchs/c8eca4bcb9d09a7bbbcd/raw/3ebfecdad7eece7c537a3cd4fa0510f25d02611b/iterm2_zsh_init.zsh;
+        #     sha256 = "1v1b6yz0lihxbbg26nvz85c1hngapiv7zmk4mdl5jp0fsj6c9s8c";
+        #     # date = 2020-01-07T15:59:13-0800;
+        #   };
+        # }
       ];
 
-
+      prezto = {
+        enable = true;
+        editor = {
+          keymap = "emacs";
+        };
+        prompt.theme = "pure";
+      };
     };
+
 
   };
 

@@ -9,11 +9,13 @@ with pkgs; [
   stow
   fd
   sbcl
+  ghc
   htop
   cloc
   ffmpeg
   wget
   tmux
+  exa 
   neofetch
   httpie
   # chez
@@ -22,5 +24,5 @@ with pkgs; [
   # cachix
   tree
   # librime
-	jq
+  jq
 ]
