@@ -45,10 +45,6 @@
       dotDir = ".config/zsh";
       enableAutosuggestions = true;
       enableSyntaxHighlighting = true;
-      history = {
-        extended = true;
-        save = 1000000;
-      };
       initExtra = (builtins.readFile ~/Projects/Repositories/My/Dotfiles/zsh/zshrc.local) +
                   ''
       if [[ $TERM == dumb || $TERM == emacs || ! -o interactive ]]; then
@@ -87,9 +83,19 @@
         };
         prompt.theme = "pure";
       };
+
     };
+    neovim = {
+      enable = true;
+      plugins = with pkgs.vimPlugins; [
+        yankring
+        vim-nix
+        { plugin = vim-startify;
+          config = "let g:startify_change_to_vcs_root = 0";
+        }
+      ];
 
-
+    };
   };
 
   services.emacs.package = pkgs.emacsUnstable;

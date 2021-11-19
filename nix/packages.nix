@@ -16,6 +16,7 @@ with pkgs; [
   wget
   tmux
   exa 
+  fira-code
   neofetch
   httpie
   # chez
