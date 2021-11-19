@@ -24,7 +24,7 @@
      ("org" . "https://mirrors.sjtug.sjtu.edu.cn/emacs-elpa/org/")
      )))
 (setq package-archives
-      (assoc-default 'sjtu ixnij/package-mirror-alist))
+      (assoc-default 'default ixnij/package-mirror-alist))
 
 
 ;; Work-around for https://debbugs.gnu.org/cgi/bugreport.cgi?bug=34341
