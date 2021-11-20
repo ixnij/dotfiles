@@ -9,6 +9,8 @@ with pkgs; [
   stow
   fd
   sbcl
+#  mitscheme
+#  tinyscheme
   ghc
   htop
   cloc

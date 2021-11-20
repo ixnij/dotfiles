@@ -21,14 +21,6 @@
     # Let Home Manager install and manage itself.
     home-manager.enable = true;
 
-
-    nnn.enable = true;
-    broot = {
-      enable = true;
-      enableZshIntegration = true;
-      modal = true;
-    };
-
     skim = {
       enable = true;
       enableZshIntegration = true;
@@ -81,7 +73,7 @@
         editor = {
           keymap = "emacs";
         };
-        prompt.theme = "pure";
+        prompt.theme = "minimal";
       };
 
     };
@@ -102,8 +94,7 @@
 
   nixpkgs.overlays = [
     (import (builtins.fetchTarball {
-      url = "https://github.com/nix-community/emacs-overlay/archive/a5de96c1781878c652bfe289caa75b521d20892f.tar.gz";
-      sha256 = "1ynz65h0ibykrz2w62ji5j8z2cgqwfxsd6q6pmgvbzb7wkm2w1kd";
+      url = "https://github.com/nix-community/emacs-overlay/archive/master.tar.gz";
     }))
   ];
 }
