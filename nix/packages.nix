@@ -2,7 +2,6 @@
 
 with pkgs; [
   bat
-  emacsGcc
   #	emacsMacport
   ripgrep
   guile

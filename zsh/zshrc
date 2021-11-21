@@ -8,7 +8,7 @@ compinit && promptinit
 # Colors on GNU ls(1)
 if ls --color=auto / >/dev/null 2>&1; then
     ls_options+=( --color=auto )
-# Colors on FreeBSD and OSX ls(1)
+    # Colors on FreeBSD and OSX ls(1)
 elif ls -G / >/dev/null 2>&1; then
     ls_options+=( -G )
 fi
