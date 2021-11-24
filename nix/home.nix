@@ -1,6 +1,8 @@
 { config, pkgs, callPackage, ... }:
 
-{
+let home = builtins.getEnv "HOME";
+
+in {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "wu";
@@ -34,7 +36,7 @@
     zsh = rec {
       enable = true;
       dotDir = ".config/zsh";
-      initExtra = (builtins.readFile "${(builtins.getEnv "HOME")}/${dotDir}/zshrc") + (builtins.readFile "${(builtins.getEnv "HOME")}/Projects/Repositories/My/Dotfiles/zsh/zshrc.local") +
+      initExtra = (builtins.readFile "${home}/${dotDir}/zshrc") + (builtins.readFile "${home}/Projects/Repositories/My/Dotfiles/zsh/zshrc.local") +
                                                                         ''
       if [[ $TERM == dumb || $TERM == emacs || ! -o interactive ]]; then
             unsetopt zle
