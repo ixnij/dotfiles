@@ -11,14 +11,18 @@ with pkgs; [
 #  mitscheme
 #  tinyscheme
   ghc
+  pandoc
   htop
   cloc
   ffmpeg
   wget
   tmux
   exa 
+  sarasa-gothic
   fira-code
+  jetbrains-mono
   neofetch
+#  emacsGit
   httpie
   # chez
   # Em.. It seems like chez doesn't support Apple m1

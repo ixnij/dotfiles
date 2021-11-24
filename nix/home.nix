@@ -34,16 +34,6 @@
     zsh = rec {
       enable = true;
       dotDir = ".config/zsh";
-
-      history = {
-        size       = 50000;
-        save       = 500000;
-        path       = "${dotDir}/history";
-        ignoreDups = true;
-        share      = true;
-        extended   = true;
-      };
-
       initExtra = (builtins.readFile "${(builtins.getEnv "HOME")}/${dotDir}/zshrc") + (builtins.readFile "${(builtins.getEnv "HOME")}/Projects/Repositories/My/Dotfiles/zsh/zshrc.local") +
                                                                         ''
       if [[ $TERM == dumb || $TERM == emacs || ! -o interactive ]]; then
