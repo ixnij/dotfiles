@@ -60,6 +60,39 @@ Grml's [[https://grml.org/console][Offical Website]].
 我的 emacs 配置带有 vim 编辑器的按键绑定，使用了 evil 的方案。
 我没有使用社区中比较流行的 use-package 或者 leaf.el ，而是选择了和 purcell 一样的方案 （实际上就是抄）。
 
+Purcell 使用了一个叫作 =maybe-require-package= 的函数。我为这个函数写了一个包装的宏 =mrp= :
+
+#+begin_src elisp
+  (defmacro mrp (package-name &rest body)
+    "It is a wrapper for `maybe-require-package'.
+  And this macro only support a name of package."
+    `(when (maybe-require-package (quote ,package-name))
+       ,@body))
+
+  (mrp hello)
+
+  (macroexpand (quote (my-macro 2)))
+  (macroexpand (quote (mrp hello (setq hello-setting t))))
+#+end_src
+
+这个宏并没有用在实际的配置中，因为我感觉也没什么太大的必要。而且功能也比较简陋，
+比如说 =maybe-require-package= 这个函数的签名如下：
+
+#+begin_src elisp
+  (maybe-require-package PACKAGE &optional MIN-VERSION NO-REFRESH)
+#+end_src
+
+也就是说，这个函数还有两个参数。这两个参数在我的配置文件里虽然没有用到，但是还是有必要提一下。
+我这个 =mrp= 宏更本没有考虑到这个问题。这个宏只是参考了常规配置模式，即:
+
+#+begin_src elisp
+  (when (maybe-require-package 'package-name)
+    (setq package-settings t)
+    ...)
+#+end_src
+
+这样的形式。
+
 ** 关于主题
 
 使用 modus-themes。

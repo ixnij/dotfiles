@@ -14,6 +14,8 @@ with pkgs; [
   pandoc
   htop
   cloc
+  llvm
+  coreutils
   ffmpeg
   wget
   tmux
@@ -22,7 +24,7 @@ with pkgs; [
   fira-code
   jetbrains-mono
   neofetch
-#  emacsGit
+  emacsGcc
   httpie
   # chez
   # Em.. It seems like chez doesn't support Apple m1
