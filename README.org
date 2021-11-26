@@ -71,7 +71,6 @@ Purcell 使用了一个叫作 =maybe-require-package= 的函数。我为这个�
 
   (mrp hello)
 
-  (macroexpand (quote (my-macro 2)))
   (macroexpand (quote (mrp hello (setq hello-setting t))))
 #+end_src
 

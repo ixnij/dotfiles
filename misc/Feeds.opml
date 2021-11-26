@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+<head>
+<title>Feeds</title>
+</head>
+<body>
+<outline htmlUrl="https://emacs-china.org/latest" type="rss" xmlUrl="https://emacs-china.org/latest.rss" title="Emacs China - 最新主题" text="Emacs China - 最新主题" />
+<outline xmlUrl="https://emacs-china.org/posts.rss" type="rss" title="Emacs China - 最新帖子" text="Emacs China - 最新帖子" htmlUrl="https://emacs-china.org" />
+<outline type="rss" htmlUrl="https://sachachua.com/blog/feed/" title="Sacha Chua" text="Sacha Chua" xmlUrl="https://sachachua.com/blog/feed" />
+<outline xmlUrl="https://sachachua.com/blog/feed/atom/" text="Sacha Chua" title="Sacha Chua" type="rss" htmlUrl="https://sachachua.comundefined" />
+<outline text="Sacha Chua - category - emacs" title="Sacha Chua - category - emacs" type="rss" htmlUrl="https://sachachua.com/blog/category/emacs/feed/index.xml" xmlUrl="https://sachachua.com/blog/category/emacs/feed/" />
+<outline title="Sacha Chua - category - monthly" type="rss" htmlUrl="https://sachachua.com/blog/category/monthly/feed/index.xml" xmlUrl="https://sachachua.com/blog/category/monthly/feed" text="Sacha Chua - category - monthly" />
+<outline htmlUrl="https://sachachua.com/blog/category/weekly/feed/index.xml" xmlUrl="https://sachachua.com/blog/category/weekly/feed" type="rss" title="Sacha Chua - category - weekly" text="Sacha Chua - category - weekly" />
+<outline htmlUrl="https://sachachua.com/blog/category/yearly/feed/index.xml" xmlUrl="https://sachachua.com/blog/category/yearly/feed" title="Sacha Chua - category - yearly" text="Sacha Chua - category - yearly" type="rss" />
+<outline title="奇客Solidot–传递最新科技情报" xmlUrl="https://www.solidot.org/index.rss" htmlUrl="https://www.solidot.org" type="rss" text="奇客Solidot–传递最新科技情报" />
+<outline type="rss" xmlUrl="https://www.zhihu.com/rss" htmlUrl="http://www.zhihu.com" title="知乎每日精选" text="知乎每日精选" />
+</body>
+</opml>
