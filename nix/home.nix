@@ -34,17 +34,21 @@ in {
     };
 
     zsh = rec {
+      enableCompletion = true;
       enable = true;
       dotDir = ".config/zsh";
+      history = {
+        path = "${dotDir}/history";
+      };
       initExtra = (builtins.readFile "${home}/${dotDir}/zshrc") + (builtins.readFile "${home}/Projects/Repositories/My/Dotfiles/zsh/zshrc.local") +
-                  ''
+      ''
       if [[ $TERM == dumb || $TERM == emacs || ! -o interactive ]]; then
-            unsetopt zle
-            unset zle_bracketed_paste
-            export PS1='%m %~ $ '
-        else
-           . ${config.xdg.configHome}/zsh/plugins/iterm2_shell_integration
-        fi
+      unsetopt zle
+      unset zle_bracketed_paste
+      export PS1='%m %~ $ '
+      else
+      . ${config.xdg.configHome}/zsh/plugins/iterm2_shell_integration
+      fi
 
       '';
       plugins = [
