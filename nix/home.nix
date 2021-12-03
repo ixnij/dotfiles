@@ -71,7 +71,7 @@ in {
     };
   };
 
-  services.emacs.package = pkgs.emacsGcc;
+  services.emacs.package = pkgs.emacsUnstable;
 
   nixpkgs.overlays = [
     (import (builtins.fetchTarball {

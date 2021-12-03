@@ -8,14 +8,15 @@ with pkgs; [
   stow
   fd
   sbcl
-#  mitscheme
-#  tinyscheme
+  #  mitscheme
+  #  tinyscheme
   ghc
   pandoc
   htop
   cloc
   llvm
   coreutils
+#  python39Packages.pyqt5_with_qtwebkit
   ffmpeg
   wget
   tmux
@@ -32,5 +33,5 @@ with pkgs; [
   # cachix
   tree
   # librime
-  jq
+	jq
 ]

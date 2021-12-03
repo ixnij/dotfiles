@@ -35,9 +35,7 @@
        system-darwin-p)
     (set-fontset-font t 'emoji
 		      '("Apple Color Emoji" . "iso10646-1")
-		      nil 'prepend)
-    )
-  )
+		      nil 'prepend)))
 (provide 'init-fonts)
 ;;; Local Variables:
 ;;; coding: utf-8

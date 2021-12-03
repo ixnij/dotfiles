@@ -104,7 +104,7 @@ Purcell 使用了一个叫作 =maybe-require-package= 的函数。我为这个�
 
 顺便提一下，我就是在 emacs 上用 pyim 写这份文件的，感谢 tumashu 同学的努力 :)
 
-** 关于第三方的插件
+** 关于第三方的包
 
 我使用 git submodule 的方式管理第三方的包（也就是 non-elpa 的包）。
 类似于这样的形式：
@@ -116,7 +116,14 @@ Purcell 使用了一个叫作 =maybe-require-package= 的函数。我为这个�
 至于去更新这些 /site-lisp/ 需要这样：
 
 #+begin_src shell
-  git submodule update
+  git submodule update --init --recursive --remote
+#+end_src
+
+如果修改了 =.gitmodules= 文件，指定了 =submodule= 的 commit，那么你需要：
+
+#+begin_src shell
+  git submodule sync
+  git submodule update --init
 #+end_src
 
 如果没有在克隆仓库的时候添加 =--reverse= 的选项，那么你需要：
@@ -124,6 +131,8 @@ Purcell 使用了一个叫作 =maybe-require-package= 的函数。我为这个�
 #+begin_src shell
   git submodule init
 #+end_src
+
+关于这个，我最近也参考了一下 [[https://liujiacai.net/blog/2021/05/05/emacs-package/#headline-6][Keep coding, liujiacai's blog]]。
 
 ** Tips
 
