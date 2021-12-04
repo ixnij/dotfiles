@@ -17,6 +17,7 @@ with pkgs; [
   llvm
   coreutils
 #  python39Packages.pyqt5_with_qtwebkit
+  less
   ffmpeg
   wget
   tmux

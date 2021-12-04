@@ -280,12 +280,6 @@ vimhelp ()    { vim -c "help $1" -c on -c "au! VimEnter *" }
 alias et="emacsclient -t -a ''" # emacs --daemon
 alias ec="emacsclient -c -a ''"
 
-# Some problem of not match.
-# setopt no_nomatch
-
-# xsource "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
-# export NIX_PATH=$HOME/.nix-defexpr/channels${NIX_PATH:+:}$NIX_PATH
-
 # End of file ##############################
 # vim:filetype=zsh
 # Local variables:

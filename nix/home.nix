@@ -6,7 +6,7 @@ in {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "wu";
-  home.homeDirectory = "/Users/wu";
+  home.homeDirectory = home;
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
@@ -33,23 +33,23 @@ in {
       enableZshIntegration = true;
     };
 
+    atuin = {
+      enable = true;
+      enableZshIntegration = true;
+    };
+
     zsh = rec {
-      enableCompletion = true;
       enable = true;
       dotDir = ".config/zsh";
-      history = {
-        path = "${dotDir}/history";
-      };
       initExtra = (builtins.readFile "${home}/${dotDir}/zshrc") + (builtins.readFile "${home}/Projects/Repositories/My/Dotfiles/zsh/zshrc.local") +
       ''
-      if [[ $TERM == dumb || $TERM == emacs || ! -o interactive ]]; then
-      unsetopt zle
-      unset zle_bracketed_paste
-      export PS1='%m %~ $ '
-      else
-      . ${config.xdg.configHome}/zsh/plugins/iterm2_shell_integration
-      fi
-
+        if [[ $TERM == dumb || $TERM == emacs || ! -o interactive ]]; then
+        unsetopt zle
+        unset zle_bracketed_paste
+        export PS1='%m %~ $ '
+        else
+        . ${config.xdg.configHome}/zsh/plugins/iterm2_shell_integration
+        fi
       '';
       plugins = [
         {
