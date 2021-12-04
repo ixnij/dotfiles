@@ -33,10 +33,11 @@ in {
       enableZshIntegration = true;
     };
 
-    atuin = {
-      enable = true;
-      enableZshIntegration = true;
-    };
+    # Atuin has't support aarch64-darwin yet.
+    #atuin = {
+    #  enable = true;
+    #  enableZshIntegration = true;
+    #};
 
     zsh = rec {
       enable = true;
