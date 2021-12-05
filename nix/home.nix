@@ -43,7 +43,7 @@ in {
       enable = true;
       dotDir = ".config/zsh";
       initExtra = (builtins.readFile "${home}/${dotDir}/zshrc") + (builtins.readFile "${home}/Projects/Repositories/My/Dotfiles/zsh/zshrc.local") +
-      ''
+                  ''
         if [[ $TERM == dumb || $TERM == emacs || ! -o interactive ]]; then
         unsetopt zle
         unset zle_bracketed_paste
@@ -70,6 +70,13 @@ in {
         vim-nix
       ];
     };
+
+#    emacs = {
+#      enable = true;
+#      package = (pkgs.emacsGcc.override {
+#        withXwidgets = true;
+#      });
+#    };
   };
 
   services.emacs.package = pkgs.emacsUnstable;

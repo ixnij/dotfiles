@@ -11,9 +11,12 @@ with pkgs; [
   #  mitscheme
   #  tinyscheme
   ghc
+  stack
   pandoc
   htop
   cloc
+  ncdu
+#  webkit # emacs with xwidget depends it
   llvm
   coreutils
 #  python39Packages.pyqt5_with_qtwebkit
@@ -26,8 +29,8 @@ with pkgs; [
   fira-code
   jetbrains-mono
   neofetch
-  emacsGcc
   httpie
+  emacsGcc
   # chez
   # Em.. It seems like chez doesn't support Apple m1
   #	freshfetch
