@@ -22,7 +22,7 @@
 
 (require 'init-native-comp)
 (require 'init-mackeys)
-(require 'init-fonts)
+
 (let
     ((normal-gc-cons-threshold
       (* 20 1024 1024))
@@ -47,6 +47,7 @@
   (global-set-key
    (kbd "M-o")
    #'ace-window))
+(require 'init-fonts)
 (require 'init-exec-path)
 (require 'init-minibuffer)
 (require 'init-company)

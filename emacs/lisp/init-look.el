@@ -17,7 +17,7 @@
 
 
 
-(maybe-require-package 'modus-themes)
+;; Since emacs 29, modus has became builtins
 (defvar ixnij/themes
   '((light . modus-operandi)
     (dark . modus-vivendi))

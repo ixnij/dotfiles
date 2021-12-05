@@ -25,7 +25,7 @@ with pkgs; [
   wget
   tmux
   exa 
-  sarasa-gothic
+  iosevka
   fira-code
   jetbrains-mono
   neofetch
