@@ -25,9 +25,9 @@ with pkgs; [
   wget
   tmux
   exa 
-  iosevka
-  fira-code
-  jetbrains-mono
+  iosevka-bin
+#  fira-code
+#  jetbrains-mono
   neofetch
   httpie
   emacsGcc

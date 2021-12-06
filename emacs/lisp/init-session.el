@@ -1,11 +1,6 @@
 ;;; init-session.el --- For sessions  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
-
-;;; TODO:
-
-;; [] replace built-in desktop with presp.
-
 ;;; Code:
 
 (require 'desktop)
