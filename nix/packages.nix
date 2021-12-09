@@ -30,7 +30,7 @@ with pkgs; [
 #  jetbrains-mono
   neofetch
   httpie
-  emacsGcc
+#  emacsUnstableGcc
   # chez
   # Em.. It seems like chez doesn't support Apple m1
   #	freshfetch

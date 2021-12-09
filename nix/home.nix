@@ -42,7 +42,8 @@ in {
     zsh = rec {
       enable = true;
       dotDir = ".config/zsh";
-      initExtra = (builtins.readFile "${home}/${dotDir}/zshrc") + (builtins.readFile "${home}/Projects/Repositories/My/Dotfiles/zsh/zshrc.local") +
+      initExtra = (builtins.readFile "${home}/${dotDir}/zshrc") + 
+      (builtins.readFile "${home}/Projects/Repositories/My/Dotfiles/zsh/zshrc.local") +
                   ''
         if [[ $TERM == dumb || $TERM == emacs || ! -o interactive ]]; then
         unsetopt zle
