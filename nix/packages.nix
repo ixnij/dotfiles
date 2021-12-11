@@ -2,7 +2,6 @@
 
 with pkgs; [
   bat
-  #	emacsMacport
   ripgrep
   guile
   stow
@@ -30,12 +29,11 @@ with pkgs; [
 #  jetbrains-mono
   neofetch
   httpie
-#  emacsUnstableGcc
+  emacsUnstableGcc
   # chez
   # Em.. It seems like chez doesn't support Apple m1
   #	freshfetch
-  # cachix
+  cachix
   tree
   # librime
-	jq
 ]
