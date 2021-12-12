@@ -55,7 +55,7 @@ Nix 的文档：[[https://nixos.org/manual/nix/stable/installation/upgrading.htm
 
 Grml's [[https://grml.org/console][Offical Website]].
 
-* .emacs.d
+* .emacs.d : depracted, I'm using doom now.
 
 我的 emacs 配置带有 vim 编辑器的按键绑定，使用了 evil 的方案。
 我没有使用社区中比较流行的 use-package 或者 leaf.el ，而是选择了和 purcell 一样的方案 （实际上就是抄）。
