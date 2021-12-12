@@ -43,7 +43,7 @@ in {
       enable = true;
       dotDir = ".config/zsh";
       initExtra = (builtins.readFile "${home}/${dotDir}/zshrc") + 
-      (builtins.readFile "${home}/Projects/Repositories/My/Dotfiles/zsh/zshrc.local") +
+                  (builtins.readFile "${home}/Projects/Repositories/My/Dotfiles/zsh/zshrc.local") +
                   ''
         if [[ $TERM == dumb || $TERM == emacs || ! -o interactive ]]; then
         unsetopt zle
@@ -85,18 +85,16 @@ nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
 nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr> "
-            ;
-	}
+          ;
+        }
       ];
       extraConfig = "set mouse=a";
     };
 
-#    emacs = {
-#      enable = true;
-#      package = (pkgs.emacsGcc.override {
-#        withXwidgets = true;
-#      });
-#    };
+    emacs = {
+      enable = true;
+      package = pkgs.emacsUnstableGcc;
+    };
   };
 
   services.emacs.package = pkgs.emacsUnstable;

@@ -25,14 +25,10 @@ with pkgs; [
   tmux
   exa 
   iosevka-bin
-#  fira-code
-#  jetbrains-mono
   neofetch
   httpie
-  emacsUnstableGcc
   # chez
   # Em.. It seems like chez doesn't support Apple m1
-  #	freshfetch
   cachix
   tree
   # librime
