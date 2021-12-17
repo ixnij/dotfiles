@@ -23,10 +23,10 @@ in {
     # Let Home Manager install and manage itself.
     home-manager.enable = true;
 
-    skim = {
-      enable = true;
-      enableZshIntegration = true;
-    };
+#    skim = {
+#      enable = true;
+#      enableZshIntegration = true;
+#    };
 
     zoxide = {
       enable = true;
@@ -45,13 +45,13 @@ in {
       initExtra = (builtins.readFile "${home}/${dotDir}/zshrc") + 
                   (builtins.readFile "${home}/Projects/Repositories/My/Dotfiles/zsh/zshrc.local") +
                   ''
-        if [[ $TERM == dumb || $TERM == emacs || ! -o interactive ]]; then
-        unsetopt zle
-        unset zle_bracketed_paste
-        export PS1='%m %~ $ '
-        else
-        . ${config.xdg.configHome}/zsh/plugins/iterm2_shell_integration
-        fi
+      if [[ $TERM == dumb || $TERM == emacs || ! -o interactive ]]; then
+      unsetopt zle
+      unset zle_bracketed_paste
+      export PS1='%m %~ $ '
+      else
+      . ${config.xdg.configHome}/zsh/plugins/iterm2_shell_integration
+      fi
       '';
       plugins = [
         {
@@ -70,21 +70,17 @@ in {
       plugins = with pkgs.vimPlugins; [
         vim-nix
         {
-          plugin = LeaderF;
-          config = "let g:Lf_WindowPosition = 'popup'";
-        }
-        {
           plugin = telescope-nvim;
           config = "
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+          nnoremap <leader>ff <cmd>Telescope find_files<cr>
+          nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+          nnoremap <leader>fb <cmd>Telescope buffers<cr>
+          nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
-nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
-nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
-nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
-nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr> "
+          nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
+          nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
+          nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
+          nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr> "
           ;
         }
       ];
@@ -93,7 +89,7 @@ nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr> "
 
     emacs = {
       enable = true;
-      package = pkgs.emacsUnstableGcc;
+      package = pkgs.emacsGcc;
     };
   };
 

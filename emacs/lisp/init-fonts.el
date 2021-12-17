@@ -39,9 +39,9 @@
 		      '("Apple Color Emoji" . "iso10646-1")
 		      nil 'prepend)))
 ;; Mode-line font
-(progn
-  (set-face-attribute 'mode-line-active nil :font "Baskerville 18")
-  (set-face-attribute 'mode-line-inactive nil :font "Fira code 14"))
+;(progn
+;  (set-face-attribute 'mode-line-active nil :font "Baskerville 18")
+;  (set-face-attribute 'mode-line-inactive nil :font "Fira code 14"))
 
 (provide 'init-fonts)
 ;;; Local Variables:
