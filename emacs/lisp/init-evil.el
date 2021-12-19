@@ -19,6 +19,7 @@
   :custom
   (evil-collection-calendar-want-org-bindings t)
   (evil-collection-outline-bind-tab-p nil)
+  (evil-collection-setup-minibuffer t)
   (evil-collection-setup-debugger-keys nil))
 
 (provide 'init-evil)

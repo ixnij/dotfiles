@@ -37,11 +37,13 @@
 
 ;; Persist history over Emacs restarts. Vertico sorts by history position.
 (use-package savehist
+  :ensure nil
   :init
   (savehist-mode))
 
 ;; A few more useful configurations...
 (use-package emacs
+  :ensure nil
   :init
   ;; Add prompt indicator to `completing-read-multiple'.
   ;; Alternatively try `consult-completing-read-multiple'.
@@ -63,11 +65,12 @@
   (setq enable-recursive-minibuffers t))
 
 (use-package consult
-  :ensure t
   :bind (([remap imenu]              . consult-imenu)
 	 ([remap goto-line]          . consult-goto-line)
 	 ([remap bookmark-jump]      . consult-bookmark)
 	 ([remap recentf-open-files] . consult-recent-file)
+	 ([remap switch-to-buffer]   . consult-buffer)
+	 ([remap load-theme]         . consult-theme)
 	 ([remap evil-show-marks]    . consult-mark))
   :config
   (with-no-warnings
