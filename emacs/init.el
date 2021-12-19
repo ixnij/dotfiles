@@ -28,6 +28,9 @@
 
 (require 'init-minibuffer)
 
+;; misc
+(require 'init-misc)
+
 (when (file-exists-p custom-file)
   (load custom-file))
 

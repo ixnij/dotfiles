@@ -1,50 +1,28 @@
 ;;; init-misc.el --- Miscellaneous and built-in.  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
-;; The `add-auto-mode' is from purcell.
-;; This file also config for some built-in packages.
-;; `follow-mode' is awesome.
-;;; Code:
-(or
- (and system-darwin-p
-      (display-graphic-p))
- (menu-bar-mode -1))
-(fset 'yes-or-no-p 'y-or-n-p)
-;; Now, Emacs 29 has `use-short-answers'.
-(setq inhibit-startup-screen t)
-;; to make ibuffer default.
-(defalias 'list-buffers 'ibuffer)
-(setq visual-line-fringe-indicators
-      '(left-bracket right-bracket))
-;; There is some problems with gui.
-(setq-default
- window-resize-pixelwise t
- frame-resize-pixelwise t)
-;; Handier way to add modes to auto-mode-alist
-(defun add-auto-mode
-    (mode &rest patterns)
-  "Add entries to `auto-mode-alist' to use `MODE' for all given file `PATTERNS'."
-  (dolist
-      (pattern patterns)
-    (add-to-list 'auto-mode-alist
-		 (cons pattern mode))))
-;; Make winner mode load after init.
-(add-hook 'after-init-hook 'winner-mode)
-;; Remeber curser localtion
-(add-hook 'after-init-hook 'save-place-mode)
-(add-hook 'after-init-hook 'global-hl-line-mode)
-(global-so-long-mode t)
-(add-hook 'after-init-hook 'global-auto-revert-mode)
-(savehist-mode t)
-(recentf-mode t)
-(diminish 'hs-minor-mode)
-(add-hook 'prog-mode-hook 'hs-minor-mode)
-(require-package 'restart-emacs)
-(when
-    (maybe-require-package 'paradox)
-  (paradox-enable))
-(setq-default initial-scratch-message
-	      (concat ";; Love the World, " user-login-name " - Emacs by your side!\n;; Never forget the support of your family!\n\n"))
+
+;; Code:
+
+(use-package emacs
+  :config
+  (setq-default initial-scratch-message
+		(concat ";; Love the World, " user-login-name " - Emacs by your side!\n;; Never forget the support of your family!\n\n"))
+  (setq-default
+   window-resize-pixelwise t
+   frame-resize-pixelwise t)
+  (setq inhibit-startup-screen t)
+  (fset 'yes-or-no-p 'y-or-n-p) ;; emacs 28 has `use-short-answers' 
+  (defalias 'list-buffers 'ibuffer)
+  :hook
+  (after-init-hook . global-auto-revert-mode)
+  (after-init-hook . save-place-mode)
+  (after-init-hook . winner-mode)
+  (after-init-hook . global-hi-line-mode)
+  (after-init-hook . global-so-long-mode))
+
+(use-package restart-emacs)
+
 (provide 'init-misc)
 ;; Local Variables:
 ;; coding: utf-8
