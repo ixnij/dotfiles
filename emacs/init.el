@@ -26,6 +26,8 @@
 (require 'init-look)
 (require 'init-fonts)
 
+(require 'init-minibuffer)
+
 (when (file-exists-p custom-file)
   (load custom-file))
 

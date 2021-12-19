@@ -3,68 +3,86 @@
 ;;; Commentary:
 
 ;;; Code:
-(when
-    (maybe-require-package 'vertico)
-  (add-hook 'after-init-hook 'vertico-mode)
-  (require-package 'orderless)
-  (with-eval-after-load 'vertico
-    (require 'orderless))
-  (defun ixnij/use-orderless-in-minibuffer
-      ()
-    (setq-local completion-styles
-		'(substring orderless)))
-  (add-hook 'minibuffer-setup-hook 'ixnij/use-orderless-in-minibuffer)
-  (require-package 'savehist)
-  (add-hook 'after-init-hook #'savehist-mode)
-  (when
-      (maybe-require-package 'marginalia)
-    (add-hook 'after-init-hook 'marginalia-mode))
-  (when
-      (maybe-require-package 'consult)
-    (global-set-key
-     (kbd "C-x b")
-     #'consult-buffer))
-  (when
-      (and
-       (require 'vertico-posframe nil t)
-       ixnij/vertico-use-posframe-p)
-    (vertico-posframe-mode 1)))
-
-(when
-(maybe-require-package 'embark)
-(require 'embark)
-;; (global-set-key (kbd "C-.") #'embark-act)
-(global-set-key
-(kbd "C-.")
-#'embark-dwim)
-(global-set-key
-(kbd "C-h B")
-#'embark-bindings)
-(setq prefix-help-command #'embark-prefix-help-command)
-(add-to-list 'display-buffer-alist
-'("\\`\\*Embark Collect \\(Live\\|Completions\\)\\*"
-	 nil
-(window-parameters
-(mode-line-format . none))))
-(when
-(maybe-require-package 'embark-consult)
-(require 'embark-consult)
-(add-hook 'embark-collect-mode #'consult-preview-at-point-mode)))
-
-(when
-(maybe-require-package 'helpful)
-;; Note that the built-in `describe-function' includes both functions
-  ;; and macros. `helpful-function' is functions only, so we provide
-  ;; `helpful-callable' as a drop-in replacement.
-(global-set-key
-(kbd "C-h f")
-#'helpful-callable)
-(global-set-key
-(kbd "C-h v")
-#'helpful-variable)
-(global-set-key
-(kbd "C-h k")
-#'helpful-key))
+
+(use-package vertico
+  :init
+  (vertico-mode)
+
+  ;; Different scroll margin
+  (setq vertico-scroll-margin 0)
+
+  ;; Show more candidates
+  (setq vertico-count 20)
+
+  ;; Grow and shrink the Vertico minibuffer
+  (setq vertico-resize t)
+
+  ;; Optionally enable cycling for `vertico-next' and `vertico-previous'.
+  (setq vertico-cycle t))
+
+;; Optionally use the `orderless' completion style. See
+;; `+orderless-dispatch' in the Consult wiki for an advanced Orderless style
+;; dispatcher. Additionally enable `partial-completion' for file path
+;; expansion. `partial-completion' is important for wildcard support.
+;; Multiple files can be opened at once with `find-file' if you enter a
+;; wildcard. You may also give the `initials' completion style a try.
+(use-package orderless
+  :init
+  ;; Configure a custom style dispatcher (see the Consult wiki)
+  ;; (setq orderless-style-dispatchers '(+orderless-dispatch)
+  ;;       orderless-component-separator #'orderless-escapable-split-on-space)
+  (setq completion-styles '(orderless)
+	completion-category-defaults nil
+	completion-category-overrides '((file (styles partial-completion)))))
+
+;; Persist history over Emacs restarts. Vertico sorts by history position.
+(use-package savehist
+  :init
+  (savehist-mode))
+
+;; A few more useful configurations...
+(use-package emacs
+  :init
+  ;; Add prompt indicator to `completing-read-multiple'.
+  ;; Alternatively try `consult-completing-read-multiple'.
+  (defun crm-indicator (args)
+    (cons (concat "[CRM] " (car args)) (cdr args)))
+  (advice-add #'completing-read-multiple :filter-args #'crm-indicator)
+
+  ;; Do not allow the cursor in the minibuffer prompt
+  (setq minibuffer-prompt-properties
+	'(read-only t cursor-intangible t face minibuffer-prompt))
+  (add-hook 'minibuffer-setup-hook #'cursor-intangible-mode)
+
+  ;; Emacs 28: Hide commands in M-x which do not work in the current mode.
+  ;; Vertico commands are hidden in normal buffers.
+  ;; (setq read-extended-command-predicate
+  ;;       #'command-completion-default-include-p)
+
+  ;; Enable recursive minibuffers
+  (setq enable-recursive-minibuffers t))
+
+(use-package consult
+  :ensure t
+  :bind (([remap imenu]              . consult-imenu)
+	 ([remap goto-line]          . consult-goto-line)
+	 ([remap bookmark-jump]      . consult-bookmark)
+	 ([remap recentf-open-files] . consult-recent-file)
+	 ([remap evil-show-marks]    . consult-mark))
+  :config
+  (with-no-warnings
+    (consult-customize consult-ripgrep consult-git-grep consult-grep
+		       consult-bookmark
+		       consult-recent-file
+		       consult-buffer
+		       :preview-key nil))
+  :custom
+  (consult-fontify-preserve nil)
+  (consult-async-min-input 2)
+  (consult-async-refresh-delay 0.15)
+  (consult-async-input-throttle 0.2)
+  (consult-async-input-debounce 0.1))
+
 (provide 'init-minibuffer)
 ;; Local Variables:
 ;; coding: utf-8
