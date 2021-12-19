@@ -4,20 +4,8 @@
 
 ;;; Code:
 
-(when (maybe-require-package 'doom-themes)
-  (setq doom-themes-enable-bold t
-	doom-themes-enable-italic t)
-  (doom-themes-org-config)
-  (doom-themes-visual-bell-config))
+(use-package modus-themes)
 
-
-
-;; For modeline.
-(column-number-mode 1)
-
-
-
-;; Since emacs 29, modus has became builtins
 (defvar ixnij/themes
   '((light . modus-operandi)
     (dark . modus-vivendi))
@@ -41,7 +29,6 @@
 	(load-theme dark-theme t)
 	(setq current-theme dark-theme)))))
 
-(add-hook 'after-init-hook #'ixnij/switch-theme)
 (provide 'init-look)
 ;;; Local Variables:
 ;;; coding: utf-8

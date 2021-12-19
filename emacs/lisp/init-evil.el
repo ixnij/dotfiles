@@ -4,17 +4,22 @@
 
 ;;; Code:
 
-(when (maybe-require-package 'evil)
+(use-package evil
+  :init
   (setq evil-want-keybinding nil)
   (setq evil-want-integration t)
-  (require 'evil)
-  (evil-mode 1)
-  (when (maybe-require-package 'evil-collection)
-    (when (require 'evil-collection nil t)
-      (setq evil-collection-setup-minibuffer t)
-      (setq evil-collection-setup-debugger-keys t)
-      (setq evil-collection-calendar-want-org-bindings t)
-      (evil-collection-init))))
+  :hook
+  (after-init . evil-mode)
+  :custom
+  (evil-undo-system 'undo-redo))
+
+(use-package evil-collection
+  :ensure t
+  :hook (evil-mode . evil-collection-init)
+  :custom
+  (evil-collection-calendar-want-org-bindings t)
+  (evil-collection-outline-bind-tab-p nil)
+  (evil-collection-setup-debugger-keys nil))
 
 (provide 'init-evil)
 ;;; init-evil.el ends here
