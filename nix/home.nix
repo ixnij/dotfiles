@@ -23,10 +23,10 @@ in {
     # Let Home Manager install and manage itself.
     home-manager.enable = true;
 
-#    skim = {
-#      enable = true;
-#      enableZshIntegration = true;
-#    };
+    skim = {
+      enable = true;
+      enableZshIntegration = true;
+    };
 
     zoxide = {
       enable = true;

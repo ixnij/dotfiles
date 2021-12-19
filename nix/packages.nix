@@ -7,6 +7,7 @@ with pkgs; [
   stow
   fd
   sbcl
+  w3m
   #  mitscheme
   #  tinyscheme
   ghc
@@ -25,11 +26,13 @@ with pkgs; [
   tmux
   exa 
   iosevka-bin
+  source-han-serif-simplified-chinese
   neofetch
   httpie
   # chez
   # Em.. It seems like chez doesn't support Apple m1
   cachix
+  lilypond-with-fonts
   tree
   # librime
 ]
