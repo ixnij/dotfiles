@@ -4,3 +4,6 @@
 [submodule "emacs/site-lisp/vertico-posframe"]
 	path = emacs/site-lisp/vertico-posframe
 	url = git@github.com:tumashu/vertico-posframe.git
+[submodule "emacs/site-lisp/vertico"]
+	path = emacs/site-lisp/vertico
+	url = git@github.com:minad/vertico.git

@@ -5,20 +5,22 @@
 ;;; Code:
 
 (use-package vertico
+  :ensure nil ;; from my /site-lisp/
   :init
-  (vertico-mode)
-
   ;; Different scroll margin
   (setq vertico-scroll-margin 0)
 
   ;; Show more candidates
-  (setq vertico-count 20)
+  (setq vertico-count 12)
 
   ;; Grow and shrink the Vertico minibuffer
   (setq vertico-resize t)
 
   ;; Optionally enable cycling for `vertico-next' and `vertico-previous'.
-  (setq vertico-cycle t))
+  (setq vertico-cycle t)
+
+  :config
+  (vertico-mode))
 
 ;; Optionally use the `orderless' completion style. See
 ;; `+orderless-dispatch' in the Consult wiki for an advanced Orderless style
@@ -34,6 +36,18 @@
   (setq completion-styles '(orderless)
 	completion-category-defaults nil
 	completion-category-overrides '((file (styles partial-completion)))))
+
+;; Configure directory extension.
+(use-package vertico-directory
+  :after vertico
+  :ensure nil
+  ;; More convenient directory navigation commands
+  :bind (:map vertico-map
+              ("RET" . vertico-directory-enter)
+              ("DEL" . vertico-directory-delete-char)
+              ("M-DEL" . vertico-directory-delete-word))
+  ;; Tidy shadowed file names
+  :hook (rfn-eshadow-update-overlay . vertico-directory-tidy))
 
 ;; Persist history over Emacs restarts. Vertico sorts by history position.
 (use-package savehist
@@ -85,6 +99,20 @@
   (consult-async-refresh-delay 0.15)
   (consult-async-input-throttle 0.2)
   (consult-async-input-debounce 0.1))
+
+;; Enable richer annotations using the Marginalia package
+(use-package marginalia
+  ;; Either bind `marginalia-cycle` globally or only in the minibuffer
+  :bind (("M-A" . marginalia-cycle)
+         :map minibuffer-local-map
+         ("M-A" . marginalia-cycle))
+
+  ;; The :init configuration is always executed (Not lazy!)
+  :init
+
+  ;; Must be in the :init section of use-package such that the mode gets
+  ;; enabled right away. Note that this forces loading the package.
+  (marginalia-mode))
 
 (provide 'init-minibuffer)
 ;; Local Variables:

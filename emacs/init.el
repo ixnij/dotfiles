@@ -2,17 +2,25 @@
 
 ;;; Commentary:
 
-;; This file bootstraps full configuretion.
+;; The `add-subdirs-to-load-path' was copied from manateelazycat.
+;; See line 136 ~ 141 at https://manateelazycat.github.io/eaf/emacs/2020/05/10/eaf-community.html.
 
 ;;; Code:
 
 (add-to-list 'load-path
 	     (expand-file-name "lisp" user-emacs-directory))
 
+(defun add-subdirs-to-load-path (dir)
+  "Recursive add directories to `load-path'."
+  (let ((default-directory (file-name-as-directory dir)))
+    (add-to-list 'load-path dir)
+    (normal-top-level-add-subdirs-to-load-path)))
+(add-subdirs-to-load-path "~/.emacs.d/site-lisp")
+
 (when (eq system-type 'darwin)
   (require 'init-mackeys))
 
-;;; package.el
+;; package.el
 (setq package-quickstart t)
 (package-initialize) ;; do not forget it
 (setq custom-file (locate-user-emacs-file "custom.el"))
