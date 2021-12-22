@@ -61,6 +61,35 @@
 (use-package ace-window
   :bind ("M-o" . ace-window))
 
+(use-package recentf
+  :ensure nil
+  :hook (after-init . recentf-mode)
+  :custom
+  (recentf-filename-handlers '(abbreviate-file-name))
+  (recentf-exclude `("/ssh:"
+		     "/TAGS\\'"
+		     "COMMIT_EDITMSG\\'")))
+
+;; mode line
+(use-package simple
+  :ensure nil
+  :hook (after-init . (lambda ()
+			(line-number-mode)
+			(column-number-mode)
+			(size-indication-mode))))
+(use-package avy
+  ;; integrate with isearch and others
+  ;; C-' to select isearch-candidate with avy
+  :hook (after-init . avy-setup-default)
+  :bind (("M-g M-l" . avy-goto-line)
+         ("M-g M-j" . avy-goto-char-timer))
+  :custom
+  (avy-background t)
+  (avy-all-windows nil)
+  (avy-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l ?q ?w ?e ?r ?u ?i ?o ?p))
+  ;; overlay is used during isearch, `pre' style makes avy keys evident.
+  (avy-styles-alist '((avy-isearch . pre))))
+
 (provide 'init-misc)
 ;; Local Variables:
 ;; coding: utf-8

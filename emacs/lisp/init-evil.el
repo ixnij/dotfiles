@@ -8,6 +8,11 @@
   :init
   (setq evil-want-keybinding nil)
   (setq evil-want-integration t)
+  :bind (([remap evil-quit] . kill-this-buffer)
+	 :map evil-motion-state-map
+	 ("f" . evil-avy-goto-char-in-line)
+	 :map evil-normal-state-map
+	 ("s" . evil-avy-goto-char-timer))
   :hook
   (after-init . evil-mode)
   :custom
