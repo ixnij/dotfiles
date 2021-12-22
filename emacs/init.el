@@ -36,6 +36,8 @@
 
 (require 'init-minibuffer)
 
+(require 'init-git)
+
 ;; misc
 (require 'init-misc)
 
