@@ -4,7 +4,9 @@
 
 ;;; Code:
 
-(use-package modus-themes)
+(use-package modus-themes
+  :config
+  (modus-themes-load-vivendi))
 
 (defvar ixnij/themes
   '((light . modus-operandi)
@@ -20,7 +22,7 @@
       ((light-theme (cdr (assoc 'light ixnij/themes)))
        (dark-theme (cdr (assoc 'dark ixnij/themes))))
     (if (equal current-theme dark-theme)
-	(progn 
+	(progn
 	  (disable-theme current-theme)
 	  (load-theme light-theme t)
 	  (setq current-theme light-theme))

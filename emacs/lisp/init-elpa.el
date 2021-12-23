@@ -11,9 +11,9 @@
 
 (defconst ixnij/package-mirror-alist
   '((default
-     ("gnu"          . "https://elpa.gnu.org/packages/")
-     ("melpa"        . "https://melpa.org/packages/")
-     ("org"          . "https://orgmode.org/elpa/"))
+      ("gnu"          . "https://elpa.gnu.org/packages/")
+      ("melpa"        . "https://melpa.org/packages/")
+      ("org"          . "https://orgmode.org/elpa/"))
     (emacs-china
      ("gnu"          . "https://elpa.emacs-china.org/gnu/")
      ("melpa"        . "https://elpa.emacs-china.org/melpa/")
@@ -33,13 +33,14 @@
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
+(eval-and-compile
   (setq use-package-always-ensure t)
   (setq use-package-always-defer nil)
   (setq use-package-always-demand nil)
   (setq use-package-expand-minimally nil)
-  (setq use-package-enable-imenu-support t)
-  (require 'use-package)
-
+  (setq use-package-enable-imenu-support t))
+(eval-when-compile
+  (require 'use-package))
 
 ;; Work-around for https://debbugs.gnu.org/cgi/bugreport.cgi?bug=34341
 (when
