@@ -41,6 +41,8 @@
 
 (require 'init-minibuffer)
 
+(require 'init-company)
+
 (require 'init-git)
 
 ;; misc

@@ -2,17 +2,18 @@
 
 ;;; Commentary:
 
+;; copied from condy0919
+
 ;;; Code:
 
 (use-package company
-  :ensure t
   :hook (prog-mode . company-mode)
   :bind (:map company-mode-map
-         ([remap completion-at-point] . company-complete)
-         :map company-active-map
-         ("C-s"     . company-filter-candidates)
-         ([tab]     . company-complete-common-or-cycle)
-         ([backtab] . company-select-previous-or-abort))
+	      ([remap completion-at-point] . company-complete)
+	      :map company-active-map
+	      ("C-s"     . company-filter-candidates)
+	      ([tab]     . company-complete-common-or-cycle)
+	      ([backtab] . company-select-previous-or-abort))
   :config
   (define-advice company-capf--candidates (:around (func &rest args))
     "Try default completion styles."
@@ -40,11 +41,11 @@
   ;; No icons
   (company-format-margin-function nil)
   (company-backends '((company-capf :with company-tempo)
-                      company-files
-                      (company-dabbrev-code company-keywords)
-                      company-dabbrev
-                      ;; HACK: prevent `lsp-mode' to add `company-capf' back.
-                      company-capf)))
+		      company-files
+		      (company-dabbrev-code company-keywords)
+		      company-dabbrev
+		      ;; HACK: prevent `lsp-mode' to add `company-capf' back.
+		      company-capf)))
 
 (provide 'init-company)
 ;;; Local Variable:
