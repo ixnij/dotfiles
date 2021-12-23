@@ -29,6 +29,7 @@
 
 ;; editing
 (require 'init-evil)
+(require 'init-edit)
 
 ;; appearance
 (require 'init-look)
