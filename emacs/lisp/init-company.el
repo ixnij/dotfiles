@@ -7,7 +7,7 @@
 ;;; Code:
 
 (use-package company
-  :hook (prog-mode . company-mode)
+  :hook ((prog-mode magit-mode). company-mode)
   :bind (:map company-mode-map
 	      ([remap completion-at-point] . company-complete)
 	      :map company-active-map
@@ -39,7 +39,7 @@
   ;; Stop annoying me
   (company-etags-use-main-table-list nil)
   ;; No icons
-  (company-format-margin-function nil)
+  ;;(company-format-margin-function nil)
   (company-backends '((company-capf :with company-tempo)
 		      company-files
 		      (company-dabbrev-code company-keywords)
