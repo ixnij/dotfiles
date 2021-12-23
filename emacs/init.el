@@ -23,6 +23,7 @@
 (setq custom-file (locate-user-emacs-file "custom.el"))
 
 (require 'init-elpa)
+(use-package diminish)
 
 (when (eq system-type 'darwin)
   (require 'init-mackeys)

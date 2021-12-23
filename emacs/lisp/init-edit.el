@@ -4,7 +4,7 @@
 
 ;;; Code:
 (use-package page-break-lines
-  :diminish
+  :diminish page-break-lines-mode
   :hook (after-init . global-page-break-lines-mode))
 
 ;; Highlight brackets according to their depth
@@ -13,6 +13,7 @@
 
 (use-package whitespace
   :ensure nil
+  :diminish
   :hook (after-init . global-whitespace-mode) ;; 注意，这里是全局打开
   :config
   ;; Don't use different background for tabs.
@@ -52,6 +53,15 @@
      tabs             ; tabs (show by face)
      tab-mark         ; tabs (show by symbol)
      )))
+
+;; Automatic parenthesis pairing
+(use-package elec-pair
+  :ensure nil
+  :hook (after-init . electric-pair-mode)
+  :init
+  (setq
+   electric-pair-inhibit-predicate
+   'electric-pair-conservative-inhibit))
 
 (provide 'init-edit)
 ;;; Local Variables:
