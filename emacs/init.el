@@ -17,15 +17,18 @@
     (normal-top-level-add-subdirs-to-load-path)))
 (add-subdirs-to-load-path "~/.emacs.d/site-lisp")
 
-(when (eq system-type 'darwin)
-  (require 'init-mackeys))
-
 ;; package.el
 (setq package-quickstart t)
 (package-initialize) ;; do not forget it
 (setq custom-file (locate-user-emacs-file "custom.el"))
 
 (require 'init-elpa)
+
+(when (eq system-type 'darwin)
+  (require 'init-mackeys)
+  (use-package ns-auto-titlebar
+    :config
+    (ns-auto-titlebar-mode)))
 
 ;; editing
 (require 'init-evil)
