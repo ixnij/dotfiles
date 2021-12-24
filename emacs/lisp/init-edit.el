@@ -13,7 +13,7 @@
 
 (use-package whitespace
   :ensure nil
-  :hook (after-init . global-whitespace-mode) ;; 注意，这里是全局打开
+  :hook (prog-mode . whitespace-mode)
   :config
   ;; Don't use different background for tabs.
   (face-spec-set 'whitespace-tab
