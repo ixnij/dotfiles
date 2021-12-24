@@ -38,6 +38,14 @@ Nix 的文档：[[https://nixos.org/manual/nix/stable/installation/upgrading.htm
   sudo -i sh -c 'nix-channel --update && nix-env -iA nixpkgs.nix && launchctl remove org.nixos.nix-daemon && launchctl load /Library/LaunchDaemons/org.nixos.nix-daemon.plist'
 #+end_src
 
+** Requirement
+
+#+begin_example
+emacs 29
+nix 2.25
+...
+#+end_example
+
 * zsh
 
 我正在使用来自 grml 的 =.zshrc= ，搭配修改自 grml 的 =.zshrc.local= 。
@@ -100,10 +108,6 @@ Using =use-package= and =evil= .
 #+end_src
 
 关于这个，我最近也参考了一下 [[https://liujiacai.net/blog/2021/05/05/emacs-package/#headline-6][Keep coding, liujiacai's blog]]。
-
-** Tips
-
-善用 =pp-buffer= 以及 =imenu=, 相比 =consult-ripgrep=, =rg.el= 或许更加适合我。
 
 * vim
 
