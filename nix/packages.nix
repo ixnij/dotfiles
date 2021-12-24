@@ -6,6 +6,7 @@ with pkgs; [
   guile
   stow
   fd
+  fira-code
   sbcl
   w3m
   #  mitscheme
