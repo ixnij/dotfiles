@@ -9,13 +9,19 @@
   :config
   (if (not (version< emacs-version "29"))
       (progn
-	(set-face-attribute 'mode-line-active nil :font "Baskerville 18")
-	(set-face-attribute 'mode-line-inactive nil :font "Fira code 14"))))
+	(set-face-attribute 'mode-line-active nil :family "Source Han Serif SC")
+	(set-face-attribute 'mode-line-inactive nil :family "Fira code"))))
 
 (use-package cnfonts
   :config (cnfonts-mode 1)
   (define-key cnfonts-mode-map (kbd "C--") #'cnfonts-decrease-fontsize)
-  (define-key cnfonts-mode-map (kbd "C-=") #'cnfonts-increase-fontsize))
+  (define-key cnfonts-mode-map (kbd "C-=") #'cnfonts-increase-fontsize)
+  :custom
+  (cnfonts-personal-fontnames
+   '(;;英文字体
+     ("Source Han Serif")
+     ;;中文字体
+     ("Source Han Serif SC"))))
 
 (use-package ligature
   :ensure nil
