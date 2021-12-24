@@ -12,10 +12,12 @@
    (concat
     ";; Love the World, "
     user-login-name
-    " - Emacs by your side!\n;; Never forget the support of your family!\n\n"
-    (format ";; Your emacs takes %s to init.\n;; Your Emacs version: %s"
+    " - Emacs by your side!\n;; Never forget the support of your family!\n"
+    (format (concat ";; Emacs takes %s to init.\n;; Emacs version: %s"
+		    "\n;; Emacs package quantity: %s")
 	    (emacs-init-time)
-	    emacs-version)))
+	    emacs-version
+	    (length package-alist))))
   (setq-default
    window-resize-pixelwise t
    frame-resize-pixelwise t)
