@@ -89,7 +89,9 @@ in {
 
     emacs = {
       enable = true;
-      package = pkgs.emacsGcc;
+      package = pkgs.emacsGit.override {
+        nativeComp = true;
+      };
     };
   };
 

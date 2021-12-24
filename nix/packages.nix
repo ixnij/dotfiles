@@ -11,7 +11,6 @@ with pkgs; [
   #  mitscheme
   #  tinyscheme
   ghc
-  stack
   pandoc
   htop
   cloc
