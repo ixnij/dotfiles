@@ -95,6 +95,13 @@
   ;; overlay is used during isearch, `pre' style makes avy keys evident.
   (avy-styles-alist '((avy-isearch . pre))))
 
+(use-package fanyi
+  :custom
+  (fanyi-providers
+   '(fanyi-longman-provider
+     fanyi-haici-provider
+     fanyi-youdao-thesaurus-provider)))
+
 (provide 'init-misc)
 ;; Local Variables:
 ;; coding: utf-8
