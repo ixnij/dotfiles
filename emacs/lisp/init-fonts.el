@@ -10,7 +10,8 @@
   (if (not (version< emacs-version "29"))
       (progn
 	(set-face-attribute 'mode-line-active nil :family "Source Han Serif SC")
-	(set-face-attribute 'mode-line-inactive nil :family "Fira code"))))
+	(set-face-attribute 'mode-line-inactive nil :family "Fira code")))
+  (set-fontset-font t 'emoji (font-spec :family "Apple Color Emoji") nil 'prepend))
 
 (use-package cnfonts
   :config (cnfonts-mode 1)
