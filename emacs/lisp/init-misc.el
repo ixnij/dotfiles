@@ -96,6 +96,7 @@
   (avy-styles-alist '((avy-isearch . pre))))
 
 (use-package fanyi
+  :defer t
   :custom
   (fanyi-providers
    '(fanyi-longman-provider
