@@ -4,7 +4,8 @@
 
 ;;; Code:
 
-(use-package magit)
+(use-package magit
+  :defer t)
 
 ;; NOTE: `diff-hl' depends on `vc'
 (use-package vc
