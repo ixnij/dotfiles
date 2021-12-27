@@ -10,23 +10,23 @@
 (require 'package)
 
 (defconst ixnij/package-mirror-alist
-  '((default
-      ("gnu"          . "https://elpa.gnu.org/packages/")
-      ("melpa"        . "https://melpa.org/packages/")
-      ("org"          . "https://orgmode.org/elpa/"))
-    (emacs-china
-     ("gnu"          . "https://elpa.emacs-china.org/gnu/")
-     ("melpa"        . "https://elpa.emacs-china.org/melpa/")
-     ("org"          . "https://elpa.emacs-china.org/org/"))
-    (tuna
-     ("gnu"          . "https://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
-     ("melpa"        . "https://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
-     ("org"          . "https://mirrors.tuna.tsinghua.edu.cn/elpa/org/"))
-    (sjtu
-     ("melpa"        . "https://mirrors.sjtug.sjtu.edu.cn/emacs-elpa/melpa/")
-     ("gnu"          . "https://mirrors.sjtug.sjtu.edu.cn/emacs-elpa/gnu/")
-     ("org"          . "https://mirrors.sjtug.sjtu.edu.cn/emacs-elpa/org/")
-     )))
+  '	((default
+	  ("gnu"          . "https://elpa.gnu.org/packages/")
+	  ("melpa"        . "https://melpa.org/packages/")
+	  ("org"          . "https://orgmode.org/elpa/"))
+	 (emacs-china
+	  ("gnu"          . "https://elpa.emacs-china.org/gnu/")
+	  ("melpa"        . "https://elpa.emacs-china.org/melpa/")
+	  ("org"          . "https://elpa.emacs-china.org/org/"))
+	 (tuna
+	  ("gnu"          . "https://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+	  ("melpa"        . "https://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
+	  ("org"          . "https://mirrors.tuna.tsinghua.edu.cn/elpa/org/"))
+	 (sjtu
+	  ("melpa"        . "https://mirrors.sjtug.sjtu.edu.cn/emacs-elpa/melpa/")
+	  ("gnu"          . "https://mirrors.sjtug.sjtu.edu.cn/emacs-elpa/gnu/")
+	  ("org"          . "https://mirrors.sjtug.sjtu.edu.cn/emacs-elpa/org/")
+	  )))
 (setq package-archives
       (assoc-default 'tuna ixnij/package-mirror-alist))
 

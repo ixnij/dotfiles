@@ -99,9 +99,7 @@
   :defer t
   :custom
   (fanyi-providers
-   '(fanyi-longman-provider
-     fanyi-haici-provider
-     fanyi-youdao-thesaurus-provider)))
+   '(fanyi-haici-provider)))
 
 (provide 'init-misc)
 ;; Local Variables:
