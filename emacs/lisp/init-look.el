@@ -6,7 +6,7 @@
 
 (use-package modus-themes
   :config
-  (modus-themes-load-operandi))
+  (modus-themes-load-vivendi))
 
 (defvar ixnij/themes
   '((light . modus-operandi)

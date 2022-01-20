@@ -7,6 +7,9 @@
 
 ;;; Code:
 
+(setq gc-cons-threshold most-positive-fixnum
+      gc-cons-percentage 0.6)
+
 (add-to-list 'load-path
 	     (expand-file-name "lisp" user-emacs-directory))
 
@@ -16,6 +19,7 @@
     (add-to-list 'load-path dir)
     (normal-top-level-add-subdirs-to-load-path)))
 (add-subdirs-to-load-path "~/.emacs.d/site-lisp")
+(setq read-process-output-max (* 1024 1024))
 
 ;; package.el
 (setq package-quickstart t)
@@ -47,6 +51,8 @@
 
 ;; misc
 (require 'init-misc)
+
+(use-package haskell-mode) ;; I don't know where I can put it.
 
 (when (file-exists-p custom-file)
   (load custom-file))

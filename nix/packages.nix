@@ -24,11 +24,13 @@ with pkgs; [
   ffmpeg
   wget
   tmux
-  exa 
+  exa
   iosevka-bin
   source-han-serif-simplified-chinese
   neofetch
   httpie
+  glances
+  alacritty
   # chez
   # Em.. It seems like chez doesn't support Apple m1
   cachix

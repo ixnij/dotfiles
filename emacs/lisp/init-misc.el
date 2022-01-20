@@ -95,11 +95,17 @@
   ;; overlay is used during isearch, `pre' style makes avy keys evident.
   (avy-styles-alist '((avy-isearch . pre))))
 
-(use-package fanyi
-  :defer t
+(use-package gcmh
+  :ensure t
+  :hook (after-init . gcmh-mode)
   :custom
-  (fanyi-providers
-   '(fanyi-haici-provider)))
+  (gcmh-idle-delay 10)
+  (gcmh-high-cons-threshold #x6400000)) ;; 100 MB
+
+(use-package go-translate
+  :ensure t
+  :custom
+  (gts-translate-list '(("en" "zh") ("fr" "zh"))))
 
 (provide 'init-misc)
 ;; Local Variables:
