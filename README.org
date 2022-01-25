@@ -109,6 +109,10 @@ Using =use-package= and =evil= .
 
 关于这个，我最近也参考了一下 [[https://liujiacai.net/blog/2021/05/05/emacs-package/#headline-6][Keep coding, liujiacai's blog]]。
 
+** haskell
+
+善用 =haskell-process-load-or-reload= 。
+
 * vim
 
 抄袭 grml。

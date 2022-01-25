@@ -7,6 +7,7 @@ with pkgs; [
   stow
   fd
   fira-code
+  hugo
   sbcl
   w3m
   #  mitscheme
