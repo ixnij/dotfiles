@@ -111,6 +111,11 @@
   :custom
   (gts-translate-list '(("en" "zh") ("fr" "zh"))))
 
+(use-package rime
+  :custom
+  (default-input-method "rime")
+  (rime-librime-root "~/.emacs.d/librime/dist"))
+
 (provide 'init-misc)
 ;; Local Variables:
 ;; coding: utf-8

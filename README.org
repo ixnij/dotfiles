@@ -73,11 +73,18 @@ Using =use-package= and =evil= .
 
 ** 关于字体
 
-在 macOS(即 Darwin) 上，我使用 Monokai 字体和 SF Mono 字体。
+使用 =cnfonts= 这个包。
 
-至于中文字体，用了 tumashu 的 cnfonts 来完成设置。
+*** Requirements
 
-顺便提一下，我就是在 emacs 上用 pyim 写这份文件的，感谢 tumashu 同学的努力 :)
+#+BEGIN_EXAMPLE
+Fonts:
+  Iosevka
+  Mononoki
+  Fira Code
+Library:
+  Librime
+#+END_EXAMPLE
 
 ** 关于第三方的包
 
