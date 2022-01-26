@@ -113,8 +113,14 @@
 
 (use-package rime
   :custom
+  (rime-librime-root "~/.emacs.d/librime/dist")
+  (rime-emacs-module-header-root "~/.emacs.d/librime")
   (default-input-method "rime")
-  (rime-librime-root "~/.emacs.d/librime/dist"))
+  :config
+  (setq rime-show-candidate 'posframe)
+  (setq rime-posframe-properties
+	(list :font "Iosevka"
+	      :internal-border-width 10)))
 
 (provide 'init-misc)
 ;; Local Variables:

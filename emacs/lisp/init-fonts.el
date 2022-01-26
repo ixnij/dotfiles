@@ -43,6 +43,21 @@
 				       "\\\\" "://"))
   ;; Enables ligature checks globally in all buffers. You can also do it
   ;; per mode with `ligature-mode'.
+  (ligature-set-ligatures 'haskell-interactive-mode
+			  (quote
+			   ("=>"
+			    "->"
+			    "/="
+			    "=="
+			    "||"
+			    "&&"
+			    ">>"
+			    "<<"
+			    ">="
+			    "<="
+			    "++"
+			    "::"
+			   )))
   (global-ligature-mode t))
 
 (provide 'init-fonts)

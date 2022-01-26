@@ -82,6 +82,7 @@ Fonts:
   Iosevka
   Mononoki
   Fira Code
+  all-then-icons-font
 Library:
   Librime
 #+END_EXAMPLE
