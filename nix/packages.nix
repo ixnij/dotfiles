@@ -13,7 +13,7 @@ with pkgs; [
   #  mitscheme
   #  tinyscheme
   ghc
-  pandoc
+#  pandoc
   htop
   cloc
   ncdu
@@ -34,7 +34,7 @@ with pkgs; [
   alacritty
   # chez
   # Em.. It seems like chez doesn't support Apple m1
-  cachix
+  # cachix
   lilypond-with-fonts
   tree
   # librime
