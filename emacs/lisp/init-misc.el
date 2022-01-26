@@ -48,11 +48,12 @@
 (use-package autorevert
   :ensure nil
   :hook (after-init . global-auto-revert-mode))
+
 (use-package winner-mode
   :ensure nil
   :hook (after-init . winner-mode))
 
-(use-package restart-emacs)
+(use-package restart-emacs :defer t)
 
 ;; MacOS specific
 (use-package exec-path-from-shell
@@ -64,6 +65,7 @@
   :hook (after-init . save-place-mode))
 
 (use-package ace-window
+  :defe t
   :bind ("M-o" . ace-window))
 
 (use-package recentf
@@ -83,6 +85,7 @@
 			(column-number-mode)
 			(size-indication-mode))))
 (use-package avy
+  :defer t
   ;; integrate with isearch and others
   ;; C-' to select isearch-candidate with avy
   :hook (after-init . avy-setup-default)
@@ -104,6 +107,7 @@
 
 (use-package go-translate
   :ensure t
+  :defer t
   :custom
   (gts-translate-list '(("en" "zh") ("fr" "zh"))))
 
