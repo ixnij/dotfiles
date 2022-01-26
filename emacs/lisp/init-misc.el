@@ -65,7 +65,7 @@
   :hook (after-init . save-place-mode))
 
 (use-package ace-window
-  :defe t
+  :defer t
   :bind ("M-o" . ace-window))
 
 (use-package recentf
