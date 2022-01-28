@@ -280,6 +280,10 @@ vimhelp ()    { vim -c "help $1" -c on -c "au! VimEnter *" }
 alias et="emacsclient -t -a ''" # emacs --daemon
 alias ec="emacsclient -c -a ''"
 
+alias stack="~/.scripts/stack"
+alias v=nvim
+alias ls='exa --icons --git'
+
 # End of file ##############################
 # vim:filetype=zsh
 # Local variables:
