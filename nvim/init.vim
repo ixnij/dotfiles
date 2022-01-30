@@ -1,6 +1,7 @@
 set expandtab
 set mouse=a
 set completeopt=menu,menuone,noselect
+set rnu
 lua require('plugins')
 
 " Telescope settings
@@ -23,15 +24,15 @@ if (has('termguicolors'))
   set termguicolors
 endif
 
-let g:material_terminal_italics = 1
-let g:material_theme_style = 'lighter'
-colorscheme material
+"let g:material_terminal_italics = 1
+"let g:material_theme_style = 'ocean'
+colorscheme gruvbox
 
 lua <<EOF
 require('lualine').setup {
   options = {
     icons_enabled = true,
-    theme = require('material.lualine'),
+    theme = auto,
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},
     disabled_filetypes = {},

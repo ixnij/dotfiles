@@ -42,6 +42,7 @@ return require('packer').startup(function(use)
   use 'hrsh7th/nvim-cmp'
   use 'neovim/nvim-lspconfig'
   use 'L3MON4D3/LuaSnip'
+  use 'morhetz/gruvbox'
   use 'saadparwaiz1/cmp_luasnip'
   if packer_bootstrap then
     require('packer').sync()

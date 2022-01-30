@@ -119,7 +119,7 @@
   :config
   (setq rime-show-candidate 'posframe)
   (setq rime-posframe-properties
-	(list :font "Iosevka"
+	(list :font "Monaco"
 	      :internal-border-width 10)))
 
 (provide 'init-misc)

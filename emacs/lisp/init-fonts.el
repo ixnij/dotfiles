@@ -15,8 +15,12 @@
   :custom
   (cnfonts-personal-fontnames
    '(;;英文字体
-     ("Source Han Serif")
-     ;;中文字体
+     ("Source Han Serif"
+
+      "FiraCode Nerd Font"
+
+      "Mononoki Nerd Font")
+     ;;中文字 体
      ("Source Han Serif SC"))))
 
 (use-package ligature
@@ -57,6 +61,7 @@
 			    "<="
 			    "++"
 			    "::"
+			    "->"
 			   )))
   (global-ligature-mode t))
 
