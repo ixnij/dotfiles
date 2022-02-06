@@ -54,36 +54,6 @@
 
 ;; I don't know where I can put them.
 (use-package haskell-mode)
-(use-package rust-mode
-  :custom
-  (rust-format-on-save (executable-find "rustfmt")))
-
-;; copied from condy
-(use-package lsp-mode
-  :ensure t
-  :hook (prog-mode . lsp-deferred)
-  :bind (:map lsp-mode-map
-         ("C-c f" . lsp-format-region)
-         ("C-c d" . lsp-describe-thing-at-point)
-         ("C-c a" . lsp-execute-code-action)
-         ("C-c r" . lsp-rename))
-  :custom
-  (lsp-keymap-prefix "C-c l")
-  (lsp-enable-links t)                 ;; no clickable links
-  (lsp-enable-folding t)               ;; use `hideshow' instead
-  (lsp-enable-snippet t)               ;; no snippets, it requires `yasnippet'
-  (lsp-enable-file-watchers nil)         ;; performance matters
-  (lsp-enable-text-document-color nil)   ;; as above
-  (lsp-enable-symbol-highlighting nil)   ;; as above
-  (lsp-enable-on-type-formatting nil)    ;; as above
-  (lsp-enable-indentation nil)           ;; don't change my code without my permission
-  (lsp-headerline-breadcrumb-enable nil) ;; keep headline clean
-  (lsp-modeline-code-actions-enable nil) ;; keep modeline clean
-  (lsp-modeline-diagnostics-enable nil)  ;; as above
-  (lsp-log-io nil)                       ;; debug only
-  (lsp-auto-guess-root t)                ;; auto guess root
-  (lsp-keep-workspace-alive t)         ;; auto kill lsp server
-  (lsp-eldoc-enable-hover nil))
 
 (when (file-exists-p custom-file)
   (load custom-file))
