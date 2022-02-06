@@ -4,9 +4,6 @@
 
 ;; Legacy code
 
-;; (use-package modus-themes
-;;   :config
-;;   (modus-themes-load-vivendi))
 ;;
 ;; (defun ixnij/switch-theme ()
 ;;   (interactive)
@@ -60,6 +57,14 @@
 
 ;;; Code:
 
+(defun ixnij/apply-theme (appearance)
+  "Load theme, taking current system APPEARANCE into consideration."
+  (mapc #'disable-theme custom-enabled-themes)
+  (pcase appearance
+    ('light (modus-themes-load-operandi))
+    ('dark (modus-themes-load-vivendi))))
+
+(add-hook 'ns-system-appearance-change-functions #'ixnij/apply-theme)
 
 (provide 'init-look)
 ;;; Local Variables:

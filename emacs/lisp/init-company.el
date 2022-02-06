@@ -7,7 +7,7 @@
   :ensure t
   :hook
   (after-init . global-company-mode)
-  (global-company-mode . company-tng-configure-default)
+;  (global-company-mode . company-tng-configure-default)
   :custom
   (company-idle-delay 0)
   (company-minimum-prefix-length 1))
