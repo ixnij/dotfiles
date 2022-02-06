@@ -26,6 +26,29 @@
   :bind
   ([remap list-buffers] . ibuffer))
 
+;; Copied from yuanqian
+  (setq ibuffer-saved-filter-groups
+	(quote (("default"
+		 ("dired" (mode . dired-mode))
+		 ("org" (name . "^.*org$"))
+		 ("magit" (mode . magit-mode))
+		 ("web" (or (mode . web-mode) (mode . js2-mode)))
+		 ("shell" (or (mode . eshell-mode) (mode . shell-mode)))
+		 ("programming" (or
+				 (mode . ess-mode)
+				 (mode . ess-r-mode)
+				 (mode . python-mode)
+				 (mode . c++-mode)))
+		 ("emacs" (or
+			   (name . "^\\*scratch\\*$")
+			   (name . "^\\*Messages\\*$")))
+		 ))))
+  (add-hook 'ibuffer-mode-hook
+	    (lambda ()
+	      (ibuffer-auto-mode 1)
+	      (ibuffer-switch-to-saved-filter-groups "default")))
+;; End
+
 (use-package hl-line
   :ensure nil
   :hook (after-init . global-hl-line-mode))
@@ -84,19 +107,30 @@
 			(line-number-mode)
 			(column-number-mode)
 			(size-indication-mode))))
+
+;;(use-package avy
+;;  :defer t
+;;  ;; integrate with isearch and others
+;;  ;; C-' to select isearch-candidate with avy
+;;  :hook (after-init . avy-setup-default)
+;;  :bind (("M-g M-l" . avy-goto-line)
+;;	 ("M-g M-j" . avy-goto-char-timer))
+;;  :custom
+;;  (avy-background t)
+;;  (avy-all-windows nil)
+;;  (avy-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l ?q ?w ?e ?r ?u ?i ?o ?p))
+;;  ;; overlay is used during isearch, `pre' style makes avy keys evident.
+;;  (avy-styles-alist '((avy-isearch . pre))))
+
 (use-package avy
-  :defer t
-  ;; integrate with isearch and others
-  ;; C-' to select isearch-candidate with avy
+  :ensure t
   :hook (after-init . avy-setup-default)
-  :bind (("M-g M-l" . avy-goto-line)
-	 ("M-g M-j" . avy-goto-char-timer))
-  :custom
-  (avy-background t)
-  (avy-all-windows nil)
-  (avy-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l ?q ?w ?e ?r ?u ?i ?o ?p))
-  ;; overlay is used during isearch, `pre' style makes avy keys evident.
-  (avy-styles-alist '((avy-isearch . pre))))
+  :bind ("M-l" . avy-goto-line))
+
+(use-package ace-pinyin
+  :ensure t
+  :config
+  (ace-pinyin-global-mode +1))
 
 (use-package gcmh
   :ensure t
@@ -105,11 +139,11 @@
   (gcmh-idle-delay 10)
   (gcmh-high-cons-threshold #x6400000)) ;; 100 MB
 
-(use-package go-translate
-  :ensure t
-  :defer t
-  :custom
-  (gts-translate-list '(("en" "zh") ("fr" "zh"))))
+;;(use-package go-translate
+;;  :ensure t
+;;  :defer t
+;;  :custom
+;;  (gts-translate-list '(("en" "zh") ("fr" "zh"))))
 
 (use-package rime
   :custom
