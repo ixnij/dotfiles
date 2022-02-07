@@ -34,11 +34,7 @@
 		 ("magit" (mode . magit-mode))
 		 ("web" (or (mode . web-mode) (mode . js2-mode)))
 		 ("shell" (or (mode . eshell-mode) (mode . shell-mode)))
-		 ("programming" (or
-				 (mode . ess-mode)
-				 (mode . ess-r-mode)
-				 (mode . python-mode)
-				 (mode . c++-mode)))
+		 ("programming" (mode . prog-mode))
 		 ("emacs" (or
 			   (name . "^\\*scratch\\*$")
 			   (name . "^\\*Messages\\*$")))
@@ -155,6 +151,9 @@
   (setq rime-posframe-properties
 	(list :font "Monaco"
 	      :internal-border-width 10)))
+
+(setq desktop-save 't)
+(setq desktop-dirname (concat (getenv "HOME") "/.emacs.d/"))
 
 (provide 'init-misc)
 ;; Local Variables:
