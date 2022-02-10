@@ -29,11 +29,18 @@
 (require 'init-elpa)
 (use-package diminish)
 
-(when (eq system-type 'darwin)
-  (require 'init-mackeys)
-  (use-package ns-auto-titlebar
-    :config
-    (ns-auto-titlebar-mode)))
+(use-package ns-auto-titlebar
+  :when (eq system-type 'darwin)
+  :ensure t
+  :config
+  (ns-auto-titlebar-mode))
+
+(use-package emacs
+  :ensure nil
+  :when (eq system-type 'darwin)
+  :config
+  (setq mac-option-modifier 'super
+	mac-command-modifier 'meta))
 
 ;; editing
 ;;(require 'init-evil)
