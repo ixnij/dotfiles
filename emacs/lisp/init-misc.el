@@ -28,14 +28,16 @@
 
 ;; Copied from yuanqian
   (setq ibuffer-saved-filter-groups
-	(quote (("default"
-		 ("dired" (mode . dired-mode))
-		 ("org" (name . "^.*org$"))
-		 ("magit" (mode . magit-mode))
+	(quote (("Default"
+		 ("Dired" (mode . dired-mode))
+		 ("Org" (name . "^.*org$"))
+		 ("Magit" (mode . magit-mode))
 		 ("web" (or (mode . web-mode) (mode . js2-mode)))
-		 ("shell" (or (mode . eshell-mode) (mode . shell-mode)))
-		 ("programming" (mode . prog-mode))
-		 ("emacs" (or
+		 ("Shell" (or (mode . eshell-mode) (mode . shell-mode)))
+		 ("Programming" (or (mode . haskell-mode)
+				    (mode . c-or-c++-mode)
+				    (mode . shell-script-mode)))
+		 ("Emacs" (or
 			   (name . "^\\*scratch\\*$")
 			   (name . "^\\*Messages\\*$")))
 		 ))))
@@ -152,8 +154,12 @@
 	(list :font "Monaco"
 	      :internal-border-width 10)))
 
-(setq desktop-save 't)
-(setq desktop-dirname (concat (getenv "HOME") "/.emacs.d/"))
+(use-package emacs
+  :config
+  (setq desktop-save 't)
+  (setq desktop-dirname (concat (getenv "HOME") "/.emacs.d/"))
+  (pixel-scroll-precision-mode))
+;; very nice 👍
 
 (provide 'init-misc)
 ;; Local Variables:
