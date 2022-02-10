@@ -36,7 +36,8 @@
     (ns-auto-titlebar-mode)))
 
 ;; editing
-(require 'init-evil)
+;;(require 'init-evil)
+(require 'init-meow)
 (require 'init-edit)
 
 ;; appearance
@@ -45,7 +46,9 @@
 
 (require 'init-minibuffer)
 
-(require 'init-company)
+;; I'm using corfu now.
+(require 'init-corfu)
+(require 'init-tempel)
 
 (require 'init-git)
 
