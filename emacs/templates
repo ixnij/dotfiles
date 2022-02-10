@@ -1,0 +1,7 @@
+;; -*- mode: lisp -*-
+
+org-mode
+
+(title "#+title: " p n "#+author: Thomas Wu" n "#+language: english" n n)
+(src "#+begin_src " p n> r> n> "#+end_src")
+(elisp "#+begin_src emacs-lisp" n> r> n "#+end_src")
