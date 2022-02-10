@@ -158,8 +158,10 @@
   :config
   (setq desktop-save 't)
   (setq desktop-dirname (concat (getenv "HOME") "/.emacs.d/"))
-  (pixel-scroll-precision-mode))
-;; very nice 👍
+  (pixel-scroll-precision-mode)
+  ;; very nice 👍
+  (desktop-save-mode 1)
+  )
 
 (provide 'init-misc)
 ;; Local Variables:
