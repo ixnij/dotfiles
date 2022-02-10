@@ -282,7 +282,7 @@ alias ec="emacsclient -c -a ''"
 
 alias stack="~/.scripts/stack"
 alias v=nvim
-alias ls='exa --icons --git'
+alias ls='exa --git --icons'
 
 # End of file ##############################
 # vim:filetype=zsh
