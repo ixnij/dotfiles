@@ -7,3 +7,6 @@
 [submodule "emacs/site-lisp/vertico"]
 	path = emacs/site-lisp/vertico
 	url = git@github.com:minad/vertico.git
+[submodule "emacs/site-lisp/corfu-doc"]
+	path = emacs/site-lisp/corfu-doc
+	url = git@github.com:galeo/corfu-doc.git
