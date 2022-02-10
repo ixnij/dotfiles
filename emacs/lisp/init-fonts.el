@@ -4,12 +4,9 @@
 
 ;;; Code:
 
-(use-package emacs
-  :config
-  (set-fontset-font t 'emoji (font-spec :family "Apple Color Emoji") nil 'prepend))
-
 (use-package cnfonts
-  :config (cnfonts-mode 1)
+  :config
+  (cnfonts-mode 1)
   (define-key cnfonts-mode-map (kbd "C--") #'cnfonts-decrease-fontsize)
   (define-key cnfonts-mode-map (kbd "C-=") #'cnfonts-increase-fontsize)
   :custom
@@ -20,7 +17,7 @@
       "FiraCode Nerd Font"
 
       "Mononoki Nerd Font")
-     ;;中文字 体
+     ;;中文字体
      ("Source Han Serif SC"))))
 
 (use-package ligature
@@ -64,6 +61,12 @@
 			    "->"
 			   )))
   (global-ligature-mode t))
+
+(use-package emacs
+  :after cnfonts
+  :ensure nil
+  :config
+  (set-fontset-font t 'emoji (font-spec :family "Apple Color Emoji") nil 'prepend))
 
 (provide 'init-fonts)
 ;;; Local Variables:
