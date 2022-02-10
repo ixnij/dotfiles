@@ -46,6 +46,11 @@
 			   )))
   (global-ligature-mode t))
 
+(use-package emacs
+  :ensure nil
+  :config
+  (set-face-attribute 'default nil :height 160 :family "Iosevka"))
+
 (provide 'init-fonts)
 ;;; Local Variables:
 ;;; coding: utf-8
