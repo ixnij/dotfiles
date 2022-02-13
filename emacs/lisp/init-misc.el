@@ -120,15 +120,15 @@
 ;;  ;; overlay is used during isearch, `pre' style makes avy keys evident.
 ;;  (avy-styles-alist '((avy-isearch . pre))))
 
-(use-package avy
-  :ensure t
-  :hook (after-init . avy-setup-default)
-  :bind ("M-l" . avy-goto-line))
+;; (use-package avy
+  ;; :ensure t
+  ;; :hook (after-init . avy-setup-default)
+  ;; :bind ("M-l" . avy-goto-line))
 
-(use-package ace-pinyin
-  :ensure t
-  :config
-  (ace-pinyin-global-mode +1))
+;; (use-package ace-pinyin
+  ;; :ensure t
+  ;; :config
+  ;; (ace-pinyin-global-mode +1))
 
 (use-package gcmh
   :ensure t
@@ -162,6 +162,9 @@
   ;; very nice 👍
   (desktop-save-mode 1)
   )
+
+(use-package markdown-mode
+  :ensure t)
 
 (provide 'init-misc)
 ;; Local Variables:
