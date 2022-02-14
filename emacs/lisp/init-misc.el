@@ -144,6 +144,8 @@
 ;;  (gts-translate-list '(("en" "zh") ("fr" "zh"))))
 
 (use-package rime
+  :ensure t
+  :defer t
   :custom
   (rime-librime-root "~/.emacs.d/librime/dist")
   (rime-emacs-module-header-root "~/.emacs.d/librime")
@@ -164,7 +166,16 @@
   )
 
 (use-package markdown-mode
-  :ensure t)
+  :ensure t
+  :defer t)
+
+(use-package easy-hugo
+  :ensure t
+  :defer t
+  :config
+  (setq easy-hugo-basedir
+	(concat ixnij/my "Blog/"))
+  (setq easy-hugo-postdir "content/posts"))
 
 (provide 'init-misc)
 ;; Local Variables:
