@@ -26,7 +26,10 @@
 (package-initialize) ;; do not forget it
 (setq custom-file (locate-user-emacs-file "custom.el"))
 
+(defvar ixnij/my "~/Projects/Repositories/My/")
+
 (require 'init-elpa)
+(require 'init-org)
 (use-package diminish)
 
 (use-package ns-auto-titlebar

@@ -4,38 +4,32 @@
 
 ;;; Code:
 
-(setq org-log-done t
-      org-edit-timestamp-down-means-later t
-      org-hide-emphasis-markers t
-      org-catch-invisible-edits 'show
-      org-export-coding-system 'utf-8
-      org-fast-tag-selection-single-key 'expert
-      org-html-validation-link nil
-      org-startup-indented t
-      org-export-kill-product-buffer-when-displayed t
-      org-tags-column 80)
-
-
-
-(with-eval-after-load 'org
-  (org-babel-do-load-languages
-   'org-babel-load-languages
-   `((R . t)
-     (ditaa . t)
-     (dot . t)
-     (emacs-lisp . t)
-     (gnuplot . t)
-     (haskell . t)
-     (latex . t)
-     (ocaml . nil)
-     (octave . t)
-     (plantuml . t)
-     (python . t)
-     (ruby . t)
-     (screen . nil)
-     (,(if (locate-library "ob-sh") 'sh 'shell) . t)
-     (sql . t)
-     (sqlite . t))))
+(use-package org-mode
+  :ensure nil
+  :defer t
+  :config
+  (setq org-log-done t
+	org-edit-timestamp-down-means-later t
+	org-hide-emphasis-markers t
+	org-catch-invisible-edits 'show
+	org-export-coding-system 'utf-8
+	org-fast-tag-selection-single-key 'expert
+	org-html-validation-link nil
+	org-startup-indented t
+	org-export-kill-product-buffer-when-displayed t
+	org-tags-column 80)
+  (with-eval-after-load 'org
+    (org-babel-do-load-languages
+     'org-babel-load-languages
+     `((emacs-lisp . t)
+       ;; (gnuplot . t)
+       (haskell . t)
+       (dot . t)
+       (C . t)
+       (Cpp . t)
+       (latex . t)
+       (python . t)
+       ))))
 
 (provide 'init-org)
 ;;; init-org.el ends here
