@@ -6,10 +6,10 @@ It's really personal, so, *do not use*.
 
 ** Requirements
 
-1) Emacs 29+ It's *really important*
-2) zsh 5.8+  shell on unix systems, or using darwin built-in
-3) Ispell Emacs needs it
-4) ripgrep written in rust, faster than ag or grep
-5) fd written in rust, faster than gnu or bsd find
-6) neovim 0.6+ I'm using 0.7
-7) gls GNU coreutils ls, =--dired= option is needed
+1) Emacs 29+: It's *really important*
+2) zsh 5.8+:  shell on unix systems, or using darwin built-in
+3) Ispell: Emacs needs it
+4) ripgrep: written in rust, faster than ag or grep
+5) fd: written in rust, faster than gnu or bsd find
+6) neovim 0.6+: I'm using 0.7
+7) gls: GNU coreutils ls, =--dired= option is needed

@@ -49,7 +49,7 @@
 (use-package emacs
   :ensure nil
   :config
-  (set-face-attribute 'default nil :height 160 :family "Iosevka"))
+  (set-face-attribute 'default nil :family "Sarasa Mono SC" :height 160))
 
 (provide 'init-fonts)
 ;;; Local Variables:
