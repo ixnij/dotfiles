@@ -67,6 +67,7 @@
 
 ;; I don't know where I can put them.
 (use-package haskell-mode)
+(require 'init-lsp)
 
 (when (file-exists-p custom-file)
   (load custom-file))
