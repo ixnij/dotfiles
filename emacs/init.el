@@ -28,6 +28,9 @@
 
 (defvar ixnij/my "~/Projects/Repositories/My/")
 
+(when (featurep 'native-compile)
+  (setq native-comp-async-jobs-number 8)) ;; make it faster
+
 (require 'init-elpa)
 (require 'init-org)
 (use-package diminish)
