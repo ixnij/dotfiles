@@ -2,14 +2,13 @@
 
 This is my configuration files repository.
 
-It's really personal, so, *do not use*.
+I am a emacs newbie, so... ;-)
 
 ** Requirements
 
-1) Emacs 29+: It's *really important*
-2) zsh 5.8+:  shell on unix systems, or using darwin built-in
-3) Ispell: Emacs needs it
-4) ripgrep: written in rust, faster than ag or grep
-5) fd: written in rust, faster than gnu or bsd find
-6) neovim 0.6+: I'm using 0.7
-7) gls: GNU coreutils ls, =--dired= option is needed
+*** OnMac
+
+- [[https://github.com/d12frosted/homebrew-emacs-plus][Emacs Plus]]: It's the best choice to run emacs. I think it's enough for me.
+  And, [[https://github.com/d12frosted/homebrew-emacs-plus/blob/master/patches/emacs-28/system-appearance.patch][they]] are the patches it use.
+- Ispell: A good tool, as it's name, it's used for checking and completing words
+- Zsh and Yash: They are my usual shell programs
