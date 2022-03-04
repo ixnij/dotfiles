@@ -57,6 +57,18 @@
 
 ;;; Code:
 
+(use-package modus-themes
+  :ensure nil
+  :init
+  (setq modus-themes-italic-constructs t
+	modus-themes-bold-constructs t
+	modus-themes-syntax '(alt-style green-strings yellow-comments)
+	; modus-themes-mixed-fonts t
+	modus-themes-mode-line '(accented borderless)
+	;; how about moody?
+	modus-themes-org-blocks 'gray-background
+	))
+
 (defun ixnij/apply-theme (appearance)
   "Load theme, taking current system APPEARANCE into consideration."
   (mapc #'disable-theme custom-enabled-themes)
@@ -66,6 +78,7 @@
 
 (add-hook 'ns-system-appearance-change-functions #'ixnij/apply-theme)
 
+;;(if ())
 (provide 'init-look)
 ;;; Local Variables:
 ;;; coding: utf-8

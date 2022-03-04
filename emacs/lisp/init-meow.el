@@ -84,6 +84,8 @@
    '("Y" . meow-sync-grab)
    '("z" . meow-pop-selection)
    '("'" . repeat)
+   '("!" . meow-start-kmacro-or-insert-counter) ;; same as below, it's original bound to <f3>
+   '("@" . meow-end-or-call-kmacro) ;; for my keyboard, original bounds to <f4>
    '("<escape>" . ignore)))
 
 (use-package meow

@@ -31,5 +31,10 @@
        (python . t)
        ))))
 
+(use-package org-modern
+  :ensure t
+  :hook
+  (org-mode . org-modern-mode))
+
 (provide 'init-org)
 ;;; init-org.el ends here

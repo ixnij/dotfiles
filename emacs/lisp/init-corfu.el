@@ -123,6 +123,7 @@
   :after corfu
   :custom
   (kind-icon-default-face 'corfu-default) ; to compute blended backgrounds correctly
+  (kind-icon-use-icons nil) ; use old-school text-based icons
   :config
   (add-to-list 'corfu-margin-formatters #'kind-icon-margin-formatter))
 

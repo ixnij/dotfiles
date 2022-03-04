@@ -57,35 +57,35 @@ fi
         {
           name   = "iterm2_shell_integration";
           src    = pkgs.fetchurl {
-          url    = https://iterm2.com/shell_integration/zsh;
-          sha256 = "1h38yggxfm8pyq3815mjd2rkb411v9g1sa0li884y0bjfaxgbnd4";
+            url    = https://iterm2.com/shell_integration/zsh;
+            sha256 = "1h38yggxfm8pyq3815mjd2rkb411v9g1sa0li884y0bjfaxgbnd4";
             # date = 2021-05-02T18:15:26-0700;
           };
         }
       ];
     };
 
-#    neovim = {
-#      enable       = true;
-#      plugins      = with pkgs.vimPlugins; [
-#        vim-nix
-#        {
-#          plugin   = telescope-nvim;
-#          config   = "
-#nnoremap <leader>ff <cmd>Telescope find_files<cr>
-#nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-#nnoremap <leader>fb <cmd>Telescope buffers<cr>
-#nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-#
-#nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
-#nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
-#nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
-#nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr> "
-#          ;
-#        }
-#      ];
-#      extraConfig  = "set mouse=a";
-#    };
+    #    neovim = {
+    #      enable       = true;
+    #      plugins      = with pkgs.vimPlugins; [
+    #        vim-nix
+    #        {
+    #          plugin   = telescope-nvim;
+    #          config   = "
+    #nnoremap <leader>ff <cmd>Telescope find_files<cr>
+    #nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+    #nnoremap <leader>fb <cmd>Telescope buffers<cr>
+    #nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+    #
+    #nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
+    #nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
+    #nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
+    #nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr> "
+    #          ;
+    #        }
+    #      ];
+    #      extraConfig  = "set mouse=a";
+    #    };
 
     emacs          = {
       enable     = true;

@@ -157,7 +157,8 @@
 	      :internal-border-width 10)))
 
 (use-package emacs
-  :config
+  :ensure nil
+  :init
   (setq desktop-save 't)
   (setq desktop-dirname (concat (getenv "HOME") "/.emacs.d/"))
   (pixel-scroll-precision-mode)
@@ -176,6 +177,11 @@
   (setq easy-hugo-basedir
 	(concat ixnij/my "Blog/"))
   (setq easy-hugo-postdir "content/posts"))
+
+(use-package telega
+  :ensure t
+  :custom
+  (telega-server-libs-prefix "/opt/homebrew/Cellar/tdlib/1.8.0"))
 
 (provide 'init-misc)
 ;; Local Variables:
