@@ -178,10 +178,15 @@
 	(concat ixnij/my "Blog/"))
   (setq easy-hugo-postdir "content/posts"))
 
-(use-package telega
-  :ensure t
-  :custom
-  (telega-server-libs-prefix "/opt/homebrew/Cellar/tdlib/1.8.0"))
+;; (use-package telega
+  ;; :ensure t
+  ;; :custom
+;; (telega-server-libs-prefix "/opt/homebrew/Cellar/tdlib/1.8.0"))
+
+(use-package awesome-tray
+  :ensure nil
+  :config
+  (awesome-tray-mode 1))
 
 (provide 'init-misc)
 ;; Local Variables:
