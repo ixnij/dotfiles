@@ -10,6 +10,3 @@
 [submodule "emacs/site-lisp/corfu-doc"]
 	path = emacs/site-lisp/corfu-doc
 	url = git@github.com:galeo/corfu-doc.git
-[submodule "emacs/site-lisp/awesome-tray"]
-	path = emacs/site-lisp/awesome-tray
-	url = git@github.com:manateelazycat/awesome-tray.git

@@ -183,10 +183,11 @@
   ;; :custom
 ;; (telega-server-libs-prefix "/opt/homebrew/Cellar/tdlib/1.8.0"))
 
-(use-package awesome-tray
-  :ensure nil
-  :config
-  (awesome-tray-mode 1))
+;;(use-package awesome-tray
+  ;;:ensure nil
+  ;;:after modus-themes
+  ;;:config
+  ;;(awesome-tray-mode 1))
 
 (provide 'init-misc)
 ;; Local Variables:
