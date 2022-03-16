@@ -1,11 +1,11 @@
 { config, pkgs, callPackage, ... }:
 
-let home			= builtins.getEnv "HOME";
+let home = builtins.getEnv "HOME";
 
 in {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
-  home.username		 = "wu";
+  home.username = "wu";
   home.homeDirectory = home;
 
   # This value determines the Home Manager release that your
@@ -16,21 +16,21 @@ in {
   # You can update Home Manager without changing this value. See
   # the Home Manager release notes for a list of state version
   # changes in each release.
-  home.stateVersion		= "21.11";
-  home.packages			= pkgs.callPackage ./packages.nix {};
+  home.stateVersion = "21.11";
+  home.packages = pkgs.callPackage ./packages.nix { };
 
-  programs                  = {
+  programs = {
     # Let Home Manager install and manage itself.
-    home-manager.enable		= true;
+    home-manager.enable = true;
 
-    skim                    = {
-      enable                = true;
-      enableZshIntegration	= true;
+    skim = {
+      enable = true;
+      enableZshIntegration = true;
     };
 
-    zoxide                  = {
-      enable                = true;
-      enableZshIntegration	= true;
+    zoxide = {
+      enable = true;
+      enableZshIntegration = true;
     };
 
     # Atuin has't support aarch64-darwin yet.
@@ -39,30 +39,28 @@ in {
     #  enableZshIntegration = true;
     #};
 
-    zsh                     = rec {
-      enable                = true;
-      dotDir                = ".config/zsh";
-      initExtra             = (builtins.readFile "${home}/${dotDir}/zshrc") + 
-                              (builtins.readFile "${home}/Projects/Repositories/My/Dotfiles/zsh/zshrc.local") +
-                              ''
-if [[ $TERM                 == dumb || $TERM == emacs || ! -o interactive ]]; then
-unsetopt zle
-unset zle_bracketed_paste
-export PS1                  ='%m %~ $ '
-else
-. ${config.xdg.configHome}/zsh/plugins/iterm2_shell_integration
-fi
-'';
-      plugins = [
-        {
-          name   = "iterm2_shell_integration";
-          src    = pkgs.fetchurl {
-            url    = https://iterm2.com/shell_integration/zsh;
-            sha256 = "1h38yggxfm8pyq3815mjd2rkb411v9g1sa0li884y0bjfaxgbnd4";
-            # date = 2021-05-02T18:15:26-0700;
-          };
-        }
-      ];
+    zsh = rec {
+      enable = true;
+      dotDir = ".config/zsh";
+      initExtra = (builtins.readFile "${home}/${dotDir}/zshrc")
+        + (builtins.readFile
+          "${home}/Projects/Repositories/My/Dotfiles/zsh/zshrc.local") + ''
+            if [[ $TERM                 == dumb || $TERM == emacs || ! -o interactive ]]; then
+            unsetopt zle
+            unset zle_bracketed_paste
+            export PS1                  ='%m %~ $ '
+            else
+            . ${config.xdg.configHome}/zsh/plugins/iterm2_shell_integration
+            fi
+          '';
+      plugins = [{
+        name = "iterm2_shell_integration";
+        src = pkgs.fetchurl {
+          url = "https://iterm2.com/shell_integration/zsh";
+          sha256 = "1h38yggxfm8pyq3815mjd2rkb411v9g1sa0li884y0bjfaxgbnd4";
+          # date = 2021-05-02T18:15:26-0700;
+        };
+      }];
     };
 
     #    neovim = {
@@ -87,19 +85,18 @@ fi
     #      extraConfig  = "set mouse=a";
     #    };
 
-    emacs          = {
-      enable     = true;
-      package    = pkgs.emacsGit.override {
-        nativeComp = true;
-      };
+    emacs = {
+      enable = true;
+      package = pkgs.emacsGit.override { nativeComp = true; };
     };
   };
 
-  services.emacs.package    = pkgs.emacsUnstable;
+  services.emacs.package = pkgs.emacsUnstable;
 
-  nixpkgs.overlays          = [
+  nixpkgs.overlays = [
     (import (builtins.fetchTarball {
-      url                   = "https://github.com/nix-community/emacs-overlay/archive/master.tar.gz";
+      url =
+        "https://github.com/nix-community/emacs-overlay/archive/master.tar.gz";
     }))
   ];
 }

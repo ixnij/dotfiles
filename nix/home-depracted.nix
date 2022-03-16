@@ -37,12 +37,8 @@
   programs.fzf.enable = true;
   programs.fzf.enableZshIntegration = true;
   programs.fzf.defaultCommand = "fd --type f";
-  programs.fzf.defaultOptions = [
-    "--height 50%"
-    "--border"
-    "--layout=reverse"
-    "--info=inline"
-  ];
+  programs.fzf.defaultOptions =
+    [ "--height 50%" "--border" "--layout=reverse" "--info=inline" ];
 
   programs.fzf.changeDirWidgetOptions = [
     "--preview 'bat --style=numbers --color=always --theme=gruvbox-dark --line-range :500 {}'"
@@ -66,7 +62,8 @@
 
   programs.neovim.plugins = with pkgs.vimPlugins; [
     vim-nix
-    { plugin = vim-startify;
+    {
+      plugin = vim-startify;
       config = "let g:startify_change_to_vcs_root = 0";
     }
   ];
@@ -98,21 +95,16 @@
   programs.zsh.enableCompletion = true;
   programs.zsh.enableSyntaxHighlighting = true;
 
-  programs.zsh.cdpath = [
-    "~/Projects/Repositories"
-  ];
+  programs.zsh.cdpath = [ "~/Projects/Repositories" ];
 
   programs.zsh.defaultKeymap = "emacs";
   programs.zsh.history.path = "~/.config/zsh/history";
   programs.zsh.history.save = 50000;
-  programs.zsh.shellAliases =
-    {
-      l = "ls -lha";
-      gt = "git status";
-      ls = "exa -lha";
-    };
-
-  programs.zsh.sessionVariables = rec {
-    EDITOR = "nvim";
+  programs.zsh.shellAliases = {
+    l = "ls -lha";
+    gt = "git status";
+    ls = "exa -lha";
   };
+
+  programs.zsh.sessionVariables = rec { EDITOR = "nvim"; };
 }

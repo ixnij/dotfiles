@@ -13,14 +13,14 @@ with pkgs; [
   #  mitscheme
   #  tinyscheme
   ghc
-#  pandoc
+  #  pandoc
   htop
   cloc
   ncdu
-#  webkit # emacs with xwidget depends it
+  #  webkit # emacs with xwidget depends it
   llvm
   coreutils
-#  python39Packages.pyqt5_with_qtwebkit
+  #  python39Packages.pyqt5_with_qtwebkit
   less
   ffmpeg
   wget
