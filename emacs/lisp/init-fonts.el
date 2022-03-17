@@ -49,7 +49,15 @@
 (use-package emacs
   :ensure nil
   :config
-  (set-face-attribute 'default nil :family "Monaco" :height 160))
+  (set-face-attribute 'default nil :family "SF Mono" :height 160)
+  (set-fontset-font t '(#x2ff0 . #x9ffc) ;; This is cjk font set
+		    (font-spec :family "PingFang SC"
+			       :weight 'normal
+			       :slant 'normal))
+  (set-fontset-font t '(#x20000 . #x2A6DF)
+                                    (font-spec :name "HanaMinB"
+                                               :weight 'normal
+                                               :slant 'normal)))
 
 (provide 'init-fonts)
 ;;; Local Variables:
