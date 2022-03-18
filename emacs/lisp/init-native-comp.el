@@ -3,7 +3,7 @@
 ;;; Commentary:
 ;;; Code:
 
-(when (and (featurep 'native-compile) (native-comp-available-p))
+(when (and (fboundp 'native-comp-available-p) (native-comp-available-p))
   (setq native-comp-async-jobs-number 8))
 
 (provide 'init-native-comp)
