@@ -280,8 +280,7 @@ vimhelp ()    { vim -c "help $1" -c on -c "au! VimEnter *" }
 alias et="emacsclient -t -a ''" # emacs --daemon
 alias ec="emacsclient -c -a ''"
 
-alias stack="~/.scripts/stack"
-alias v=nvim
+#alias stack="~/.scripts/stack"
 #alias ls='exa --git --icons'
 #if [[ $TERM_PROGRAM == Apple_Terminal ]] || [[ $TERM_PROGRAM == iTerm.app ]]; then
 #        unalias ls
