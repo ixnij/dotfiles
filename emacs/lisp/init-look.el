@@ -84,7 +84,7 @@
 	;; of padding and NATNUM), and a floating point for the height of
 	;; the text relative to the base font size (or a cons cell of
 	;; height and FLOAT)
-	modus-themes-mode-line '(accented borderless (padding . 4) (height . 0.9))
+	modus-themes-mode-line '(moody accented borderless (padding . 4) (height . 0.9))
 
 	;; Same as above:
 	;; modus-themes-mode-line '(accented borderless 4 0.9)
@@ -170,6 +170,14 @@
           (t . (semibold))))
   (modus-themes-load-themes)
   )
+
+(use-package moody
+  :ensure t
+  :config
+  (setq x-underline-at-descent-line t)
+  (moody-replace-mode-line-buffer-identification)
+  (moody-replace-vc-mode)
+  (moody-replace-eldoc-minibuffer-message-function))
 
 (defun ixnij/apply-theme (appearance)
   "Load theme, taking current system APPEARANCE into consideration."

@@ -14,7 +14,7 @@
   ;; (corfu-echo-documentation nil) ;; Disable documentation in the echo area
   ;; (corfu-scroll-margin 5)        ;; Use scroll margin
   (corfu-auto-delay 0)
-  (corfu-auto-prefix 1)
+  (corfu-auto-prefix 3)
   :bind
   (:map corfu-map
         ("TAB" . corfu-next)
