@@ -165,7 +165,7 @@
           (habit . traffic-light))
 
 	modus-themes-headings ; this is an alist: read the manual or its doc string
-	'((1 . (overline background variable-pitch 1.3))
+	'((1 . (overline background variable-pitch 1.5))
           (2 . (rainbow overline 1.1))
           (t . (semibold))))
   (modus-themes-load-themes)
