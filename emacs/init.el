@@ -28,6 +28,8 @@
 
 (defvar ixnij/my "~/Projects/Repositories/My/")
 
+(setq-default lexical-binding t)
+
 (require 'init-native-comp)
 
 (require 'init-elpa)

@@ -57,10 +57,10 @@
   :custom
   (repeat-exit-key (kbd "RET")))
 
-(use-package emacs
-  :ensure nil
-  :hook
-  (after-init-hook . global-whitespace-cleanup-mode))
+(use-package whitespace-cleanup-mode
+  :ensure t
+  :diminish
+  :hook (after-init . global-whitespace-cleanup-mode))
 
 (use-package so-long
   :ensure nil
@@ -132,6 +132,7 @@
 
 (use-package gcmh
   :ensure t
+  :diminish
   :hook (after-init . gcmh-mode)
   :custom
   (gcmh-idle-delay 10)
@@ -177,6 +178,11 @@
   (setq easy-hugo-basedir
 	(concat ixnij/my "Blog/"))
   (setq easy-hugo-postdir "content/posts"))
+
+(global-visual-line-mode 1)
+(diminish 'visual-line-mode)
+(setq word-wrap-by-category t) ;; it solves a chinese users' problem
+;; or cjk?
 
 ;; (use-package telega
   ;; :ensure t

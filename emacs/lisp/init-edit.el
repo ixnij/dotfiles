@@ -4,7 +4,7 @@
 
 ;;; Code:
 (use-package page-break-lines
-  :diminish page-break-lines-mode
+  :diminish
   :hook (after-init . global-page-break-lines-mode))
 
 ;; Highlight brackets according to their depth
@@ -14,6 +14,7 @@
 (use-package whitespace
   :ensure nil
   :hook (prog-mode . whitespace-mode)
+  :diminish
   :config
   ;; Don't use different background for tabs.
   (face-spec-set 'whitespace-tab
