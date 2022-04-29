@@ -276,9 +276,18 @@ getstrings () { perl -ne 'while ( m/"(.*?)"/gc ) { print $1, "\n"; }' $*}
 showINC ()    { perl -e 'for (@INC) { printf "%d %s\n", $i++, $_ }' }
 vimpm ()      { vim `perldoc -l $1 | sed -e 's/pod$/pm/'` }
 vimhelp ()    { vim -c "help $1" -c on -c "au! VimEnter *" }
-nn () { nix-env -iA "nixpkgs.$1" }
-ne () { nix-env -e "$1" }
-
+nn () {
+    while [ "$1" != "" ]; do
+	nix-env -iA "nixpkgs.$1"
+	shift
+    done
+}
+ne () {
+    while [ "$1" != "" ]; do
+	nix-env -e "$1"
+	shift
+    done
+}
 alias et="emacsclient -t -a ''" # emacs --daemon
 alias ec="emacsclient -c -a ''"
 
