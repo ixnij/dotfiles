@@ -55,7 +55,7 @@
 ;;     )))
 (use-package emacs
   :ensure nil
-  :hook (after-init . global-display-fill-column-indicator-mode))
+  :hook (prog-mode . display-fill-column-indicator-mode))
 
 ;; Automatic parenthesis pairing
 (use-package elec-pair
