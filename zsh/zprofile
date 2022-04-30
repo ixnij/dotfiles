@@ -11,7 +11,7 @@ export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git"
 export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"
 
 # Homebrew: zsh completions
-export FPATH=$(brew --prefix)/share/zsh/site-functions:~/.zfunc:$FPATH
+export FPATH=~/.nix-profile/share/zsh/site-functions:$(brew --prefix)/share/zsh/site-functions:~/.zfunc:$FPATH
 
 # Homebrew: disable auto update.
 export HOMEBREW_NO_AUTO_UPDATE=1
