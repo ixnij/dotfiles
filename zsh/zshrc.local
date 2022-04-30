@@ -21,6 +21,7 @@
 # prompt restore
 # prompt adam2
 # prompt adam1
+autoload -U promptinit && promptinit && prompt pure
 
 # Settings for umask
 
@@ -263,31 +264,34 @@ if [[ "$TERM" == "xterm" ]] && [[ "$LINES" -ge 50 ]] && [[ "$COLUMNS" -ge 100 ]]
 fi
 
 ## Some quick Perl-hacks aka /useful/ oneliner
-bew() { perl -le 'print unpack "B*","'$1'"' }
-web() { perl -le 'print pack "B*","'$1'"' }
-hew() { perl -le 'print unpack "H*","'$1'"' }
-weh() { perl -le 'print pack "H*","'$1'"' }
-pversion()    { perl -M$1 -le "print $1->VERSION" } # i. e."pversion LWP -> 5.79"
-getlinks ()   { perl -ne 'while ( m/"((www|ftp|http):\/\/.*?)"/gc ) { print $1, "\n"; }' $* }
-gethrefs ()   { perl -ne 'while ( m/href="([^"]*)"/gc ) { print $1, "\n"; }' $* }
-getanames ()  { perl -ne 'while ( m/a name="([^"]*)"/gc ) { print $1, "\n"; }' $* }
-getforms ()   { perl -ne 'while ( m:(\</?(input|form|select|option).*?\>):gic ) { print $1, "\n"; }' $* }
-getstrings () { perl -ne 'while ( m/"(.*?)"/gc ) { print $1, "\n"; }' $*}
-showINC ()    { perl -e 'for (@INC) { printf "%d %s\n", $i++, $_ }' }
-vimpm ()      { vim `perldoc -l $1 | sed -e 's/pod$/pm/'` }
-vimhelp ()    { vim -c "help $1" -c on -c "au! VimEnter *" }
+#bew() { perl -le 'print unpack "B*","'$1'"' }
+#web() { perl -le 'print pack "B*","'$1'"' }
+#hew() { perl -le 'print unpack "H*","'$1'"' }
+#weh() { perl -le 'print pack "H*","'$1'"' }
+#pversion()    { perl -M$1 -le "print $1->VERSION" } # i. e."pversion LWP -> 5.79"
+#getlinks ()   { perl -ne 'while ( m/"((www|ftp|http):\/\/.*?)"/gc ) { print $1, "\n"; }' $* }
+#gethrefs ()   { perl -ne 'while ( m/href="([^"]*)"/gc ) { print $1, "\n"; }' $* }
+#getanames ()  { perl -ne 'while ( m/a name="([^"]*)"/gc ) { print $1, "\n"; }' $* }
+#getforms ()   { perl -ne 'while ( m:(\</?(input|form|select|option).*?\>):gic ) { print $1, "\n"; }' $* }
+#getstrings () { perl -ne 'while ( m/"(.*?)"/gc ) { print $1, "\n"; }' $*}
+#showINC ()    { perl -e 'for (@INC) { printf "%d %s\n", $i++, $_ }' }
+#vimpm ()      { vim `perldoc -l $1 | sed -e 's/pod$/pm/'` }
+#vimhelp ()    { vim -c "help $1" -c on -c "au! VimEnter *" }
+
 nn () {
-    while [ "$1" != "" ]; do
-	nix-env -iA "nixpkgs.$1"
-	shift
-    done
+    emulate -L zsh
+    for i ($*) {
+	nix-env -iA "nixpkgs.$i"
+    }
 }
+
 ne () {
-    while [ "$1" != "" ]; do
-	nix-env -e "$1"
-	shift
-    done
+    emulate -L zsh
+    for i ($*) {
+	nix-env -e "$i"
+    }
 }
+
 alias et="emacsclient -t -a ''" # emacs --daemon
 alias ec="emacsclient -c -a ''"
 
