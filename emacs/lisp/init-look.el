@@ -168,7 +168,6 @@
 	'((1 . (overline background variable-pitch 1.5))
           (2 . (rainbow overline 1.1))
           (t . (semibold))))
-  (modus-themes-load-themes)
   )
 
 (use-package moody

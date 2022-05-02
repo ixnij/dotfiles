@@ -4,11 +4,13 @@
 
 ;;; Code:
 (use-package page-break-lines
+  :ensure t
   :diminish
   :hook (after-init . global-page-break-lines-mode))
 
 ;; Highlight brackets according to their depth
 (use-package rainbow-delimiters
+  :ensure t
   :hook (prog-mode . rainbow-delimiters-mode))
 
 ;;(use-package whitespace

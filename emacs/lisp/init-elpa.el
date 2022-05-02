@@ -28,7 +28,7 @@
 	  ("org"          . "https://mirrors.sjtug.sjtu.edu.cn/emacs-elpa/org/")
 	  )))
 (setq package-archives
-      (assoc-default 'tuna ixnij/package-mirror-alist))
+      (assoc-default 'sjtu ixnij/package-mirror-alist))
 
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)

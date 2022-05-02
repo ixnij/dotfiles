@@ -43,7 +43,7 @@
   (setq auto-save-file-name-transforms
 	`((".*" ,(no-littering-expand-var-file-name "auto-save/") t)))
   )
-;;(require 'init-org)
+;(require 'init-org)
 (use-package diminish)
 
 (use-package ns-auto-titlebar
