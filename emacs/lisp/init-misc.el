@@ -12,9 +12,12 @@
    (concat
     ";; Love the World, "
     user-login-name
-    " - Emacs by your side!\n;; Never forget the support of your family!\n"
-    (format (concat ";; Emacs takes %s to init.\n;; Emacs version: %s"
-		    "\n;; Emacs package quantity: %s")
+    " - Emacs by your side!\n"
+    ";; Never forget the support of your family!\n"
+    (format (concat
+	     ";; Emacs takes %s to init.\n"
+	     ";; Emacs version: %s\n"
+	     ";; Emacs package quantity: %s")
 	    (emacs-init-time)
 	    emacs-version
 	    (length package-alist))))
@@ -27,24 +30,24 @@
   ([remap list-buffers] . ibuffer))
 
 ;; Copied from yuanqian
-  (setq ibuffer-saved-filter-groups
-	(quote (("Default"
-		 ("Dired" (mode . dired-mode))
-		 ("Org" (name . "^.*org$"))
-		 ("Magit" (mode . magit-mode))
-		 ("web" (or (mode . web-mode) (mode . js2-mode)))
-		 ("Shell" (or (mode . eshell-mode) (mode . shell-mode)))
-		 ("Programming" (or (mode . haskell-mode)
-				    (mode . c-or-c++-mode)
-				    (mode . shell-script-mode)))
-		 ("Emacs" (or
-			   (name . "^\\*scratch\\*$")
-			   (name . "^\\*Messages\\*$")))
-		 ))))
-  (add-hook 'ibuffer-mode-hook
-	    (lambda ()
-	      (ibuffer-auto-mode 1)
-	      (ibuffer-switch-to-saved-filter-groups "default")))
+(setq ibuffer-saved-filter-groups
+      (quote (("Default"
+	       ("Dired" (mode . dired-mode))
+	       ("Org" (name . "^.*org$"))
+	       ("Magit" (mode . magit-mode))
+	       ("web" (or (mode . web-mode) (mode . js2-mode)))
+	       ("Shell" (or (mode . eshell-mode) (mode . shell-mode)))
+	       ("Programming" (or (mode . haskell-mode)
+				  (mode . c-or-c++-mode)
+				  (mode . shell-script-mode)))
+	       ("Emacs" (or
+			 (name . "^\\*scratch\\*$")
+			 (name . "^\\*Messages\\*$")))
+	       ))))
+(add-hook 'ibuffer-mode-hook
+	  (lambda ()
+	    (ibuffer-auto-mode 1)
+	    (ibuffer-switch-to-saved-filter-groups "default")))
 ;; End
 
 (use-package hl-line
@@ -121,8 +124,8 @@
 ;;  (avy-styles-alist '((avy-isearch . pre))))
 
 ;; (use-package avy
-  ;; :ensure t
-  ;; :hook (after-init . avy-setup-default)
+;; :ensure t
+;; :hook (after-init . avy-setup-default)
   ;; :bind ("M-l" . avy-goto-line))
 
 ;; (use-package ace-pinyin
@@ -157,15 +160,22 @@
 	(list :font "Monaco"
 	      :internal-border-width 10)))
 
-(use-package emacs
-  :ensure nil
-  :init
-  (setq desktop-save 't)
-  (setq desktop-dirname (concat (getenv "HOME") "/.emacs.d/"))
-  (pixel-scroll-precision-mode)
-  ;; very nice 👍
-  (desktop-save-mode 1)
-  )
+;;(use-package emacs
+;;  :ensure nil
+;;  :init
+;;  (setq desktop-save 't)
+;;  (setq desktop-dirname (concat (getenv "HOME") "/.emacs.d/"))
+;;  (pixel-scroll-precision-mode)
+;;  ;; very nice 👍
+;;  (desktop-save-mode 1)
+;;  )
+
+(use-package workgroups2
+  :ensure t
+  :diminish
+  :config
+  (setq wg-session-file "~/.emacs.d/.emacs-workgroups")
+  (workgroups-mode 1))
 
 (use-package markdown-mode
   :ensure t
