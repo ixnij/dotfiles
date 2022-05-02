@@ -33,7 +33,17 @@
 (require 'init-native-comp)
 
 (require 'init-elpa)
-(require 'init-org)
+
+(use-package no-littering
+  :ensure t
+  :config
+  (require 'recentf)
+  (add-to-list 'recentf-exclude no-littering-var-directory)
+  (add-to-list 'recentf-exclude no-littering-etc-directory)
+  (setq auto-save-file-name-transforms
+	`((".*" ,(no-littering-expand-var-file-name "auto-save/") t)))
+  )
+;;(require 'init-org)
 (use-package diminish)
 
 (use-package ns-auto-titlebar

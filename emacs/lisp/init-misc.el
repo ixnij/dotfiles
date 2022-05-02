@@ -173,21 +173,22 @@
 (use-package workgroups2
   :ensure t
   :diminish
+  :hook
+  (after-init . workgroups-mode)
   :config
-  (setq wg-session-file "~/.emacs.d/.emacs-workgroups")
-  (workgroups-mode 1))
+  (setq wg-session-file "~/.emacs.d/var/workgroups.el"))
 
 (use-package markdown-mode
   :ensure t
   :defer t)
 
-(use-package easy-hugo
-  :ensure t
-  :defer t
-  :config
-  (setq easy-hugo-basedir
-	(concat ixnij/my "Blog/"))
-  (setq easy-hugo-postdir "content/posts"))
+;;(use-package easy-hugo
+;;  :ensure t
+;;  :defer t
+;;  :config
+;;  (setq easy-hugo-basedir
+;;	(concat ixnij/my "Blog/"))
+;;  (setq easy-hugo-postdir "content/posts"))
 
 (global-visual-line-mode 1)
 (diminish 'visual-line-mode)
