@@ -16,6 +16,8 @@
           gnumake
           nixfmt
           ripgrep
+          mosh
+          bat
         ];
         extraOutputsToInstall = [ "man" "doc" ];
       };
