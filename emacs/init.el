@@ -72,7 +72,7 @@
 
 ;; I'm using corfu now.
 (require 'init-corfu)
-(require 'init-tempel)
+;;(require 'init-tempel)
 
 (require 'init-git)
 
@@ -83,6 +83,11 @@
 (use-package haskell-mode)
 
 ;;(require 'init-fns)
+
+(progn ; personalize
+  (let ((file (expand-file-name "private.el" user-emacs-directory)))
+    (when (file-exists-p file)
+      (load file))))
 
 (when (file-exists-p custom-file)
   (load custom-file))

@@ -63,11 +63,11 @@
   (setq modus-themes-italic-constructs t
 	modus-themes-bold-constructs nil
 	modus-themes-mixed-fonts nil
-	modus-themes-subtle-line-numbers nil
 	modus-themes-intense-mouseovers nil
 	modus-themes-deuteranopia t
 	modus-themes-tabs-accented t
 	modus-themes-variable-pitch-ui nil
+	modus-themes-subtle-line-numbers t
 	modus-themes-inhibit-reload t ; only applies to `customize-set-variable' and related
 
 	modus-themes-fringes nil ; {nil,'subtle,'intense}
@@ -84,7 +84,7 @@
 	;; of padding and NATNUM), and a floating point for the height of
 	;; the text relative to the base font size (or a cons cell of
 	;; height and FLOAT)
-	modus-themes-mode-line '(moody accented borderless (padding . 4) (height . 0.9))
+	modus-themes-mode-line '(moody accented borderless)
 
 	;; Same as above:
 	;; modus-themes-mode-line '(accented borderless 4 0.9)
@@ -97,12 +97,12 @@
 	;; Options for `modus-themes-syntax' are either nil (the default),
 	;; or a list of properties that may include any of those symbols:
 	;; `faint', `yellow-comments', `green-strings', `alt-syntax'
-	modus-themes-syntax '(faint green-strings)
+	modus-themes-syntax nil
 
 	;; Options for `modus-themes-hl-line' are either nil (the default),
 	;; or a list of properties that may include any of those symbols:
 	;; `accented', `underline', `intense'
-	modus-themes-hl-line '(intense accented)
+	modus-themes-hl-line '(underline accented)
 
 	;; Options for `modus-themes-paren-match' are either nil (the
 	;; default), or a list of properties that may include any of those
@@ -142,8 +142,8 @@
 	;; covered in `modus-themes-weights'.  Bold is used in the absence
 	;; of an explicit WEIGHT.
 	modus-themes-completions '((matches . (extrabold))
-                                   (selection . (semibold accented))
-                                   (popup . (accented intense)))
+				   (selection . (semibold accented))
+				   (popup . (accented intense)))
 
 	modus-themes-mail-citations nil ; {nil,'intense,'faint,'monochrome}
 
@@ -159,16 +159,20 @@
 
 	modus-themes-org-agenda ; this is an alist: read the manual or its doc string
 	'((header-block . (variable-pitch 1.3))
-          (header-date . (grayscale workaholic bold-today 1.1))
-          (event . (accented varied))
-          (scheduled . uniform)
-          (habit . traffic-light))
+	  (header-date . (grayscale workaholic bold-today 1.1))
+	  (event . (accented varied))
+	  (scheduled . uniform)
+	  (habit . traffic-light))
 
 	modus-themes-headings ; this is an alist: read the manual or its doc string
-	'((1 . (overline background variable-pitch 1.5))
-          (2 . (rainbow overline 1.1))
-          (t . (semibold))))
-  )
+	'((1 . (overline background variable-pitch 1.3))
+	  (2 . (rainbow overline 1.1))
+	  (t . (semibold)))))
+  ;; :config
+  ;; (modus-themes-with-colors
+    ;; (custom-set-faces
+     ;; `(fill-column-indicator ((,class :foreground ,bg-active)))))
+
 
 (use-package moody
   :ensure t

@@ -172,7 +172,6 @@
 
 (use-package workgroups2
   :ensure t
-  :diminish
   :hook
   (after-init . workgroups-mode)
   :config
@@ -192,6 +191,10 @@
 
 (global-visual-line-mode 1)
 (diminish 'visual-line-mode)
+
+(when (fboundp 'pixel-scroll-precision-mode)
+  (pixel-scroll-precision-mode))
+
 (setq word-wrap-by-category t) ;; it solves a chinese users' problem
 ;; or cjk?
 

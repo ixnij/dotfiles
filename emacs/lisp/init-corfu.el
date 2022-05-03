@@ -10,11 +10,10 @@
   ;; (corfu-separator ?\s)          ;; Orderless field separator
   (corfu-quit-no-match t)      ;; Never quit, even if there is no match
   ;; (corfu-preview-current nil)    ;; Disable current candidate preview
-  (corfu-preselect-first nil)    ;; Disable candidate preselection
+  ;; (corfu-preselect-first nil)    ;; Disable candidate preselection
   ;; (corfu-echo-documentation nil) ;; Disable documentation in the echo area
-  ;; (corfu-scroll-margin 5)        ;; Use scroll margin
+  (corfu-scroll-margin 5)        ;; Use scroll margin
   (corfu-auto-delay 0)
-  (corfu-auto-prefix 3)
   :bind
   (:map corfu-map
         ("TAB" . corfu-next)
@@ -84,14 +83,11 @@
   (add-to-list 'completion-at-point-functions #'cape-keyword)
   ;;(add-to-list 'completion-at-point-functions #'cape-sgml)
   ;;(add-to-list 'completion-at-point-functions #'cape-rfc1345)
-  ;;(add-to-list 'completion-at-point-functions #'cape-abbrev)
   (add-to-list 'completion-at-point-functions #'cape-ispell)
   (add-to-list 'completion-at-point-functions #'cape-dict)
   (add-to-list 'completion-at-point-functions #'cape-symbol)
   (add-to-list 'completion-at-point-functions #'cape-line)
 )
-
-
 
 (defun corfu-enable-in-minibuffer ()
   "Enable Corfu in the minibuffer if `completion-at-point' is bound."
@@ -123,7 +119,7 @@
   :after corfu
   :custom
   (kind-icon-default-face 'corfu-default) ; to compute blended backgrounds correctly
-  (kind-icon-use-icons nil) ; use old-school text-based icons
+  (kind-icon-use-icons t) ; use old-school text-based icons
   :config
   (add-to-list 'corfu-margin-formatters #'kind-icon-margin-formatter))
 
