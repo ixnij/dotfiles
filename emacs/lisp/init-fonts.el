@@ -46,13 +46,35 @@
 ;;			   )))
 ;;  (global-ligature-mode t))
 
-(set-face-attribute 'default nil :family "SF Mono" :height 160)
-(set-fontset-font t '(#x2ff0 . #x9ffc) ;; This is cjk font set
-		  (font-spec :family "PingFang SC" :size 18))
-(set-fontset-font t '(#x20000 . #x2A6DF)
-                  (font-spec :name "HanaMinB"
-                             :weight 'normal
-                             :slant 'normal)
+(defun font-installed-p (font-name)
+  "Check if font with FONT-NAME is available."
+  (find-font (font-spec :name font-name)))
+
+(when (display-graphic-p)
+  ;; Set default font
+  (cl-loop for font in '("SF Mono" "Hack" "Source Code Pro" "Fira Code"
+                         "Menlo" "Monaco" "DejaVu Sans Mono" "Consolas")
+           when (font-installed-p font)
+           return (set-face-attribute 'default nil
+                                      :font font
+                                      :height 160))
+  ;; Specify font for all unicode characters
+  (cl-loop for font in '("Apple Color Emoji" "Segoe UI Symbol" "Symbola" "Symbol")
+           when (font-installed-p font)
+           return(set-fontset-font t 'unicode font nil 'prepend))
+
+  ;; Specify font for Chinese characters
+  (cl-loop for font in '("PingFang SC" "Microsoft Yahei")
+           when (font-installed-p font)
+           return (set-fontset-font t '(#x2ff0 . #x9fff)
+				    (font-spec :family font
+					       :size 18
+					       )))
+  (set-fontset-font t '(#x20000 . #x2A6DF)
+                    (font-spec :name "HanaMinB"
+                               :weight 'normal
+                               :slant 'normal)))
+
 
 (provide 'init-fonts)
 ;;; Local Variables:
