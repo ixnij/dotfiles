@@ -12,14 +12,15 @@
   ;; (corfu-preview-current nil)    ;; Disable current candidate preview
   ;; (corfu-preselect-first nil)    ;; Disable candidate preselection
   ;; (corfu-echo-documentation nil) ;; Disable documentation in the echo area
-  (corfu-scroll-margin 5)        ;; Use scroll margin
-  (corfu-auto-delay 0)
-  :bind
-  (:map corfu-map
-        ("TAB" . corfu-next)
-        ([tab] . corfu-next)
-        ("S-TAB" . corfu-previous)
-        ([backtab] . corfu-previous))
+  ;; (corfu-scroll-margin 5)        ;; Use scroll margin
+  ;; (corfu-auto-delay 0)
+  ;;:bind
+   ;;(:map corfu-map ("C-SPC" . corfu-insert-separator))
+  ;;(:map corfu-map
+        ;;("TAB" . corfu-next)
+        ;;([tab] . corfu-next)
+        ;;("S-TAB" . corfu-previous)
+        ;;([backtab] . corfu-previous))
   :init
   (corfu-global-mode))
 
@@ -87,7 +88,13 @@
   (add-to-list 'completion-at-point-functions #'cape-dict)
   (add-to-list 'completion-at-point-functions #'cape-symbol)
   (add-to-list 'completion-at-point-functions #'cape-line)
-)
+  :config
+    ;; Silence the pcomplete capf, no errors or messages!
+  (advice-add 'pcomplete-completions-at-point :around #'cape-wrap-silent)
+
+  ;; Ensure that pcomplete does not write to the buffer
+  ;; and behaves as a pure `completion-at-point-function'.
+  (advice-add 'pcomplete-completions-at-point :around #'cape-wrap-purify))
 
 (defun corfu-enable-in-minibuffer ()
   "Enable Corfu in the minibuffer if `completion-at-point' is bound."
@@ -114,14 +121,14 @@
   (define-key corfu-map (kbd "M-d") #'corfu-doc-toggle))
 ;; todo setup templ
 
-(use-package kind-icon
-  :ensure t
-  :after corfu
-  :custom
-  (kind-icon-default-face 'corfu-default) ; to compute blended backgrounds correctly
-  (kind-icon-use-icons t) ; use old-school text-based icons
-  :config
-  (add-to-list 'corfu-margin-formatters #'kind-icon-margin-formatter))
+;;(use-package kind-icon
+  ;;:ensure t
+  ;;:after corfu
+  ;;:custom
+  ;;(kind-icon-default-face 'corfu-default) ; to compute blended backgrounds correctly
+  ;;(kind-icon-use-icons t) ; use old-school text-based icons
+  ;;:config
+  ;;(add-to-list 'corfu-margin-formatters #'kind-icon-margin-formatter))
 
 (provide 'init-corfu)
 ;;; init-corfu dot el ends here

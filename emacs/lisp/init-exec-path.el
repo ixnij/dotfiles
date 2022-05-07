@@ -3,6 +3,7 @@
 ;;; Commentary:
 
 ;; This file is from purcell's emacs configuretion file.
+;; TODO: @see https://emacs-china.org/t/exec-path-from-shell/2515/19
 
 ;;; Code:
 

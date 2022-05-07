@@ -3,7 +3,8 @@
 ;;; Commentary:
 
 ;; The `add-subdirs-to-load-path' was copied from manateelazycat.
-;; See line 136 ~ 141 at https://manateelazycat.github.io/eaf/emacs/2020/05/10/eaf-community.html.
+;; @see line 136 ~ 141 at
+;; https://manateelazycat.github.io/eaf/emacs/2020/05/10/eaf-community.html.
 
 ;;; Code:
 
