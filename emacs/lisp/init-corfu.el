@@ -111,7 +111,7 @@
 (define-key corfu-map "\M-m" #'corfu-move-to-minibuffer)
 
 (use-package corfu-doc
-  :ensure nil
+  :ensure t
   :config
   ;;hook
   (add-hook 'corfu-mode-hook #'corfu-doc-mode)

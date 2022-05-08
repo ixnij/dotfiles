@@ -5,7 +5,7 @@
 ;;; Code:
 
 (use-package vertico
-  :ensure nil ;; from my /site-lisp/
+  :ensure t
   :init
   ;; Different scroll margin
   (setq vertico-scroll-margin 0)
