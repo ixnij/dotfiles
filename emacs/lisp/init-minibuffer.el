@@ -79,13 +79,7 @@
   (setq enable-recursive-minibuffers t))
 
 (use-package consult
-  :bind (([remap imenu]              . consult-imenu)
-	 ([remap goto-line]          . consult-goto-line)
-	 ([remap bookmark-jump]      . consult-bookmark)
-	 ([remap recentf-open-files] . consult-recent-file)
-	 ([remap switch-to-buffer]   . consult-buffer)
-	 ([remap load-theme]         . consult-theme)
-	 ([remap evil-show-marks]    . consult-mark))
+  :ensure t
   :config
   (with-no-warnings
     (consult-customize consult-ripgrep consult-git-grep consult-grep
@@ -117,7 +111,6 @@
 
 (use-package embark
   :ensure t
-
   :bind
   (("C-." . embark-act)         ;; pick some comfortable binding
    ("C-;" . embark-dwim)        ;; good alternative: M-.
