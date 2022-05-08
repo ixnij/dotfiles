@@ -21,7 +21,7 @@
 # prompt restore
 # prompt adam2
 # prompt adam1
-autoload -U promptinit && promptinit && prompt pure
+# autoload -U promptinit && promptinit && prompt pure
 
 # Settings for umask
 
