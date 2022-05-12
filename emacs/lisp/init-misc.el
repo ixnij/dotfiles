@@ -54,11 +54,11 @@
   :ensure nil
   :hook (after-init . global-hl-line-mode))
 
-;;(use-package repeat
-  ;;:ensure nil
-  ;;:hook (after-init . repeat-mode)
-  ;;:custom
-  ;;(repeat-exit-key (kbd "RET")))
+(use-package repeat
+  :ensure nil
+  :hook (after-init . repeat-mode)
+  :custom
+  (repeat-exit-key (kbd "RET")))
 
 (use-package whitespace-cleanup-mode
   :ensure t
@@ -186,7 +186,7 @@
 ;;  :defer t
 ;;  :config
 ;;  (setq easy-hugo-basedir
-;;	(concat ixnij/my "Blog/"))
+;;	"")
 ;;  (setq easy-hugo-postdir "content/posts"))
 
 (global-visual-line-mode 1)
