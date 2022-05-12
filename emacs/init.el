@@ -90,9 +90,6 @@
     (when (file-exists-p file)
       (load file))))
 
-(when (file-exists-p custom-file)
-  (load custom-file))
-
 (provide 'init)
 ;; Local Variables:
 ;; coding: utf-8
