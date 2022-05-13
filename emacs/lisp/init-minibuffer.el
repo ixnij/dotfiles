@@ -20,7 +20,8 @@
   (setq vertico-cycle t)
 
   :config
-  (vertico-mode))
+  (vertico-mode)
+  (vertico-reverse-mode 'toggle))
 
 ;; Optionally use the `orderless' completion style. See
 ;; `+orderless-dispatch' in the Consult wiki for an advanced Orderless style
@@ -80,16 +81,22 @@
 
 (use-package consult
   :ensure t
+  :bind (([remap imenu] . consult-imenu)
+	 ([remap switch-to-buffer] . consult-buffer)
+	 ([remap bookmark-jump] . consult-bookmark)
+	 ([remap recentf-open-files] . consult-recent-file)
+	 ([remap load-theme] . consult-theme))
   :config
   (with-no-warnings
     (consult-customize consult-ripgrep consult-git-grep consult-grep
 		       consult-bookmark
 		       consult-recent-file
 		       consult-buffer
+		       consult-imenu
 		       :preview-key nil))
   :custom
   (consult-fontify-preserve nil)
-  (consult-async-min-input 2)
+  (consult-async-min-input 1)
   (consult-async-refresh-delay 0.15)
   (consult-async-input-throttle 0.2)
   (consult-async-input-debounce 0.1))
