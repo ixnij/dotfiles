@@ -2,27 +2,28 @@
 
 ;;; Code:
 (use-package corfu
+  :ensure t
   ;; Optional customizations
   :custom
   (corfu-cycle t)                ;; Enable cycling for `corfu-next/previous'
   (corfu-auto t)                 ;; Enable auto completion
   ;; (corfu-commit-predicate nil)   ;; Do not commit selected candidates on next input
   ;; (corfu-separator ?\s)          ;; Orderless field separator
-  (corfu-quit-no-match t)      ;; Never quit, even if there is no match
+  (corfu-quit-no-match 'separator)      ;; Never quit, even if there is no match
   ;; (corfu-preview-current nil)    ;; Disable current candidate preview
   ;; (corfu-preselect-first nil)    ;; Disable candidate preselection
   ;; (corfu-echo-documentation nil) ;; Disable documentation in the echo area
   ;; (corfu-scroll-margin 5)        ;; Use scroll margin
-  ;; (corfu-auto-delay 0)
-  ;;:bind
-   ;;(:map corfu-map ("C-SPC" . corfu-insert-separator))
-  ;;(:map corfu-map
-        ;;("TAB" . corfu-next)
-        ;;([tab] . corfu-next)
-        ;;("S-TAB" . corfu-previous)
-        ;;([backtab] . corfu-previous))
+  (corfu-auto-delay 0)
+  (corfu-auto-prefix 3)
+  (define-key corfu-map "\M-q" #'corfu-quick-complete)
+  (define-key corfu-map "\C-q" #'corfu-quick-exit)
+  :bind
+  (:map corfu-map ("SPC" . corfu-insert-separator))
   :init
-  (corfu-global-mode))
+  (global-corfu-mode)
+  (corfu-history-mode 1)
+  (add-to-list 'savehist-additional-variables 'corfu-history))
 
 ;; Optionally use the `orderless' completion style. See `+orderless-dispatch'
 ;; in the Consult wiki for an advanced Orderless style dispatcher.
@@ -33,7 +34,7 @@
   ;; Configure a custom style dispatcher (see the Consult wiki)
   ;; (setq orderless-style-dispatchers '(+orderless-dispatch)
   ;;       orderless-component-separator #'orderless-escapable-split-on-space)
-  (setq completion-styles '(orderless)
+  (setq completion-styles '(orderless basic)
         completion-category-defaults nil
         completion-category-overrides '((file (styles . (partial-completion))))))
 
@@ -58,12 +59,13 @@
   ;; `completion-at-point' is often bound to M-TAB.
   (setq tab-always-indent 'complete))
 
-;; Add extensions
 (use-package cape
   ;; Bind dedicated completion commands
+  ;; Alternative prefix keys: C-c p, M-p, M-+, ...
   :bind (("C-c p p" . completion-at-point) ;; capf
          ("C-c p t" . complete-tag)        ;; etags
          ("C-c p d" . cape-dabbrev)        ;; or dabbrev-completion
+         ("C-c p h" . cape-history)
          ("C-c p f" . cape-file)
          ("C-c p k" . cape-keyword)
          ("C-c p s" . cape-symbol)
@@ -79,22 +81,18 @@
   :init
   ;; Add `completion-at-point-functions', used by `completion-at-point'.
   (add-to-list 'completion-at-point-functions #'cape-file)
-  (add-to-list 'completion-at-point-functions #'cape-tex)
   (add-to-list 'completion-at-point-functions #'cape-dabbrev)
-  (add-to-list 'completion-at-point-functions #'cape-keyword)
+  (add-to-list 'completion-at-point-functions #'cape-history)
+  ;;(add-to-list 'completion-at-point-functions #'cape-keyword)
+  ;;(add-to-list 'completion-at-point-functions #'cape-tex)
   ;;(add-to-list 'completion-at-point-functions #'cape-sgml)
   ;;(add-to-list 'completion-at-point-functions #'cape-rfc1345)
+  (add-to-list 'completion-at-point-functions #'cape-abbrev)
   (add-to-list 'completion-at-point-functions #'cape-ispell)
-  (add-to-list 'completion-at-point-functions #'cape-dict)
+  ;;(add-to-list 'completion-at-point-functions #'cape-dict)
   (add-to-list 'completion-at-point-functions #'cape-symbol)
   (add-to-list 'completion-at-point-functions #'cape-line)
-  :config
-    ;; Silence the pcomplete capf, no errors or messages!
-  (advice-add 'pcomplete-completions-at-point :around #'cape-wrap-silent)
-
-  ;; Ensure that pcomplete does not write to the buffer
-  ;; and behaves as a pure `completion-at-point-function'.
-  (advice-add 'pcomplete-completions-at-point :around #'cape-wrap-purify))
+)
 
 (defun corfu-enable-in-minibuffer ()
   "Enable Corfu in the minibuffer if `completion-at-point' is bound."
@@ -102,13 +100,6 @@
     ;; (setq-local corfu-auto nil) Enable/disable auto completion
     (corfu-mode 1)))
 (add-hook 'minibuffer-setup-hook #'corfu-enable-in-minibuffer)
-
-(defun corfu-move-to-minibuffer ()
-  (interactive)
-  (let ((completion-extra-properties corfu--extra)
-        completion-cycle-threshold completion-cycling)
-    (apply #'consult-completion-in-region completion-in-region--data)))
-(define-key corfu-map "\M-m" #'corfu-move-to-minibuffer)
 
 (use-package corfu-doc
   :ensure t
@@ -121,14 +112,14 @@
   (define-key corfu-map (kbd "M-d") #'corfu-doc-toggle))
 ;; todo setup templ
 
-;;(use-package kind-icon
-  ;;:ensure t
-  ;;:after corfu
-  ;;:custom
-  ;;(kind-icon-default-face 'corfu-default) ; to compute blended backgrounds correctly
-  ;;(kind-icon-use-icons t) ; use old-school text-based icons
-  ;;:config
-  ;;(add-to-list 'corfu-margin-formatters #'kind-icon-margin-formatter))
+(use-package kind-icon
+  :ensure t
+  :after corfu
+  :custom
+  (kind-icon-default-face 'corfu-default) ; to compute blended backgrounds correctly
+  ;(kind-icon-use-icons t) ; use old-school text-based icons
+  :config
+  (add-to-list 'corfu-margin-formatters #'kind-icon-margin-formatter))
 
 (provide 'init-corfu)
 ;;; init-corfu dot el ends here
