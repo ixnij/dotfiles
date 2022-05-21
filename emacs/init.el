@@ -27,8 +27,6 @@
 (package-initialize) ;; do not forget it
 (setq custom-file (locate-user-emacs-file "custom.el"))
 
-(defvar ixnij/my "~/Projects/Repositories/My/")
-
 (require 'init-native-comp)
 
 (require 'init-elpa)
@@ -43,7 +41,8 @@
 	`((".*" ,(no-littering-expand-var-file-name "auto-save/") t)))
   )
 ;(require 'init-org)
-(use-package diminish)
+(use-package diminish
+  :ensure t)
 
 (use-package ns-auto-titlebar
   :when (eq system-type 'darwin)
