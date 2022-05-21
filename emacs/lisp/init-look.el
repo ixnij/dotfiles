@@ -62,7 +62,7 @@
   :init
   (setq modus-themes-italic-constructs t
 	modus-themes-bold-constructs nil
-	modus-themes-mixed-fonts nil
+	modus-themes-mixed-fonts t
 	modus-themes-intense-mouseovers nil
 	modus-themes-deuteranopia t
 	modus-themes-tabs-accented t
@@ -97,7 +97,7 @@
 	;; Options for `modus-themes-syntax' are either nil (the default),
 	;; or a list of properties that may include any of those symbols:
 	;; `faint', `yellow-comments', `green-strings', `alt-syntax'
-	modus-themes-syntax nil
+	modus-themes-syntax '(alt-syntax)
 
 	;; Options for `modus-themes-hl-line' are either nil (the default),
 	;; or a list of properties that may include any of those symbols:
@@ -165,14 +165,12 @@
 	  (habit . traffic-light))
 
 	modus-themes-headings ; this is an alist: read the manual or its doc string
-	'((1 . (overline background variable-pitch 1.3))
-	  (2 . (rainbow overline 1.1))
-	  (t . (semibold)))))
-  ;; :config
-  ;; (modus-themes-with-colors
-    ;; (custom-set-faces
-     ;; `(fill-column-indicator ((,class :foreground ,bg-active)))))
-
+	'((1 . (variable-pitch 1.1))
+	  (2 . (rainbow variable-pitch 1.0))
+	  (3 . (rainbow variable-pitch 0.9))
+	  (4 . (rainbow variable-pitch 0.8))
+	  (5 . (rainbow variable-pitch 0.7))
+	  (t . (semibold variable-pitch 0.6)))))
 
 (use-package moody
   :ensure t
