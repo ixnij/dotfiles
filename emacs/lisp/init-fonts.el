@@ -61,7 +61,8 @@
   ;; Specify font for all unicode characters
   (cl-loop for font in '("Apple Color Emoji" "Segoe UI Symbol" "Symbola" "Symbol")
            when (font-installed-p font)
-           return(set-fontset-font t 'unicode font nil 'prepend))
+           return (set-fontset-font t 'emoji (font-spec :family font)
+				    nil 'prepend))
 
   ;; Specify font for Chinese characters
   (cl-loop for font in '("PingFang SC" "Microsoft Yahei")
@@ -73,8 +74,12 @@
   (set-fontset-font t '(#x20000 . #x2A6DF)
                     (font-spec :name "HanaMinB"
                                :weight 'normal
-                               :slant 'normal)))
+                               :slant 'normal))
+  (set-face-attribute 'fixed-pitch nil
+		      :family (face-attribute 'default :family))
 
+  (set-face-attribute 'variable-pitch nil
+		      :family "SF Pro" :height 210))
 
 (provide 'init-fonts)
 ;;; Local Variables:
