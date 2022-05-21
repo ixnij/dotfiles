@@ -23,22 +23,52 @@
   (vertico-mode)
   (vertico-reverse-mode 'toggle))
 
+;; @see https://github.com/minad/vertico/wiki
+;; Pre-select previous directory when entering parent directory from within find-file
+;; {
+
+;; Advise vertico-directory-up to save the directory being exited.
+
+(defvar previous-directory nil
+    "The directory that was just left. It is set when leaving a directory and
+    set back to nil once it is used in the parent directory.")
+
+(defun set-previous-directory ()
+  "Set the directory that was just exited from within find-file."
+  (when (> (minibuffer-prompt-end) (point))
+    (save-excursion
+      (goto-char (1- (point)))
+      (when (search-backward "/" (minibuffer-prompt-end) t)
+        ;; set parent directory
+        (setq previous-directory (buffer-substring (1+ (point)) (point-max)))
+        ;; set back to nil if not sorting by directories or what was deleted is not a directory
+        (when (not (string-suffix-p "/" previous-directory))
+          (setq previous-directory nil))
+        t))))
+
+(advice-add #'vertico-directory-up :before #'set-previous-directory)
+
+;; Advise vertico--update-candidates to select the previous directory.
+
+(define-advice vertico--update-candidates (:after (&rest _) choose-candidate)
+    "Pick the previous directory rather than the prompt after updating candidates."
+    (cond
+     (previous-directory ; select previous directory
+      (setq vertico--index (or (seq-position vertico--candidates previous-directory)
+                               vertico--index))
+      (setq previous-directory nil))))
+
+;; }
+
 ;; Optionally use the `orderless' completion style. See
 ;; `+orderless-dispatch' in the Consult wiki for an advanced Orderless style
-;; dispatcher. Additionally enable `partial-completion' for file path
+;; dispatcher. @see https://github.com/minad/consult/wiki
+;; Additionally enable `partial-completion' for file path
 ;; expansion. `partial-completion' is important for wildcard support.
 ;; Multiple files can be opened at once with `find-file' if you enter a
 ;; wildcard. You may also give the `initials' completion style a try.
-(use-package orderless
-  :init
-  ;; Configure a custom style dispatcher (see the Consult wiki)
-  ;; (setq orderless-style-dispatchers '(+orderless-dispatch)
-  ;;       orderless-component-separator #'orderless-escapable-split-on-space)
-  (setq completion-styles '(orderless)
-	completion-category-defaults nil
-	completion-category-overrides '((file (styles partial-completion)))))
-
 ;; Configure directory extension.
+;; I put the configuration code snippet of orderless into `init-corfu.el'
 (use-package vertico-directory
   :after vertico
   :ensure nil
