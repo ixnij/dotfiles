@@ -207,7 +207,15 @@
   ;;:ensure nil
   ;;:after modus-themes
   ;;:config
-  ;;(awesome-tray-mode 1))
+;;(awesome-tray-mode 1))
+
+(use-package helpful
+  :ensure t
+  :bind (([remap describe-function] . helpful-callable)
+	 ([remap describe-command] . helpful-command)
+	 ([remap describe-variable] . helpful-variable)
+	 ([remap describe-key] . helpful-key)
+	 ([remap describe-symbol] . helpful-symbol)))
 
 (provide 'init-misc)
 ;; Local Variables:
