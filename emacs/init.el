@@ -27,7 +27,9 @@
 (package-initialize) ;; do not forget it
 (setq custom-file (locate-user-emacs-file "custom.el"))
 
-(require 'init-native-comp)
+;; native-comp
+(when (and (fboundp 'native-comp-available-p) (native-comp-available-p))
+  (setq native-comp-async-jobs-number 8))
 
 (require 'init-elpa)
 
@@ -59,12 +61,9 @@
 
 ;; editing
 ;;(require 'init-evil)
+(require 'init-fonts)
 (require 'init-meow)
 (require 'init-edit)
-
-;; appearance
-(require 'init-look)
-(require 'init-fonts)
 
 (require 'init-minibuffer)
 
@@ -78,7 +77,11 @@
 (require 'init-misc)
 
 ;; I don't know where I can put them.
-(use-package haskell-mode)
+(use-package haskell-mode
+  :ensure t)
+
+;; appearance
+(require 'init-look)
 
 ;;(require 'init-fns)
 
