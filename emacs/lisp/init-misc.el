@@ -147,35 +147,35 @@
 ;;  :custom
 ;;  (gts-translate-list '(("en" "zh") ("fr" "zh"))))
 
-(use-package rime
-  :ensure t
-  :defer t
-  :custom
-  (rime-librime-root "~/.emacs.d/librime/dist")
-  (rime-emacs-module-header-root "~/.emacs.d/librime")
-  (default-input-method "rime")
-  :config
-  (setq rime-show-candidate 'posframe)
-  (setq rime-posframe-properties
-	(list :font "Monaco"
-	      :internal-border-width 10)))
+;;(use-package rime
+  ;;:ensure t
+  ;;:defer t
+  ;;:custom
+  ;;(rime-librime-root "~/.emacs.d/librime/dist")
+  ;;(rime-emacs-module-header-root "~/.emacs.d/librime")
+  ;;(default-input-method "rime")
+  ;;:config
+  ;;(setq rime-show-candidate 'posframe)
+  ;;(setq rime-posframe-properties
+	;;(list :font "Monaco"
+	      ;;:internal-border-width 10)))
 
-;;(use-package emacs
-;;  :ensure nil
-;;  :init
-;;  (setq desktop-save 't)
-;;  (setq desktop-dirname (concat (getenv "HOME") "/.emacs.d/"))
-;;  (pixel-scroll-precision-mode)
-;;  ;; very nice 👍
-;;  (desktop-save-mode 1)
-;;  )
+(use-package emacs
+  :ensure nil
+  :init
+  (setq desktop-save 't)
+  (setq desktop-dirname (concat (getenv "HOME") "/.emacs.d/"))
+  (pixel-scroll-precision-mode)
+  ;; very nice 👍
+  (desktop-save-mode 1)
+  )
 
-(use-package workgroups2
-  :ensure t
-  :hook
-  (after-init . workgroups-mode)
-  :config
-  (setq wg-session-file "~/.emacs.d/var/workgroups.el"))
+;;(use-package workgroups2
+  ;;:ensure t
+  ;;:hook
+  ;;(after-init . workgroups-mode)
+  ;;:config
+  ;;(setq wg-session-file "~/.emacs.d/var/workgroups.el"))
 
 (use-package markdown-mode
   :ensure t
