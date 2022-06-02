@@ -69,7 +69,7 @@
   ;; Specify font for Chinese characters
   (cl-loop for font in '("PingFang SC" "Microsoft Yahei")
            when (font-installed-p font)
-           return (set-fontset-font t '(#x2ff0 . #x9fff)
+           return (set-fontset-font t 'han
 				    (font-spec :family font
 					       :size 18
 					       )))

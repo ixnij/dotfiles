@@ -120,6 +120,7 @@
 
   ;; Optionally replace the key help with a completing-read interface
   (setq prefix-help-command #'embark-prefix-help-command)
+  (setq embark-help-key "?")
 
   :config
 
