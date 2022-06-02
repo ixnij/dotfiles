@@ -21,6 +21,7 @@
     (normal-top-level-add-subdirs-to-load-path)))
 (add-subdirs-to-load-path "~/.emacs.d/site-lisp")
 (setq read-process-output-max (* 1024 1024))
+(set-language-environment "UTF-8")
 
 ;; package.el
 (setq package-quickstart t)
@@ -84,6 +85,9 @@
 (require 'init-look)
 
 ;;(require 'init-fns)
+
+(unless (display-graphic-p)
+  (xterm-mouse-mode))
 
 (progn ; personalize
   (let ((file (expand-file-name "private.el" user-emacs-directory)))

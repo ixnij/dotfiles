@@ -174,6 +174,7 @@
 
 (use-package moody
   :ensure t
+  :when (display-graphic-p)
   :config
   (setq x-underline-at-descent-line t)
   (moody-replace-mode-line-buffer-identification)
