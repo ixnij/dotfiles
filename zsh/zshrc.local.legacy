@@ -303,7 +303,7 @@ alias ec="emacsclient -c -a ''"
 
 # End of file ##############################
 # vim:filetype=zsh
-# Local variables:
+# Local Variables:
 # mode: sh
 # End:
 # #########################################

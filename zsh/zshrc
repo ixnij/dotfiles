@@ -1,82 +1,80 @@
-# Filename: ~/.zshrc
-# Author: Thomas Wu <ixnij.wu@outlook.com>
+# The following lines were added by compinstall
 
-autoload -U compinit promptinit
-compinit && promptinit
-# prompt walters
-
-# Colors on GNU ls(1)
-if ls --color=auto / >/dev/null 2>&1; then
-    ls_options+=( --color=auto )
-    # Colors on FreeBSD and OSX ls(1)
-elif ls -G / >/dev/null 2>&1; then
-    ls_options+=( -G )
-fi
-
-# Natural sorting order on GNU ls(1)
-# OSX and IllumOS have a -v option that is not natural sorting
-if ls --version |& grep -q 'GNU' >/dev/null 2>&1 && ls -v / >/dev/null 2>&1; then
-    ls_options+=( -v )
-fi
-
-alias ls="ls $ls_options"
-
+zstyle ':completion:*' completer _complete _ignored
 zstyle ':completion:*' menu select
-setopt completealiases
 zstyle ':completion:*' rehash true
+zstyle ':completion:*' max-errors 5 not-numeric
+zstyle ':completion::complete:*' gain-privileges 1
+zstyle ':completion:*' use-cache on
 
-# Check if we can read given files and source those we can.
-function ssource () {
-    if (( ${#argv} < 1 )) ; then
-	printf 'usage: ssource FILE(s)...\n' >&2
-	return 1
+# Global alias from ZSH-LOVERS(1)
+alias -g ...='../..'
+alias -g ....='../../..'
+alias -g .....='../../../..'
+alias -g CA="2>&1 | cat -A"
+alias -g C='| wc -l'
+alias -g D="DISPLAY=:0.0"
+alias -g DN=/dev/null
+alias -g ED="export DISPLAY=:0.0"
+alias -g EG='|& egrep'
+alias -g EH='|& head'
+alias -g EL='|& less'
+alias -g ELS='|& less -S'
+alias -g ETL='|& tail -20'
+alias -g ET='|& tail'
+alias -g F=' | fmt -'
+alias -g G='| egrep'
+alias -g H='| head'
+alias -g HL='|& head -20'
+alias -g Sk="*~(*.bz2|*.gz|*.tgz|*.zip|*.z)"
+alias -g LL="2>&1 | less"
+alias -g L="| less"
+alias -g LS='| less -S'
+alias -g MM='| most'
+alias -g M='| more'
+alias -g NE="2> /dev/null"
+alias -g NS='| sort -n'
+alias -g NUL="> /dev/null 2>&1"
+alias -g PIPE='|'
+alias -g R=' > /c/aaa/tee.txt '
+alias -g RNS='| sort -nr'
+alias -g S='| sort'
+alias -g TL='| tail -20'
+alias -g T='| tail'
+alias -g US='| sort -u'
+alias -g VM=/var/log/messages
+alias -g X0G='| xargs -0 egrep'
+alias -g X0='| xargs -0'
+alias -g XG='| xargs egrep'
+alias -g X='| xargs'
+
+autoload -Uz compinit
+compinit
+
+HISTFILE=~/.zsh_history
+HISTSIZE=10000000
+SAVEHIST=10000000
+
+bindkey -e
+# End of lines configured by zsh-newuser-install
+eval "$(zoxide init zsh)"
+eval "$(starship init zsh)"
+[[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/opt/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/opt/anaconda3/bin:$PATH"
     fi
+fi
+#unset __conda_setup
+# <<< conda initialize <<<
 
-    while (( ${#argv} > 0 )) ; do
-	[[ -r "$1" ]] && source "$1"
-	shift
-    done
-    return 0
-}
 
-# If has .zshrc.local, source it.
-ssource ~/.zshrc.local
-
-# automatically complete 'cd -<tab>' and 'cd -<ctrl-d>' with menu
-zstyle ':completion:*:*:cd:*:directory-stack' menu yes select
-
-# match uppercase from lowercase
-zstyle ':completion:*'    matcher-list 'm:{a-z}={A-Z}'
-
-# activate menu
-zstyle ':completion:*:history-words'   menu yes
-
-# ignore duplicate entries
-zstyle ':completion:*:history-words'   remove-all-dups yes
-zstyle ':completion:*:history-words'   stop yes
-
-zstyle ':completion:*:messages'        format '%d'
-zstyle ':completion:*:options'         auto-description '%d'
-
-# describe options in full
-zstyle ':completion:*:options'         description 'yes'
-
-# on processes completion complete all user processes
-zstyle ':completion:*:processes'       command 'ps -au$USER'
-
-# complete manual by their section
-zstyle ':completion:*:manuals'    separate-sections true
-zstyle ':completion:*:manuals.*'  insert-sections   true
-zstyle ':completion:*:man:*'      menu yes select
-
-zstyle ':completion:*' special-dirs ..
-
-# command for process lists, the local web server details and host completion
-zstyle ':completion:*:urls' local 'www' '/var/www/' 'public_html'
-
-# End of file ##############################
-# vim:filetype=zsh
-# Local variables:
-# mode: sh
-# End:
-# #########################################
+[ -f "/Users/wu/.ghcup/env" ] && source "/Users/wu/.ghcup/env" # ghcup-env

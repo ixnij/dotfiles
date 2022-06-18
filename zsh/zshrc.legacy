@@ -1,0 +1,82 @@
+# Filename: ~/.zshrc
+# Author: Thomas Wu <ixnij.wu@outlook.com>
+
+autoload -U compinit promptinit
+compinit && promptinit
+# prompt walters
+
+# Colors on GNU ls(1)
+if ls --color=auto / >/dev/null 2>&1; then
+    ls_options+=( --color=auto )
+    # Colors on FreeBSD and OSX ls(1)
+elif ls -G / >/dev/null 2>&1; then
+    ls_options+=( -G )
+fi
+
+# Natural sorting order on GNU ls(1)
+# OSX and IllumOS have a -v option that is not natural sorting
+if ls --version |& grep -q 'GNU' >/dev/null 2>&1 && ls -v / >/dev/null 2>&1; then
+    ls_options+=( -v )
+fi
+
+alias ls="ls $ls_options"
+
+zstyle ':completion:*' menu select
+setopt completealiases
+zstyle ':completion:*' rehash true
+
+# Check if we can read given files and source those we can.
+function ssource () {
+    if (( ${#argv} < 1 )) ; then
+	printf 'usage: ssource FILE(s)...\n' >&2
+	return 1
+    fi
+
+    while (( ${#argv} > 0 )) ; do
+	[[ -r "$1" ]] && source "$1"
+	shift
+    done
+    return 0
+}
+
+# If has .zshrc.local, source it.
+ssource ~/.zshrc.local
+
+# automatically complete 'cd -<tab>' and 'cd -<ctrl-d>' with menu
+zstyle ':completion:*:*:cd:*:directory-stack' menu yes select
+
+# match uppercase from lowercase
+zstyle ':completion:*'    matcher-list 'm:{a-z}={A-Z}'
+
+# activate menu
+zstyle ':completion:*:history-words'   menu yes
+
+# ignore duplicate entries
+zstyle ':completion:*:history-words'   remove-all-dups yes
+zstyle ':completion:*:history-words'   stop yes
+
+zstyle ':completion:*:messages'        format '%d'
+zstyle ':completion:*:options'         auto-description '%d'
+
+# describe options in full
+zstyle ':completion:*:options'         description 'yes'
+
+# on processes completion complete all user processes
+zstyle ':completion:*:processes'       command 'ps -au$USER'
+
+# complete manual by their section
+zstyle ':completion:*:manuals'    separate-sections true
+zstyle ':completion:*:manuals.*'  insert-sections   true
+zstyle ':completion:*:man:*'      menu yes select
+
+zstyle ':completion:*' special-dirs ..
+
+# command for process lists, the local web server details and host completion
+zstyle ':completion:*:urls' local 'www' '/var/www/' 'public_html'
+
+# End of file ##############################
+# vim:filetype=zsh
+# Local variables:
+# mode: sh
+# End:
+# #########################################
