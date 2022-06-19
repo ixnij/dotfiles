@@ -1,3 +1,6 @@
+# Filename: ~/.zshrc
+# Author: Thomas Wu <ixnij.wu@outlook.com>
+
 # The following lines were added by compinstall
 
 zstyle ':completion:*' completer _complete _ignored
@@ -48,6 +51,15 @@ alias -g X0='| xargs -0'
 alias -g XG='| xargs egrep'
 alias -g X='| xargs'
 
+# Colors on GNU ls(1)
+if ls --color=auto / >/dev/null 2>&1; then
+    alias ls="ls --color=auto"
+    # Colors on FreeBSD and OSX ls(1)
+elif ls -G / >/dev/null 2>&1; then
+    alias ls="ls -G"
+fi
+
+emulate -L zsh
 autoload -Uz compinit
 compinit
 
@@ -57,8 +69,13 @@ SAVEHIST=10000000
 
 bindkey -e
 # End of lines configured by zsh-newuser-install
-eval "$(zoxide init zsh)"
-eval "$(starship init zsh)"
+
+local progs=(zoxide starship)
+
+for prog ($progs) {
+    eval "$($prog init zsh)"
+}
+
 [[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
 
 # >>> conda initialize >>>
@@ -76,5 +93,11 @@ fi
 #unset __conda_setup
 # <<< conda initialize <<<
 
-
 [ -f "/Users/wu/.ghcup/env" ] && source "/Users/wu/.ghcup/env" # ghcup-env
+
+# PATH
+path+=~/.local/bin
+
+# Local Variables:
+# mode: sh
+# End:
