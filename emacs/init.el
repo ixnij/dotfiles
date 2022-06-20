@@ -56,9 +56,6 @@
 (use-package emacs
   :ensure nil
   :when (eq system-type 'darwin)
-  :bind
-  (("M--" . text-scale-decrease)
-   ("M-=" . text-scale-increase))
   :config
   (setq mac-option-modifier 'super
 	mac-command-modifier 'meta))

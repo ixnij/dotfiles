@@ -189,8 +189,13 @@
 ;;	"")
 ;;  (setq easy-hugo-postdir "content/posts"))
 
-(global-visual-line-mode 1)
-(diminish 'visual-line-mode)
+(use-package emacs
+  :bind
+  (("M--" . text-scale-decrease)
+   ("M-=" . text-scale-increase))
+  :config
+  (global-visual-line-mode 1)
+  (diminish 'visual-line-mode))
 
 (when (fboundp 'pixel-scroll-precision-mode)
   (pixel-scroll-precision-mode))
