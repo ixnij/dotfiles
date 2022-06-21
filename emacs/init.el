@@ -34,15 +34,29 @@
 
 (require 'init-elpa)
 
-(use-package no-littering
-  :ensure t
-  :config
-  (require 'recentf)
-  (add-to-list 'recentf-exclude no-littering-var-directory)
-  (add-to-list 'recentf-exclude no-littering-etc-directory)
-  (setq auto-save-file-name-transforms
-	`((".*" ,(no-littering-expand-var-file-name "auto-save/") t)))
-  )
+;; TODO: 这个 no-littering 没有配置好的话，会出现一些严重的问题。比如说，
+;; 在第一次启动之后，再次启动时，Emacs 会找不到一些包。这个 no-littering
+;; 还是需要谨慎使用的。下面的配置有问题，有待修理。
+;(use-package no-littering
+;  :ensure t
+;  :init
+; (setq no-littering-etc-directory
+;	(expand-file-name "config/" user-emacs-directory))
+; (setq no-littering-var-directory
+;	(expand-file-name "data/" user-emacs-directory))
+;  :config
+;  (require 'recentf)
+;  (add-to-list 'recentf-exclude no-littering-var-directory)
+;  (add-to-list 'recentf-exclude no-littering-etc-directory)
+;  (setq auto-save-file-name-transforms
+;	`((".*" ,(no-littering-expand-var-file-name "auto-save/") t)))
+;  )
+;
+;(when (fboundp 'startup-redirect-eln-cache)
+;  (startup-redirect-eln-cache
+;   (convert-standard-filename
+;	  (expand-file-name  "var/eln-cache/" user-emacs-directory))))
+
 ;(require 'init-org)
 (use-package diminish
   :ensure t)
