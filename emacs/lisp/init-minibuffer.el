@@ -46,7 +46,7 @@
 (use-package vertico-posframe
   :after vertico
   :when (display-graphic-p)
-  :ensure nil
+  :ensure t
   :config
   (vertico-posframe-mode 1))
 

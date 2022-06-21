@@ -2,7 +2,3 @@
 	path = emacs/site-lisp/ligature.el
 	url = git@github.com:mickeynp/ligature.el
 	shallow = true
-[submodule "emacs/site-lisp/vertico-posframe"]
-	path = emacs/site-lisp/vertico-posframe
-	url = git@github.com:tumashu/vertico-posframe.git
-	shallow = true

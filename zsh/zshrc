@@ -54,6 +54,7 @@ alias -g X0='| xargs -0'
 alias -g XG='| xargs egrep'
 alias -g X='| xargs'
 alias e='emacsclient -t'
+alias cat=bat
 
 # Colors on GNU ls(1)
 if ls --color=auto / >/dev/null 2>&1; then
