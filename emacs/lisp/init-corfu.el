@@ -25,6 +25,13 @@
   (corfu-history-mode 1)
   (add-to-list 'savehist-additional-variables 'corfu-history))
 
+(use-package corfu-terminal
+  :ensure t
+  :after corfu
+  :when (not (display-graphic-p))
+  :config
+  (corfu-terminal-mode +1))
+
 ;; Optionally use the `orderless' completion style. See `+orderless-dispatch'
 ;; in the Consult wiki for an advanced Orderless style dispatcher.
 ;; Enable `partial-completion' for files to allow path expansion.

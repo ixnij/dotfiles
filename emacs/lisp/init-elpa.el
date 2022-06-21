@@ -25,7 +25,8 @@
 	 (sjtu
 	  ("melpa"        . "https://mirrors.sjtug.sjtu.edu.cn/emacs-elpa/melpa/")
 	  ("gnu"          . "https://mirrors.sjtug.sjtu.edu.cn/emacs-elpa/gnu/")
-	  ("org"          . "https://mirrors.sjtug.sjtu.edu.cn/emacs-elpa/org/")
+	  ;; ("org"          . "https://mirrors.sjtug.sjtu.edu.cn/emacs-elpa/org/")
+	  ("nongnu"       . "https://mirrors.sjtug.sjtu.edu.cn/emacs-elpa/nongnu/")
 	  )))
 (setq package-archives
       (assoc-default 'sjtu ixnij/package-mirror-alist))
