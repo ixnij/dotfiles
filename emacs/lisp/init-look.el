@@ -190,6 +190,11 @@
 
 (add-hook 'ns-system-appearance-change-functions #'ixnij/apply-theme)
 
+;; Set theme for terminal
+(when (not (display-graphic-p))
+  (modus-themes-load-vivendi) ;; dark
+  )
+
 (provide 'init-look)
 ;;; Local Variables:
 ;;; coding: utf-8

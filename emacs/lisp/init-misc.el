@@ -164,11 +164,9 @@
   :ensure nil
   :init
   (setq desktop-save 't)
-  (setq desktop-dirname (concat (getenv "HOME") "/.emacs.d/"))
   (pixel-scroll-precision-mode)
   ;; very nice 👍
-  (desktop-save-mode 1)
-  )
+  (desktop-save-mode 1))
 
 ;;(use-package workgroups2
   ;;:ensure t
