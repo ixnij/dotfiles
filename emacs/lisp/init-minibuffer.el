@@ -43,6 +43,13 @@
   ;; Tidy shadowed file names
   :hook (rfn-eshadow-update-overlay . vertico-directory-tidy))
 
+(use-package vertico-posframe
+  :after vertico
+  :when (display-graphic-p)
+  :ensure nil
+  :config
+  (vertico-posframe-mode 1))
+
 ;; Persist history over Emacs restarts. Vertico sorts by history position.
 (use-package savehist
   :ensure nil

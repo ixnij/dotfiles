@@ -1,5 +1,8 @@
 # Filename: ~/.zshrc
 # Author: Thomas Wu <ixnij.wu@outlook.com>
+# Local Variables:
+# mode: sh
+# End:
 
 # The following lines were added by compinstall
 
@@ -50,6 +53,7 @@ alias -g X0G='| xargs -0 egrep'
 alias -g X0='| xargs -0'
 alias -g XG='| xargs egrep'
 alias -g X='| xargs'
+alias e='emacsclient -t'
 
 # Colors on GNU ls(1)
 if ls --color=auto / >/dev/null 2>&1; then
@@ -98,6 +102,4 @@ fi
 # PATH
 path+=~/.local/bin
 
-# Local Variables:
-# mode: sh
-# End:
+
