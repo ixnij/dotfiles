@@ -19,6 +19,7 @@
   (evil-undo-system 'undo-redo))
 
 (use-package evil-collection
+  :diminish
   :ensure t
   :hook (evil-mode . evil-collection-init)
   :custom

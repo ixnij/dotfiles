@@ -75,7 +75,7 @@
 	mac-command-modifier 'meta))
 
 ;; editing
-;;(require 'init-evil)
+;(require 'init-evil)
 (require 'init-fonts)
 (require 'init-meow)
 (require 'init-edit)
@@ -94,6 +94,13 @@
 ;; I don't know where I can put them.
 (use-package haskell-mode
   :ensure t)
+
+(use-package rust-mode
+  :ensure t
+  :custom
+  (rust-format-on-save t)
+  )
+
 
 ;; appearance
 (require 'init-look)
