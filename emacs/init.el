@@ -19,6 +19,7 @@
   (let ((default-directory (file-name-as-directory dir)))
     (add-to-list 'load-path dir)
     (normal-top-level-add-subdirs-to-load-path)))
+
 (add-subdirs-to-load-path "~/.emacs.d/site-lisp")
 (setq read-process-output-max (* 1024 1024))
 (set-language-environment "UTF-8")
@@ -100,7 +101,6 @@
   :custom
   (rust-format-on-save t)
   )
-
 
 ;; appearance
 (require 'init-look)

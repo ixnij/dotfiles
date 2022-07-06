@@ -164,13 +164,21 @@
 	  (scheduled . uniform)
 	  (habit . traffic-light))
 
-	modus-themes-headings ; this is an alist: read the manual or its doc string
-	'((1 . (variable-pitch 1.1))
-	  (2 . (rainbow variable-pitch 1.0))
-	  (3 . (rainbow variable-pitch 0.9))
-	  (4 . (rainbow variable-pitch 0.8))
-	  (5 . (rainbow variable-pitch 0.7))
-	  (t . (semibold variable-pitch 0.6)))))
+	;;modus-themes-headings ; this is an alist: read the manual or its doc string
+	;;'((1 . (variable-pitch 1.1))
+	  ;;(2 . (rainbow variable-pitch 1.0))
+	  ;;(3 . (rainbow variable-pitch 0.9))
+	  ;;(4 . (rainbow variable-pitch 0.8))
+	  ;;(5 . (rainbow variable-pitch 0.7))
+	  ;;(t . (semibold variable-pitch 0.6)))
+	))
+
+(use-package doom-themes
+  :ensure t
+  :config
+  (doom-themes-org-config)
+  (doom-themes-visual-bell-config)
+  )
 
 (use-package moody
   :ensure t
@@ -181,21 +189,29 @@
   (moody-replace-vc-mode)
   (moody-replace-eldoc-minibuffer-message-function))
 
-(defun ixnij/apply-theme (appearance)
+(defun ixnij/apply-theme-modus (appearance)
   "Load theme, taking current system APPEARANCE into consideration."
   (mapc #'disable-theme custom-enabled-themes)
   (pcase appearance
     ('light (modus-themes-load-operandi))
     ('dark (modus-themes-load-vivendi))))
 
-(add-hook 'ns-system-appearance-change-functions #'ixnij/apply-theme)
+(defun ixnij/apply-theme-doom-themes (appearance)
+  "Load theme, taking current system APPEARANCE into consideration."
+  (mapc #'disable-theme custom-enabled-themes)
+  (pcase appearance
+    ('light (load-theme 'doom-gruvbox-light t))
+    ('dark (load-theme 'doom-ir-black t))))
+
+(add-hook 'ns-system-appearance-change-functions #'ixnij/apply-theme-doom-themes)
 
 ;; Set theme for terminal
 (when (not (display-graphic-p))
-  (modus-themes-load-vivendi) ;; dark
+  (load-theme 'doom-moonlight t)
+  ;;(modus-themes-load-vivendi) ;; dark
   )
 
 (provide 'init-look)
-;;; Local Variables:
+
 ;;; coding: utf-8
 ;;; init-look.el ends here
