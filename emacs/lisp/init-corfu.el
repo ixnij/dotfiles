@@ -13,9 +13,9 @@
   ;; (corfu-preview-current nil)    ;; Disable current candidate preview
   ;; (corfu-preselect-first nil)    ;; Disable candidate preselection
   ;; (corfu-echo-documentation nil) ;; Disable documentation in the echo area
-  ;; (corfu-scroll-margin 5)        ;; Use scroll margin
+  (corfu-scroll-margin 5)        ;; Use scroll margin
   (corfu-auto-delay 0)
-  (corfu-auto-prefix 3)
+  ;; (corfu-auto-prefix 3)
   (define-key corfu-map "\M-q" #'corfu-quick-complete)
   (define-key corfu-map "\C-q" #'corfu-quick-exit)
   :bind
@@ -98,7 +98,7 @@
   (add-to-list 'completion-at-point-functions #'cape-ispell)
   ;;(add-to-list 'completion-at-point-functions #'cape-dict)
   (add-to-list 'completion-at-point-functions #'cape-symbol)
-  (add-to-list 'completion-at-point-functions #'cape-line)
+  ;; (add-to-list 'completion-at-point-functions #'cape-line)
 )
 
 (defun corfu-enable-in-minibuffer ()
