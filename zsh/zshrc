@@ -87,3 +87,9 @@ for prog ($progs) {
 
 # PATH
 path+=~/.local/bin
+
+#repository_root=/Users/wu/Library/Python/3.9/lib/python/site-packages
+#. ${repository_root}/powerline/bindings/zsh/powerline.zsh
+
+# opam configuration
+[[ ! -r /Users/wu/.opam/opam-init/init.zsh ]] || source /Users/wu/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
