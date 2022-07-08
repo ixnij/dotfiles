@@ -17,10 +17,12 @@
     (format (concat
 	     ";; Emacs takes %s to init.\n"
 	     ";; Emacs version: %s\n"
-	     ";; Emacs package quantity: %s")
+	     ";; Emacs package quantity: %s\n"
+	     ";; Emacs up time: %s")
 	    (emacs-init-time)
 	    emacs-version
-	    (length package-alist))))
+	    (length package-alist)
+	    (emacs-uptime))))
   (setq-default
    window-resize-pixelwise t
    frame-resize-pixelwise t)

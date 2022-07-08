@@ -70,6 +70,7 @@
 
 (use-package emacs
   :ensure nil
+  :diminish eldoc-mode
   :when (eq system-type 'darwin)
   :config
   (setq mac-option-modifier 'super
