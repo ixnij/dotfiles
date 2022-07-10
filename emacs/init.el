@@ -59,9 +59,6 @@
 ;	  (expand-file-name  "var/eln-cache/" user-emacs-directory))))
 
 ;(require 'init-org)
-(use-package diminish
-  :ensure t)
-
 (use-package ns-auto-titlebar
   :when (eq system-type 'darwin)
   :ensure t

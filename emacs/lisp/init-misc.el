@@ -31,7 +31,7 @@
   :ensure nil
   :hook (after-init . winner-mode))
 
-(use-package restart-emacs :defer t)
+(use-package restart-emacs :ensure t :defer t)
 
 ;; MacOS specific
 (use-package exec-path-from-shell
@@ -138,7 +138,6 @@
   :ensure nil
   :init
   (setq desktop-save 't)
-  (pixel-scroll-precision-mode)
   ;; very nice 👍
   (desktop-save-mode 1)
   :bind
@@ -157,49 +156,51 @@
     (format (concat
 	     ";; Emacs takes %s to init.\n"
 	     ";; Emacs version: %s\n"
-	     ";; Emacs package quantity: %s\n"
-	     ";; Emacs up time: %s")
-	    (emacs-init-time)
-	    emacs-version
-	    (length package-alist)
-	    (emacs-uptime))))
-  (setq-default
-   window-resize-pixelwise t
-   frame-resize-pixelwise t)
-  (setq inhibit-startup-screen t)
-  ;(fset 'yes-or-no-p 'y-or-n-p) ;; emacs 28 has `use-short-answers'
-  (setq use-short-answers t)
-  :bind
-  ([remap list-buffers] . ibuffer))
+	     ";; Emacs package quantity: %s\n")
+	     (emacs-init-time)
+	     emacs-version
+	     (length package-alist)
+	     )))
+   (setq-default
+    window-resize-pixelwise t
+    frame-resize-pixelwise t)
+   (setq inhibit-startup-screen t)
+					;(fset 'yes-or-no-p 'y-or-n-p) ;; emacs 28 has `use-short-answers'
+   (when (fboundp 'pixel-scroll-precision-mode)
+     (pixel-scroll-precision-mode))
 
-(when (fboundp 'pixel-scroll-precision-mode)
-  (pixel-scroll-precision-mode))
+   (setq word-wrap-by-category t) ;; it solves a chinese users' problems
+   (setq use-short-answers t)
+   :bind
+   ([remap list-buffers] . ibuffer))
 
-(setq word-wrap-by-category t) ;; it solves a chinese users' problem
-;; or cjk?
+(use-package all-the-icons-ibuffer
+  :ensure t
+  :hook (ibuffer-mode . all-the-icons-ibuffer-mode))
 
-;; (use-package telega
-  ;; :ensure t
-  ;; :custom
-;; (telega-server-libs-prefix "/opt/homebrew/Cellar/tdlib/1.8.0"))
+(use-package all-the-icons-dired
+  :ensure t
+  :hook (dired-mode . all-the-icons-dired-mode))
 
-;;(use-package awesome-tray
-  ;;:ensure nil
-  ;;:after modus-themes
-  ;;:config
-;;(awesome-tray-mode 1))
+(use-package all-the-icons-completion
+  :ensure t
+  :after marginalia-mode
+  :hook (marginalia-mode . all-the-icons-completion-marginalia-setup))
 
 (use-package helpful
   :ensure t
-  :bind (([remap describe-function] . helpful-callable)
-	 ([remap describe-command] . helpful-command)
-	 ([remap describe-variable] . helpful-variable)
-	 ([remap describe-key] . helpful-key)
-	 ([remap describe-symbol] . helpful-symbol)))
+  :defer t
+  :init
+  ;; Note that the built-in `describe-function' includes both functions
+  ;; and macros. `helpful-function' is functions only, so we provide
+  ;; `helpful-callable' as a drop-in replacement.
+  (global-set-key (kbd "C-h f") #'helpful-callable)
+  (global-set-key (kbd "C-h v") #'helpful-variable)
+  (global-set-key (kbd "C-h k") #'helpful-key))
 
 (provide 'init-misc)
 ;; Local Variables:
 ;; coding: utf-8
 ;; no-byte-compile: t
-;; end:
+;; End:
 ;;; init-misc.el ends here

@@ -180,14 +180,16 @@
   (doom-themes-visual-bell-config)
   )
 
-(use-package moody
-  :ensure t
-  :when (display-graphic-p)
-  :config
-  (setq x-underline-at-descent-line t)
-  (moody-replace-mode-line-buffer-identification)
-  (moody-replace-vc-mode)
-  (moody-replace-eldoc-minibuffer-message-function))
+;; if you do not want to use doom-modeline anymore,
+;; then you might want to cancel the comment of moody
+;(use-package moody
+  ;:ensure t
+  ;:when (display-graphic-p)
+  ;:config
+  ;(setq x-underline-at-descent-line t)
+  ;(moody-replace-mode-line-buffer-identification)
+  ;(moody-replace-vc-mode)
+  ;(moody-replace-eldoc-minibuffer-message-function))
 
 (defun ixnij/apply-theme-modus (appearance)
   "Load theme, taking current system APPEARANCE into consideration."
