@@ -2,55 +2,7 @@
 
 ;;; Commentary:
 
-;; Code:
-
-(use-package emacs
-  :ensure nil
-  :config
-  (setq-default
-   initial-scratch-message
-   (concat
-    ";; Love the World, "
-    user-login-name
-    " - Emacs by your side!\n"
-    ";; Never forget the support of your family!\n"
-    (format (concat
-	     ";; Emacs takes %s to init.\n"
-	     ";; Emacs version: %s\n"
-	     ";; Emacs package quantity: %s\n"
-	     ";; Emacs up time: %s")
-	    (emacs-init-time)
-	    emacs-version
-	    (length package-alist)
-	    (emacs-uptime))))
-  (setq-default
-   window-resize-pixelwise t
-   frame-resize-pixelwise t)
-  (setq inhibit-startup-screen t)
-  (fset 'yes-or-no-p 'y-or-n-p) ;; emacs 28 has `use-short-answers'
-  :bind
-  ([remap list-buffers] . ibuffer))
-
-;; Copied from yuanqian
-(setq ibuffer-saved-filter-groups
-      (quote (("Default"
-	       ("Dired" (mode . dired-mode))
-	       ("Org" (name . "^.*org$"))
-	       ("Magit" (mode . magit-mode))
-	       ("web" (or (mode . web-mode) (mode . js2-mode)))
-	       ("Shell" (or (mode . eshell-mode) (mode . shell-mode)))
-	       ("Programming" (or (mode . haskell-mode)
-				  (mode . c-or-c++-mode)
-				  (mode . shell-script-mode)))
-	       ("Emacs" (or
-			 (name . "^\\*scratch\\*$")
-			 (name . "^\\*Messages\\*$")))
-	       ))))
-(add-hook 'ibuffer-mode-hook
-	  (lambda ()
-	    (ibuffer-auto-mode 1)
-	    (ibuffer-switch-to-saved-filter-groups "default")))
-;; End
+;;; Code:
 
 (use-package hl-line
   :ensure nil
@@ -162,13 +114,6 @@
 	;;(list :font "Monaco"
 	      ;;:internal-border-width 10)))
 
-(use-package emacs
-  :ensure nil
-  :init
-  (setq desktop-save 't)
-  (pixel-scroll-precision-mode)
-  ;; very nice 👍
-  (desktop-save-mode 1))
 
 ;;(use-package workgroups2
   ;;:ensure t
@@ -190,12 +135,42 @@
 ;;  (setq easy-hugo-postdir "content/posts"))
 
 (use-package emacs
+  :ensure nil
+  :init
+  (setq desktop-save 't)
+  (pixel-scroll-precision-mode)
+  ;; very nice 👍
+  (desktop-save-mode 1)
   :bind
   (("M--" . text-scale-decrease)
    ("M-=" . text-scale-increase))
   :config
   (global-visual-line-mode 1)
-  (diminish 'visual-line-mode))
+  (diminish 'visual-line-mode)
+  (setq-default
+   initial-scratch-message
+   (concat
+    ";; Love the World, "
+    user-login-name
+    " - Emacs by your side!\n"
+    ";; Never forget the support of your family!\n"
+    (format (concat
+	     ";; Emacs takes %s to init.\n"
+	     ";; Emacs version: %s\n"
+	     ";; Emacs package quantity: %s\n"
+	     ";; Emacs up time: %s")
+	    (emacs-init-time)
+	    emacs-version
+	    (length package-alist)
+	    (emacs-uptime))))
+  (setq-default
+   window-resize-pixelwise t
+   frame-resize-pixelwise t)
+  (setq inhibit-startup-screen t)
+  ;(fset 'yes-or-no-p 'y-or-n-p) ;; emacs 28 has `use-short-answers'
+  (setq use-short-answers t)
+  :bind
+  ([remap list-buffers] . ibuffer))
 
 (when (fboundp 'pixel-scroll-precision-mode)
   (pixel-scroll-precision-mode))
