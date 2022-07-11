@@ -42,9 +42,9 @@
   :ensure nil
   :hook (after-init . save-place-mode))
 
-(use-package ace-window
-  :defer t
-  :bind ("M-o" . ace-window))
+;;(use-package ace-window
+  ;;:defer t
+  ;;:bind ("M-o" . ace-window))
 
 (use-package recentf
   :ensure nil
@@ -176,14 +176,17 @@
 
 (use-package all-the-icons-ibuffer
   :ensure t
+  :when (display-graphic-p)
   :hook (ibuffer-mode . all-the-icons-ibuffer-mode))
 
 (use-package all-the-icons-dired
   :ensure t
+  :when (display-graphic-p)
   :hook (dired-mode . all-the-icons-dired-mode))
 
 (use-package all-the-icons-completion
   :ensure t
+  :when (display-graphic-p)
   :after marginalia-mode
   :hook (marginalia-mode . all-the-icons-completion-marginalia-setup))
 
