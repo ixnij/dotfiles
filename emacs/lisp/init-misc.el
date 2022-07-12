@@ -184,12 +184,6 @@
   :when (display-graphic-p)
   :hook (dired-mode . all-the-icons-dired-mode))
 
-(use-package all-the-icons-completion
-  :ensure t
-  :when (display-graphic-p)
-  :after marginalia-mode
-  :hook (marginalia-mode . all-the-icons-completion-marginalia-setup))
-
 (use-package helpful
   :ensure t
   :defer t
