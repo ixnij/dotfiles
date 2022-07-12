@@ -165,7 +165,7 @@
     window-resize-pixelwise t
     frame-resize-pixelwise t)
    (setq inhibit-startup-screen t)
-					;(fset 'yes-or-no-p 'y-or-n-p) ;; emacs 28 has `use-short-answers'
+   ;;(fset 'yes-or-no-p 'y-or-n-p) ;; emacs 28 has `use-short-answers'
    (when (fboundp 'pixel-scroll-precision-mode)
      (pixel-scroll-precision-mode))
 

@@ -119,14 +119,14 @@
   (define-key corfu-map (kbd "M-d") #'corfu-doc-toggle))
 ;; todo setup templ
 
-(use-package kind-icon
-  :ensure t
-  :after corfu
-  :custom
-  (kind-icon-default-face 'corfu-default) ; to compute blended backgrounds correctly
-  ;(kind-icon-use-icons t) ; use old-school text-based icons
-  :config
-  (add-to-list 'corfu-margin-formatters #'kind-icon-margin-formatter))
+;(use-package kind-icon
+  ;:ensure t
+  ;:after corfu
+  ;:custom
+  ;(kind-icon-default-face 'corfu-default) ; to compute blended backgrounds correctly
+  ;;(kind-icon-use-icons t) ; use old-school text-based icons
+  ;:config
+  ;(add-to-list 'corfu-margin-formatters #'kind-icon-margin-formatter))
 
 (provide 'init-corfu)
 ;;; init-corfu dot el ends here
