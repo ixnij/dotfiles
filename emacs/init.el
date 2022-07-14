@@ -20,6 +20,11 @@
     (add-to-list 'load-path dir)
     (normal-top-level-add-subdirs-to-load-path)))
 
+(defmacro dowEver (ver &rest body)
+  "Do BODY only when `EMACS-VERSION' >= VER"
+  `(when (not (version< emacs-version ,ver))
+     ,@body))
+
 (add-subdirs-to-load-path "~/.emacs.d/site-lisp")
 (setq read-process-output-max (* 1024 1024))
 (set-language-environment "UTF-8")

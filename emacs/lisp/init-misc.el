@@ -169,7 +169,8 @@
    (when (fboundp 'pixel-scroll-precision-mode)
      (pixel-scroll-precision-mode))
 
-   (setq word-wrap-by-category t) ;; it solves a chinese users' problems
+   (dowEver "28.1"
+	    (setq word-wrap-by-category t)) ;; it solves a chinese users' problems
    (setq use-short-answers t)
    :bind
    ([remap list-buffers] . ibuffer))
@@ -183,6 +184,12 @@
   :ensure t
   :when (display-graphic-p)
   :hook (dired-mode . all-the-icons-dired-mode))
+
+(use-package xref
+  :ensure nil
+  :when (executable-find "rg")
+  :custom
+  (xref-search-program 'ripgrep))
 
 (use-package helpful
   :ensure t
