@@ -198,10 +198,10 @@
     ('light (modus-themes-load-operandi))
     ('dark (modus-themes-load-vivendi))))
 
-(use-package doom-modeline
-  :ensure t
-  :config
-  (doom-modeline-mode +1))
+;(use-package doom-modeline
+  ;:ensure t
+  ;:config
+  ;(doom-modeline-mode +1))
 
 (defun ixnij/apply-theme-doom-themes (appearance)
   "Load theme, taking current system APPEARANCE into consideration."
