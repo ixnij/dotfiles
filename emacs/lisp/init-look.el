@@ -156,67 +156,31 @@
 	modus-themes-diffs 'desaturated
 
 	modus-themes-org-blocks 'gray-background ; {nil,'gray-background,'tinted-background}
-
-	modus-themes-org-agenda ; this is an alist: read the manual or its doc string
-	'((header-block . (variable-pitch 1.3))
-	  (header-date . (grayscale workaholic bold-today 1.1))
-	  (event . (accented varied))
-	  (scheduled . uniform)
-	  (habit . traffic-light))
-
-	;;modus-themes-headings ; this is an alist: read the manual or its doc string
-	;;'((1 . (variable-pitch 1.1))
-	  ;;(2 . (rainbow variable-pitch 1.0))
-	  ;;(3 . (rainbow variable-pitch 0.9))
-	  ;;(4 . (rainbow variable-pitch 0.8))
-	  ;;(5 . (rainbow variable-pitch 0.7))
-	  ;;(t . (semibold variable-pitch 0.6)))
 	))
-
-(use-package doom-themes
-  :ensure t
-  :config
-  (doom-themes-org-config)
-  (doom-themes-visual-bell-config)
-  )
 
 ;; if you do not want to use doom-modeline anymore,
 ;; then you might want to cancel the comment of moody
-;(use-package moody
-  ;:ensure t
-  ;:when (display-graphic-p)
-  ;:config
-  ;(setq x-underline-at-descent-line t)
-  ;(moody-replace-mode-line-buffer-identification)
-  ;(moody-replace-vc-mode)
-  ;(moody-replace-eldoc-minibuffer-message-function))
+(use-package moody
+  :ensure t
+  :when (display-graphic-p)
+  :config
+  (setq x-underline-at-descent-line t)
+  (moody-replace-mode-line-buffer-identification)
+  (moody-replace-vc-mode)
+  (moody-replace-eldoc-minibuffer-message-function))
 
-(defun ixnij/apply-theme-modus (appearance)
+(defun ixnij/apply-theme (appearance)
   "Load theme, taking current system APPEARANCE into consideration."
   (mapc #'disable-theme custom-enabled-themes)
   (pcase appearance
     ('light (modus-themes-load-operandi))
     ('dark (modus-themes-load-vivendi))))
 
-;(use-package doom-modeline
-  ;:ensure t
-  ;:config
-  ;(doom-modeline-mode +1))
-
-(defun ixnij/apply-theme-doom-themes (appearance)
-  "Load theme, taking current system APPEARANCE into consideration."
-  (mapc #'disable-theme custom-enabled-themes)
-  (pcase appearance
-    ('light (load-theme 'doom-gruvbox-light t))
-    ('dark (load-theme 'doom-ir-black t))))
-
-(add-hook 'ns-system-appearance-change-functions #'ixnij/apply-theme-doom-themes)
+(add-hook 'ns-system-appearance-change-functions #'ixnij/apply-theme)
 
 ;; Set theme for terminal
 (when (not (display-graphic-p))
-  (load-theme 'doom-moonlight t)
-  ;;(modus-themes-load-vivendi) ;; dark
-  )
+  (modus-themes-load-vivendi)) ;; dark
 
 (provide 'init-look)
 
