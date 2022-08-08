@@ -105,6 +105,10 @@
   (rust-format-on-save t)
   )
 
+(use-package racket-mode
+  :ensure t
+  :hook (racket-mode . (lambda () (electric-pair-local-mode -1)))
+
 ;; appearance
 (require 'init-look)
 

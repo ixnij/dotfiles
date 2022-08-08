@@ -142,7 +142,8 @@
   (desktop-save-mode 1)
   :bind
   (("M--" . text-scale-decrease)
-   ("M-=" . text-scale-increase))
+   ("M-=" . text-scale-increase)
+   ("M-o" . other-window))
   :config
   (global-visual-line-mode 1)
   (diminish 'visual-line-mode)

@@ -62,7 +62,10 @@
 ;; Automatic parenthesis pairing
 (use-package elec-pair
   :ensure nil
-  :hook (after-init . electric-pair-mode)
+  :hook ((emacs-lisp-mode . electric-pair-local-mode)
+	 (c-or-c++-mode . electric-pair-local-mode)
+	 (rust-mode . electric-pair-local-mode)
+	 (haskell-mode . electric-pair-local-mode))
   :init
   (setq
    electric-pair-inhibit-predicate
