@@ -33,18 +33,9 @@
 
 (use-package restart-emacs :ensure t :defer t)
 
-;; MacOS specific
-(use-package exec-path-from-shell
-  :when (eq system-type 'darwin)
-  :hook (after-init . exec-path-from-shell-initialize))
-
 (use-package saveplace
   :ensure nil
   :hook (after-init . save-place-mode))
-
-;;(use-package ace-window
-  ;;:defer t
-  ;;:bind ("M-o" . ace-window))
 
 (use-package recentf
   :ensure nil
@@ -176,32 +167,11 @@
    :bind
    ([remap list-buffers] . ibuffer))
 
-(use-package all-the-icons-ibuffer
-  :ensure t
-  :when (display-graphic-p)
-  :hook (ibuffer-mode . all-the-icons-ibuffer-mode))
-
-(use-package all-the-icons-dired
-  :ensure t
-  :when (display-graphic-p)
-  :hook (dired-mode . all-the-icons-dired-mode))
-
 (use-package xref
   :ensure nil
   :when (executable-find "rg")
   :custom
   (xref-search-program 'ripgrep))
-
-(use-package helpful
-  :ensure t
-  :defer t
-  :init
-  ;; Note that the built-in `describe-function' includes both functions
-  ;; and macros. `helpful-function' is functions only, so we provide
-  ;; `helpful-callable' as a drop-in replacement.
-  (global-set-key (kbd "C-h f") #'helpful-callable)
-  (global-set-key (kbd "C-h v") #'helpful-variable)
-  (global-set-key (kbd "C-h k") #'helpful-key))
 
 (provide 'init-misc)
 ;; Local Variables:
