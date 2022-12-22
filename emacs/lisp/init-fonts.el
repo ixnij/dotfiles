@@ -81,7 +81,7 @@
 		      :family (face-attribute 'default :family))
 
   (set-face-attribute 'variable-pitch nil
-		      :family "SF Pro" :height 210))
+		      :family "Times" :height 210))
 
 (provide 'init-fonts)
 ;;; Local Variables:
