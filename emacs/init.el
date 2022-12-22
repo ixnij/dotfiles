@@ -106,11 +106,12 @@
   )
 
 (use-package racket-mode
-  :ensure t
-  :hook (racket-mode . (lambda () (electric-pair-local-mode -1)))
+  :ensure t)
 
 ;; appearance
 (require 'init-look)
+
+(require (quote init-optional))
 
 ;;(require 'init-fns)
 
